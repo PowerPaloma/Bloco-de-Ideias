@@ -13,6 +13,8 @@
 		BEFCB37520C9560A006F8498 /* Bloco_de_Ideias.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BEFCB37320C9560A006F8498 /* Bloco_de_Ideias.xcdatamodeld */; };
 		BEFCB37720C9560C006F8498 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEFCB37620C9560C006F8498 /* Assets.xcassets */; };
 		BEFCB37A20C9560C006F8498 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEFCB37820C9560C006F8498 /* LaunchScreen.storyboard */; };
+		BEFCB38220C9707B006F8498 /* VisualizarIdeiaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFCB38120C9707B006F8498 /* VisualizarIdeiaViewController.swift */; };
+		BEFCB38620C9771F006F8498 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFCB38520C9771F006F8498 /* PerfilViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		BEFCB37620C9560C006F8498 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEFCB37920C9560C006F8498 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BEFCB37B20C9560C006F8498 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEFCB38120C9707B006F8498 /* VisualizarIdeiaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizarIdeiaViewController.swift; sourceTree = "<group>"; };
+		BEFCB38520C9771F006F8498 /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +60,9 @@
 		BEFCB36B20C9560A006F8498 /* Bloco de Ideias */ = {
 			isa = PBXGroup;
 			children = (
+				BEFCB38420C9708A006F8498 /* Model */,
+				BEFCB38320C97080006F8498 /* Controller */,
 				BEFCB36C20C9560A006F8498 /* AppDelegate.swift */,
-				BEFCB36E20C9560A006F8498 /* ViewController.swift */,
 				BEFCB37020C9560A006F8498 /* Main.storyboard */,
 				BEFCB37620C9560C006F8498 /* Assets.xcassets */,
 				BEFCB37820C9560C006F8498 /* LaunchScreen.storyboard */,
@@ -65,6 +70,23 @@
 				BEFCB37320C9560A006F8498 /* Bloco_de_Ideias.xcdatamodeld */,
 			);
 			path = "Bloco de Ideias";
+			sourceTree = "<group>";
+		};
+		BEFCB38320C97080006F8498 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BEFCB36E20C9560A006F8498 /* ViewController.swift */,
+				BEFCB38120C9707B006F8498 /* VisualizarIdeiaViewController.swift */,
+				BEFCB38520C9771F006F8498 /* PerfilViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BEFCB38420C9708A006F8498 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +163,8 @@
 				BEFCB36F20C9560A006F8498 /* ViewController.swift in Sources */,
 				BEFCB36D20C9560A006F8498 /* AppDelegate.swift in Sources */,
 				BEFCB37520C9560A006F8498 /* Bloco_de_Ideias.xcdatamodeld in Sources */,
+				BEFCB38220C9707B006F8498 /* VisualizarIdeiaViewController.swift in Sources */,
+				BEFCB38620C9771F006F8498 /* PerfilViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
