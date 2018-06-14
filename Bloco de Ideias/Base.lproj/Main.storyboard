@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -22,7 +23,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8W7-G7-eVx">
                                 <rect key="frame" x="16" y="2" width="343" height="557"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Opf-Ib-eXx">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -41,7 +42,7 @@
                                 </cells>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="UIu-D1-1ML" firstAttribute="bottom" secondItem="8W7-G7-eVx" secondAttribute="bottom" id="Ape-1o-rqc"/>
                             <constraint firstItem="UIu-D1-1ML" firstAttribute="trailing" secondItem="8W7-G7-eVx" secondAttribute="trailing" constant="16" id="QQ7-iv-AfR"/>
@@ -80,7 +81,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zVZ-YI-SO0">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="md8-Sp-huv">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-bg" translatesAutoresizingMaskIntoConstraints="NO" id="md8-Sp-huv">
                                         <rect key="frame" x="16" y="16" width="343" height="151"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="redraw" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V06-ci-ezv">
@@ -148,6 +149,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="V06-ci-ezv" firstAttribute="centerY" secondItem="md8-Sp-huv" secondAttribute="centerY" id="3LO-Sw-8eQ"/>
                                     <constraint firstItem="nzy-tM-WKC" firstAttribute="leading" secondItem="zX5-Nz-MKf" secondAttribute="leading" id="3Py-q0-7jk"/>
@@ -223,13 +225,37 @@
                     <view key="view" contentMode="scaleToFill" id="cME-yl-VJ5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hLV-U8-CcE">
+                                <rect key="frame" x="0.0" y="623" width="377" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Item" id="Yzy-kt-B2Y"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="iIj-Ch-nao"/>
+                                    <barButtonItem title="Item" id="3dC-bg-tPm"/>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MpO-jG-kqa">
+                                <rect key="frame" x="0.0" y="64" width="375" height="258"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XuX-FO-SgY" firstAttribute="bottom" secondItem="MpO-jG-kqa" secondAttribute="centerY" constant="474" id="5xm-o5-hes"/>
+                            <constraint firstItem="XuX-FO-SgY" firstAttribute="trailing" secondItem="MpO-jG-kqa" secondAttribute="trailing" id="7u3-i2-Krs"/>
+                            <constraint firstItem="MpO-jG-kqa" firstAttribute="centerX" secondItem="XuX-FO-SgY" secondAttribute="centerX" id="CG7-lL-vRj"/>
+                            <constraint firstItem="MpO-jG-kqa" firstAttribute="top" secondItem="XuX-FO-SgY" secondAttribute="top" id="Gah-LD-3iH"/>
+                            <constraint firstItem="MpO-jG-kqa" firstAttribute="leading" secondItem="XuX-FO-SgY" secondAttribute="leading" id="fcW-h3-zCm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="XuX-FO-SgY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Ucj-zS-Xx0">
+                        <barButtonItem key="leftBarButtonItem" title="Exit" id="FiT-cD-hD8"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y7C-iw-3KG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2153" y="64"/>
+            <point key="canvasLocation" x="4317.6000000000004" y="-708.39580209895053"/>
         </scene>
         <!--Idea View Controller-->
         <scene sceneID="OnD-fT-Wwk">
@@ -255,12 +281,12 @@
                                         <rect key="frame" x="15" y="227" width="345" height="122"/>
                                         <string key="text">To avoid food spoilage and dispensing in large quantities, it is very important in a sustainable kitchen to do a review of the refrigerators and cabinets and write a list, noting just what is needed before leaving the house to do the shopping.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Wus-yM-aKF">
                                         <rect key="frame" x="15" y="379" width="345" height="256"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.93725490196078431" green="0.94901960784313721" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="256" id="ZiO-nZ-Q2c"/>
                                         </constraints>
@@ -278,10 +304,12 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </view>
+                                                <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
                                 </subviews>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="fhb-Kc-i2q" secondAttribute="trailing" constant="15" id="0pq-rd-a4I"/>
                                     <constraint firstItem="fhb-Kc-i2q" firstAttribute="leading" secondItem="Uac-CC-Bum" secondAttribute="leading" constant="15" id="3fT-jz-gPn"/>
@@ -301,7 +329,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Uac-CC-Bum" firstAttribute="leading" secondItem="ezz-qu-NbM" secondAttribute="leading" id="1am-kN-zvF"/>
                             <constraint firstItem="Vxo-ot-Hyj" firstAttribute="trailing" secondItem="Uac-CC-Bum" secondAttribute="trailing" id="6Au-DQ-MVH"/>
@@ -358,9 +386,28 @@
             </objects>
             <point key="canvasLocation" x="1312.8" y="23.838080959520241"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Npo-8Z-7Kc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aM4-wu-ba5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iJq-YR-Ybx">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jcK-00-69D" kind="relationship" relationship="rootViewController" id="9Ih-gm-hJP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t26-jN-ecw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3503" y="-708"/>
+        </scene>
     </scenes>
     <resources>
         <image name="camera" width="48" height="48"/>
+        <image name="image-bg" width="700" height="500"/>
         <image name="kitchen" width="375" height="251"/>
     </resources>
 </document>
