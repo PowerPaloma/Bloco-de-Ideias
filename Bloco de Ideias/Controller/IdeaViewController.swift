@@ -1,5 +1,5 @@
 //
-//  PerfilViewController.swift
+//  VisualizarIdeiaViewController.swift
 //  Bloco de Ideias
 //
 //  Created by Ada 2018 on 07/06/2018.
@@ -8,16 +8,21 @@
 
 import UIKit
 
-class PerfilViewController: UIViewController {
+class IdeaViewController: UIViewController {
 
-   
-    @IBOutlet weak var imageProfile: UIImageView!
+//    @IBOutlet var topicsCollection: UICollectionView!
+//    @IBOutlet var ideaImage: UIImageView!
+//    @IBOutlet var title: UILabel!
+//    @IBOutlet weak var descrip: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.imageProfile.layer.borderColor = UIColor.white.cgColor
-        self.imageProfile.layer.cornerRadius = self.imageProfile.bounds.width/2
-        self.imageProfile.layer.borderWidth = 3.0
-        self.imageProfile.clipsToBounds = true
+//        self.imageProfile.layer.cornerRadius = self.imageProfile.bounds.width/2
+//        self.imageProfile.layer.borderWidth = 1.0
+//        self.imageProfile.layer.borderColor = UIColor.black.cgColor
+//        self.imageProfile.clipsToBounds = true
+//        self.descricao.sizeToFit()
+        
 
         // Do any additional setup after loading the view.
     }
