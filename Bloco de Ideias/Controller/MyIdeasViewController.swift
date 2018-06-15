@@ -10,10 +10,10 @@ import UIKit
 
 class MyIdeasViewController: UIViewController {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadProcesses()
-        
     }
 
     override func didReceiveMemoryWarning() {
