@@ -9,12 +9,17 @@
 /* Begin PBXBuildFile section */
 		BE205A6120CE989A00B53288 /* IdeaBuilder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE205A5F20CE989A00B53288 /* IdeaBuilder.xcdatamodeld */; };
 		BE205A6920CEA1AA00B53288 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE205A6820CEA1AA00B53288 /* DataManager.swift */; };
-		BE205A6B20CEA3D300B53288 /* MyIdeasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE205A6A20CEA3D300B53288 /* MyIdeasViewController.swift */; };
 		BE205A6D20CEA45400B53288 /* NewIdeaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE205A6C20CEA45400B53288 /* NewIdeaViewController.swift */; };
-		BE205AB320D15FA100B53288 /* Process+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE205AAF20D15FA100B53288 /* Process+CoreDataClass.swift */; };
-		BE205AB420D15FA100B53288 /* Process+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE205AB020D15FA100B53288 /* Process+CoreDataProperties.swift */; };
-		BE205AB520D15FA100B53288 /* Idea+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE205AB120D15FA100B53288 /* Idea+CoreDataClass.swift */; };
-		BE205AB620D15FA100B53288 /* Idea+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE205AB220D15FA100B53288 /* Idea+CoreDataProperties.swift */; };
+		BE205AC220D2B71500B53288 /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE205AC120D2B71500B53288 /* Process.swift */; };
+		BE205AC420D2B9AE00B53288 /* Idea.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE205AC320D2B9AE00B53288 /* Idea.swift */; };
+		BE205AC920D2BA1F00B53288 /* Process+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE205AC520D2BA1F00B53288 /* Process+CoreDataClass.swift */; };
+		BE205ACA20D2BA1F00B53288 /* Process+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE205AC620D2BA1F00B53288 /* Process+CoreDataProperties.swift */; };
+		BE205ACB20D2BA1F00B53288 /* Idea+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE205AC720D2BA1F00B53288 /* Idea+CoreDataClass.swift */; };
+		BE205ACC20D2BA1F00B53288 /* Idea+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE205AC820D2BA1F00B53288 /* Idea+CoreDataProperties.swift */; };
+		BE205ACF20D3D86600B53288 /* MyIdeasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE205ACD20D3D86600B53288 /* MyIdeasViewController.swift */; };
+		BE205AD420D3D94400B53288 /* MyIdeaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE205AD220D3D94400B53288 /* MyIdeaCollectionViewCell.swift */; };
+		BE205AD520D3D94400B53288 /* MyIdeaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE205AD320D3D94400B53288 /* MyIdeaCollectionViewCell.xib */; };
+		BE205AD720D3F9C900B53288 /* ReorderableFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE205AD620D3F9C900B53288 /* ReorderableFlowLayout.swift */; };
 		BEFCB36D20C9560A006F8498 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFCB36C20C9560A006F8498 /* AppDelegate.swift */; };
 		BEFCB36F20C9560A006F8498 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFCB36E20C9560A006F8498 /* ViewController.swift */; };
 		BEFCB37220C9560A006F8498 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEFCB37020C9560A006F8498 /* Main.storyboard */; };
@@ -26,12 +31,17 @@
 /* Begin PBXFileReference section */
 		BE205A6020CE989A00B53288 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		BE205A6820CEA1AA00B53288 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		BE205A6A20CEA3D300B53288 /* MyIdeasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyIdeasViewController.swift; sourceTree = "<group>"; };
 		BE205A6C20CEA45400B53288 /* NewIdeaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewIdeaViewController.swift; sourceTree = "<group>"; };
-		BE205AAF20D15FA100B53288 /* Process+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Process+CoreDataClass.swift"; sourceTree = "<group>"; };
-		BE205AB020D15FA100B53288 /* Process+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Process+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BE205AB120D15FA100B53288 /* Idea+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Idea+CoreDataClass.swift"; sourceTree = "<group>"; };
-		BE205AB220D15FA100B53288 /* Idea+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Idea+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BE205AC120D2B71500B53288 /* Process.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Process.swift; sourceTree = "<group>"; };
+		BE205AC320D2B9AE00B53288 /* Idea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Idea.swift; sourceTree = "<group>"; };
+		BE205AC520D2BA1F00B53288 /* Process+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Process+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BE205AC620D2BA1F00B53288 /* Process+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Process+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BE205AC720D2BA1F00B53288 /* Idea+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Idea+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BE205AC820D2BA1F00B53288 /* Idea+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Idea+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BE205ACD20D3D86600B53288 /* MyIdeasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyIdeasViewController.swift; sourceTree = "<group>"; };
+		BE205AD220D3D94400B53288 /* MyIdeaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyIdeaCollectionViewCell.swift; sourceTree = "<group>"; };
+		BE205AD320D3D94400B53288 /* MyIdeaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyIdeaCollectionViewCell.xib; sourceTree = "<group>"; };
+		BE205AD620D3F9C900B53288 /* ReorderableFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderableFlowLayout.swift; sourceTree = "<group>"; };
 		BEFCB36920C9560A006F8498 /* Bloco de Ideias.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bloco de Ideias.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEFCB36C20C9560A006F8498 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEFCB36E20C9560A006F8498 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +63,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE205AD120D3D91900B53288 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				BE205AD220D3D94400B53288 /* MyIdeaCollectionViewCell.swift */,
+				BE205AD320D3D94400B53288 /* MyIdeaCollectionViewCell.xib */,
+				BE205AD620D3F9C900B53288 /* ReorderableFlowLayout.swift */,
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
 		BEFCB36020C95609006F8498 = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				BE205A5F20CE989A00B53288 /* IdeaBuilder.xcdatamodeld */,
+				BE205AD120D3D91900B53288 /* CollectionViewCells */,
 				BEFCB38420C9708A006F8498 /* Model */,
 				BEFCB38320C97080006F8498 /* Controller */,
 				BEFCB36C20C9560A006F8498 /* AppDelegate.swift */,
@@ -89,8 +110,8 @@
 			children = (
 				BEFCB36E20C9560A006F8498 /* ViewController.swift */,
 				BEFCB38120C9707B006F8498 /* IdeaViewController.swift */,
-				BE205A6A20CEA3D300B53288 /* MyIdeasViewController.swift */,
 				BE205A6C20CEA45400B53288 /* NewIdeaViewController.swift */,
+				BE205ACD20D3D86600B53288 /* MyIdeasViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -98,11 +119,13 @@
 		BEFCB38420C9708A006F8498 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BE205AAF20D15FA100B53288 /* Process+CoreDataClass.swift */,
-				BE205AB020D15FA100B53288 /* Process+CoreDataProperties.swift */,
-				BE205AB120D15FA100B53288 /* Idea+CoreDataClass.swift */,
-				BE205AB220D15FA100B53288 /* Idea+CoreDataProperties.swift */,
+				BE205AC520D2BA1F00B53288 /* Process+CoreDataClass.swift */,
+				BE205AC620D2BA1F00B53288 /* Process+CoreDataProperties.swift */,
+				BE205AC720D2BA1F00B53288 /* Idea+CoreDataClass.swift */,
+				BE205AC820D2BA1F00B53288 /* Idea+CoreDataProperties.swift */,
 				BE205A6820CEA1AA00B53288 /* DataManager.swift */,
+				BE205AC120D2B71500B53288 /* Process.swift */,
+				BE205AC320D2B9AE00B53288 /* Idea.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -165,6 +188,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE205AD520D3D94400B53288 /* MyIdeaCollectionViewCell.xib in Resources */,
 				BEFCB37A20C9560C006F8498 /* LaunchScreen.storyboard in Resources */,
 				BEFCB37720C9560C006F8498 /* Assets.xcassets in Resources */,
 				BEFCB37220C9560A006F8498 /* Main.storyboard in Resources */,
@@ -178,17 +202,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE205AB520D15FA100B53288 /* Idea+CoreDataClass.swift in Sources */,
+				BE205AC420D2B9AE00B53288 /* Idea.swift in Sources */,
+				BE205AD420D3D94400B53288 /* MyIdeaCollectionViewCell.swift in Sources */,
+				BE205ACA20D2BA1F00B53288 /* Process+CoreDataProperties.swift in Sources */,
+				BE205ACB20D2BA1F00B53288 /* Idea+CoreDataClass.swift in Sources */,
+				BE205AC920D2BA1F00B53288 /* Process+CoreDataClass.swift in Sources */,
 				BE205A6920CEA1AA00B53288 /* DataManager.swift in Sources */,
-				BE205AB320D15FA100B53288 /* Process+CoreDataClass.swift in Sources */,
 				BE205A6D20CEA45400B53288 /* NewIdeaViewController.swift in Sources */,
 				BEFCB36F20C9560A006F8498 /* ViewController.swift in Sources */,
-				BE205AB620D15FA100B53288 /* Idea+CoreDataProperties.swift in Sources */,
-				BE205AB420D15FA100B53288 /* Process+CoreDataProperties.swift in Sources */,
 				BEFCB36D20C9560A006F8498 /* AppDelegate.swift in Sources */,
-				BE205A6B20CEA3D300B53288 /* MyIdeasViewController.swift in Sources */,
+				BE205ACC20D2BA1F00B53288 /* Idea+CoreDataProperties.swift in Sources */,
 				BE205A6120CE989A00B53288 /* IdeaBuilder.xcdatamodeld in Sources */,
+				BE205AD720D3F9C900B53288 /* ReorderableFlowLayout.swift in Sources */,
 				BEFCB38220C9707B006F8498 /* IdeaViewController.swift in Sources */,
+				BE205AC220D2B71500B53288 /* Process.swift in Sources */,
+				BE205ACF20D3D86600B53288 /* MyIdeasViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

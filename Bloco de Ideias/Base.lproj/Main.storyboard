@@ -21,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8W7-G7-eVx">
-                                <rect key="frame" x="16" y="2" width="343" height="557"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="559"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Opf-Ib-eXx">
                                     <size key="itemSize" width="50" height="50"/>
@@ -30,7 +30,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="KAB-5r-o3R">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyIdeaCell" id="KAB-5r-o3R" customClass="MyIdeaCollectionViewCell" customModule="Bloco_de_Ideias" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -44,16 +44,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="UIu-D1-1ML" firstAttribute="bottom" secondItem="8W7-G7-eVx" secondAttribute="bottom" id="Ape-1o-rqc"/>
-                            <constraint firstItem="UIu-D1-1ML" firstAttribute="trailing" secondItem="8W7-G7-eVx" secondAttribute="trailing" constant="16" id="QQ7-iv-AfR"/>
-                            <constraint firstItem="8W7-G7-eVx" firstAttribute="centerY" secondItem="UIu-D1-1ML" secondAttribute="centerY" constant="1" id="Y5O-sL-6er"/>
-                            <constraint firstItem="8W7-G7-eVx" firstAttribute="leading" secondItem="UIu-D1-1ML" secondAttribute="leading" constant="16" id="aUD-E3-Ybh"/>
+                            <constraint firstItem="UIu-D1-1ML" firstAttribute="trailing" secondItem="8W7-G7-eVx" secondAttribute="trailing" id="QQ7-iv-AfR"/>
+                            <constraint firstItem="8W7-G7-eVx" firstAttribute="centerY" secondItem="UIu-D1-1ML" secondAttribute="centerY" id="Y5O-sL-6er"/>
+                            <constraint firstItem="8W7-G7-eVx" firstAttribute="leading" secondItem="UIu-D1-1ML" secondAttribute="leading" id="aUD-E3-Ybh"/>
                             <constraint firstItem="8W7-G7-eVx" firstAttribute="centerX" secondItem="UIu-D1-1ML" secondAttribute="centerX" id="k10-5l-4xY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UIu-D1-1ML"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="My Ideas" largeTitleDisplayMode="always" id="gK0-7a-1rx">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="UMI-Bg-XRP"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="UMI-Bg-XRP">
+                            <connections>
+                                <action selector="changeLayoutAction:" destination="CXF-i7-KEs" id="Xkv-VG-UqC"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="NEM-b6-3SW">
                             <connections>
                                 <segue destination="rs1-VD-BjV" kind="presentation" id="Shk-0F-IaG"/>
@@ -62,6 +66,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="collectionView" destination="8W7-G7-eVx" id="LoG-ja-TbK"/>
                         <segue destination="ZTJ-5U-gNN" kind="show" id="9qs-Q3-k0I"/>
                     </connections>
                 </viewController>
