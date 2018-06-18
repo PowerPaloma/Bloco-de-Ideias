@@ -21,6 +21,7 @@ extension Idea {
     convenience init(){
         let entity:NSEntityDescription = DataManager.getEntity(entity: "Idea")
         let context:NSManagedObjectContext = DataManager.getContext()
+        
         self.init(entity: entity, insertInto: context)
     }
     
@@ -41,5 +42,32 @@ extension Idea {
         } catch {
             print("Failed saving")
         }
+    }
+    
+    func delete(){
+        let context:NSManagedObjectContext = DataManager.getContext()
+
+        
+        context.delete(self)
+        
+        do {
+            try context.save()
+        } catch  let error as NSError{
+            print("Error While Deleting Note: \(error.userInfo)")
+        }
+        
+        let entity = DataManager.getEntity(entity: "Idea")
+        let ideas = DataManager.getAll(entity: entity)
+        
+        if (ideas.success){
+            if(ideas.objects.count == 0){
+                NSLog("Não existem registros.")
+            }else{
+                for idea in ideas.objects as! [Idea] {
+                    print(idea.title)
+                }
+            }
+        }
+               
     }
 }

@@ -18,8 +18,8 @@ class MyIdeasViewController: UIViewController {
     var processList : [Process] = []
     
     let inset: CGFloat = 8
-    let minimunLineSpacing: CGFloat = 8
-    let minimunInteritemSpacing: CGFloat = 8
+    let minimunLineSpacing: CGFloat = 0
+    let minimunInteritemSpacing: CGFloat = 0
     var cellsPerRow = 2
     
     override func viewDidLoad() {
@@ -258,15 +258,25 @@ extension MyIdeasViewController : UICollectionViewDelegateFlowLayout {
 
 extension MyIdeasViewController : IdeaDelegate {
     func deleteIdea(item: Int) {
-        let indexPath = IndexPath(item: item, section: 0)
+        let alertSave = UIAlertController(title: "Delete Idea?", message: "Are you sure you want to delete this idea?", preferredStyle: .alert)
+        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let yesButton = UIAlertAction(title: "Yes", style: .default  , handler: {_ in
+            let indexPath = IndexPath(item: item, section: 0)
+            
+            let idea = self.ideasList.remove(at: indexPath.item)
+            idea.delete()
+            
+            self.collectionView.performBatchUpdates({
+                self.collectionView.deleteItems(at: [indexPath])
+            }) { (finished) in
+                self.collectionView.reloadItems(at: self.collectionView.indexPathsForVisibleItems)
+            }
+        })
         
-        ideasList.remove(at: indexPath.item)
+        alertSave.addAction(cancelButton)
+        alertSave.addAction(yesButton)
         
-        self.collectionView.performBatchUpdates({
-            self.collectionView.deleteItems(at: [indexPath])
-        }) { (finished) in
-            self.collectionView.reloadItems(at: self.collectionView.indexPathsForVisibleItems)
-        }
+        self.present(alertSave, animated: true, completion: nil)
     }
 }
 
