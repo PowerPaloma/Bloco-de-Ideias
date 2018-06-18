@@ -11,6 +11,7 @@ import UIKit
 class MyIdeasViewController: UIViewController {
     
     @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var editButton: UIBarButtonItem!
     var longPressGR: UILongPressGestureRecognizer!
     var movingIndexPath: NSIndexPath?
     var ideasList : [Idea] = []
@@ -28,6 +29,8 @@ class MyIdeasViewController: UIViewController {
         
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         
         //-------------- view did load---------------
         longPressGR = UILongPressGestureRecognizer(target: self, action: #selector(longPressed(gesture:)))
@@ -81,6 +84,20 @@ class MyIdeasViewController: UIViewController {
         collectionView.collectionViewLayout.invalidateLayout()
     }
     
+    @IBAction func editModeAction(_ sender: Any) {
+        startEditMode()
+    }
+    
+    func startEditMode(){
+        if isEditing {
+            editButton.title = "Edit"
+            setEditing(false, animated: true)
+        } else {
+            editButton.title = "Done"
+            setEditing(true, animated: true)
+        }
+    }
+    
     func loadProcesses(){
         let cbl:Process = Process()
         cbl.name = "CBL"
@@ -94,14 +111,11 @@ class MyIdeasViewController: UIViewController {
         cbl.save()
         canvas.save()
         designThinking.save()
-
     }
-    
     
     //-------------- view controler ---------------
     func pickedUpCell() -> MyIdeaCollectionViewCell? {
         guard let indexPath = movingIndexPath else { return nil }
-        
         return collectionView.cellForItem(at: indexPath as IndexPath) as? MyIdeaCollectionViewCell
     }
     
@@ -110,7 +124,7 @@ class MyIdeasViewController: UIViewController {
             cell?.alpha = 0.7
             cell?.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
         }, completion: { finished in
-            
+            NSLog("animatePickingUpCell")
         })
     }
     
@@ -120,6 +134,7 @@ class MyIdeasViewController: UIViewController {
             cell?.transform = CGAffineTransform.identity
         }, completion: { finished in
             cell?.startWiggling()
+            NSLog("animatePickingDownCell")
         })
     }
     
@@ -153,16 +168,18 @@ class MyIdeasViewController: UIViewController {
         let cells = collectionView?.visibleCells as! [MyIdeaCollectionViewCell]
         
         for cell in cells {
-            if isEditing { cell.startWiggling() } else { cell.stopWiggling() }
+            if isEditing {
+                cell.startWiggling()
+            } else {
+                cell.stopWiggling()
+            }
         }
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: true)
-        
         startWigglingAllVisibleCells()
     }
-    
     //-----------------------------
 }
 
@@ -193,8 +210,6 @@ extension MyIdeasViewController : UICollectionViewDelegate, UICollectionViewData
             cell.transform = CGAffineTransform.identity
         }
         //-----------------------------
-
-        
         return cell
     }
     
@@ -205,6 +220,7 @@ extension MyIdeasViewController : UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, moveItemAt source: IndexPath, to destination: IndexPath) {
         let idea = ideasList.remove(at: source.item)
         ideasList.insert(idea, at: destination.item)
+        // MUDAR NO CORE DATA A ORDEM DAS IDEIAS
     }
     
 }

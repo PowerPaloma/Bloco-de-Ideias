@@ -18,12 +18,13 @@ class MyIdeaCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        view.layer.masksToBounds = true
-        view.layer.cornerRadius = 16
-        view.layer.shadowColor = UIColor.black.cgColor
-        view.layer.shadowOffset = CGSize(width: 3.0, height: 3.0)
-        view.layer.shadowOpacity = 0.8
-        view.layer.shadowRadius = 4.0
+        image.layer.masksToBounds = true
+        image.layer.cornerRadius = 16
+        
+        image.layer.shadowColor = UIColor.black.cgColor
+        image.layer.shadowOffset = CGSize(width: 3.0, height: 3.0)
+        image.layer.shadowOpacity = 0.8
+        image.layer.shadowRadius = 4.0
         
         if !UIAccessibilityIsReduceTransparencyEnabled() {
             image.backgroundColor = .clear

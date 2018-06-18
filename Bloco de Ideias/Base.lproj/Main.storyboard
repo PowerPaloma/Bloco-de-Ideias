@@ -53,20 +53,21 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="My Ideas" largeTitleDisplayMode="always" id="gK0-7a-1rx">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="UMI-Bg-XRP">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="list" id="NEM-b6-3SW">
                             <connections>
-                                <action selector="changeLayoutAction:" destination="CXF-i7-KEs" id="Xkv-VG-UqC"/>
+                                <action selector="changeLayoutAction:" destination="CXF-i7-KEs" id="LJi-tU-heF"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="NEM-b6-3SW">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="UMI-Bg-XRP">
                             <connections>
-                                <segue destination="rs1-VD-BjV" kind="presentation" id="Shk-0F-IaG"/>
+                                <action selector="editModeAction:" destination="CXF-i7-KEs" id="Y8j-11-1oV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="8W7-G7-eVx" id="LoG-ja-TbK"/>
+                        <outlet property="editButton" destination="UMI-Bg-XRP" id="Gv8-JD-gaX"/>
                         <segue destination="ZTJ-5U-gNN" kind="show" id="9qs-Q3-k0I"/>
                     </connections>
                 </viewController>
@@ -367,5 +368,6 @@
     <resources>
         <image name="camera" width="48" height="48"/>
         <image name="kitchen" width="375" height="251"/>
+        <image name="list" width="24" height="24"/>
     </resources>
 </document>
