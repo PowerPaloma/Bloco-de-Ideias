@@ -19,9 +19,9 @@ class NewIdeaViewController: UIViewController{
     @IBOutlet var button: UIButton!
     
     var activeField: UITextField!
-    //var selectedProcess: UUID
-    
     var imagePicker = UIImagePickerController()
+    
+    let newIdea:Idea = Idea()
     let processPicker = UIPickerView()
     
     var processes: [Process] {
@@ -32,7 +32,6 @@ class NewIdeaViewController: UIViewController{
             if(query.objects.count > 0){
                 return query.objects as! [Process]
             }
-            
         }else{
             NSLog("Error on reading processes from Database...")
         }
@@ -140,7 +139,7 @@ class NewIdeaViewController: UIViewController{
     }
     
     @IBAction func done(_ sender: UIBarButtonItem) {
-        let newIdea:Idea = Idea()
+        
         if (self.titleTF.text == "" || self.desc.text == "" || self.process.text == "" || self.tags.text == ""){
             let alert = UIAlertController(title: "Preencha todos os campos", message: nil, preferredStyle: .alert)
             self.present(alert, animated: true, completion: nil)
@@ -149,10 +148,10 @@ class NewIdeaViewController: UIViewController{
                 alert.dismiss(animated: true, completion: nil)
             }
         }else{
-            newIdea.title = self.titleTF.text
-            newIdea.desc = self.desc.text
-            newIdea.image = UIImageJPEGRepresentation(self.image.image!, 1.0)!
-            newIdea.save()
+            self.newIdea.title = self.titleTF.text
+            self.newIdea.desc = self.desc.text
+            self.newIdea.image = UIImageJPEGRepresentation(self.image.image!, 1.0)!
+            self.newIdea.save()
         }
         
         
@@ -205,6 +204,8 @@ extension NewIdeaViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.process.text = processes[row].name
+        self.newIdea.process = processes[row]
+        
     
         
     }
