@@ -14,7 +14,9 @@ class MyIdeaCollectionViewCell: UICollectionViewCell {
     @IBOutlet var desc: UILabel!
     @IBOutlet var tags: UIStackView!
     @IBOutlet var image: UIImageView!
-
+    @IBOutlet var deleteButton: UIButton!
+    weak var delegate : IdeaDelegate!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -26,11 +28,18 @@ class MyIdeaCollectionViewCell: UICollectionViewCell {
         image.layer.shadowOpacity = 0.8
         image.layer.shadowRadius = 4.0
         
+        deleteButton.layer.isHidden = true
+        
+        
         if !UIAccessibilityIsReduceTransparencyEnabled() {
             image.backgroundColor = .clear
             let blurEffect = UIBlurEffect(style: .light)
             let blurEffectView = UIVisualEffectView(effect: blurEffect)
-            blurEffectView.frame = image.bounds
+
+            blurEffectView.frame = CGRect(origin: image.frame.origin, size: image.bounds.size)
+            blurEffectView.layer.masksToBounds = true
+            blurEffectView.layer.cornerRadius = 16
+
             blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             view.insertSubview(blurEffectView, at: 1)
         } else {
@@ -38,11 +47,12 @@ class MyIdeaCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    //---------------- collection view cell -------------
+    //---------------- Wiggling -------------
     func startWiggling() {
         guard view.layer.animation(forKey: "wiggle") == nil else { return }
         guard view.layer.animation(forKey: "bounce") == nil else { return }
         
+        deleteButton.layer.isHidden = false
         let angle = 0.04
         
         let wiggle = CAKeyframeAnimation(keyPath: "transform.rotation.z")
@@ -53,18 +63,10 @@ class MyIdeaCollectionViewCell: UICollectionViewCell {
         wiggle.repeatCount = Float.infinity
         
         contentView.layer.add(wiggle, forKey: "wiggle")
-        
-//        let bounce = CAKeyframeAnimation(keyPath: "transform.translation.y")
-//        bounce.values = [4.0, 0.0]
-//
-//        bounce.autoreverses = true
-//        bounce.duration = randomInterval(interval: 0.12, variance: 0.025)
-//        bounce.repeatCount = Float.infinity
-//
-//        contentView.layer.add(bounce, forKey: "bounce")
     }
     
     func stopWiggling() {
+        deleteButton.layer.isHidden = true
         contentView.layer.removeAllAnimations()
     }
     
@@ -76,7 +78,10 @@ class MyIdeaCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
         stopWiggling()
     }
-    //-----------------------------
     
+    @IBAction func deleteButtonAction(_ sender: Any) {
+        delegate.deleteIdea(item: deleteButton.tag)
+    }
+    //-----------------------------
     
 }

@@ -20,6 +20,7 @@
 		BE205AD420D3D94400B53288 /* MyIdeaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE205AD220D3D94400B53288 /* MyIdeaCollectionViewCell.swift */; };
 		BE205AD520D3D94400B53288 /* MyIdeaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE205AD320D3D94400B53288 /* MyIdeaCollectionViewCell.xib */; };
 		BE205AD720D3F9C900B53288 /* ReorderableFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE205AD620D3F9C900B53288 /* ReorderableFlowLayout.swift */; };
+		BE9F234120D7F950007B58BB /* IdeaDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F234020D7F950007B58BB /* IdeaDelegate.swift */; };
 		BEFCB36D20C9560A006F8498 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFCB36C20C9560A006F8498 /* AppDelegate.swift */; };
 		BEFCB36F20C9560A006F8498 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFCB36E20C9560A006F8498 /* ViewController.swift */; };
 		BEFCB37220C9560A006F8498 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEFCB37020C9560A006F8498 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		BE205AD220D3D94400B53288 /* MyIdeaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyIdeaCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE205AD320D3D94400B53288 /* MyIdeaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyIdeaCollectionViewCell.xib; sourceTree = "<group>"; };
 		BE205AD620D3F9C900B53288 /* ReorderableFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderableFlowLayout.swift; sourceTree = "<group>"; };
+		BE9F234020D7F950007B58BB /* IdeaDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaDelegate.swift; sourceTree = "<group>"; };
 		BEFCB36920C9560A006F8498 /* Bloco de Ideias.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bloco de Ideias.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEFCB36C20C9560A006F8498 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEFCB36E20C9560A006F8498 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,14 @@
 			path = CollectionViewCells;
 			sourceTree = "<group>";
 		};
+		BE9F233F20D7F926007B58BB /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BE9F234020D7F950007B58BB /* IdeaDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		BEFCB36020C95609006F8498 = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +102,7 @@
 		BEFCB36B20C9560A006F8498 /* Bloco de Ideias */ = {
 			isa = PBXGroup;
 			children = (
+				BE9F233F20D7F926007B58BB /* Protocols */,
 				BE205A5F20CE989A00B53288 /* IdeaBuilder.xcdatamodeld */,
 				BE205AD120D3D91900B53288 /* CollectionViewCells */,
 				BEFCB38420C9708A006F8498 /* Model */,
@@ -207,6 +218,7 @@
 				BE205ACA20D2BA1F00B53288 /* Process+CoreDataProperties.swift in Sources */,
 				BE205ACB20D2BA1F00B53288 /* Idea+CoreDataClass.swift in Sources */,
 				BE205AC920D2BA1F00B53288 /* Process+CoreDataClass.swift in Sources */,
+				BE9F234120D7F950007B58BB /* IdeaDelegate.swift in Sources */,
 				BE205A6920CEA1AA00B53288 /* DataManager.swift in Sources */,
 				BE205A6D20CEA45400B53288 /* NewIdeaViewController.swift in Sources */,
 				BEFCB36F20C9560A006F8498 /* ViewController.swift in Sources */,
