@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,20 +20,24 @@
                 <rect key="frame" x="0.0" y="0.0" width="298" height="130"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WkN-N1-aJl">
-                        <rect key="frame" x="122.5" y="41" width="53" height="48"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                        <state key="normal" title="Add"/>
-                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plusButton" translatesAutoresizingMaskIntoConstraints="NO" id="qfy-Fh-Onm">
+                        <rect key="frame" x="104.5" y="0.0" width="89" height="130"/>
+                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </imageView>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="WkN-N1-aJl" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="CEz-eJ-yxq"/>
-                <constraint firstItem="WkN-N1-aJl" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="mud-Cw-1YC"/>
+                <constraint firstItem="qfy-Fh-Onm" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="K1d-AA-yS3"/>
+                <constraint firstItem="qfy-Fh-Onm" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="Uke-TX-vfH"/>
+                <constraint firstItem="qfy-Fh-Onm" firstAttribute="width" secondItem="ZTg-uK-7eu" secondAttribute="width" multiplier="0.3" id="bol-uw-4V9"/>
+                <constraint firstItem="qfy-Fh-Onm" firstAttribute="height" secondItem="ZTg-uK-7eu" secondAttribute="height" id="moN-qH-iJn"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="298" height="130"/>
             <point key="canvasLocation" x="191" y="-26"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="plusButton" width="626" height="626"/>
+    </resources>
 </document>

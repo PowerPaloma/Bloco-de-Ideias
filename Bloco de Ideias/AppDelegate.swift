@@ -71,7 +71,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 t3.save()
             }
         }else{
-            NSLog("Error on searching tags...")
+            NSLog("Error on saving tags...")
         }
         
         return true

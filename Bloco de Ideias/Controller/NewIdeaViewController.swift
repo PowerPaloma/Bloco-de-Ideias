@@ -106,13 +106,13 @@ class NewIdeaViewController: UIViewController{
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.destination is SearchTagsViewController{
-            let vc = segue.destination as! SearchTagsViewController
-            vc.delegate = self
-        }
-    }
-    @IBAction func editingBegin(_ sender: UITextField) {
         
+        let dest = segue.destination as! UINavigationController
+        let vc = dest.topViewController as! SearchTagsViewController
+        vc.delegate = self
+    }
+    
+    @IBAction func editingBegin(_ sender: UITextField) {
         performSegue(withIdentifier: "tag", sender: nil)
     }
     
@@ -226,11 +226,20 @@ extension NewIdeaViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 extension NewIdeaViewController: TagDelegate {
     
     func tags(tags: [Tag]) {
-        for tag in tags{
-            self.tags.text = self.tags.text! + " \(tag.name),"
-        }
+        // adding tags to idea
+        var stringTags = ""
+        let tagsIdea = NSSet.init(array: tags)
+        self.newIdea.addToTag(tagsIdea)
+
         
-        //self.newIdea.addToRelationship(<#T##value: Idea_Tag##Idea_Tag#>)
+        // adding idea to tags
+        for tag in tags{
+            stringTags += "\(tag.name!);"
+            tag.addToIdeas(self.newIdea)
+            tag.save()
+        }
+        self.tags.text = stringTags
+       
     }
     
     

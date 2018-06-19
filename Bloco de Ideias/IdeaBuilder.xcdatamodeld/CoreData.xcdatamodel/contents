@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E199" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17D47" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Idea" representedClassName=".Idea" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="process" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Process" inverseName="ideas" inverseEntity="Process" syncable="YES"/>
-        <relationship name="relationship" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Idea_Tag" inverseName="idea" inverseEntity="Idea_Tag" syncable="YES"/>
-    </entity>
-    <entity name="Idea_Tag" representedClassName=".Idea_Tag" syncable="YES" codeGenerationType="class">
-        <relationship name="idea" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Idea" inverseName="relationship" inverseEntity="Idea" syncable="YES"/>
-        <relationship name="tag" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tag" inverseName="relationship" inverseEntity="Tag" syncable="YES"/>
+        <relationship name="tag" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Tag" inverseName="ideas" inverseEntity="Tag" syncable="YES"/>
     </entity>
     <entity name="Process" representedClassName=".Process" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -23,7 +19,7 @@
     </entity>
     <entity name="Tag" representedClassName=".Tag" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="relationship" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Idea_Tag" inverseName="tag" inverseEntity="Idea_Tag" syncable="YES"/>
+        <relationship name="ideas" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Idea" inverseName="tag" inverseEntity="Idea" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName=".User" syncable="YES" codeGenerationType="class">
         <attribute name="credits" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -42,9 +38,8 @@
     </entity>
     <elements>
         <element name="Idea" positionX="45" positionY="-171" width="128" height="133"/>
-        <element name="Idea_Tag" positionX="250" positionY="-126" width="128" height="73"/>
-        <element name="Process" positionX="171" positionY="128" width="128" height="75"/>
-        <element name="Suggestion" positionX="180" positionY="-27" width="128" height="88"/>
+        <element name="Process" positionX="261" positionY="198" width="128" height="75"/>
+        <element name="Suggestion" positionX="358" positionY="-27" width="128" height="88"/>
         <element name="Tag" positionX="466" positionY="-126" width="128" height="73"/>
         <element name="User" positionX="-200" positionY="-211" width="128" height="238"/>
     </elements>

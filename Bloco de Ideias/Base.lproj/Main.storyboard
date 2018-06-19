@@ -69,23 +69,19 @@
                                     <action selector="deleteAllData:" destination="CXF-i7-KEs" id="AhT-uX-eE1"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem systemItem="add" id="V1a-uE-IWi">
-                                <connections>
-                                    <segue destination="rs1-VD-BjV" kind="presentation" id="ibJ-S4-OHB"/>
-                                </connections>
-                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="8W7-G7-eVx" id="LoG-ja-TbK"/>
                         <outlet property="editButton" destination="UMI-Bg-XRP" id="Gv8-JD-gaX"/>
-                        <segue destination="ZTJ-5U-gNN" kind="show" id="9qs-Q3-k0I"/>
+                        <segue destination="ZTJ-5U-gNN" kind="show" identifier="viewIdea" id="9qs-Q3-k0I"/>
+                        <segue destination="rs1-VD-BjV" kind="presentation" identifier="newIdea" id="dPv-f4-p71"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IKz-d2-Qdc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1313" y="-708"/>
+            <point key="canvasLocation" x="1313" y="-734"/>
         </scene>
         <!--New Idea-->
         <scene sceneID="k9x-Ft-us5">
@@ -263,8 +259,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ioM-t2-L05" userLabel="Tags" customClass="TagListView" customModule="TagListView">
+                                <rect key="frame" x="0.0" y="72" width="375" height="50.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="tagBackgroundColor">
+                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableRemoveButton" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="removeButtonIconSize">
+                                        <real key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="removeIconLineWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingY">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingX">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="marginY">
+                                        <real key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="marginX">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WjW-Eb-mUe">
-                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="130.5" width="375" height="492.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="kdh-Yk-0ca" style="IBUITableViewCellStyleDefault" id="5QG-iS-cb3">
@@ -290,10 +326,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="ioM-t2-L05" firstAttribute="height" secondItem="eTk-2d-2bi" secondAttribute="height" multiplier="0.09" id="3HG-C4-LxD"/>
                             <constraint firstItem="WjW-Eb-mUe" firstAttribute="leading" secondItem="eTk-2d-2bi" secondAttribute="leading" id="71e-iJ-THh"/>
+                            <constraint firstItem="eTk-2d-2bi" firstAttribute="trailing" secondItem="ioM-t2-L05" secondAttribute="trailing" id="7TA-bc-vr8"/>
+                            <constraint firstItem="ioM-t2-L05" firstAttribute="centerX" secondItem="WjW-Eb-mUe" secondAttribute="centerX" id="AkP-Zn-LSd"/>
                             <constraint firstItem="WjW-Eb-mUe" firstAttribute="trailing" secondItem="eTk-2d-2bi" secondAttribute="trailing" id="Kf9-ZA-Gn8"/>
                             <constraint firstItem="WjW-Eb-mUe" firstAttribute="bottom" secondItem="eTk-2d-2bi" secondAttribute="bottom" id="T4w-zf-TgX"/>
-                            <constraint firstItem="WjW-Eb-mUe" firstAttribute="top" secondItem="eTk-2d-2bi" secondAttribute="top" id="vzV-iH-UKx"/>
+                            <constraint firstItem="ioM-t2-L05" firstAttribute="top" secondItem="eTk-2d-2bi" secondAttribute="top" constant="8" id="iTj-it-JPu"/>
+                            <constraint firstItem="ioM-t2-L05" firstAttribute="leading" secondItem="eTk-2d-2bi" secondAttribute="leading" id="qrH-zJ-n5s"/>
+                            <constraint firstItem="WjW-Eb-mUe" firstAttribute="top" secondItem="ioM-t2-L05" secondAttribute="bottom" constant="8" id="zYQ-Nf-icP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eTk-2d-2bi"/>
                     </view>
@@ -309,6 +350,7 @@
                     <connections>
                         <outlet property="searchDisplayController" destination="VHc-bB-cfC" id="4xd-ci-99E"/>
                         <outlet property="tableView" destination="WjW-Eb-mUe" id="uPR-6C-tjr"/>
+                        <outlet property="tagListView" destination="ioM-t2-L05" id="NB8-tH-fzm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WX7-Cq-11X" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -498,10 +540,10 @@
                         <viewLayoutGuide key="safeArea" id="Vxo-ot-Hyj"/>
                     </view>
                     <connections>
-                        <outlet property="descrip" destination="fhb-Kc-i2q" id="3Ry-id-5bi"/>
-                        <outlet property="ideaImage" destination="rhM-27-36k" id="Jyc-Ed-SUB"/>
-                        <outlet property="title" destination="2aO-2I-mTE" id="6D8-fK-eHD"/>
-                        <outlet property="topicsCollection" destination="Wus-yM-aKF" id="fFd-JW-HdM"/>
+                        <outlet property="descrip" destination="fhb-Kc-i2q" id="jRk-Uq-rWh"/>
+                        <outlet property="ideaImage" destination="rhM-27-36k" id="Gzr-Dd-5bK"/>
+                        <outlet property="titleIdea" destination="2aO-2I-mTE" id="WZE-7m-wCp"/>
+                        <outlet property="topicsCollection" destination="Wus-yM-aKF" id="uzA-N7-8C9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qqr-fv-cGw" userLabel="First Responder" sceneMemberID="firstResponder"/>

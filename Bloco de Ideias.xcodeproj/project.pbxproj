@@ -7,24 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C9F2FC439CB661A78330101 /* Pods_Bloco_de_Ideias.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F40F065B579427B13474486E /* Pods_Bloco_de_Ideias.framework */; };
 		BE205A6120CE989A00B53288 /* IdeaBuilder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE205A5F20CE989A00B53288 /* IdeaBuilder.xcdatamodeld */; };
 		BE205A6920CEA1AA00B53288 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE205A6820CEA1AA00B53288 /* DataManager.swift */; };
 		BE205A6D20CEA45400B53288 /* NewIdeaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE205A6C20CEA45400B53288 /* NewIdeaViewController.swift */; };
 		BE205AC220D2B71500B53288 /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE205AC120D2B71500B53288 /* Process.swift */; };
 		BE205AC420D2B9AE00B53288 /* Idea.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE205AC320D2B9AE00B53288 /* Idea.swift */; };
-		BE205AC920D2BA1F00B53288 /* Process+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE205AC520D2BA1F00B53288 /* Process+CoreDataClass.swift */; };
-		BE205ACA20D2BA1F00B53288 /* Process+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE205AC620D2BA1F00B53288 /* Process+CoreDataProperties.swift */; };
-		BE205ACB20D2BA1F00B53288 /* Idea+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE205AC720D2BA1F00B53288 /* Idea+CoreDataClass.swift */; };
-		BE205ACC20D2BA1F00B53288 /* Idea+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE205AC820D2BA1F00B53288 /* Idea+CoreDataProperties.swift */; };
 		BE205ACF20D3D86600B53288 /* MyIdeasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE205ACD20D3D86600B53288 /* MyIdeasViewController.swift */; };
 		BE205AD420D3D94400B53288 /* MyIdeaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE205AD220D3D94400B53288 /* MyIdeaCollectionViewCell.swift */; };
 		BE205AD520D3D94400B53288 /* MyIdeaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE205AD320D3D94400B53288 /* MyIdeaCollectionViewCell.xib */; };
 		BE205AD720D3F9C900B53288 /* ReorderableFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE205AD620D3F9C900B53288 /* ReorderableFlowLayout.swift */; };
-		BE254C8E20D7FBD5007646CA /* Tag+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE254C8C20D7FBD5007646CA /* Tag+CoreDataClass.swift */; };
-		BE254C8F20D7FBD5007646CA /* Tag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE254C8D20D7FBD5007646CA /* Tag+CoreDataProperties.swift */; };
 		BE254C9120D7FC01007646CA /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE254C9020D7FC01007646CA /* Tag.swift */; };
 		BE33F5A420D94B7400A026C9 /* TagDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33F5A320D94B7400A026C9 /* TagDelegate.swift */; };
 		BE63581A20D941A8002666EC /* SearchTagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63581920D941A7002666EC /* SearchTagsViewController.swift */; };
+		BE63582120D97DE4002666EC /* Tag+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63581B20D97DE4002666EC /* Tag+CoreDataClass.swift */; };
+		BE63582220D97DE4002666EC /* Tag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63581C20D97DE4002666EC /* Tag+CoreDataProperties.swift */; };
+		BE63582320D97DE4002666EC /* Idea+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63581D20D97DE4002666EC /* Idea+CoreDataClass.swift */; };
+		BE63582420D97DE4002666EC /* Idea+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63581E20D97DE4002666EC /* Idea+CoreDataProperties.swift */; };
+		BE63582520D97DE4002666EC /* Process+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63581F20D97DE4002666EC /* Process+CoreDataClass.swift */; };
+		BE63582620D97DE4002666EC /* Process+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63582020D97DE4002666EC /* Process+CoreDataProperties.swift */; };
 		BE9F234120D7F950007B58BB /* IdeaDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F234020D7F950007B58BB /* IdeaDelegate.swift */; };
 		BE9F234620D9315D007B58BB /* NewIdeaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F234420D9315D007B58BB /* NewIdeaCollectionViewCell.swift */; };
 		BE9F234720D9315D007B58BB /* NewIdeaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE9F234520D9315D007B58BB /* NewIdeaCollectionViewCell.xib */; };
@@ -37,24 +38,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0290FE6C5410F9F7C3E06A60 /* Pods-Bloco de Ideias.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bloco de Ideias.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bloco de Ideias/Pods-Bloco de Ideias.debug.xcconfig"; sourceTree = "<group>"; };
+		77246C0EE9EB509EBFC78157 /* Pods-Bloco de Ideias.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bloco de Ideias.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bloco de Ideias/Pods-Bloco de Ideias.release.xcconfig"; sourceTree = "<group>"; };
 		BE205A6020CE989A00B53288 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		BE205A6820CEA1AA00B53288 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		BE205A6C20CEA45400B53288 /* NewIdeaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewIdeaViewController.swift; sourceTree = "<group>"; };
 		BE205AC120D2B71500B53288 /* Process.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Process.swift; sourceTree = "<group>"; };
 		BE205AC320D2B9AE00B53288 /* Idea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Idea.swift; sourceTree = "<group>"; };
-		BE205AC520D2BA1F00B53288 /* Process+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Process+CoreDataClass.swift"; sourceTree = "<group>"; };
-		BE205AC620D2BA1F00B53288 /* Process+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Process+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BE205AC720D2BA1F00B53288 /* Idea+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Idea+CoreDataClass.swift"; sourceTree = "<group>"; };
-		BE205AC820D2BA1F00B53288 /* Idea+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Idea+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BE205ACD20D3D86600B53288 /* MyIdeasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyIdeasViewController.swift; sourceTree = "<group>"; };
 		BE205AD220D3D94400B53288 /* MyIdeaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyIdeaCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE205AD320D3D94400B53288 /* MyIdeaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyIdeaCollectionViewCell.xib; sourceTree = "<group>"; };
 		BE205AD620D3F9C900B53288 /* ReorderableFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderableFlowLayout.swift; sourceTree = "<group>"; };
-		BE254C8C20D7FBD5007646CA /* Tag+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataClass.swift"; sourceTree = "<group>"; };
-		BE254C8D20D7FBD5007646CA /* Tag+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BE254C9020D7FC01007646CA /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		BE33F5A320D94B7400A026C9 /* TagDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagDelegate.swift; sourceTree = "<group>"; };
 		BE63581920D941A7002666EC /* SearchTagsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTagsViewController.swift; sourceTree = "<group>"; };
+		BE63581B20D97DE4002666EC /* Tag+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BE63581C20D97DE4002666EC /* Tag+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BE63581D20D97DE4002666EC /* Idea+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Idea+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BE63581E20D97DE4002666EC /* Idea+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Idea+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BE63581F20D97DE4002666EC /* Process+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Process+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BE63582020D97DE4002666EC /* Process+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Process+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BE9F234020D7F950007B58BB /* IdeaDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaDelegate.swift; sourceTree = "<group>"; };
 		BE9F234420D9315D007B58BB /* NewIdeaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewIdeaCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE9F234520D9315D007B58BB /* NewIdeaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewIdeaCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -66,6 +69,7 @@
 		BEFCB37920C9560C006F8498 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BEFCB37B20C9560C006F8498 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEFCB38120C9707B006F8498 /* IdeaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaViewController.swift; sourceTree = "<group>"; };
+		F40F065B579427B13474486E /* Pods_Bloco_de_Ideias.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bloco_de_Ideias.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,12 +77,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C9F2FC439CB661A78330101 /* Pods_Bloco_de_Ideias.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4BDC66CC5AD7DF01E23A4B4F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F40F065B579427B13474486E /* Pods_Bloco_de_Ideias.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BE205AD120D3D91900B53288 /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +118,8 @@
 			children = (
 				BEFCB36B20C9560A006F8498 /* Bloco de Ideias */,
 				BEFCB36A20C9560A006F8498 /* Products */,
+				E53934DA7CC1CF27007C8B28 /* Pods */,
+				4BDC66CC5AD7DF01E23A4B4F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -148,18 +163,27 @@
 		BEFCB38420C9708A006F8498 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BE254C8C20D7FBD5007646CA /* Tag+CoreDataClass.swift */,
-				BE254C8D20D7FBD5007646CA /* Tag+CoreDataProperties.swift */,
-				BE205AC520D2BA1F00B53288 /* Process+CoreDataClass.swift */,
-				BE205AC620D2BA1F00B53288 /* Process+CoreDataProperties.swift */,
-				BE205AC720D2BA1F00B53288 /* Idea+CoreDataClass.swift */,
-				BE205AC820D2BA1F00B53288 /* Idea+CoreDataProperties.swift */,
+				BE63581B20D97DE4002666EC /* Tag+CoreDataClass.swift */,
+				BE63581C20D97DE4002666EC /* Tag+CoreDataProperties.swift */,
+				BE63581D20D97DE4002666EC /* Idea+CoreDataClass.swift */,
+				BE63581E20D97DE4002666EC /* Idea+CoreDataProperties.swift */,
+				BE63581F20D97DE4002666EC /* Process+CoreDataClass.swift */,
+				BE63582020D97DE4002666EC /* Process+CoreDataProperties.swift */,
 				BE205A6820CEA1AA00B53288 /* DataManager.swift */,
 				BE205AC120D2B71500B53288 /* Process.swift */,
 				BE205AC320D2B9AE00B53288 /* Idea.swift */,
 				BE254C9020D7FC01007646CA /* Tag.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E53934DA7CC1CF27007C8B28 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0290FE6C5410F9F7C3E06A60 /* Pods-Bloco de Ideias.debug.xcconfig */,
+				77246C0EE9EB509EBFC78157 /* Pods-Bloco de Ideias.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,9 +193,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BEFCB37E20C9560C006F8498 /* Build configuration list for PBXNativeTarget "Bloco de Ideias" */;
 			buildPhases = (
+				668E9755F52FAC7D3251CE24 /* [CP] Check Pods Manifest.lock */,
 				BEFCB36520C95609006F8498 /* Sources */,
 				BEFCB36620C95609006F8498 /* Frameworks */,
 				BEFCB36720C95609006F8498 /* Resources */,
+				81EDE5A5592C85FD39EC5036 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -230,27 +256,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		668E9755F52FAC7D3251CE24 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Bloco de Ideias-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81EDE5A5592C85FD39EC5036 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Bloco de Ideias/Pods-Bloco de Ideias-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/TagListView/TagListView.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TagListView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bloco de Ideias/Pods-Bloco de Ideias-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BEFCB36520C95609006F8498 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BE205AC420D2B9AE00B53288 /* Idea.swift in Sources */,
-				BE254C8E20D7FBD5007646CA /* Tag+CoreDataClass.swift in Sources */,
+				BE63582520D97DE4002666EC /* Process+CoreDataClass.swift in Sources */,
+				BE63582120D97DE4002666EC /* Tag+CoreDataClass.swift in Sources */,
+				BE63582320D97DE4002666EC /* Idea+CoreDataClass.swift in Sources */,
 				BE205AD420D3D94400B53288 /* MyIdeaCollectionViewCell.swift in Sources */,
 				BE33F5A420D94B7400A026C9 /* TagDelegate.swift in Sources */,
-				BE205ACA20D2BA1F00B53288 /* Process+CoreDataProperties.swift in Sources */,
-				BE205ACB20D2BA1F00B53288 /* Idea+CoreDataClass.swift in Sources */,
-				BE205AC920D2BA1F00B53288 /* Process+CoreDataClass.swift in Sources */,
 				BE9F234120D7F950007B58BB /* IdeaDelegate.swift in Sources */,
 				BE9F234620D9315D007B58BB /* NewIdeaCollectionViewCell.swift in Sources */,
 				BE205A6920CEA1AA00B53288 /* DataManager.swift in Sources */,
 				BE63581A20D941A8002666EC /* SearchTagsViewController.swift in Sources */,
+				BE63582220D97DE4002666EC /* Tag+CoreDataProperties.swift in Sources */,
+				BE63582420D97DE4002666EC /* Idea+CoreDataProperties.swift in Sources */,
+				BE63582620D97DE4002666EC /* Process+CoreDataProperties.swift in Sources */,
 				BE205A6D20CEA45400B53288 /* NewIdeaViewController.swift in Sources */,
-				BE254C8F20D7FBD5007646CA /* Tag+CoreDataProperties.swift in Sources */,
 				BEFCB36F20C9560A006F8498 /* ViewController.swift in Sources */,
 				BEFCB36D20C9560A006F8498 /* AppDelegate.swift in Sources */,
-				BE205ACC20D2BA1F00B53288 /* Idea+CoreDataProperties.swift in Sources */,
 				BE205A6120CE989A00B53288 /* IdeaBuilder.xcdatamodeld in Sources */,
 				BE205AD720D3F9C900B53288 /* ReorderableFlowLayout.swift in Sources */,
 				BEFCB38220C9707B006F8498 /* IdeaViewController.swift in Sources */,
@@ -398,6 +463,7 @@
 		};
 		BEFCB37F20C9560C006F8498 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0290FE6C5410F9F7C3E06A60 /* Pods-Bloco de Ideias.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -416,6 +482,7 @@
 		};
 		BEFCB38020C9560C006F8498 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77246C0EE9EB509EBFC78157 /* Pods-Bloco de Ideias.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

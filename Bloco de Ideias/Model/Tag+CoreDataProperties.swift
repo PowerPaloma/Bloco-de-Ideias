@@ -2,7 +2,7 @@
 //  Tag+CoreDataProperties.swift
 //  Bloco de Ideias
 //
-//  Created by Ada 2018 on 18/06/2018.
+//  Created by Ada 2018 on 19/06/2018.
 //  Copyright © 2018 Academy. All rights reserved.
 //
 //
@@ -18,23 +18,23 @@ extension Tag {
     }
 
     @NSManaged public var name: String?
-    @NSManaged public var relationship: NSSet?
+    @NSManaged public var ideas: NSSet?
 
 }
 
-// MARK: Generated accessors for relationship
+// MARK: Generated accessors for ideas
 extension Tag {
 
-    @objc(addRelationshipObject:)
-    @NSManaged public func addToRelationship(_ value: Idea_Tag)
+    @objc(addIdeasObject:)
+    @NSManaged public func addToIdeas(_ value: Idea)
 
-    @objc(removeRelationshipObject:)
-    @NSManaged public func removeFromRelationship(_ value: Idea_Tag)
+    @objc(removeIdeasObject:)
+    @NSManaged public func removeFromIdeas(_ value: Idea)
 
-    @objc(addRelationship:)
-    @NSManaged public func addToRelationship(_ values: NSSet)
+    @objc(addIdeas:)
+    @NSManaged public func addToIdeas(_ values: NSSet)
 
-    @objc(removeRelationship:)
-    @NSManaged public func removeFromRelationship(_ values: NSSet)
+    @objc(removeIdeas:)
+    @NSManaged public func removeFromIdeas(_ values: NSSet)
 
 }

@@ -16,6 +16,7 @@ class MyIdeasViewController: UIViewController {
     var movingIndexPath: NSIndexPath?
     var ideasList : [Idea] = []
     var processList : [Process] = []
+    var ideaSelected = 1
     
     let inset: CGFloat = 8
     let minimunLineSpacing: CGFloat = 0
@@ -85,6 +86,7 @@ class MyIdeasViewController: UIViewController {
     @IBAction func deleteAllData(_ sender: UIBarButtonItem) {
         DataManager.deleteAll(entity: Idea.entityDescription())
         DataManager.deleteAll(entity: Process.entityDescription())
+        DataManager.deleteAll(entity: Tag.entityDescription())
     }
     
     @IBAction func changeLayoutAction(_ sender: Any) {
@@ -192,6 +194,16 @@ class MyIdeasViewController: UIViewController {
         super.setEditing(editing, animated: true)
         startWigglingAllVisibleCells()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.destination is IdeaViewController{
+           let vc = segue.destination as! IdeaViewController
+            vc.indexIdeaSelect = self.ideaSelected
+        }
+        
+        
+    }
     //-----------------------------
 }
 
@@ -231,6 +243,12 @@ extension MyIdeasViewController : UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if (indexPath.row == 0){
+            performSegue(withIdentifier: "newIdea", sender: nil)
+        }else{
+            self.ideaSelected = indexPath.row - 1
+            performSegue(withIdentifier: "viewIdea", sender: nil)
+        }
         
     }
     
