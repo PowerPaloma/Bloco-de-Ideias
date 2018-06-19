@@ -20,9 +20,8 @@ extension Idea {
     
     convenience init(){
         let entity:NSEntityDescription = DataManager.getEntity(entity: "Idea")
-        let context:NSManagedObjectContext = DataManager.getContext()
         
-        self.init(entity: entity, insertInto: context)
+        self.init(entity: entity, insertInto: nil)
     }
     
     class func entityDescription() -> (NSEntityDescription){
@@ -46,8 +45,6 @@ extension Idea {
     
     func delete(){
         let context:NSManagedObjectContext = DataManager.getContext()
-
-        
         context.delete(self)
         
         do {
@@ -64,7 +61,7 @@ extension Idea {
                 NSLog("Não existem registros.")
             }else{
                 for idea in ideas.objects as! [Idea] {
-                    print(idea.title)
+                    print(idea.title!)
                 }
             }
         }

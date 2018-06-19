@@ -20,8 +20,8 @@ extension Process {
     
     convenience init(){
         let entity:NSEntityDescription = DataManager.getEntity(entity: "Process")
-        let context:NSManagedObjectContext = DataManager.getContext()
-        self.init(entity: entity, insertInto: context)
+        
+        self.init(entity: entity, insertInto: nil)
     }
     
     class func entityDescription() -> (NSEntityDescription){

@@ -5,7 +5,7 @@
 //  Created by Ada 2018 on 11/06/2018.
 //  Copyright © 2018 Academy. All rights reserved.
 //
-
+import CoreData
 import UIKit
 
 class MyIdeasViewController: UIViewController {
@@ -24,8 +24,13 @@ class MyIdeasViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let nib = UINib(nibName: "MyIdeaCollectionViewCell", bundle: nil)
         self.collectionView.register(nib, forCellWithReuseIdentifier: "MyIdeaCell")
+        
+        
+        let nib2 = UINib(nibName: "NewIdeaCollectionViewCell", bundle: nil)
+        self.collectionView.register(nib2, forCellWithReuseIdentifier: "NewIdeaCell")
         
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
@@ -37,9 +42,6 @@ class MyIdeasViewController: UIViewController {
         collectionView.addGestureRecognizer(longPressGR)
         longPressGR.minimumPressDuration = 0.3
         //-----------------------------
-        
-        
-        self.loadProcesses()
     }
     
     override func viewDidLayoutSubviews() {
@@ -63,9 +65,12 @@ class MyIdeasViewController: UIViewController {
             if(ideas.objects.count == 0){
                 NSLog("Não existem registros.")
             }else{
+                ideasList.removeAll()
                 for idea in ideas.objects as! [Idea] {
                     ideasList.append(idea)
                 }
+                
+                processList.removeAll()
                 for process in processes.objects as! [Process] {
                     processList.append(process)
                 }
@@ -74,6 +79,11 @@ class MyIdeasViewController: UIViewController {
             NSLog("Erro ao buscar registros.")
         }
         collectionView.reloadData()
+    }
+    
+    @IBAction func deleteAllData(_ sender: UIBarButtonItem) {
+        DataManager.deleteAll(entity: Idea.entityDescription())
+        DataManager.deleteAll(entity: Process.entityDescription())
     }
     
     @IBAction func changeLayoutAction(_ sender: Any) {
@@ -100,22 +110,6 @@ class MyIdeasViewController: UIViewController {
     func endEditMode(){
         editButton.title = "Edit"
         setEditing(false, animated: true)
-    }
-    
-    
-    func loadProcesses(){
-        let cbl:Process = Process()
-        cbl.name = "CBL"
-
-        let canvas:Process = Process()
-        canvas.name = "Canvas"
-
-        let designThinking:Process = Process()
-        designThinking.name = "Design Thinking"
-
-        cbl.save()
-        canvas.save()
-        designThinking.save()
     }
     
     //-------------- view controler ---------------
@@ -172,13 +166,17 @@ class MyIdeasViewController: UIViewController {
     }
     
     func startWigglingAllVisibleCells() {
-        let cells = collectionView?.visibleCells as! [MyIdeaCollectionViewCell]
+        let cells = collectionView!.visibleCells
         
         for cell in cells {
-            if isEditing {
-                cell.startWiggling()
-            } else {
-                cell.stopWiggling()
+            if cell.reuseIdentifier == "MyIdeaCell" {
+                let c = cell as! MyIdeaCollectionViewCell
+                
+                if isEditing {
+                    c.startWiggling()
+                } else {
+                    c.stopWiggling()
+                }
             }
         }
     }
@@ -192,46 +190,58 @@ class MyIdeasViewController: UIViewController {
 
 extension MyIdeasViewController : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return ideasList.count
+        return ideasList.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "MyIdeaCell", for: indexPath) as! MyIdeaCollectionViewCell
-        
-        cell.title.text = ideasList[indexPath.row].title
-        cell.desc.text = ideasList[indexPath.row].desc
-        cell.image.image = UIImage(data: ideasList[indexPath.row].image!)
-        cell.deleteButton.tag = indexPath.row
-        cell.delegate = self
-        
-        //------------ cell for row item at index path-----------------
-        if isEditing {
-            cell.startWiggling()
-        } else {
-            cell.stopWiggling()
+        if(indexPath.row == 0){
+            return self.collectionView.dequeueReusableCell(withReuseIdentifier: "NewIdeaCell", for: indexPath) as! NewIdeaCollectionViewCell
+        }else{
+            let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "MyIdeaCell", for: indexPath) as! MyIdeaCollectionViewCell
+            
+            cell.title.text = ideasList[indexPath.row-1].title
+            cell.desc.text = ideasList[indexPath.row-1].desc
+            cell.image.image = UIImage(data: ideasList[indexPath.row-1].image!)
+            cell.deleteButton.tag = indexPath.row-1
+            cell.delegate = self
+            
+            if isEditing {
+                cell.startWiggling()
+            } else {
+                cell.stopWiggling()
+            }
+            
+            if (indexPath as NSIndexPath) == movingIndexPath {
+                cell.alpha = 0.7
+                cell.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+            } else {
+                cell.alpha = 1.0
+                cell.transform = CGAffineTransform.identity
+            }
+            
+            return cell
         }
-        
-        if (indexPath as NSIndexPath) == movingIndexPath {
-            cell.alpha = 0.7
-            cell.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
-        } else {
-            cell.alpha = 1.0
-            cell.transform = CGAffineTransform.identity
-        }
-        //-----------------------------
-        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
     }
     
-    func collectionView(_ collectionView: UICollectionView, moveItemAt source: IndexPath, to destination: IndexPath) {
-        let idea = ideasList.remove(at: source.item)
-        ideasList.insert(idea, at: destination.item)
-        // MUDAR NO CORE DATA A ORDEM DAS IDEIAS
+    func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
+        return indexPath.item != 0
     }
     
+    func collectionView(_ collectionView: UICollectionView, moveItemAt source: IndexPath, to destination: IndexPath) {
+        print(source.item, destination.item)
+        
+        if destination.item != 0 {
+            let idea = ideasList.remove(at: source.item+1)
+            ideasList.insert(idea, at: destination.item+1)
+            
+//            collectionView.moveItem(at: destination, to: source)
+            // MUDAR NO CORE DATA A ORDEM DAS IDEIAS
+        }
+    }
 }
 
 extension MyIdeasViewController : UICollectionViewDelegateFlowLayout {
@@ -261,10 +271,10 @@ extension MyIdeasViewController : IdeaDelegate {
         let alertSave = UIAlertController(title: "Delete Idea?", message: "Are you sure you want to delete this idea?", preferredStyle: .alert)
         let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         let yesButton = UIAlertAction(title: "Yes", style: .default  , handler: {_ in
-            let indexPath = IndexPath(item: item, section: 0)
-            
-            let idea = self.ideasList.remove(at: indexPath.item)
+            let idea = self.ideasList.remove(at: item)
             idea.delete()
+            
+            let indexPath = IndexPath(item: item+1, section: 0)
             
             self.collectionView.performBatchUpdates({
                 self.collectionView.deleteItems(at: [indexPath])

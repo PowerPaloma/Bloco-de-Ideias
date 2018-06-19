@@ -5,7 +5,7 @@
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="process" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Process" inverseName="ideas" inverseEntity="Process" syncable="YES"/>
+        <relationship name="process" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Process" inverseName="ideas" inverseEntity="Process" syncable="YES"/>
         <relationship name="relationship" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Idea_Tag" inverseName="idea" inverseEntity="Idea_Tag" syncable="YES"/>
     </entity>
     <entity name="Idea_Tag" representedClassName=".Idea_Tag" syncable="YES" codeGenerationType="class">
@@ -41,7 +41,7 @@
         <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Idea" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Idea" positionX="45" positionY="-171" width="128" height="135"/>
+        <element name="Idea" positionX="45" positionY="-171" width="128" height="133"/>
         <element name="Idea_Tag" positionX="250" positionY="-126" width="128" height="73"/>
         <element name="Process" positionX="171" positionY="128" width="128" height="75"/>
         <element name="Suggestion" positionX="180" positionY="-27" width="128" height="88"/>

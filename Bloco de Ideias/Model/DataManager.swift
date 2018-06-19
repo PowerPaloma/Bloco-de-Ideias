@@ -12,8 +12,7 @@ import CoreData
 class DataManager {
 
     class func getEntity(entity: String) -> (NSEntityDescription){
-        let delegate = (UIApplication.shared).delegate as! AppDelegate
-        let context:NSManagedObjectContext! = delegate.persistentContainer.viewContext
+        let context:NSManagedObjectContext = DataManager.getContext()
         
         let description:NSEntityDescription = NSEntityDescription.entity(forEntityName: entity, in: context)!
         
@@ -37,8 +36,21 @@ class DataManager {
             result = try context.fetch(request) as? [NSManagedObject]
             return(true, result!)
         } catch {
-            print("Failed reading")
+            print("Failed reading all")
             return(false, result!)
+        }
+    }
+    
+    class func deleteAll(entity: NSEntityDescription) {
+        let context = DataManager.getContext()
+        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entity.name!)
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+        
+        do {
+            try context.execute(deleteRequest)
+            try context.save()
+        } catch {
+            print ("There was an error on deleting all")
         }
     }
 }

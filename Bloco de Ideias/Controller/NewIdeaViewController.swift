@@ -21,7 +21,7 @@ class NewIdeaViewController: UIViewController{
     var activeField: UITextField!
     var imagePicker = UIImagePickerController()
     
-    let newIdea:Idea = Idea()
+    var newIdea:Idea = Idea()
     let processPicker = UIPickerView()
     
     var processes: [Process] {
@@ -65,6 +65,9 @@ class NewIdeaViewController: UIViewController{
         
         process.inputView = processPicker
         process.inputAccessoryView = accessoryToolbar
+        process.text = processes[0].name
+        
+        processPicker.selectRow(0, inComponent: 0, animated: false)
 
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: .UIKeyboardWillHide, object: nil)
@@ -151,9 +154,10 @@ class NewIdeaViewController: UIViewController{
             self.newIdea.title = self.titleTF.text
             self.newIdea.desc = self.desc.text
             self.newIdea.image = UIImageJPEGRepresentation(self.image.image!, 1.0)!
+            DataManager.getContext().insert(self.newIdea)
+            self.newIdea.process = processes[processPicker.selectedRow(inComponent: 0)]
             self.newIdea.save()
         }
-        
         
         dismiss(animated: true, completion: nil)
     }
@@ -204,9 +208,5 @@ extension NewIdeaViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.process.text = processes[row].name
-        self.newIdea.process = processes[row]
-        
-    
-        
     }
 }

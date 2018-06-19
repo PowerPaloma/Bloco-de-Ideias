@@ -17,6 +17,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let entityProcess = DataManager.getEntity(entity: "Process")
+        let processes = DataManager.getAll(entity: entityProcess)
+        
+        if (processes.success){
+            if(processes.objects.count < 4){
+                DataManager.deleteAll(entity: Process.entityDescription())
+                
+                NSLog("Saving processes...")
+                
+                let none:Process = Process()
+                none.name = "Free"
+                none.save()
+                
+                let cbl:Process = Process()
+                cbl.name = "CBL"
+                cbl.save()
+                
+                let canvas:Process = Process()
+                canvas.name = "Canvas"
+                canvas.save()
+                
+                let designThinking:Process = Process()
+                designThinking.name = "Design Thinking"
+                designThinking.save()
+            }
+        }else{
+            NSLog("Error on searching processes...")
+        }
+        
         return true
     }
 
