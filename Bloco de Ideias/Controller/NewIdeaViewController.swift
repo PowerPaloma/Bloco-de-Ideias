@@ -101,6 +101,11 @@ class NewIdeaViewController: UIViewController{
         scView.scrollIndicatorInsets = contentInsets
     }
     
+    
+    @IBAction func editingBegin(_ sender: UITextField) {
+        performSegue(withIdentifier: "tag", sender: nil)
+    }
+    
     @IBAction func captureImage(_ sender: UIButton) {
         let actionSheet: UIAlertController = UIAlertController(title: "Capture an image", message: "Choose an option", preferredStyle: .actionSheet)
         
