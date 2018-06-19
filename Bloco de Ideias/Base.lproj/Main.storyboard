@@ -258,15 +258,6 @@
         <!--Search Tags View Controller-->
         <scene sceneID="NVK-1e-9qK">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WX7-Cq-11X" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="VHc-bB-cfC">
-                    <connections>
-                        <outlet property="delegate" destination="nqu-Dr-XgN" id="c1f-lz-Jtd"/>
-                        <outlet property="searchContentsController" destination="nqu-Dr-XgN" id="G9I-kV-1yz"/>
-                        <outlet property="searchResultsDataSource" destination="nqu-Dr-XgN" id="vnc-iI-Gkx"/>
-                        <outlet property="searchResultsDelegate" destination="nqu-Dr-XgN" id="Bb3-tU-DkV"/>
-                    </connections>
-                </searchDisplayController>
                 <viewController id="nqu-Dr-XgN" customClass="SearchTagsViewController" customModule="Bloco_de_Ideias" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jzi-Rf-gmy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -316,6 +307,15 @@
                         <outlet property="tableView" destination="WjW-Eb-mUe" id="uPR-6C-tjr"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WX7-Cq-11X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="VHc-bB-cfC">
+                    <connections>
+                        <outlet property="delegate" destination="nqu-Dr-XgN" id="c1f-lz-Jtd"/>
+                        <outlet property="searchContentsController" destination="nqu-Dr-XgN" id="G9I-kV-1yz"/>
+                        <outlet property="searchResultsDataSource" destination="nqu-Dr-XgN" id="vnc-iI-Gkx"/>
+                        <outlet property="searchResultsDelegate" destination="nqu-Dr-XgN" id="Bb3-tU-DkV"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1312.8" y="1503.5982008995504"/>
         </scene>

@@ -55,6 +55,7 @@ class MyIdeaCollectionViewCell: UICollectionViewCell {
         deleteButton.layer.isHidden = false
         let angle = 0.04
         
+        //--- wiggle
         let wiggle = CAKeyframeAnimation(keyPath: "transform.rotation.z")
         wiggle.values = [-angle, angle]
         
@@ -63,6 +64,16 @@ class MyIdeaCollectionViewCell: UICollectionViewCell {
         wiggle.repeatCount = Float.infinity
         
         contentView.layer.add(wiggle, forKey: "wiggle")
+        
+        //--- bounce
+        let bounce = CAKeyframeAnimation(keyPath: "transform.translation.y")
+        bounce.values = [4.0, 0.0]
+        
+        bounce.autoreverses = true
+        bounce.duration = randomInterval(interval: 0.12, variance: 0.025)
+        bounce.repeatCount = Float.infinity
+        
+        contentView.layer.add(bounce, forKey: "bounce")
     }
     
     func stopWiggling() {

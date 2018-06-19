@@ -21,6 +21,7 @@ class MyIdeasViewController: UIViewController {
     let minimunLineSpacing: CGFloat = 0
     let minimunInteritemSpacing: CGFloat = 0
     var cellsPerRow = 2
+    var addCellFrame: CGRect!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -147,6 +148,8 @@ class MyIdeasViewController: UIViewController {
         if gesture.state == .began {
             guard let indexPath = movingIndexPath else { return }
             
+            addCellFrame = collectionView.cellForItem(at: IndexPath(item: 0, section: 0))?.frame
+            
             setEditing(true, animated: true)
             startEditMode()
             
@@ -156,9 +159,13 @@ class MyIdeasViewController: UIViewController {
         } else if(gesture.state == .changed) {
             collectionView.updateInteractiveMovementTargetPosition(location)
         } else {
-            gesture.state == .ended
-                ? collectionView.endInteractiveMovement()
-                : collectionView.cancelInteractiveMovement()
+            //let currentFrame
+            if gesture.state == .ended &&
+                collectionView.cellForItem(at: IndexPath(item: 0, section: 0))?.frame == addCellFrame {
+                collectionView.endInteractiveMovement()
+            } else{
+                collectionView.cancelInteractiveMovement()
+            }
             
             animatePuttingDownCell(cell: pickedUpCell())
             movingIndexPath = nil
@@ -232,7 +239,6 @@ extension MyIdeasViewController : UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, moveItemAt source: IndexPath, to destination: IndexPath) {
-        print(source.item, destination.item)
         
         if destination.item != 0 {
             let idea = ideasList.remove(at: source.item+1)
