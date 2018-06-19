@@ -9,10 +9,35 @@
 import UIKit
 
 class MyIdeasViewController: UIViewController {
-
+    
+    @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var editButton: UIBarButtonItem!
+    var longPressGR: UILongPressGestureRecognizer!
+    var movingIndexPath: NSIndexPath?
+    var ideasList : [Idea] = []
+    var processList : [Process] = []
+    
+    let inset: CGFloat = 16
+    let minimunLineSpacing: CGFloat = 16
+    let minimunInteritemSpacing: CGFloat = 16
+    var cellsPerRow = 2
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let nib = UINib(nibName: "MyIdeaCollectionViewCell", bundle: nil)
+        self.collectionView.register(nib, forCellWithReuseIdentifier: "MyIdeaCell")
+        
+        self.collectionView.dataSource = self
+        self.collectionView.delegate = self
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        
+        //-------------- view did load---------------
+        longPressGR = UILongPressGestureRecognizer(target: self, action: #selector(longPressed(gesture:)))
+        collectionView.addGestureRecognizer(longPressGR)
+        longPressGR.minimumPressDuration = 0.3
+        //-----------------------------
+        
         self.loadProcesses()
     }
     

@@ -20,6 +20,10 @@
 		BE205AD420D3D94400B53288 /* MyIdeaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE205AD220D3D94400B53288 /* MyIdeaCollectionViewCell.swift */; };
 		BE205AD520D3D94400B53288 /* MyIdeaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE205AD320D3D94400B53288 /* MyIdeaCollectionViewCell.xib */; };
 		BE205AD720D3F9C900B53288 /* ReorderableFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE205AD620D3F9C900B53288 /* ReorderableFlowLayout.swift */; };
+		BE254C8B20D7EE25007646CA /* SearchTagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE254C8A20D7EE25007646CA /* SearchTagsViewController.swift */; };
+		BE254C8E20D7FBD5007646CA /* Tag+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE254C8C20D7FBD5007646CA /* Tag+CoreDataClass.swift */; };
+		BE254C8F20D7FBD5007646CA /* Tag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE254C8D20D7FBD5007646CA /* Tag+CoreDataProperties.swift */; };
+		BE254C9120D7FC01007646CA /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE254C9020D7FC01007646CA /* Tag.swift */; };
 		BEFCB36D20C9560A006F8498 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFCB36C20C9560A006F8498 /* AppDelegate.swift */; };
 		BEFCB36F20C9560A006F8498 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFCB36E20C9560A006F8498 /* ViewController.swift */; };
 		BEFCB37220C9560A006F8498 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEFCB37020C9560A006F8498 /* Main.storyboard */; };
@@ -42,6 +46,10 @@
 		BE205AD220D3D94400B53288 /* MyIdeaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyIdeaCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE205AD320D3D94400B53288 /* MyIdeaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyIdeaCollectionViewCell.xib; sourceTree = "<group>"; };
 		BE205AD620D3F9C900B53288 /* ReorderableFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderableFlowLayout.swift; sourceTree = "<group>"; };
+		BE254C8A20D7EE25007646CA /* SearchTagsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTagsViewController.swift; sourceTree = "<group>"; };
+		BE254C8C20D7FBD5007646CA /* Tag+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BE254C8D20D7FBD5007646CA /* Tag+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BE254C9020D7FC01007646CA /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		BEFCB36920C9560A006F8498 /* Bloco de Ideias.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bloco de Ideias.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEFCB36C20C9560A006F8498 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEFCB36E20C9560A006F8498 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +120,7 @@
 				BEFCB38120C9707B006F8498 /* IdeaViewController.swift */,
 				BE205A6C20CEA45400B53288 /* NewIdeaViewController.swift */,
 				BE205ACD20D3D86600B53288 /* MyIdeasViewController.swift */,
+				BE254C8A20D7EE25007646CA /* SearchTagsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -119,6 +128,8 @@
 		BEFCB38420C9708A006F8498 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BE254C8C20D7FBD5007646CA /* Tag+CoreDataClass.swift */,
+				BE254C8D20D7FBD5007646CA /* Tag+CoreDataProperties.swift */,
 				BE205AC520D2BA1F00B53288 /* Process+CoreDataClass.swift */,
 				BE205AC620D2BA1F00B53288 /* Process+CoreDataProperties.swift */,
 				BE205AC720D2BA1F00B53288 /* Idea+CoreDataClass.swift */,
@@ -126,6 +137,7 @@
 				BE205A6820CEA1AA00B53288 /* DataManager.swift */,
 				BE205AC120D2B71500B53288 /* Process.swift */,
 				BE205AC320D2B9AE00B53288 /* Idea.swift */,
+				BE254C9020D7FC01007646CA /* Tag.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -203,19 +215,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE205AC420D2B9AE00B53288 /* Idea.swift in Sources */,
+				BE254C8E20D7FBD5007646CA /* Tag+CoreDataClass.swift in Sources */,
 				BE205AD420D3D94400B53288 /* MyIdeaCollectionViewCell.swift in Sources */,
 				BE205ACA20D2BA1F00B53288 /* Process+CoreDataProperties.swift in Sources */,
 				BE205ACB20D2BA1F00B53288 /* Idea+CoreDataClass.swift in Sources */,
 				BE205AC920D2BA1F00B53288 /* Process+CoreDataClass.swift in Sources */,
 				BE205A6920CEA1AA00B53288 /* DataManager.swift in Sources */,
 				BE205A6D20CEA45400B53288 /* NewIdeaViewController.swift in Sources */,
+				BE254C8F20D7FBD5007646CA /* Tag+CoreDataProperties.swift in Sources */,
 				BEFCB36F20C9560A006F8498 /* ViewController.swift in Sources */,
 				BEFCB36D20C9560A006F8498 /* AppDelegate.swift in Sources */,
 				BE205ACC20D2BA1F00B53288 /* Idea+CoreDataProperties.swift in Sources */,
 				BE205A6120CE989A00B53288 /* IdeaBuilder.xcdatamodeld in Sources */,
 				BE205AD720D3F9C900B53288 /* ReorderableFlowLayout.swift in Sources */,
 				BEFCB38220C9707B006F8498 /* IdeaViewController.swift in Sources */,
+				BE254C8B20D7EE25007646CA /* SearchTagsViewController.swift in Sources */,
 				BE205AC220D2B71500B53288 /* Process.swift in Sources */,
+				BE254C9120D7FC01007646CA /* Tag.swift in Sources */,
 				BE205ACF20D3D86600B53288 /* MyIdeasViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
