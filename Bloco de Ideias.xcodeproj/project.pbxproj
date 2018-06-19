@@ -81,6 +81,14 @@
 			path = CollectionViewCells;
 			sourceTree = "<group>";
 		};
+		BE9F233F20D7F926007B58BB /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BE9F234020D7F950007B58BB /* IdeaDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		BEFCB36020C95609006F8498 = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +108,7 @@
 		BEFCB36B20C9560A006F8498 /* Bloco de Ideias */ = {
 			isa = PBXGroup;
 			children = (
+				BE9F233F20D7F926007B58BB /* Protocols */,
 				BE205A5F20CE989A00B53288 /* IdeaBuilder.xcdatamodeld */,
 				BE205AD120D3D91900B53288 /* CollectionViewCells */,
 				BEFCB38420C9708A006F8498 /* Model */,
@@ -220,6 +229,7 @@
 				BE205ACA20D2BA1F00B53288 /* Process+CoreDataProperties.swift in Sources */,
 				BE205ACB20D2BA1F00B53288 /* Idea+CoreDataClass.swift in Sources */,
 				BE205AC920D2BA1F00B53288 /* Process+CoreDataClass.swift in Sources */,
+				BE9F234120D7F950007B58BB /* IdeaDelegate.swift in Sources */,
 				BE205A6920CEA1AA00B53288 /* DataManager.swift in Sources */,
 				BE205A6D20CEA45400B53288 /* NewIdeaViewController.swift in Sources */,
 				BE254C8F20D7FBD5007646CA /* Tag+CoreDataProperties.swift in Sources */,

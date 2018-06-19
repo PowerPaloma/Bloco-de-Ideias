@@ -17,9 +17,9 @@ class MyIdeasViewController: UIViewController {
     var ideasList : [Idea] = []
     var processList : [Process] = []
     
-    let inset: CGFloat = 16
-    let minimunLineSpacing: CGFloat = 16
-    let minimunInteritemSpacing: CGFloat = 16
+    let inset: CGFloat = 8
+    let minimunLineSpacing: CGFloat = 0
+    let minimunInteritemSpacing: CGFloat = 0
     var cellsPerRow = 2
     
     override func viewDidLoad() {
@@ -37,6 +37,7 @@ class MyIdeasViewController: UIViewController {
         collectionView.addGestureRecognizer(longPressGR)
         longPressGR.minimumPressDuration = 0.3
         //-----------------------------
+        
         
         self.loadProcesses()
     }
@@ -85,18 +86,22 @@ class MyIdeasViewController: UIViewController {
     }
     
     @IBAction func editModeAction(_ sender: Any) {
-        startEditMode()
+        if isEditing {
+            endEditMode()
+        } else {
+            startEditMode()
+        }
     }
     
     func startEditMode(){
-        if isEditing {
-            editButton.title = "Edit"
-            setEditing(false, animated: true)
-        } else {
-            editButton.title = "Done"
-            setEditing(true, animated: true)
-        }
+        editButton.title = "Done"
+        setEditing(true, animated: true)
     }
+    func endEditMode(){
+        editButton.title = "Edit"
+        setEditing(false, animated: true)
+    }
+    
     
     func loadProcesses(){
         let cbl:Process = Process()
@@ -149,6 +154,8 @@ class MyIdeasViewController: UIViewController {
             guard let indexPath = movingIndexPath else { return }
             
             setEditing(true, animated: true)
+            startEditMode()
+            
             collectionView.beginInteractiveMovementForItem(at: indexPath as IndexPath)
             pickedUpCell()?.stopWiggling()
             animatePickingUpCell(cell: pickedUpCell())
@@ -194,6 +201,8 @@ extension MyIdeasViewController : UICollectionViewDelegate, UICollectionViewData
         cell.title.text = ideasList[indexPath.row].title
         cell.desc.text = ideasList[indexPath.row].desc
         cell.image.image = UIImage(data: ideasList[indexPath.row].image!)
+        cell.deleteButton.tag = indexPath.row
+        cell.delegate = self
         
         //------------ cell for row item at index path-----------------
         if isEditing {
@@ -244,6 +253,30 @@ extension MyIdeasViewController : UICollectionViewDelegateFlowLayout {
         let itemWidth = ((view.bounds.size.width - marginsAndInsets) / CGFloat(cellsPerRow).rounded(.down))
 
         return CGSize(width: itemWidth, height: 160.0)
+    }
+}
+
+extension MyIdeasViewController : IdeaDelegate {
+    func deleteIdea(item: Int) {
+        let alertSave = UIAlertController(title: "Delete Idea?", message: "Are you sure you want to delete this idea?", preferredStyle: .alert)
+        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let yesButton = UIAlertAction(title: "Yes", style: .default  , handler: {_ in
+            let indexPath = IndexPath(item: item, section: 0)
+            
+            let idea = self.ideasList.remove(at: indexPath.item)
+            idea.delete()
+            
+            self.collectionView.performBatchUpdates({
+                self.collectionView.deleteItems(at: [indexPath])
+            }) { (finished) in
+                self.collectionView.reloadItems(at: self.collectionView.indexPathsForVisibleItems)
+            }
+        })
+        
+        alertSave.addAction(cancelButton)
+        alertSave.addAction(yesButton)
+        
+        self.present(alertSave, animated: true, completion: nil)
     }
 }
 
