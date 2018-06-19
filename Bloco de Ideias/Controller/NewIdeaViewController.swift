@@ -63,6 +63,7 @@ class NewIdeaViewController: UIViewController{
         imagePicker.delegate = self
         processPicker.delegate = self
         
+        
         process.inputView = processPicker
         process.inputAccessoryView = accessoryToolbar
         process.text = processes[0].name
@@ -104,8 +105,14 @@ class NewIdeaViewController: UIViewController{
         scView.scrollIndicatorInsets = contentInsets
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is SearchTagsViewController{
+            let vc = segue.destination as! SearchTagsViewController
+            vc.delegate = self
+        }
+    }
     @IBAction func editingBegin(_ sender: UITextField) {
+        
         performSegue(withIdentifier: "tag", sender: nil)
     }
     
@@ -214,4 +221,17 @@ extension NewIdeaViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.process.text = processes[row].name
     }
+}
+
+extension NewIdeaViewController: TagDelegate {
+    
+    func tags(tags: [Tag]) {
+        for tag in tags{
+            self.tags.text = self.tags.text! + " \(tag.name),"
+        }
+        
+        //self.newIdea.addToRelationship(<#T##value: Idea_Tag##Idea_Tag#>)
+    }
+    
+    
 }

@@ -47,6 +47,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NSLog("Error on searching processes...")
         }
         
+        
+        // ------ tags
+        let entityTag = DataManager.getEntity(entity: "Tag")
+        let tags = DataManager.getAll(entity: entityTag)
+        
+        if (tags.success){
+            if(tags.objects.count < 3){
+                DataManager.deleteAll(entity: Tag.entityDescription())
+                
+                NSLog("Saving tags...")
+                
+                let t1:Tag = Tag()
+                t1.name = "Tecnologia"
+                t1.save()
+                
+                let t2:Tag = Tag()
+                t2.name = "Aplicativo"
+                t2.save()
+                
+                let t3:Tag = Tag()
+                t3.name = "Inovação"
+                t3.save()
+            }
+        }else{
+            NSLog("Error on searching tags...")
+        }
+        
         return true
     }
 
