@@ -299,7 +299,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="eZj-ny-Xnu">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="6v0-5J-BbP"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="6v0-5J-BbP">
+                            <connections>
+                                <action selector="done:" destination="nqu-Dr-XgN" id="Klk-Sl-0vR"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>

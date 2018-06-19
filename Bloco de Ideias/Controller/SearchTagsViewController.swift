@@ -15,6 +15,8 @@ class SearchTagsViewController: UIViewController, UITableViewDelegate, UITableVi
     var selectedTags: [Tag] = []
     var inSearchMode = false
     var filteredTags: [Tag] = []
+    weak var delegate: TagDelegate?
+
     
     var tags: [Tag] {
         let entity = DataManager.getEntity(entity: "Tag")
@@ -32,30 +34,15 @@ class SearchTagsViewController: UIViewController, UITableViewDelegate, UITableVi
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.loadTags()
         
         tableView.delegate = self
         tableView.dataSource = self
-        
+
+            
         searchBar.sizeToFit()
         searchBar.delegate = self
         navigationItem.titleView = searchBar
         searchBar.returnKeyType = UIReturnKeyType.done
-    }
-    
-    func loadTags(){
-        let t1:Tag = Tag()
-        t1.name = "Tecnologia"
-        
-        let t2:Tag = Tag()
-        t2.name = "Aplicativo"
-
-        let t3:Tag = Tag()
-        t3.name = "Inovação"
-        
-        t1.save()
-        t2.save()
-        t3.save()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -106,6 +93,10 @@ class SearchTagsViewController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
     
+    @IBAction func done(_ sender: Any) {
+        delegate!.tags(tags: selectedTags)
+        dismiss(animated: true, completion: nil)
+    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if selectedTags.contains(tags[indexPath.row]){
             var indexSelectedTag = 9
