@@ -164,7 +164,7 @@ class NewIdeaViewController: UIViewController{
         }else{
             self.newIdea.title = self.titleTF.text
             self.newIdea.desc = self.desc.text
-            self.newIdea.image = UIImageJPEGRepresentation(self.image.image!, 1.0)!
+            self.newIdea.image = UIImageJPEGRepresentation(self.image.image!, 1.0)! as Data
             DataManager.getContext().insert(self.newIdea)
             self.newIdea.process = processes[processPicker.selectedRow(inComponent: 0)]
             self.newIdea.save()
@@ -227,7 +227,7 @@ extension NewIdeaViewController: TagDelegate {
         // adding tags to idea
         var stringTags = ""
         let tagsIdea = NSSet.init(array: tags)
-        self.newIdea.addToTag(tagsIdea)
+        self.newIdea.addToTags(tagsIdea)
 
         
         // adding idea to tags

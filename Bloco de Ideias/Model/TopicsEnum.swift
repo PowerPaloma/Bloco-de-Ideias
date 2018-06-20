@@ -8,9 +8,9 @@
 
 import Foundation
 
-enum topic {
-    case text
-    case image
-    case draw
+enum topic:String {
+    case text = "text"
+    case image = "image"
+    case draw = "draw"
 //    case audio
 }

@@ -69,7 +69,7 @@ class IdeaViewController: UIViewController {
         longPressGR.minimumPressDuration = 0.3
         
         //Set Idea data to view
-        self.ideaImage.image = UIImage(data: self.idea.image!)
+        self.ideaImage.image = UIImage(data: self.idea.image! as Data)
         self.titleIdea.text = self.idea.title
         self.descrip.text = self.idea.desc
     }

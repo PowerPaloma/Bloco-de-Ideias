@@ -11,15 +11,15 @@ import Foundation
 import CoreData
 
 
-extension Tag {
+extension Topic {
     convenience init(){
-        let entity:NSEntityDescription = DataManager.getEntity(entity: "Tag")
+        let entity:NSEntityDescription = DataManager.getEntity(entity: "Topic")
         let context:NSManagedObjectContext = DataManager.getContext()
         self.init(entity: entity, insertInto: context)
     }
     
     class func entityDescription() -> (NSEntityDescription){
-        let entity:NSEntityDescription = DataManager.getEntity(entity: "Tag")
+        let entity:NSEntityDescription = DataManager.getEntity(entity: "Topic")
         return entity
     }
 }

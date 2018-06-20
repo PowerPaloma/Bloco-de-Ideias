@@ -12,12 +12,6 @@ import CoreData
 
 
 extension Process {
-    
-//    @objc
-//    private override init(entity: NSEntityDescription, insertInto context: NSManagedObjectContext?) {
-//        super.init(entity: entity, insertInto: context)
-//    }
-    
     convenience init(){
         let entity:NSEntityDescription = DataManager.getEntity(entity: "Process")
         
@@ -27,19 +21,5 @@ extension Process {
     class func entityDescription() -> (NSEntityDescription){
         let entity:NSEntityDescription = DataManager.getEntity(entity: "Process")
         return entity
-    }
-    
-    func save(){
-        let context:NSManagedObjectContext = DataManager.getContext()
-        
-        if (!self.isInserted) {
-            context.insert(self)
-        }
-        
-        do {
-            try context.save()
-        } catch {
-            print("Failed saving")
-        }
     }
 }

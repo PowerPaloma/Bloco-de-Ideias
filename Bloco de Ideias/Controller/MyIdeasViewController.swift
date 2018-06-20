@@ -227,7 +227,7 @@ extension MyIdeasViewController : UICollectionViewDelegate, UICollectionViewData
             
             cell.title.text = ideasList[indexPath.row-1].title
             cell.desc.text = ideasList[indexPath.row-1].desc
-            cell.image.image = UIImage(data: ideasList[indexPath.row-1].image!)
+            cell.image.image = UIImage(data: ideasList[indexPath.row-1].image! as Data)
             cell.deleteButton.tag = indexPath.row-1
             cell.delegate = self
             
