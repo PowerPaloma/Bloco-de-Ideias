@@ -13,7 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyIdeaCell" id="jEk-58-eqE" customClass="TopicDrawCollectionViewCell" customModule="Bloco_de_Ideias" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TopicDrawCell" id="jEk-58-eqE" customClass="TopicDrawCollectionViewCell" customModule="Bloco_de_Ideias" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="200" height="160"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -87,6 +87,7 @@
                 <outlet property="deleteAction" destination="OG0-S7-bN8" id="PUt-jx-S34"/>
                 <outlet property="deleteButton" destination="OG0-S7-bN8" id="l8s-gZ-LGc"/>
                 <outlet property="image" destination="dxw-0C-mar" id="hei-WL-Oz1"/>
+                <outlet property="title" destination="IEk-xz-2fO" id="RZC-xu-Szq"/>
                 <outlet property="view" destination="fUA-cy-gsw" id="Np8-M1-59y"/>
                 <outlet property="viewBlur" destination="UpC-Hv-MlG" id="dhi-0k-sMn"/>
             </connections>
