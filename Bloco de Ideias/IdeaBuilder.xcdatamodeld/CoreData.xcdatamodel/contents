@@ -1,27 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17D47" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Idea" representedClassName=".Idea" syncable="YES">
-        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="process" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Process" inverseName="ideas" inverseEntity="Process" syncable="YES"/>
-        <relationship name="tag" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Tag" inverseName="ideas" inverseEntity="Tag" syncable="YES"/>
+        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Tag" inverseName="ideas" inverseEntity="Tag" syncable="YES"/>
+        <relationship name="topics" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Topic" inverseName="idea" inverseEntity="Topic" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="ideas" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="Process" representedClassName=".Process" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="ideas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Idea" inverseName="process" inverseEntity="Idea" syncable="YES"/>
+        <relationship name="ideas" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Idea" inverseName="process" inverseEntity="Idea" syncable="YES"/>
+        <relationship name="suggestions" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Suggestion" inverseName="process" inverseEntity="Suggestion" syncable="YES"/>
     </entity>
-    <entity name="Suggestion" representedClassName=".Suggestion" syncable="YES" codeGenerationType="class">
-        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="process" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Process" syncable="YES"/>
+    <entity name="Suggestion" representedClassName=".Suggestion" syncable="YES">
+        <attribute name="descS" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="titleS" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="process" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Process" inverseName="suggestions" inverseEntity="Process" syncable="YES"/>
+        <relationship name="topics" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Topic" inverseName="suggestion" inverseEntity="Topic" syncable="YES"/>
     </entity>
     <entity name="Tag" representedClassName=".Tag" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="ideas" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Idea" inverseName="tag" inverseEntity="Idea" syncable="YES"/>
+        <relationship name="ideas" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Idea" inverseName="tags" inverseEntity="Idea" syncable="YES"/>
     </entity>
-    <entity name="User" representedClassName=".User" syncable="YES" codeGenerationType="class">
+    <entity name="Topic" representedClassName=".Topic" syncable="YES">
+        <attribute name="descT" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="drawT" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="imageT" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="titleT" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="typeT" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="idea" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Idea" inverseName="topics" inverseEntity="Idea" syncable="YES"/>
+        <relationship name="suggestion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Suggestion" inverseName="topics" inverseEntity="Suggestion" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName=".User" syncable="YES">
         <attribute name="credits" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
@@ -34,13 +46,14 @@
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pinterest" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="twitter" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Idea" syncable="YES"/>
+        <relationship name="ideas" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Idea" inverseName="user" inverseEntity="Idea" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Idea" positionX="45" positionY="-171" width="128" height="133"/>
-        <element name="Process" positionX="261" positionY="198" width="128" height="75"/>
-        <element name="Suggestion" positionX="358" positionY="-27" width="128" height="88"/>
+        <element name="Idea" positionX="45" positionY="-171" width="128" height="148"/>
+        <element name="Process" positionX="261" positionY="198" width="128" height="88"/>
+        <element name="Suggestion" positionX="358" positionY="-27" width="128" height="103"/>
         <element name="Tag" positionX="466" positionY="-126" width="128" height="73"/>
         <element name="User" positionX="-200" positionY="-211" width="128" height="238"/>
+        <element name="Topic" positionX="9" positionY="48" width="128" height="148"/>
     </elements>
 </model>
