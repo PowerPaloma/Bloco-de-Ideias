@@ -108,6 +108,7 @@ class SearchTagsViewController: UIViewController, UITableViewDelegate, UITableVi
             var indexSelectedTag = 9
             indexSelectedTag = selectedTags.index(of: tags[indexPath.row])!
             print("indexselectedtag: \(indexSelectedTag)")
+            
             selectedTags.remove(at: indexSelectedTag)
             //removing a tag
             tagListView.removeTag(tags[indexPath.row].name!)
@@ -127,6 +128,17 @@ class SearchTagsViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tagRemoveButtonPressed(_ title: String, tagView: TagView, sender: TagListView) {
         print("Tag Remove pressed: \(title), \(sender)")
+        removeTag(title)
         sender.removeTagView(tagView)
     }
+    
+    func removeTag(_ title: String){
+        for (index,tag) in selectedTags.enumerated(){
+            if tag.name == title{
+                selectedTags.remove(at: index)
+                tableView.reloadData()
+            }
+        }
+    }
+    
 }
