@@ -20,6 +20,7 @@ class IdeaViewController: UIViewController {
     var indexIdeaSelect = 0
     var idea = Idea()
     var topicsList : [Idea] = []
+//    var topicsList : [Topic] = []
     var longPressGR: UILongPressGestureRecognizer!
     var movingIndexPath: NSIndexPath?
     
@@ -189,31 +190,38 @@ class IdeaViewController: UIViewController {
     
 }
 
-//extension IdeaViewController : UICollectionViewDelegate, UICollectionViewDataSource {
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return topicsList.count + 1
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        if(indexPath.row == 0){
-//            return self.collectionView.dequeueReusableCell(withReuseIdentifier: "NewTopicCell", for: indexPath) as! NewIdeaCollectionViewCell
-//        }else{
-//            //Use diferent types of cells depending on the topic type
+extension IdeaViewController : UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return topicsList.count + 1
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if(indexPath.row == 0){
+            return self.collectionView.dequeueReusableCell(withReuseIdentifier: "NewTopicCell", for: indexPath) as! NewIdeaCollectionViewCell
+        }else{
+            //Use diferent types of cells depending on the topic type
 //            if topicsList[indexPath.row-1].type == .text {
 //                let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "TopicCell", for: indexPath) as! TopicTextCollectionViewCell
-//                cell.title.text = ideasList[indexPath.row-1].title
-//                cell.desc.text = ideasList[indexPath.row-1].desc
-//                cell.image.image = UIImage(data: ideasList[indexPath.row-1].image!)
+//                cell.title.text = topicsList[indexPath.row-1].title
+//                cell.desc.text = topicsList[indexPath.row-1].desc
 //                cell.deleteButton.tag = indexPath.row-1
 //                cell.delegate = self
 //            }
 //            if topicsList[indexPath.row-1].type == .image {
 //                let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "TopicCell", for: indexPath) as! TopicImageCollectionViewCell
+//                cell.title.text = topicsList[indexPath.row-1].title
+//                cell.image.image = UIImage(data: topicsList[indexPath.row-1].image!)
+//                cell.deleteButton.tag = indexPath.row-1
+//                cell.delegate = self
 //            }
 //            if topicsList[indexPath.row-1].type == .draw {
 //                let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "TopicCell", for: indexPath) as! TopicDrawCollectionViewCell
+//                cell.title.text = topicsList[indexPath.row-1].title
+//                cell.image.image = UIImage(data: topicsList[indexPath.row-1].image!)
+//                cell.deleteButton.tag = indexPath.row-1
+//                cell.delegate = self
 //            }
-//
+
 //            if isEditing {
 //                cell.startWiggling()
 //            } else {
@@ -227,33 +235,33 @@ class IdeaViewController: UIViewController {
 //                cell.alpha = 1.0
 //                cell.transform = CGAffineTransform.identity
 //            }
-//
-//            return cell
-//        }
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+            let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "TopicCell", for: indexPath) as! TopicTextCollectionViewCell
+            return cell
+        }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //        if (indexPath.row == 0){
 //            performSegue(withIdentifier: "newIdea", sender: nil)
 //        }else{
 //            self.ideaSelected = indexPath.row - 1
 //            performSegue(withIdentifier: "viewIdea", sender: nil)
 //        }
-//
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
-//        return indexPath.item != 0
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, moveItemAt source: IndexPath, to destination: IndexPath) {
-//
-//        if destination.item != 0 {
-//            let idea = ideasList.remove(at: source.item-1)
-//            ideasList.insert(idea, at: destination.item-1)
-//
-//            //            collectionView.moveItem(at: destination, to: source)
-//            // MUDAR NO CORE DATA A ORDEM DAS IDEIAS
-//        }
-//    }
-//}
+    }
+
+    func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
+        return indexPath.item != 0
+    }
+
+    func collectionView(_ collectionView: UICollectionView, moveItemAt source: IndexPath, to destination: IndexPath) {
+
+        if destination.item != 0 {
+            let topic = topicsList.remove(at: source.item-1)
+            topicsList.insert(topic, at: destination.item-1)
+
+            //            collectionView.moveItem(at: destination, to: source)
+            // MUDAR NO CORE DATA A ORDEM DAS IDEIAS
+        }
+    }
+}

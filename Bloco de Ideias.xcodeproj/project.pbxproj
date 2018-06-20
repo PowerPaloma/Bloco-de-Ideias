@@ -33,6 +33,7 @@
 		BE63583020DA7FA6002666EC /* TopicImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE63582E20DA7FA6002666EC /* TopicImageCollectionViewCell.xib */; };
 		BE63583320DA8315002666EC /* TopicDrawCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63583120DA8315002666EC /* TopicDrawCollectionViewCell.swift */; };
 		BE63583420DA8315002666EC /* TopicDrawCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE63583220DA8315002666EC /* TopicDrawCollectionViewCell.xib */; };
+		BE63583620DA9D20002666EC /* TopicsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63583520DA9D20002666EC /* TopicsEnum.swift */; };
 		BE9F234120D7F950007B58BB /* IdeaDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F234020D7F950007B58BB /* IdeaDelegate.swift */; };
 		BE9F234620D9315D007B58BB /* NewIdeaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F234420D9315D007B58BB /* NewIdeaCollectionViewCell.swift */; };
 		BE9F234720D9315D007B58BB /* NewIdeaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE9F234520D9315D007B58BB /* NewIdeaCollectionViewCell.xib */; };
@@ -71,6 +72,7 @@
 		BE63582E20DA7FA6002666EC /* TopicImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		BE63583120DA8315002666EC /* TopicDrawCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDrawCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE63583220DA8315002666EC /* TopicDrawCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicDrawCollectionViewCell.xib; sourceTree = "<group>"; };
+		BE63583520DA9D20002666EC /* TopicsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsEnum.swift; sourceTree = "<group>"; };
 		BE9F234020D7F950007B58BB /* IdeaDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaDelegate.swift; sourceTree = "<group>"; };
 		BE9F234420D9315D007B58BB /* NewIdeaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewIdeaCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE9F234520D9315D007B58BB /* NewIdeaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewIdeaCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				BE205AC120D2B71500B53288 /* Process.swift */,
 				BE205AC320D2B9AE00B53288 /* Idea.swift */,
 				BE254C9020D7FC01007646CA /* Tag.swift */,
+				BE63583520DA9D20002666EC /* TopicsEnum.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -267,7 +270,6 @@
 				BE205AD520D3D94400B53288 /* MyIdeaCollectionViewCell.xib in Resources */,
 				BEFCB37A20C9560C006F8498 /* LaunchScreen.storyboard in Resources */,
 				BE63582C20DA79C8002666EC /* TopicTextCollectionViewCell.xib in Resources */,
-				BEFCB37720C9560C006F8498 /* Assets.xcassets in Resources */,
 				BE63583420DA8315002666EC /* TopicDrawCollectionViewCell.xib in Resources */,
 				BE9F234720D9315D007B58BB /* NewIdeaCollectionViewCell.xib in Resources */,
 				BE63583020DA7FA6002666EC /* TopicImageCollectionViewCell.xib in Resources */,
@@ -340,6 +342,7 @@
 				BE205A6D20CEA45400B53288 /* NewIdeaViewController.swift in Sources */,
 				BEFCB36F20C9560A006F8498 /* ViewController.swift in Sources */,
 				BEFCB36D20C9560A006F8498 /* AppDelegate.swift in Sources */,
+				BE63583620DA9D20002666EC /* TopicsEnum.swift in Sources */,
 				BE205A6120CE989A00B53288 /* IdeaBuilder.xcdatamodeld in Sources */,
 				BE205AD720D3F9C900B53288 /* ReorderableFlowLayout.swift in Sources */,
 				BEFCB38220C9707B006F8498 /* IdeaViewController.swift in Sources */,

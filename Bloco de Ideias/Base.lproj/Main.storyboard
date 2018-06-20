@@ -782,7 +782,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nh5-z1-Zqq">
                                         <rect key="frame" x="15" y="359" width="24" height="24"/>
                                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" backgroundImage="list"/>
+                                        <state key="normal" image="list">
+                                            <color key="titleShadowColor" red="0.23137254900000001" green="0.68627450980000004" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERv-ru-Vf8">
                                         <rect key="frame" x="69" y="356" width="30" height="30"/>
