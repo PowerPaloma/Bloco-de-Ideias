@@ -9,15 +9,18 @@ import CoreData
 import UIKit
 
 class MyIdeasViewController: UIViewController {
-    
+    //Outlets from View
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var editButton: UIBarButtonItem!
+    
+    //Variables
     var longPressGR: UILongPressGestureRecognizer!
     var movingIndexPath: NSIndexPath?
     var ideasList : [Idea] = []
     var processList : [Process] = []
     var ideaSelected = 1
     
+    //Values for UICollectionViewFlowLayout
     let inset: CGFloat = 8
     let minimunLineSpacing: CGFloat = 0
     let minimunInteritemSpacing: CGFloat = 0
@@ -26,24 +29,22 @@ class MyIdeasViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Navigation Bar Large Title
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         
+        //Ideas Collection View
         let nib = UINib(nibName: "MyIdeaCollectionViewCell", bundle: nil)
         self.collectionView.register(nib, forCellWithReuseIdentifier: "MyIdeaCell")
-        
-        
-        let nib2 = UINib(nibName: "NewIdeaCollectionViewCell", bundle: nil)
-        self.collectionView.register(nib2, forCellWithReuseIdentifier: "NewIdeaCell")
+        let nibNew = UINib(nibName: "NewIdeaCollectionViewCell", bundle: nil)
+        self.collectionView.register(nibNew, forCellWithReuseIdentifier: "NewIdeaCell")
         
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        
-        //-------------- view did load---------------
+        //Edit Collection View Long Press
         longPressGR = UILongPressGestureRecognizer(target: self, action: #selector(longPressed(gesture:)))
         collectionView.addGestureRecognizer(longPressGR)
         longPressGR.minimumPressDuration = 0.3
-        //-----------------------------
     }
     
     override func viewDidLayoutSubviews() {
@@ -53,13 +54,12 @@ class MyIdeasViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        //Core Data
         let entityIdea = DataManager.getEntity(entity: "Idea")
         let ideas = DataManager.getAll(entity: entityIdea)
-        
         let entityProcess = DataManager.getEntity(entity: "Process")
         let processes = DataManager.getAll(entity: entityProcess)
         
@@ -71,7 +71,6 @@ class MyIdeasViewController: UIViewController {
                 for idea in ideas.objects as! [Idea] {
                     ideasList.append(idea)
                 }
-                
                 processList.removeAll()
                 for process in processes.objects as! [Process] {
                     processList.append(process)
@@ -83,13 +82,16 @@ class MyIdeasViewController: UIViewController {
         collectionView.reloadData()
     }
     
+    //Delete all ideas
     @IBAction func deleteAllData(_ sender: UIBarButtonItem) {
         DataManager.deleteAll(entity: Idea.entityDescription())
         DataManager.deleteAll(entity: Process.entityDescription())
         DataManager.deleteAll(entity: Tag.entityDescription())
     }
     
+    //Change layout: number of rows
     @IBAction func changeLayoutAction(_ sender: Any) {
+        //Change number of rows in Collection View
         if (cellsPerRow == 1) {
             cellsPerRow = 2
         } else {
@@ -98,30 +100,55 @@ class MyIdeasViewController: UIViewController {
         collectionView.collectionViewLayout.invalidateLayout()
     }
     
+    //Edit mode collection view
     @IBAction func editModeAction(_ sender: Any) {
+        //Starts and Stops Edit mode: reorder and delete cells
         if isEditing {
             endEditMode()
         } else {
             startEditMode()
         }
     }
-    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        //Starts and end editing mode
+        super.setEditing(editing, animated: true)
+        startWigglingAllVisibleCells()
+    }
     func startEditMode(){
+        //Starts edit mode
         editButton.title = "Done"
         setEditing(true, animated: true)
     }
     func endEditMode(){
+        //Stops edit mode
         editButton.title = "Edit"
         setEditing(false, animated: true)
     }
     
-    //-------------- view controler ---------------
+    //Effects Edit Mode
+    func startWigglingAllVisibleCells() {
+        //Start Wiggling and Boucing effects in all cells
+        let cells = collectionView!.visibleCells
+        
+        for cell in cells {
+            if cell.reuseIdentifier == "MyIdeaCell" {
+                let c = cell as! MyIdeaCollectionViewCell
+                if isEditing {
+                    c.startWiggling()
+                } else {
+                    c.stopWiggling()
+                } } }
+    }
+    
+    //Reordering Cells
     func pickedUpCell() -> MyIdeaCollectionViewCell? {
+        //Return selected cell when longpressed
         guard let indexPath = movingIndexPath else { return nil }
         return collectionView.cellForItem(at: indexPath as IndexPath) as? MyIdeaCollectionViewCell
     }
     
     func animatePickingUpCell(cell: MyIdeaCollectionViewCell?) {
+        //Animates the cell when longpress starts
         UIView.animate(withDuration: 0.1, delay: 0.0, options: [.allowUserInteraction, .beginFromCurrentState], animations: { () -> Void in
             cell?.alpha = 0.7
             cell?.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
@@ -131,6 +158,7 @@ class MyIdeasViewController: UIViewController {
     }
     
     func animatePuttingDownCell(cell: MyIdeaCollectionViewCell?) {
+        //Animates the cell when longpress ends
         UIView.animate(withDuration: 0.1, delay: 0.0, options: [.allowUserInteraction, .beginFromCurrentState], animations: { () -> Void in
             cell?.alpha = 1.0
             cell?.transform = CGAffineTransform.identity
@@ -141,70 +169,49 @@ class MyIdeasViewController: UIViewController {
     }
     
     @objc func longPressed(gesture: UILongPressGestureRecognizer) {
+        //Get the longpress gesture and handle the reorder the cells based in it's location
         let location = gesture.location(in: collectionView)
-        
         if let locationIndexPathForItem = collectionView.indexPathForItem(at: location) {
            movingIndexPath = locationIndexPathForItem as NSIndexPath
         }
-
+        //LongPress starts
         if gesture.state == .began {
             guard let indexPath = movingIndexPath else { return }
-            
             addCellFrame = collectionView.cellForItem(at: IndexPath(item: 0, section: 0))?.frame
-            
+
             setEditing(true, animated: true)
             startEditMode()
             
             collectionView.beginInteractiveMovementForItem(at: indexPath as IndexPath)
             pickedUpCell()?.stopWiggling()
             animatePickingUpCell(cell: pickedUpCell())
-        } else if(gesture.state == .changed) {
+        }
+        //Longpress changes
+        else if(gesture.state == .changed) {
             collectionView.updateInteractiveMovementTargetPosition(location)
-        } else {
-            //let currentFrame
+        }
+        //Longpress ends
+        else {
             if gesture.state == .ended &&
-                collectionView.cellForItem(at: IndexPath(item: 0, section: 0))?.frame == addCellFrame {
+                collectionView.cellForItem(at: IndexPath(item: 0, section: 0))?.frame == addCellFrame &&
+                !addCellFrame.contains(location)
+                {
                 collectionView.endInteractiveMovement()
             } else{
                 collectionView.cancelInteractiveMovement()
             }
-            
             animatePuttingDownCell(cell: pickedUpCell())
             movingIndexPath = nil
         }
     }
     
-    func startWigglingAllVisibleCells() {
-        let cells = collectionView!.visibleCells
-        
-        for cell in cells {
-            if cell.reuseIdentifier == "MyIdeaCell" {
-                let c = cell as! MyIdeaCollectionViewCell
-                
-                if isEditing {
-                    c.startWiggling()
-                } else {
-                    c.stopWiggling()
-                }
-            }
-        }
-    }
-    
-    override func setEditing(_ editing: Bool, animated: Bool) {
-        super.setEditing(editing, animated: true)
-        startWigglingAllVisibleCells()
-    }
-    
+    //Prepare for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if segue.destination is IdeaViewController{
            let vc = segue.destination as! IdeaViewController
             vc.indexIdeaSelect = self.ideaSelected
         }
-        
-        
     }
-    //-----------------------------
 }
 
 extension MyIdeasViewController : UICollectionViewDelegate, UICollectionViewDataSource {
@@ -259,8 +266,8 @@ extension MyIdeasViewController : UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, moveItemAt source: IndexPath, to destination: IndexPath) {
         
         if destination.item != 0 {
-            let idea = ideasList.remove(at: source.item+1)
-            ideasList.insert(idea, at: destination.item+1)
+            let idea = ideasList.remove(at: source.item-1)
+            ideasList.insert(idea, at: destination.item-1)
             
 //            collectionView.moveItem(at: destination, to: source)
             // MUDAR NO CORE DATA A ORDEM DAS IDEIAS
