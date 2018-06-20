@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iTy-d4-eUr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="99f-ze-aZS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -951,7 +951,7 @@
         <!--Imagem-->
         <scene sceneID="4XH-XX-uVQ">
             <objects>
-                <viewController id="7rN-2b-3mK" sceneMemberID="viewController">
+                <viewController id="7rN-2b-3mK" customClass="NewTopicImageViewController" customModule="Bloco_de_Ideias" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="acg-uV-v4f">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -962,6 +962,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AA9-F3-WQM">
                                 <rect key="frame" x="163" y="380.5" width="48" height="48"/>
                                 <state key="normal" image="camera"/>
+                                <connections>
+                                    <action selector="captureImage:" destination="7rN-2b-3mK" eventType="touchUpInside" id="4jJ-Mf-24m"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xor-ss-Ahn">
                                 <rect key="frame" x="16" y="96" width="42" height="21"/>
@@ -996,6 +999,9 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Yho-AO-8RH"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="dR6-b0-vSO"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="image" destination="Jv3-uB-D16" id="RTC-sa-kP6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UAc-83-32O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
