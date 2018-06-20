@@ -22,12 +22,6 @@
 		BE33F5A620DA85C900A026C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE33F5A520DA85C900A026C9 /* Assets.xcassets */; };
 		BE33F5AA20DA9F4400A026C9 /* NewTopicImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33F5A920DA9F4400A026C9 /* NewTopicImageViewController.swift */; };
 		BE63581A20D941A8002666EC /* SearchTagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63581920D941A7002666EC /* SearchTagsViewController.swift */; };
-		BE63582120D97DE4002666EC /* Tag+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63581B20D97DE4002666EC /* Tag+CoreDataClass.swift */; };
-		BE63582220D97DE4002666EC /* Tag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63581C20D97DE4002666EC /* Tag+CoreDataProperties.swift */; };
-		BE63582320D97DE4002666EC /* Idea+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63581D20D97DE4002666EC /* Idea+CoreDataClass.swift */; };
-		BE63582420D97DE4002666EC /* Idea+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63581E20D97DE4002666EC /* Idea+CoreDataProperties.swift */; };
-		BE63582520D97DE4002666EC /* Process+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63581F20D97DE4002666EC /* Process+CoreDataClass.swift */; };
-		BE63582620D97DE4002666EC /* Process+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63582020D97DE4002666EC /* Process+CoreDataProperties.swift */; };
 		BE63582B20DA79C8002666EC /* TopicTextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63582920DA79C8002666EC /* TopicTextCollectionViewCell.swift */; };
 		BE63582C20DA79C8002666EC /* TopicTextCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE63582A20DA79C8002666EC /* TopicTextCollectionViewCell.xib */; };
 		BE63582F20DA7FA6002666EC /* TopicImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63582D20DA7FA6002666EC /* TopicImageCollectionViewCell.swift */; };
@@ -35,15 +29,21 @@
 		BE63583320DA8315002666EC /* TopicDrawCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63583120DA8315002666EC /* TopicDrawCollectionViewCell.swift */; };
 		BE63583420DA8315002666EC /* TopicDrawCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE63583220DA8315002666EC /* TopicDrawCollectionViewCell.xib */; };
 		BE63583620DA9D20002666EC /* TopicsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63583520DA9D20002666EC /* TopicsEnum.swift */; };
-		BE63583D20DAC834002666EC /* Topic+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63583B20DAC833002666EC /* Topic+CoreDataClass.swift */; };
-		BE63583E20DAC834002666EC /* Topic+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63583C20DAC834002666EC /* Topic+CoreDataProperties.swift */; };
 		BE63584020DAC8EE002666EC /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63583F20DAC8EE002666EC /* Topic.swift */; };
 		BE63584220DAC94D002666EC /* Draw.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63584120DAC94D002666EC /* Draw.swift */; };
 		BE63584420DACD58002666EC /* ExtensionNSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63584320DACD58002666EC /* ExtensionNSManagedObject.swift */; };
-		BE63584D20DAD2F1002666EC /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63584520DAD2EF002666EC /* User+CoreDataProperties.swift */; };
-		BE63584F20DAD2F1002666EC /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63584720DAD2EF002666EC /* User+CoreDataClass.swift */; };
-		BE63585020DAD2F1002666EC /* Suggestion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63584820DAD2EF002666EC /* Suggestion+CoreDataProperties.swift */; };
-		BE63585220DAD2F1002666EC /* Suggestion+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63584A20DAD2F0002666EC /* Suggestion+CoreDataClass.swift */; };
+		BE63588520DADCAC002666EC /* Idea+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63587920DADCAB002666EC /* Idea+CoreDataProperties.swift */; };
+		BE63588620DADCAC002666EC /* Topic+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63587A20DADCAB002666EC /* Topic+CoreDataClass.swift */; };
+		BE63588720DADCAC002666EC /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63587B20DADCAB002666EC /* User+CoreDataProperties.swift */; };
+		BE63588820DADCAC002666EC /* Idea+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63587C20DADCAB002666EC /* Idea+CoreDataClass.swift */; };
+		BE63588920DADCAC002666EC /* Topic+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63587D20DADCAB002666EC /* Topic+CoreDataProperties.swift */; };
+		BE63588A20DADCAC002666EC /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63587E20DADCAB002666EC /* User+CoreDataClass.swift */; };
+		BE63588B20DADCAC002666EC /* Process+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63587F20DADCAB002666EC /* Process+CoreDataProperties.swift */; };
+		BE63588C20DADCAC002666EC /* Suggestion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63588020DADCAC002666EC /* Suggestion+CoreDataProperties.swift */; };
+		BE63588D20DADCAC002666EC /* Tag+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63588120DADCAC002666EC /* Tag+CoreDataClass.swift */; };
+		BE63588E20DADCAC002666EC /* Tag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63588220DADCAC002666EC /* Tag+CoreDataProperties.swift */; };
+		BE63588F20DADCAC002666EC /* Suggestion+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63588320DADCAC002666EC /* Suggestion+CoreDataClass.swift */; };
+		BE63589020DADCAC002666EC /* Process+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63588420DADCAC002666EC /* Process+CoreDataClass.swift */; };
 		BE9F234120D7F950007B58BB /* IdeaDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F234020D7F950007B58BB /* IdeaDelegate.swift */; };
 		BE9F234620D9315D007B58BB /* NewIdeaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F234420D9315D007B58BB /* NewIdeaCollectionViewCell.swift */; };
 		BE9F234720D9315D007B58BB /* NewIdeaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE9F234520D9315D007B58BB /* NewIdeaCollectionViewCell.xib */; };
@@ -71,12 +71,6 @@
 		BE33F5A520DA85C900A026C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE33F5A920DA9F4400A026C9 /* NewTopicImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTopicImageViewController.swift; sourceTree = "<group>"; };
 		BE63581920D941A7002666EC /* SearchTagsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTagsViewController.swift; sourceTree = "<group>"; };
-		BE63581B20D97DE4002666EC /* Tag+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataClass.swift"; sourceTree = "<group>"; };
-		BE63581C20D97DE4002666EC /* Tag+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BE63581D20D97DE4002666EC /* Idea+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Idea+CoreDataClass.swift"; sourceTree = "<group>"; };
-		BE63581E20D97DE4002666EC /* Idea+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Idea+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BE63581F20D97DE4002666EC /* Process+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Process+CoreDataClass.swift"; sourceTree = "<group>"; };
-		BE63582020D97DE4002666EC /* Process+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Process+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BE63582920DA79C8002666EC /* TopicTextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicTextCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE63582A20DA79C8002666EC /* TopicTextCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicTextCollectionViewCell.xib; sourceTree = "<group>"; };
 		BE63582D20DA7FA6002666EC /* TopicImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicImageCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -84,15 +78,21 @@
 		BE63583120DA8315002666EC /* TopicDrawCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDrawCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE63583220DA8315002666EC /* TopicDrawCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicDrawCollectionViewCell.xib; sourceTree = "<group>"; };
 		BE63583520DA9D20002666EC /* TopicsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsEnum.swift; sourceTree = "<group>"; };
-		BE63583B20DAC833002666EC /* Topic+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Topic+CoreDataClass.swift"; path = "/Users/ada2018/Downloads/Bloco de Ideias/Bloco de Ideias/Model/Topic+CoreDataClass.swift"; sourceTree = "<absolute>"; };
-		BE63583C20DAC834002666EC /* Topic+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Topic+CoreDataProperties.swift"; path = "/Users/ada2018/Downloads/Bloco de Ideias/Bloco de Ideias/Model/Topic+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		BE63583F20DAC8EE002666EC /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 		BE63584120DAC94D002666EC /* Draw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Draw.swift; sourceTree = "<group>"; };
 		BE63584320DACD58002666EC /* ExtensionNSManagedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionNSManagedObject.swift; sourceTree = "<group>"; };
-		BE63584520DAD2EF002666EC /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "/Users/ada2018/Downloads/Bloco de Ideias/Bloco de Ideias/Model/User+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
-		BE63584720DAD2EF002666EC /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "User+CoreDataClass.swift"; path = "/Users/ada2018/Downloads/Bloco de Ideias/Bloco de Ideias/Model/User+CoreDataClass.swift"; sourceTree = "<absolute>"; };
-		BE63584820DAD2EF002666EC /* Suggestion+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Suggestion+CoreDataProperties.swift"; path = "/Users/ada2018/Downloads/Bloco de Ideias/Bloco de Ideias/Model/Suggestion+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
-		BE63584A20DAD2F0002666EC /* Suggestion+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Suggestion+CoreDataClass.swift"; path = "/Users/ada2018/Downloads/Bloco de Ideias/Bloco de Ideias/Model/Suggestion+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		BE63587920DADCAB002666EC /* Idea+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Idea+CoreDataProperties.swift"; path = "/Users/ada2018/Downloads/Bloco de Ideias/Bloco de Ideias/Model/Idea+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		BE63587A20DADCAB002666EC /* Topic+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Topic+CoreDataClass.swift"; path = "/Users/ada2018/Downloads/Bloco de Ideias/Bloco de Ideias/Model/Topic+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		BE63587B20DADCAB002666EC /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "/Users/ada2018/Downloads/Bloco de Ideias/Bloco de Ideias/Model/User+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		BE63587C20DADCAB002666EC /* Idea+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Idea+CoreDataClass.swift"; path = "/Users/ada2018/Downloads/Bloco de Ideias/Bloco de Ideias/Model/Idea+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		BE63587D20DADCAB002666EC /* Topic+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Topic+CoreDataProperties.swift"; path = "/Users/ada2018/Downloads/Bloco de Ideias/Bloco de Ideias/Model/Topic+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		BE63587E20DADCAB002666EC /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "User+CoreDataClass.swift"; path = "/Users/ada2018/Downloads/Bloco de Ideias/Bloco de Ideias/Model/User+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		BE63587F20DADCAB002666EC /* Process+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Process+CoreDataProperties.swift"; path = "/Users/ada2018/Downloads/Bloco de Ideias/Bloco de Ideias/Model/Process+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		BE63588020DADCAC002666EC /* Suggestion+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Suggestion+CoreDataProperties.swift"; path = "/Users/ada2018/Downloads/Bloco de Ideias/Bloco de Ideias/Model/Suggestion+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		BE63588120DADCAC002666EC /* Tag+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Tag+CoreDataClass.swift"; path = "/Users/ada2018/Downloads/Bloco de Ideias/Bloco de Ideias/Model/Tag+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		BE63588220DADCAC002666EC /* Tag+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Tag+CoreDataProperties.swift"; path = "/Users/ada2018/Downloads/Bloco de Ideias/Bloco de Ideias/Model/Tag+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		BE63588320DADCAC002666EC /* Suggestion+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Suggestion+CoreDataClass.swift"; path = "/Users/ada2018/Downloads/Bloco de Ideias/Bloco de Ideias/Model/Suggestion+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		BE63588420DADCAC002666EC /* Process+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Process+CoreDataClass.swift"; path = "/Users/ada2018/Downloads/Bloco de Ideias/Bloco de Ideias/Model/Process+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		BE9F234020D7F950007B58BB /* IdeaDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaDelegate.swift; sourceTree = "<group>"; };
 		BE9F234420D9315D007B58BB /* NewIdeaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewIdeaCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE9F234520D9315D007B58BB /* NewIdeaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewIdeaCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -204,18 +204,18 @@
 		BEFCB38420C9708A006F8498 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BE63584720DAD2EF002666EC /* User+CoreDataClass.swift */,
-				BE63584520DAD2EF002666EC /* User+CoreDataProperties.swift */,
-				BE63584A20DAD2F0002666EC /* Suggestion+CoreDataClass.swift */,
-				BE63584820DAD2EF002666EC /* Suggestion+CoreDataProperties.swift */,
-				BE63583B20DAC833002666EC /* Topic+CoreDataClass.swift */,
-				BE63583C20DAC834002666EC /* Topic+CoreDataProperties.swift */,
-				BE63581B20D97DE4002666EC /* Tag+CoreDataClass.swift */,
-				BE63581C20D97DE4002666EC /* Tag+CoreDataProperties.swift */,
-				BE63581D20D97DE4002666EC /* Idea+CoreDataClass.swift */,
-				BE63581E20D97DE4002666EC /* Idea+CoreDataProperties.swift */,
-				BE63581F20D97DE4002666EC /* Process+CoreDataClass.swift */,
-				BE63582020D97DE4002666EC /* Process+CoreDataProperties.swift */,
+				BE63588420DADCAC002666EC /* Process+CoreDataClass.swift */,
+				BE63587F20DADCAB002666EC /* Process+CoreDataProperties.swift */,
+				BE63587C20DADCAB002666EC /* Idea+CoreDataClass.swift */,
+				BE63587920DADCAB002666EC /* Idea+CoreDataProperties.swift */,
+				BE63588120DADCAC002666EC /* Tag+CoreDataClass.swift */,
+				BE63588220DADCAC002666EC /* Tag+CoreDataProperties.swift */,
+				BE63587A20DADCAB002666EC /* Topic+CoreDataClass.swift */,
+				BE63587D20DADCAB002666EC /* Topic+CoreDataProperties.swift */,
+				BE63587E20DADCAB002666EC /* User+CoreDataClass.swift */,
+				BE63587B20DADCAB002666EC /* User+CoreDataProperties.swift */,
+				BE63588320DADCAC002666EC /* Suggestion+CoreDataClass.swift */,
+				BE63588020DADCAC002666EC /* Suggestion+CoreDataProperties.swift */,
 				BE205A6820CEA1AA00B53288 /* DataManager.swift */,
 				BE205AC120D2B71500B53288 /* Process.swift */,
 				BE205AC320D2B9AE00B53288 /* Idea.swift */,
@@ -355,41 +355,41 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE205AC420D2B9AE00B53288 /* Idea.swift in Sources */,
-				BE63585020DAD2F1002666EC /* Suggestion+CoreDataProperties.swift in Sources */,
 				BE63584020DAC8EE002666EC /* Topic.swift in Sources */,
-				BE63582520D97DE4002666EC /* Process+CoreDataClass.swift in Sources */,
 				BE63584220DAC94D002666EC /* Draw.swift in Sources */,
-				BE63582120D97DE4002666EC /* Tag+CoreDataClass.swift in Sources */,
-				BE63583D20DAC834002666EC /* Topic+CoreDataClass.swift in Sources */,
-				BE63583E20DAC834002666EC /* Topic+CoreDataProperties.swift in Sources */,
-				BE63582320D97DE4002666EC /* Idea+CoreDataClass.swift in Sources */,
 				BE205AD420D3D94400B53288 /* MyIdeaCollectionViewCell.swift in Sources */,
+				BE63588920DADCAC002666EC /* Topic+CoreDataProperties.swift in Sources */,
 				BE63583320DA8315002666EC /* TopicDrawCollectionViewCell.swift in Sources */,
 				BE33F5A420D94B7400A026C9 /* TagDelegate.swift in Sources */,
 				BE9F234120D7F950007B58BB /* IdeaDelegate.swift in Sources */,
-				BE63585220DAD2F1002666EC /* Suggestion+CoreDataClass.swift in Sources */,
 				BE63582B20DA79C8002666EC /* TopicTextCollectionViewCell.swift in Sources */,
+				BE63588C20DADCAC002666EC /* Suggestion+CoreDataProperties.swift in Sources */,
 				BE33F5AA20DA9F4400A026C9 /* NewTopicImageViewController.swift in Sources */,
+				BE63588620DADCAC002666EC /* Topic+CoreDataClass.swift in Sources */,
+				BE63588820DADCAC002666EC /* Idea+CoreDataClass.swift in Sources */,
+				BE63589020DADCAC002666EC /* Process+CoreDataClass.swift in Sources */,
 				BE9F234620D9315D007B58BB /* NewIdeaCollectionViewCell.swift in Sources */,
 				BE205A6920CEA1AA00B53288 /* DataManager.swift in Sources */,
+				BE63588A20DADCAC002666EC /* User+CoreDataClass.swift in Sources */,
 				BE63581A20D941A8002666EC /* SearchTagsViewController.swift in Sources */,
-				BE63582220D97DE4002666EC /* Tag+CoreDataProperties.swift in Sources */,
-				BE63582420D97DE4002666EC /* Idea+CoreDataProperties.swift in Sources */,
-				BE63582620D97DE4002666EC /* Process+CoreDataProperties.swift in Sources */,
 				BE205A6D20CEA45400B53288 /* NewIdeaViewController.swift in Sources */,
+				BE63588E20DADCAC002666EC /* Tag+CoreDataProperties.swift in Sources */,
 				BEFCB36F20C9560A006F8498 /* ViewController.swift in Sources */,
+				BE63588D20DADCAC002666EC /* Tag+CoreDataClass.swift in Sources */,
 				BEFCB36D20C9560A006F8498 /* AppDelegate.swift in Sources */,
+				BE63588520DADCAC002666EC /* Idea+CoreDataProperties.swift in Sources */,
+				BE63588720DADCAC002666EC /* User+CoreDataProperties.swift in Sources */,
 				BE63583620DA9D20002666EC /* TopicsEnum.swift in Sources */,
+				BE63588F20DADCAC002666EC /* Suggestion+CoreDataClass.swift in Sources */,
 				BE205A6120CE989A00B53288 /* IdeaBuilder.xcdatamodeld in Sources */,
 				BE205AD720D3F9C900B53288 /* ReorderableFlowLayout.swift in Sources */,
+				BE63588B20DADCAC002666EC /* Process+CoreDataProperties.swift in Sources */,
 				BEFCB38220C9707B006F8498 /* IdeaViewController.swift in Sources */,
 				BE63584420DACD58002666EC /* ExtensionNSManagedObject.swift in Sources */,
 				BE205AC220D2B71500B53288 /* Process.swift in Sources */,
-				BE63584D20DAD2F1002666EC /* User+CoreDataProperties.swift in Sources */,
 				BE254C9120D7FC01007646CA /* Tag.swift in Sources */,
 				BE63582F20DA7FA6002666EC /* TopicImageCollectionViewCell.swift in Sources */,
 				BE205ACF20D3D86600B53288 /* MyIdeasViewController.swift in Sources */,
-				BE63584F20DAD2F1002666EC /* User+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

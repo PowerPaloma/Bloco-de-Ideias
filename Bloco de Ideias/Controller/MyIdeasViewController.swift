@@ -29,8 +29,6 @@ class MyIdeasViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Navigation Bar Large Title
-        self.navigationController?.navigationBar.prefersLargeTitles = true
         
         //Ideas Collection View
         let nib = UINib(nibName: "MyIdeaCollectionViewCell", bundle: nil)
@@ -47,6 +45,11 @@ class MyIdeasViewController: UIViewController {
         longPressGR.minimumPressDuration = 0.3
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        // Navigation Bar Large Title
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionView.collectionViewLayout.invalidateLayout()
@@ -56,7 +59,15 @@ class MyIdeasViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        // Navigation Bar Large Title
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
+        // Navigation Bar Large Title
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        
         //Core Data
         let entityIdea = DataManager.getEntity(entity: "Idea")
         let ideas = DataManager.getAll(entity: entityIdea)

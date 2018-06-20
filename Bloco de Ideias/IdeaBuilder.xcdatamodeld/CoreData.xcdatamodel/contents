@@ -11,14 +11,14 @@
     </entity>
     <entity name="Process" representedClassName=".Process" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="ideas" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Idea" inverseName="process" inverseEntity="Idea" syncable="YES"/>
-        <relationship name="suggestions" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Suggestion" inverseName="process" inverseEntity="Suggestion" syncable="YES"/>
+        <relationship name="ideas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Idea" inverseName="process" inverseEntity="Idea" syncable="YES"/>
+        <relationship name="suggestions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Suggestion" inverseName="process" inverseEntity="Suggestion" syncable="YES"/>
     </entity>
     <entity name="Suggestion" representedClassName=".Suggestion" syncable="YES">
         <attribute name="descS" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="titleS" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="process" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Process" inverseName="suggestions" inverseEntity="Process" syncable="YES"/>
-        <relationship name="topics" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Topic" inverseName="suggestion" inverseEntity="Topic" syncable="YES"/>
+        <relationship name="topics" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Topic" inverseName="suggestion" inverseEntity="Topic" syncable="YES"/>
     </entity>
     <entity name="Tag" representedClassName=".Tag" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -46,14 +46,14 @@
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pinterest" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="twitter" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="ideas" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Idea" inverseName="user" inverseEntity="Idea" syncable="YES"/>
+        <relationship name="ideas" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Idea" inverseName="user" inverseEntity="Idea" syncable="YES"/>
     </entity>
     <elements>
         <element name="Idea" positionX="45" positionY="-171" width="128" height="148"/>
-        <element name="Process" positionX="261" positionY="198" width="128" height="88"/>
-        <element name="Suggestion" positionX="358" positionY="-27" width="128" height="103"/>
-        <element name="Tag" positionX="466" positionY="-126" width="128" height="73"/>
-        <element name="User" positionX="-200" positionY="-211" width="128" height="238"/>
+        <element name="Process" positionX="261" positionY="198" width="128" height="90"/>
+        <element name="Suggestion" positionX="358" positionY="-27" width="128" height="105"/>
+        <element name="Tag" positionX="466" positionY="-126" width="128" height="75"/>
         <element name="Topic" positionX="9" positionY="48" width="128" height="148"/>
+        <element name="User" positionX="-200" positionY="-211" width="128" height="240"/>
     </elements>
 </model>

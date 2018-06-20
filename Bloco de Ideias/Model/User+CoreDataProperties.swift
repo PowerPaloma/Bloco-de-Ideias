@@ -28,6 +28,23 @@ extension User {
     @NSManaged public var phone: String?
     @NSManaged public var pinterest: String?
     @NSManaged public var twitter: String?
-    @NSManaged public var ideas: Idea?
+    @NSManaged public var ideas: NSSet?
+
+}
+
+// MARK: Generated accessors for ideas
+extension User {
+
+    @objc(addIdeasObject:)
+    @NSManaged public func addToIdeas(_ value: Idea)
+
+    @objc(removeIdeasObject:)
+    @NSManaged public func removeFromIdeas(_ value: Idea)
+
+    @objc(addIdeas:)
+    @NSManaged public func addToIdeas(_ values: NSSet)
+
+    @objc(removeIdeas:)
+    @NSManaged public func removeFromIdeas(_ values: NSSet)
 
 }

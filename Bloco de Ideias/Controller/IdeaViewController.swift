@@ -33,8 +33,6 @@ class IdeaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Navigation Bar Large Title
-        self.navigationController?.navigationBar.prefersLargeTitles = true
         
         //Core data
         let entity = DataManager.getEntity(entity: "Idea")
@@ -77,6 +75,11 @@ class IdeaViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionView.collectionViewLayout.invalidateLayout()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        // Navigation Bar Large Title
+        self.navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     override func didReceiveMemoryWarning() {
