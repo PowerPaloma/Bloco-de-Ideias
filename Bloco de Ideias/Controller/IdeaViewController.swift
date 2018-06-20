@@ -77,7 +77,7 @@ class IdeaViewController: UIViewController {
         collectionView.collectionViewLayout.invalidateLayout()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         // Navigation Bar Large Title
         self.navigationController?.navigationBar.prefersLargeTitles = true
     }

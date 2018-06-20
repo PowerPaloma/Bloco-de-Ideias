@@ -45,11 +45,6 @@ class MyIdeasViewController: UIViewController {
         longPressGR.minimumPressDuration = 0.3
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        // Navigation Bar Large Title
-        self.navigationController?.navigationBar.prefersLargeTitles = false
-    }
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionView.collectionViewLayout.invalidateLayout()
@@ -57,11 +52,6 @@ class MyIdeasViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        // Navigation Bar Large Title
-        self.navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
