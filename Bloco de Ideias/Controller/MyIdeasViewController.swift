@@ -163,12 +163,13 @@ class MyIdeasViewController: UIViewController {
         } else {
             //let currentFrame
             if gesture.state == .ended &&
-                collectionView.cellForItem(at: IndexPath(item: 0, section: 0))?.frame == addCellFrame {
+                collectionView.cellForItem(at: IndexPath(item: 0, section: 0))?.frame == addCellFrame &&
+                !addCellFrame.contains(location)
+                {
                 collectionView.endInteractiveMovement()
             } else{
                 collectionView.cancelInteractiveMovement()
             }
-            
             animatePuttingDownCell(cell: pickedUpCell())
             movingIndexPath = nil
         }
@@ -259,8 +260,8 @@ extension MyIdeasViewController : UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, moveItemAt source: IndexPath, to destination: IndexPath) {
         
         if destination.item != 0 {
-            let idea = ideasList.remove(at: source.item+1)
-            ideasList.insert(idea, at: destination.item+1)
+            let idea = ideasList.remove(at: source.item-1)
+            ideasList.insert(idea, at: destination.item-1)
             
 //            collectionView.moveItem(at: destination, to: source)
             // MUDAR NO CORE DATA A ORDEM DAS IDEIAS
