@@ -13,7 +13,7 @@ class NewTopicTextViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descTextField: UITextField!
     
-//    var newTopicText = Topic!
+    var newTopicText = Topic()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,9 +32,11 @@ class NewTopicTextViewController: UIViewController {
                 alert.dismiss(animated: true, completion: nil)
             }
         }else{
-//            self.newTopicText.title = self.titleTextField.text
-//            self.newTopicText.desc = self.descTextField.text
-//            self.newTopicText.save()
+            self.newTopicText.titleT = self.titleTextField.text
+            self.newTopicText.descT = self.descTextField.text
+            self.newTopicText.typeT = TopicsEnum.text.rawValue
+            self.newTopicText.save()
+            dismiss(animated: true, completion: nil)
         }
     }
     

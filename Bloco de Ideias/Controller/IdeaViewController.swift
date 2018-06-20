@@ -46,24 +46,6 @@ class IdeaViewController: UIViewController {
             NSLog("Error on reading ideas from Database...")
         }
         
-        
-        //Core Data
-        let entityTopic = DataManager.getEntity(entity: "Topic")
-        let topics = DataManager.getAll(entity: entityTopic)
-        if (topics.success){
-            if(topics.objects.count == 0){
-                NSLog("Não existem topicos.")
-            }else{
-                topicsList.removeAll()
-                for top in topics.objects as! [Topic] {
-                    topicsList.append(top)
-                }
-            }
-        }else{
-            NSLog("Erro ao buscar topicos.")
-        }
-        collectionView.reloadData()
-        
         //Topics Collection View
         let nibText = UINib(nibName: "TopicTextCollectionViewCell", bundle: nil)
         self.collectionView.register(nibText, forCellWithReuseIdentifier: "TopicTextCell")
@@ -91,6 +73,25 @@ class IdeaViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionView.collectionViewLayout.invalidateLayout()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //Core Data
+        let entityTopic = DataManager.getEntity(entity: "Topic")
+        let topics = DataManager.getAll(entity: entityTopic)
+        if (topics.success){
+            if(topics.objects.count == 0){
+                NSLog("Não existem topicos.")
+            }else{
+                topicsList.removeAll()
+                for top in topics.objects as! [Topic] {
+                    topicsList.append(top)
+                }
+            }
+        }else{
+            NSLog("Erro ao buscar topicos.")
+        }
+        collectionView.reloadData()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -335,5 +336,27 @@ extension IdeaViewController : UICollectionViewDelegate, UICollectionViewDataSou
             //            collectionView.moveItem(at: destination, to: source)
             // MUDAR NO CORE DATA A ORDEM DAS IDEIAS
         }
+    }
+}
+
+extension IdeaViewController : UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return minimunLineSpacing
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return minimunInteritemSpacing
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let marginsAndInsets = inset * 2 + collectionView.safeAreaInsets.left + collectionView.safeAreaInsets.right + minimunInteritemSpacing * CGFloat(cellsPerRow - 1)
+        
+        let itemWidth = ((view.bounds.size.width - marginsAndInsets) / CGFloat(cellsPerRow).rounded(.down))
+        
+        return CGSize(width: itemWidth, height: 160.0)
     }
 }
