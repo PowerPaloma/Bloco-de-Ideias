@@ -21,6 +21,7 @@
 		BE33F5A420D94B7400A026C9 /* TagDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33F5A320D94B7400A026C9 /* TagDelegate.swift */; };
 		BE33F5A620DA85C900A026C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE33F5A520DA85C900A026C9 /* Assets.xcassets */; };
 		BE33F5AA20DA9F4400A026C9 /* NewTopicImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33F5A920DA9F4400A026C9 /* NewTopicImageViewController.swift */; };
+		BE33F5AC20DACD7000A026C9 /* NewTopicTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE33F5AB20DACD7000A026C9 /* NewTopicTextViewController.swift */; };
 		BE63581A20D941A8002666EC /* SearchTagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63581920D941A7002666EC /* SearchTagsViewController.swift */; };
 		BE63582120D97DE4002666EC /* Tag+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63581B20D97DE4002666EC /* Tag+CoreDataClass.swift */; };
 		BE63582220D97DE4002666EC /* Tag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63581C20D97DE4002666EC /* Tag+CoreDataProperties.swift */; };
@@ -61,6 +62,7 @@
 		BE33F5A320D94B7400A026C9 /* TagDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagDelegate.swift; sourceTree = "<group>"; };
 		BE33F5A520DA85C900A026C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE33F5A920DA9F4400A026C9 /* NewTopicImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTopicImageViewController.swift; sourceTree = "<group>"; };
+		BE33F5AB20DACD7000A026C9 /* NewTopicTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTopicTextViewController.swift; sourceTree = "<group>"; };
 		BE63581920D941A7002666EC /* SearchTagsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTagsViewController.swift; sourceTree = "<group>"; };
 		BE63581B20D97DE4002666EC /* Tag+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BE63581C20D97DE4002666EC /* Tag+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				BE205A6C20CEA45400B53288 /* NewIdeaViewController.swift */,
 				BE205ACD20D3D86600B53288 /* MyIdeasViewController.swift */,
 				BE33F5A920DA9F4400A026C9 /* NewTopicImageViewController.swift */,
+				BE33F5AB20DACD7000A026C9 /* NewTopicTextViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				BE205AD720D3F9C900B53288 /* ReorderableFlowLayout.swift in Sources */,
 				BEFCB38220C9707B006F8498 /* IdeaViewController.swift in Sources */,
 				BE205AC220D2B71500B53288 /* Process.swift in Sources */,
+				BE33F5AC20DACD7000A026C9 /* NewTopicTextViewController.swift in Sources */,
 				BE254C9120D7FC01007646CA /* Tag.swift in Sources */,
 				BE63582F20DA7FA6002666EC /* TopicImageCollectionViewCell.swift in Sources */,
 				BE205ACF20D3D86600B53288 /* MyIdeasViewController.swift in Sources */,

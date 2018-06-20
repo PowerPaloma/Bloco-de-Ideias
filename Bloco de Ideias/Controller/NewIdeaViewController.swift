@@ -154,9 +154,8 @@ class NewIdeaViewController: UIViewController{
     }
     
     @IBAction func done(_ sender: UIBarButtonItem) {
-        
         if (self.titleTF.text == "" || self.desc.text == "" || self.process.text == "" || self.tags.text == ""){
-            let alert = UIAlertController(title: "Preencha todos os campos", message: nil, preferredStyle: .alert)
+            let alert = UIAlertController(title: "Complete all the fields", message: nil, preferredStyle: .alert)
             self.present(alert, animated: true, completion: nil)
             let when = DispatchTime.now() + 1
             DispatchQueue.main.asyncAfter(deadline: when){
@@ -170,7 +169,6 @@ class NewIdeaViewController: UIViewController{
             self.newIdea.process = processes[processPicker.selectedRow(inComponent: 0)]
             self.newIdea.save()
         }
-        
         dismiss(animated: true, completion: nil)
     }
 }

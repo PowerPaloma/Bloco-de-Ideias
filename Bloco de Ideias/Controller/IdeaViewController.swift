@@ -243,7 +243,30 @@ extension IdeaViewController : UICollectionViewDelegate, UICollectionViewDataSou
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //        if (indexPath.row == 0){
-//            performSegue(withIdentifier: "newIdea", sender: nil)
+//            //Set details of actionsheet options
+//            let actionSheet: UIAlertController = UIAlertController(title: "Add topic", message: "Choose an option", preferredStyle: .actionSheet)
+//            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+//            let textAction = UIAlertAction(title: "Text", style: .default)
+//            { _ in
+//                self.performSegue(withIdentifier: "newTopicText", sender: nil)
+//            }
+//            let drawAction = UIAlertAction(title: "Draw", style: .default)
+//            { _ in
+//                self.performSegue(withIdentifier: "newTopicDraw", sender: nil)
+//            }
+//            let galeryAction = UIAlertAction(title: "Image", style: .default)
+//            { _ in
+//                self.performSegue(withIdentifier: "newTopicImage", sender: nil)
+//            }
+//            
+//            //Add options to actionsheet
+//            actionSheet.addAction(cancelAction)
+//            actionSheet.addAction(textAction)
+//            actionSheet.addAction(drawAction)
+//            actionSheet.addAction(galeryAction)
+//            
+//            //Show actionsheet
+//            self.present(actionSheet, animated: true, completion: nil)
 //        }else{
 //            self.ideaSelected = indexPath.row - 1
 //            performSegue(withIdentifier: "viewIdea", sender: nil)

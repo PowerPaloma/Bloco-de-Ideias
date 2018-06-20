@@ -11,7 +11,10 @@ import UIKit
 class NewTopicImageViewController: UIViewController {
 
     @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var titleTextField: UITextField!
     var imagePicker = UIImagePickerController()
+    
+//    var newTopicimage = Topic!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,12 +33,24 @@ class NewTopicImageViewController: UIViewController {
         showAlert()
     }
     
-    @IBAction func saveAction(_ sender: Any) {
-        
+    @IBAction func doneAction(_ sender: Any) {
+        if (self.titleTextField.text == "" || self.image.image == nil){
+            let alert = UIAlertController(title: "Complete all the fields", message: nil, preferredStyle: .alert)
+            self.present(alert, animated: true, completion: nil)
+            let when = DispatchTime.now() + 1
+            DispatchQueue.main.asyncAfter(deadline: when){
+                alert.dismiss(animated: true, completion: nil)
+            }
+        }else{
+//            self.newTopicImage.title = self.titleTextField.text
+//            self.newTopicImage.image = UIImageJPEGRepresentation(self.image.image!, 1.0)!
+//            DataManager.getContext().insert(self.newTopicImage)
+//            self.newTopicImage.save()
+        }
     }
 
     @IBAction func cancelAction(_ sender: Any) {
-        
+        dismiss(animated: true, completion: nil)
     }
     
     func showAlert(){
