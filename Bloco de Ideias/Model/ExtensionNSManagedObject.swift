@@ -20,7 +20,7 @@ extension NSManagedObject {
         do {
             try context.save()
         } catch {
-            print("Failed saving")
+            print("Failed saving \(self.entity.description)")
         }
     }
     

@@ -243,8 +243,8 @@ extension NewIdeaViewController: TagDelegate {
         // adding idea to tags
         for tag in tags{
             stringTags += "\(tag.name!);"
-            tag.addToIdeas(self.newIdea)
-            tag.save()
+            //tag.addToIdeas(self.newIdea)
+            //tag.save()
         }
         self.tags.text = stringTags
        
