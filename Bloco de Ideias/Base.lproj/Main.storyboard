@@ -849,7 +849,7 @@
                         <outlet property="titleIdea" destination="2aO-2I-mTE" id="WZE-7m-wCp"/>
                         <segue destination="67f-WX-UkI" kind="presentation" identifier="newTopicText" id="7qa-kk-H6n"/>
                         <segue destination="7UW-iv-dSw" kind="presentation" identifier="newTopicDraw" id="TZA-5n-dwg"/>
-                        <segue destination="7rN-2b-3mK" kind="presentation" id="VZk-i8-DPx"/>
+                        <segue destination="7rN-2b-3mK" kind="presentation" identifier="newTopic" id="VZk-i8-DPx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qqr-fv-cGw" userLabel="First Responder" sceneMemberID="firstResponder"/>
