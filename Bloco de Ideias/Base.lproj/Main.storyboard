@@ -828,11 +828,11 @@
                         <viewLayoutGuide key="safeArea" id="Vxo-ot-Hyj"/>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="Wus-yM-aKF" id="aI8-0z-ffE"/>
                         <outlet property="descrip" destination="fhb-Kc-i2q" id="jRk-Uq-rWh"/>
                         <outlet property="editButton" destination="ERv-ru-Vf8" id="ND9-Rg-4H0"/>
                         <outlet property="ideaImage" destination="rhM-27-36k" id="Gzr-Dd-5bK"/>
                         <outlet property="titleIdea" destination="2aO-2I-mTE" id="WZE-7m-wCp"/>
-                        <outlet property="topicsCollection" destination="Wus-yM-aKF" id="uzA-N7-8C9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qqr-fv-cGw" userLabel="First Responder" sceneMemberID="firstResponder"/>
