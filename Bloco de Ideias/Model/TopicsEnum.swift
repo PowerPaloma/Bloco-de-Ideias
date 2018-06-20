@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum topic:String {
+enum TopicsEnum:String {
     case text = "text"
     case image = "image"
     case draw = "draw"

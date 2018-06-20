@@ -13,6 +13,7 @@ class TopicDrawCollectionViewCell: UICollectionViewCell {
     @IBOutlet var viewBlur: UIView!
     @IBOutlet var image: UIImageView!
     @IBOutlet var deleteButton: UIButton!
+    @IBOutlet weak var title: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,7 +25,7 @@ class TopicDrawCollectionViewCell: UICollectionViewCell {
         view.layer.shadowOffset = CGSize(width: 3.0, height: 3.0)
         view.layer.shadowOpacity = 0.8
         view.layer.shadowRadius = 4.0
-        
+
         deleteButton.layer.isHidden = true
         
         if !UIAccessibilityIsReduceTransparencyEnabled() {
