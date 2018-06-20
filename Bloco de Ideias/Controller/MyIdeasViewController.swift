@@ -29,8 +29,6 @@ class MyIdeasViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Navigation Bar Large Title
-        self.navigationController?.navigationBar.prefersLargeTitles = true
         
         //Ideas Collection View
         let nib = UINib(nibName: "MyIdeaCollectionViewCell", bundle: nil)
@@ -57,6 +55,9 @@ class MyIdeasViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        // Navigation Bar Large Title
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        
         //Core Data
         let entityIdea = DataManager.getEntity(entity: "Idea")
         let ideas = DataManager.getAll(entity: entityIdea)

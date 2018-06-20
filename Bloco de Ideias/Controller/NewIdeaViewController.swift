@@ -73,6 +73,16 @@ class NewIdeaViewController: UIViewController{
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: .UIKeyboardWillHide, object: nil)
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        // Navigation Bar Large Title
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // Navigation Bar Large Title
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -164,7 +174,7 @@ class NewIdeaViewController: UIViewController{
         }else{
             self.newIdea.title = self.titleTF.text
             self.newIdea.desc = self.desc.text
-            self.newIdea.image = UIImageJPEGRepresentation(self.image.image!, 1.0)! as Data
+            self.newIdea.image = UIImageJPEGRepresentation(self.image.image!, 1.0)! as NSData
             DataManager.getContext().insert(self.newIdea)
             self.newIdea.process = processes[processPicker.selectedRow(inComponent: 0)]
             self.newIdea.save()

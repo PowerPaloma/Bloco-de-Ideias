@@ -17,7 +17,7 @@ extension Idea {
     }
 
     @NSManaged public var desc: String?
-    @NSManaged public var image: Data?
+    @NSManaged public var image: NSData?
     @NSManaged public var title: String?
     @NSManaged public var process: Process?
     @NSManaged public var tags: NSSet?

@@ -19,5 +19,23 @@ extension Suggestion {
     @NSManaged public var descS: String?
     @NSManaged public var titleS: String?
     @NSManaged public var process: Process?
+    @NSManaged public var topics: NSSet?
+
+}
+
+// MARK: Generated accessors for topics
+extension Suggestion {
+
+    @objc(addTopicsObject:)
+    @NSManaged public func addToTopics(_ value: Topic)
+
+    @objc(removeTopicsObject:)
+    @NSManaged public func removeFromTopics(_ value: Topic)
+
+    @objc(addTopics:)
+    @NSManaged public func addToTopics(_ values: NSSet)
+
+    @objc(removeTopics:)
+    @NSManaged public func removeFromTopics(_ values: NSSet)
 
 }
