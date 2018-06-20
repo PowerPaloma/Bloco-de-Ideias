@@ -35,6 +35,20 @@ class IdeaViewController: UIViewController {
         // Navigation Bar Large Title
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
+        //Core data
+        let entity = DataManager.getEntity(entity: "Idea")
+        let query = DataManager.getAll(entity: entity)
+        
+        if (query.success){
+            if(query.objects.count > 0){
+                var ideas = query.objects as! [Idea]
+                self.idea = ideas[self.indexIdeaSelect]
+            }
+        }else{
+            NSLog("Error on reading ideas from Database...")
+        }
+        collectionView.reloadData()
+        
         //Topics Collection View
         let nibText = UINib(nibName: "TopicTextCollectionViewCell", bundle: nil)
         self.collectionView.register(nibText, forCellWithReuseIdentifier: "TopicCell")
@@ -62,22 +76,6 @@ class IdeaViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionView.collectionViewLayout.invalidateLayout()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        //Core data
-        let entity = DataManager.getEntity(entity: "Idea")
-        let query = DataManager.getAll(entity: entity)
-        
-        if (query.success){
-            if(query.objects.count > 0){
-                var ideas = query.objects as! [Idea]
-                self.idea = ideas[self.indexIdeaSelect]
-            }
-        }else{
-            NSLog("Error on reading ideas from Database...")
-        }
-        collectionView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
