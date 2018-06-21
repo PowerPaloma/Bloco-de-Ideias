@@ -5,6 +5,7 @@
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="process" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Process" inverseName="ideas" inverseEntity="Process" syncable="YES"/>
+        <relationship name="suggestionStatus" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SuggestionStatus" inverseName="idea" inverseEntity="SuggestionStatus" syncable="YES"/>
         <relationship name="tags" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Tag" inverseName="ideas" inverseEntity="Tag" syncable="YES"/>
         <relationship name="topics" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Topic" inverseName="idea" inverseEntity="Topic" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="User" inverseName="ideas" inverseEntity="User" syncable="YES"/>
@@ -12,17 +13,33 @@
     <entity name="Process" representedClassName=".Process" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="ideas" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Idea" inverseName="process" inverseEntity="Idea" syncable="YES"/>
-        <relationship name="suggestions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Suggestion" inverseName="process" inverseEntity="Suggestion" syncable="YES"/>
+        <relationship name="suggestionOrder" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SuggestionOrder" inverseName="process" inverseEntity="SuggestionOrder" syncable="YES"/>
+        <relationship name="suggestions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Suggestion" inverseName="processes" inverseEntity="Suggestion" syncable="YES"/>
     </entity>
     <entity name="Suggestion" representedClassName=".Suggestion" syncable="YES">
         <attribute name="descS" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isText" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="titleS" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="process" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Process" inverseName="suggestions" inverseEntity="Process" syncable="YES"/>
-        <relationship name="topics" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Topic" inverseName="suggestion" inverseEntity="Topic" syncable="YES"/>
+        <attribute name="topicTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="processes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Process" inverseName="suggestions" inverseEntity="Process" syncable="YES"/>
+        <relationship name="suggestionOrder" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SuggestionOrder" inverseName="suggestion" inverseEntity="SuggestionOrder" syncable="YES"/>
+        <relationship name="suggestionStatus" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SuggestionStatus" inverseName="suggestion" inverseEntity="SuggestionStatus" syncable="YES"/>
+        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="suggestions" inverseEntity="Tag" syncable="YES"/>
+    </entity>
+    <entity name="SuggestionOrder" representedClassName=".SuggestionOrder" syncable="YES">
+        <attribute name="order" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="process" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Process" inverseName="suggestionOrder" inverseEntity="Process" syncable="YES"/>
+        <relationship name="suggestion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Suggestion" inverseName="suggestionOrder" inverseEntity="Suggestion" syncable="YES"/>
+    </entity>
+    <entity name="SuggestionStatus" representedClassName=".SuggestionStatus" syncable="YES">
+        <attribute name="done" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="idea" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Idea" inverseName="suggestionStatus" inverseEntity="Idea" syncable="YES"/>
+        <relationship name="suggestion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Suggestion" inverseName="suggestionStatus" inverseEntity="Suggestion" syncable="YES"/>
     </entity>
     <entity name="Tag" representedClassName=".Tag" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="ideas" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Idea" inverseName="tags" inverseEntity="Idea" syncable="YES"/>
+        <relationship name="suggestions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Suggestion" inverseName="tags" inverseEntity="Suggestion" syncable="YES"/>
     </entity>
     <entity name="Topic" representedClassName=".Topic" syncable="YES">
         <attribute name="descT" optional="YES" attributeType="String" syncable="YES"/>
@@ -31,7 +48,6 @@
         <attribute name="titleT" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="typeT" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="idea" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Idea" inverseName="topics" inverseEntity="Idea" syncable="YES"/>
-        <relationship name="suggestion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Suggestion" inverseName="topics" inverseEntity="Suggestion" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName=".User" syncable="YES">
         <attribute name="credits" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -49,11 +65,13 @@
         <relationship name="ideas" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Idea" inverseName="user" inverseEntity="Idea" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Idea" positionX="45" positionY="-171" width="128" height="150"/>
-        <element name="Process" positionX="261" positionY="198" width="128" height="90"/>
-        <element name="Suggestion" positionX="358" positionY="-27" width="128" height="105"/>
-        <element name="Tag" positionX="466" positionY="-126" width="128" height="75"/>
-        <element name="Topic" positionX="9" positionY="48" width="128" height="148"/>
+        <element name="Idea" positionX="45" positionY="-171" width="128" height="165"/>
+        <element name="Process" positionX="45" positionY="606" width="128" height="105"/>
+        <element name="Suggestion" positionX="448" positionY="537" width="128" height="165"/>
+        <element name="SuggestionOrder" positionX="259" positionY="252" width="128" height="88"/>
+        <element name="SuggestionStatus" positionX="540" positionY="81" width="128" height="88"/>
+        <element name="Tag" positionX="835" positionY="-126" width="128" height="90"/>
+        <element name="Topic" positionX="-108" positionY="288" width="128" height="135"/>
         <element name="User" positionX="-200" positionY="-211" width="128" height="240"/>
     </elements>
 </model>

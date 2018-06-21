@@ -17,7 +17,6 @@ class IdeaViewController: UIViewController {
     @IBOutlet var editButton: UIButton!
     
     //Variables
-    var indexIdeaSelect = 0
     var idea = Idea()
     var topicsList : [Topic] = []
     var longPressGR: UILongPressGestureRecognizer!
@@ -32,19 +31,6 @@ class IdeaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //Core data RECEBER OBJETO IDEIA DA TELA ANTERIOR
-        let entity = DataManager.getEntity(entity: "Idea")
-        let query = DataManager.getAll(entity: entity)
-        
-        if (query.success){
-            if(query.objects.count > 0){
-                var ideas = query.objects as! [Idea]
-                self.idea = ideas[self.indexIdeaSelect]
-            }
-        }else{
-            NSLog("Error on reading ideas from Database...")
-        }
         
         //Topics Collection View
         let nibText = UINib(nibName: "TopicTextCollectionViewCell", bundle: nil)
@@ -103,6 +89,15 @@ class IdeaViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    //perform segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination as! UINavigationController
+        let vc = dest.topViewController as! ImproveIdeaViewController
+        vc.idea = self.idea
+        
+    }
+    
+    
     //Edit mode collection view
     @IBAction func editModeAction(_ sender: Any) {
         //Starts and Stops Edit mode: reorder and delete cells
@@ -112,6 +107,12 @@ class IdeaViewController: UIViewController {
             startEditMode()
         }
     }
+    
+    //Improve Idea
+    @IBAction func improveIdea(_ sender: UIButton) {
+        performSegue(withIdentifier: "improve", sender: nil)
+    }
+    
     override func setEditing(_ editing: Bool, animated: Bool) {
         //Starts and end editing mode
         super.setEditing(editing, animated: true)

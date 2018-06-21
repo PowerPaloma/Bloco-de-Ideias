@@ -18,64 +18,248 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let entityProcess = DataManager.getEntity(entity: "Process")
-        let processes = DataManager.getAll(entity: entityProcess)
+        var processList: [Process] = []
+        var tagList: [Tag] = []
+        var suggestionList: [Suggestion] = []
         
-        if (processes.success){
-            if(processes.objects.count < 4){
-                DataManager.deleteAll(entity: Process.entityDescription())
-                
-                NSLog("Saving processes...")
-                
-                let none:Process = Process()
-                none.name = "Free"
-                none.save()
-                
-                let cbl:Process = Process()
-                cbl.name = "CBL"
-                cbl.save()
-                
-                let canvas:Process = Process()
-                canvas.name = "Canvas"
-                canvas.save()
-                
-                let designThinking:Process = Process()
-                designThinking.name = "Design Thinking"
-                designThinking.save()
-            }
-        }else{
-            NSLog("Error on searching processes...")
-        }
+        //-------Process
+        let p1:Process = Process()
+        p1.name = "Free"
+        processList.append(p1)
         
+        let p2:Process = Process()
+        p2.name = "CBL"
+        processList.append(p2)
+        
+        let p3:Process = Process()
+        p3.name = "Canvas"
+        processList.append(p3)
+
+        let p4:Process = Process()
+        p4.name = "Design Thinking"
+        processList.append(p4)
+        //--------------------------------
         
         // ------ tags
-        let entityTag = DataManager.getEntity(entity: "Tag")
-        let tags = DataManager.getAll(entity: entityTag)
+        let t1:Tag = Tag()
+        t1.name = "Game"
+        tagList.append(t1)
         
-        if (tags.success){
-            if(tags.objects.count < 3){
-                DataManager.deleteAll(entity: Tag.entityDescription())
-                
-                NSLog("Saving tags...")
-                
-                let t1:Tag = Tag()
-                t1.name = "Tecnologia"
-                t1.save()
-                
-                let t2:Tag = Tag()
-                t2.name = "Aplicativo"
-                t2.save()
-                
-                let t3:Tag = Tag()
-                t3.name = "Inovação"
-                t3.save()
-            }
-        }else{
-            NSLog("Error on saving tags...")
-        }
+        let t2:Tag = Tag()
+        t2.name = "App"
+        tagList.append(t2)
         
+        let t3:Tag = Tag()
+        t3.name = "Product"
+        tagList.append(t3)
+        
+        let t4:Tag = Tag()
+        t4.name = "Party"
+        tagList.append(t4)
+        
+        let t5:Tag = Tag()
+        t5.name = "Business"
+        tagList.append(t5)
+        
+        let t6:Tag = Tag()
+        t6.name = "Art"
+        tagList.append(t6)
+        
+        let t7:Tag = Tag()
+        t7.name = "Music"
+        tagList.append(t7)
+        
+        let t8:Tag = Tag()
+        t8.name = "Story"
+        tagList.append(t8)
+        
+        let t9:Tag = Tag()
+        t9.name = "Fashion"
+        tagList.append(t9)
+        
+        let t10:Tag = Tag()
+        t10.name = "Research"
+        tagList.append(t10)
+        
+        let t11:Tag = Tag()
+        t11.name = "Software"
+        tagList.append(t11)
+        
+        let t12:Tag = Tag()
+        t12.name = "Architecture"
+        tagList.append(t12)
+        
+        let t13:Tag = Tag()
+        t13.name = "Technology"
+        tagList.append(t13)
+        
+        let t14:Tag = Tag()
+        t14.name = "Theater"
+        tagList.append(t14)
+        
+        let t15:Tag = Tag()
+        t15.name = "Dance"
+        tagList.append(t15)
+        
+        let t16:Tag = Tag()
+        t16.name = "Site"
+        tagList.append(t16)
+        
+        let t17:Tag = Tag()
+        t17.name = "Design"
+        tagList.append(t17)
+        
+        let t18:Tag = Tag()
+        t18.name = "User Interface"
+        tagList.append(t18)
+        
+        let t19:Tag = Tag()
+        t19.name = "Audio-visual"
+        tagList.append(t19)
+        
+        //-------------------------
+        
+        //--------Suggestions of process free
+        let s1:Suggestion = Suggestion()
+        s1.titleS = "Who is my audience?"
+        s1.descS = "Imagine you had the single perfect audience member in front of you – who would that be?"
+        s1.topicTitle = "Audience"
+        s1.isText = true
+        s1.addToProcesses(p1)
+        //let s1Tags: Array<Tag> = [t1, t2, t3, t4, t6, t7, t8, t9, t10, t11, t12, t13, t17, t18, t19]
+        s1.addToTags(t1)
+        s1.addToTags(t2)
+        s1.addToTags(t3)
+        s1.addToTags(t4)
+        s1.addToTags(t6)
+        s1.addToTags(t7)
+        s1.addToTags(t8)
+        s1.addToTags(t9)
+        s1.addToTags(t10)
+        s1.addToTags(t11)
+        s1.addToTags(t12)
+        s1.addToTags(t13)
+        s1.addToTags(t17)
+        s1.addToTags(t18)
+        s1.addToTags(t19)
+        suggestionList.append(s1)
+        
+        let s2:Suggestion = Suggestion()
+        s2.titleS = "What is the problem my idea is solving?"
+        s2.descS = ""
+        s2.topicTitle = "Problem"
+        s2.isText = true
+        s2.addToProcesses(p1)
+        //let s2Tags:Array<Tag> = [t1, t2, t3, t4, t6, t7, t8, t9, t10, t11, t12, t13, t17, t18, t19]
+        //self.addTagsInSuggestion(tags: s2Tags, s: s2)
+        s1.addToTags(t2)
+        s1.addToTags(t3)
+        s1.addToTags(t5)
+        s1.addToTags(t10)
+        s1.addToTags(t11)
+        s1.addToTags(t13)
+        s1.addToTags(t16)
+        s1.addToTags(t17)
+        suggestionList.append(s2)
+        
+        let s3:Suggestion = Suggestion()
+        s3.titleS = "What are the impacts of my idea?"
+        s3.descS = "What will the world look like if I’m able to change it?"
+        s3.topicTitle = "Impacts"
+        s3.isText = true
+        s3.addToProcesses(p1)
+//        let s3Tags: Array<Tag> = [t2, t3, t5, t6, t10, t11, t12, t13, t14, t16, t17, t18, t19]
+//        self.addTagsInSuggestion(tags: s3Tags, s: s3)
+        s1.addToTags(t2)
+        s1.addToTags(t3)
+        s1.addToTags(t5)
+        s1.addToTags(t6)
+        s1.addToTags(t10)
+        s1.addToTags(t11)
+        s1.addToTags(t12)
+        s1.addToTags(t13)
+        s1.addToTags(t14)
+        s1.addToTags(t16)
+        s1.addToTags(t17)
+        s1.addToTags(t18)
+        s1.addToTags(t19)
+        
+        suggestionList.append(s3)
+        
+        let s4:Suggestion = Suggestion()
+        s4.titleS = "What are my motivations?"
+        s4.descS = "Why this is important to me?"
+        s4.topicTitle = "Motivations"
+        s4.isText = true
+        s4.addToProcesses(p1)
+//        let s4Tags: Array<Tag> = [t2, t3, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14, t15, t16, t17, t18, t19]
+//        self.addTagsInSuggestion(tags: s4Tags, s: s4)
+        s1.addToTags(t2)
+        s1.addToTags(t3)
+        s1.addToTags(t5)
+        s1.addToTags(t6)
+        s1.addToTags(t10)
+        s1.addToTags(t11)
+        s1.addToTags(t12)
+        s1.addToTags(t13)
+        s1.addToTags(t14)
+        s1.addToTags(t16)
+        s1.addToTags(t17)
+        s1.addToTags(t18)
+        s1.addToTags(t19)
+        suggestionList.append(s4)
+        //--------------------------------
+
+    
+        
+        //---------Saving tags, processes and suggestions
+        self.saving(recordsToSave:tagList, entityName: "Tag")
+        self.saving(recordsToSave: processList, entityName: "Process")
+        self.saving(recordsToSave: suggestionList, entityName: "Suggestion")
+        //--------------------------------------------------
+
         return true
     }
+    
+    // try this later
+//    func addTagsInSuggestion(tags:[Tag], s: Suggestion){
+//        for tag in tags{
+//            s.addToTags(tag)
+//        }
+//
+//    }
+    
+    
+    func saving(recordsToSave: [Any] ,entityName: String){
+        let entity = DataManager.getEntity(entity: entityName)
+        let entityRecords = DataManager.getAll(entity: entity)
+
+        
+        if (entityRecords.success){
+            if(entityRecords.objects.count == 0){
+                NSLog("Saving \(entityName)...")
+                if recordsToSave is [Process]{
+                    for rec in recordsToSave as! [Process]{
+                        rec.save()
+                    }
+                }else if recordsToSave is [Tag]{
+                    for rec in recordsToSave as! [Tag]{
+                        rec.save()
+                    }
+                }else if recordsToSave is [Suggestion]{
+                    for rec in recordsToSave as! [Suggestion]{
+                        rec.save()
+                    }
+                }
+                
+                
+            }
+        }else{
+            NSLog("Error on saving \(entityName)...")
+        }
+        
+    }
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -365,10 +365,10 @@
             </objects>
             <point key="canvasLocation" x="1313" y="2399"/>
         </scene>
-        <!--View Controller-->
+        <!--Improve Idea View Controller-->
         <scene sceneID="h30-8t-her">
             <objects>
-                <viewController id="jcK-00-69D" sceneMemberID="viewController">
+                <viewController id="jcK-00-69D" customClass="ImproveIdeaViewController" customModule="Bloco_de_Ideias" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cME-yl-VJ5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -376,9 +376,17 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hLV-U8-CcE">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem title="Pular" id="Yzy-kt-B2Y"/>
+                                    <barButtonItem title="Pular" id="Yzy-kt-B2Y">
+                                        <connections>
+                                            <action selector="skip:" destination="jcK-00-69D" id="ivo-s6-Le0"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="iIj-Ch-nao"/>
-                                    <barButtonItem title="Proximo" id="3dC-bg-tPm"/>
+                                    <barButtonItem title="Proximo" id="3dC-bg-tPm">
+                                        <connections>
+                                            <action selector="next:" destination="jcK-00-69D" id="LhJ-Uj-nOe"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GoQ-6C-DJT">
@@ -451,8 +459,17 @@
                         <viewLayoutGuide key="safeArea" id="XuX-FO-SgY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ucj-zS-Xx0">
-                        <barButtonItem key="leftBarButtonItem" title="Exit" id="FiT-cD-hD8"/>
+                        <barButtonItem key="leftBarButtonItem" title="Exit" id="FiT-cD-hD8">
+                            <connections>
+                                <action selector="exit:" destination="jcK-00-69D" id="hFM-dP-cQr"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="answer" destination="cpX-8E-4aU" id="nw8-Ws-Fae"/>
+                        <outlet property="descSuggestion" destination="fzA-ng-kmj" id="ntD-sN-12a"/>
+                        <outlet property="titleSugguestion" destination="Ntu-GN-eUd" id="cUv-D0-2Pw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y7C-iw-3KG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -738,7 +755,6 @@
         <!--Idea View Controller-->
         <scene sceneID="OnD-fT-Wwk">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qqr-fv-cGw" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="ZTJ-5U-gNN" customClass="IdeaViewController" customModule="Bloco_de_Ideias" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ezz-qu-NbM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
@@ -790,6 +806,10 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Umq-oZ-lww">
                                         <rect key="frame" x="270" y="176" width="89" height="30"/>
                                         <state key="normal" title="Improve Idea"/>
+                                        <connections>
+                                            <action selector="improveIdea:" destination="ZTJ-5U-gNN" eventType="touchUpInside" id="gJY-p4-y7c"/>
+                                            <segue destination="aM4-wu-ba5" kind="show" identifier="improve" id="HR2-Zc-4K5"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nh5-z1-Zqq">
                                         <rect key="frame" x="15" y="359" width="24" height="24"/>
@@ -852,6 +872,7 @@
                         <segue destination="99f-ze-aZS" kind="presentation" identifier="newTopic" id="79T-yY-PGc"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qqr-fv-cGw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2148" y="-734"/>
         </scene>
@@ -931,7 +952,6 @@
         <!--Navigation Controller-->
         <scene sceneID="v1c-Ld-qjZ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AGN-Gr-UpP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oXU-TB-V9k" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="dAN-tH-4u0">
@@ -943,13 +963,13 @@
                         <segue destination="67f-WX-UkI" kind="relationship" relationship="rootViewController" id="Fot-RF-Kku"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AGN-Gr-UpP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2230" y="9"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="f9G-Tc-uQr">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IZh-Ur-Yn2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fsS-fT-1KP" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="YOx-fE-YOc">
@@ -961,6 +981,7 @@
                         <segue destination="7UW-iv-dSw" kind="relationship" relationship="rootViewController" id="LhH-8Y-xFC"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IZh-Ur-Yn2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2230" y="706"/>
         </scene>
@@ -1036,7 +1057,6 @@
         <!--Navigation Controller-->
         <scene sceneID="eoS-hg-gZR">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="feW-M4-7Vv" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="99f-ze-aZS" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="mJa-cA-7GO">
@@ -1048,6 +1068,7 @@
                         <segue destination="7rN-2b-3mK" kind="relationship" relationship="rootViewController" id="Zho-6X-oUs"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="feW-M4-7Vv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2230" y="1423"/>
         </scene>
