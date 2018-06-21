@@ -14,7 +14,7 @@ class NewTopicImageViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     var imagePicker = UIImagePickerController()
     
-//    var newTopicimage = Topic!
+    var newTopicImage = Topic()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,10 +42,13 @@ class NewTopicImageViewController: UIViewController {
                 alert.dismiss(animated: true, completion: nil)
             }
         }else{
-//            self.newTopicImage.title = self.titleTextField.text
-//            self.newTopicImage.image = UIImageJPEGRepresentation(self.image.image!, 1.0)!
-//            DataManager.getContext().insert(self.newTopicImage)
-//            self.newTopicImage.save()
+            self.newTopicImage.titleT = self.titleTextField.text
+            self.newTopicImage.imageT = UIImageJPEGRepresentation(self.image.image!, 1.0)! as NSData
+            self.newTopicImage.typeT = TopicsEnum.image.rawValue
+            DataManager.getContext().insert(self.newTopicImage)
+            self.newTopicImage.save()
+            dismiss(animated: true, completion: nil)
+
         }
     }
 

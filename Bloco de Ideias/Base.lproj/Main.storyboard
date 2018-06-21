@@ -764,11 +764,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Wus-yM-aKF">
-                                        <rect key="frame" x="15" y="398" width="345" height="256"/>
+                                        <rect key="frame" x="0.0" y="398" width="375" height="241"/>
                                         <color key="backgroundColor" red="0.93725490196078431" green="0.94901960784313721" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="256" id="ZiO-nZ-Q2c"/>
-                                        </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jeK-Lr-txI">
                                             <size key="itemSize" width="50" height="50"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -811,7 +808,7 @@
                                     <constraint firstAttribute="trailing" secondItem="fhb-Kc-i2q" secondAttribute="trailing" constant="15" id="0pq-rd-a4I"/>
                                     <constraint firstItem="fhb-Kc-i2q" firstAttribute="leading" secondItem="Uac-CC-Bum" secondAttribute="leading" constant="15" id="3fT-jz-gPn"/>
                                     <constraint firstAttribute="trailing" secondItem="2aO-2I-mTE" secondAttribute="trailing" constant="15" id="4YY-sp-cve"/>
-                                    <constraint firstItem="Wus-yM-aKF" firstAttribute="leading" secondItem="Uac-CC-Bum" secondAttribute="leading" constant="15" id="BWh-E0-EzL"/>
+                                    <constraint firstItem="Wus-yM-aKF" firstAttribute="leading" secondItem="Uac-CC-Bum" secondAttribute="leading" id="BWh-E0-EzL"/>
                                     <constraint firstItem="2aO-2I-mTE" firstAttribute="top" secondItem="rhM-27-36k" secondAttribute="bottom" constant="15" id="C1t-oF-cyr"/>
                                     <constraint firstItem="Wus-yM-aKF" firstAttribute="top" secondItem="nh5-z1-Zqq" secondAttribute="bottom" constant="15" id="D5l-uU-cE1"/>
                                     <constraint firstAttribute="trailing" secondItem="Umq-oZ-lww" secondAttribute="trailing" constant="16" id="JXP-8T-tkW"/>
@@ -822,7 +819,7 @@
                                     <constraint firstItem="Umq-oZ-lww" firstAttribute="top" secondItem="rhM-27-36k" secondAttribute="bottom" constant="8" id="ZMP-no-zue"/>
                                     <constraint firstItem="rhM-27-36k" firstAttribute="height" secondItem="Uac-CC-Bum" secondAttribute="height" multiplier="0.3" id="ZgB-lh-VKi"/>
                                     <constraint firstItem="rhM-27-36k" firstAttribute="top" secondItem="Uac-CC-Bum" secondAttribute="top" id="aKj-Oz-WhM"/>
-                                    <constraint firstAttribute="trailing" secondItem="Wus-yM-aKF" secondAttribute="trailing" constant="15" id="fc1-yS-pVx"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wus-yM-aKF" secondAttribute="trailing" id="fc1-yS-pVx"/>
                                     <constraint firstItem="rhM-27-36k" firstAttribute="width" secondItem="Uac-CC-Bum" secondAttribute="width" id="nOD-xZ-8rl"/>
                                     <constraint firstItem="ERv-ru-Vf8" firstAttribute="leading" secondItem="nh5-z1-Zqq" secondAttribute="trailing" constant="30" id="qDw-dp-cD3"/>
                                     <constraint firstItem="2aO-2I-mTE" firstAttribute="leading" secondItem="Uac-CC-Bum" secondAttribute="leading" constant="15" id="qW9-MQ-5dj"/>
@@ -835,6 +832,7 @@
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Uac-CC-Bum" firstAttribute="leading" secondItem="Vxo-ot-Hyj" secondAttribute="leading" id="1am-kN-zvF"/>
+                            <constraint firstItem="Wus-yM-aKF" firstAttribute="height" secondItem="ezz-qu-NbM" secondAttribute="height" multiplier="0.4" id="4Ws-Mo-anD"/>
                             <constraint firstItem="Vxo-ot-Hyj" firstAttribute="trailing" secondItem="Uac-CC-Bum" secondAttribute="trailing" id="6Au-DQ-MVH"/>
                             <constraint firstItem="Uac-CC-Bum" firstAttribute="top" secondItem="Vxo-ot-Hyj" secondAttribute="top" id="6wb-Ug-ZkG"/>
                             <constraint firstItem="Vxo-ot-Hyj" firstAttribute="bottom" secondItem="Uac-CC-Bum" secondAttribute="bottom" id="lll-9Y-BTJ"/>
@@ -849,7 +847,7 @@
                         <outlet property="titleIdea" destination="2aO-2I-mTE" id="WZE-7m-wCp"/>
                         <segue destination="oXU-TB-V9k" kind="presentation" identifier="newTopicText" id="ues-vQ-KO9"/>
                         <segue destination="fsS-fT-1KP" kind="presentation" identifier="newTopicDraw" id="b0x-a7-WBB"/>
-                        <segue destination="99f-ze-aZS" kind="presentation" identifier="newTopic" id="79T-yY-PGc"/>
+                        <segue destination="99f-ze-aZS" kind="presentation" identifier="newTopicImage" id="79T-yY-PGc"/>
                     </connections>
                 </viewController>
             </objects>
