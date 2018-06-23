@@ -693,7 +693,7 @@
         <!--Desenho-->
         <scene sceneID="T8c-UW-vQ5">
             <objects>
-                <viewController id="7UW-iv-dSw" sceneMemberID="viewController">
+                <viewController id="7UW-iv-dSw" customClass="NewTopicDraw" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0aP-xT-xEu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -820,7 +820,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TopicCell" id="HD1-jr-MV6" customClass="TopicCollectionViewCell">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="TopicCell" id="HD1-jr-MV6" customClass="TopicCollectionViewCell">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">

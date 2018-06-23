@@ -92,8 +92,10 @@ class IdeaViewController: UIViewController {
     //perform segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dest = segue.destination as! UINavigationController
-        let vc = dest.topViewController as! ImproveIdeaViewController
-        vc.idea = self.idea
+        if dest.topViewController is ImproveIdeaViewController {
+            let vc = dest.topViewController as! ImproveIdeaViewController
+            vc.idea = self.idea
+        }
         
     }
     
