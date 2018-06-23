@@ -31,7 +31,7 @@
 		BE63583420DA8315002666EC /* TopicDrawCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE63583220DA8315002666EC /* TopicDrawCollectionViewCell.xib */; };
 		BE63583620DA9D20002666EC /* TopicsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63583520DA9D20002666EC /* TopicsEnum.swift */; };
 		BE63584020DAC8EE002666EC /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63583F20DAC8EE002666EC /* Topic.swift */; };
-		BE63584220DAC94D002666EC /* Draw.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63584120DAC94D002666EC /* Draw.swift */; };
+		BE63584220DAC94D002666EC /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63584120DAC94D002666EC /* Line.swift */; };
 		BE63584420DACD58002666EC /* ExtensionNSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63584320DACD58002666EC /* ExtensionNSManagedObject.swift */; };
 		BE7D22A520DAE21900FCC96C /* Tag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D229920DAE21600FCC96C /* Tag+CoreDataProperties.swift */; };
 		BE7D22A620DAE21900FCC96C /* Topic+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D229A20DAE21700FCC96C /* Topic+CoreDataClass.swift */; };
@@ -45,6 +45,7 @@
 		BE7D22AE20DAE21900FCC96C /* Suggestion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22A220DAE21800FCC96C /* Suggestion+CoreDataProperties.swift */; };
 		BE7D22AF20DAE21900FCC96C /* Idea+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22A320DAE21800FCC96C /* Idea+CoreDataProperties.swift */; };
 		BE7D22B020DAE21900FCC96C /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22A420DAE21800FCC96C /* User+CoreDataClass.swift */; };
+		BE7D22B320DE6D0700FCC96C /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22B220DE6D0700FCC96C /* DrawView.swift */; };
 		BE9F234120D7F950007B58BB /* IdeaDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F234020D7F950007B58BB /* IdeaDelegate.swift */; };
 		BE9F234620D9315D007B58BB /* NewIdeaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F234420D9315D007B58BB /* NewIdeaCollectionViewCell.swift */; };
 		BE9F234720D9315D007B58BB /* NewIdeaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE9F234520D9315D007B58BB /* NewIdeaCollectionViewCell.xib */; };
@@ -81,7 +82,7 @@
 		BE63583220DA8315002666EC /* TopicDrawCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicDrawCollectionViewCell.xib; sourceTree = "<group>"; };
 		BE63583520DA9D20002666EC /* TopicsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsEnum.swift; sourceTree = "<group>"; };
 		BE63583F20DAC8EE002666EC /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
-		BE63584120DAC94D002666EC /* Draw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Draw.swift; sourceTree = "<group>"; };
+		BE63584120DAC94D002666EC /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		BE63584320DACD58002666EC /* ExtensionNSManagedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionNSManagedObject.swift; sourceTree = "<group>"; };
 		BE7D229920DAE21600FCC96C /* Tag+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BE7D229A20DAE21700FCC96C /* Topic+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Topic+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -95,6 +96,7 @@
 		BE7D22A220DAE21800FCC96C /* Suggestion+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Suggestion+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BE7D22A320DAE21800FCC96C /* Idea+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Idea+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BE7D22A420DAE21800FCC96C /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BE7D22B220DE6D0700FCC96C /* DrawView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
 		BE9F234020D7F950007B58BB /* IdeaDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaDelegate.swift; sourceTree = "<group>"; };
 		BE9F234420D9315D007B58BB /* NewIdeaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewIdeaCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE9F234520D9315D007B58BB /* NewIdeaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewIdeaCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -146,6 +148,14 @@
 			path = CollectionViewCells;
 			sourceTree = "<group>";
 		};
+		BE7D22B120DE6C3500FCC96C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BE7D22B220DE6D0700FCC96C /* DrawView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		BE9F233F20D7F926007B58BB /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +186,7 @@
 		BEFCB36B20C9560A006F8498 /* Bloco de Ideias */ = {
 			isa = PBXGroup;
 			children = (
+				BE7D22B120DE6C3500FCC96C /* View */,
 				BE9F233F20D7F926007B58BB /* Protocols */,
 				BE205A5F20CE989A00B53288 /* IdeaBuilder.xcdatamodeld */,
 				BE205AD120D3D91900B53288 /* CollectionViewCells */,
@@ -225,7 +236,7 @@
 				BE254C9020D7FC01007646CA /* Tag.swift */,
 				BE63583520DA9D20002666EC /* TopicsEnum.swift */,
 				BE63583F20DAC8EE002666EC /* Topic.swift */,
-				BE63584120DAC94D002666EC /* Draw.swift */,
+				BE63584120DAC94D002666EC /* Line.swift */,
 				BE63584320DACD58002666EC /* ExtensionNSManagedObject.swift */,
 			);
 			path = Model;
@@ -359,7 +370,7 @@
 			files = (
 				BE205AC420D2B9AE00B53288 /* Idea.swift in Sources */,
 				BE63584020DAC8EE002666EC /* Topic.swift in Sources */,
-				BE63584220DAC94D002666EC /* Draw.swift in Sources */,
+				BE63584220DAC94D002666EC /* Line.swift in Sources */,
 				BE7D22A720DAE21900FCC96C /* Topic+CoreDataProperties.swift in Sources */,
 				BE205AD420D3D94400B53288 /* MyIdeaCollectionViewCell.swift in Sources */,
 				BE7D22AE20DAE21900FCC96C /* Suggestion+CoreDataProperties.swift in Sources */,
@@ -373,6 +384,7 @@
 				BE33F5AA20DA9F4400A026C9 /* NewTopicImageViewController.swift in Sources */,
 				BE7D22A520DAE21900FCC96C /* Tag+CoreDataProperties.swift in Sources */,
 				BE9F234620D9315D007B58BB /* NewIdeaCollectionViewCell.swift in Sources */,
+				BE7D22B320DE6D0700FCC96C /* DrawView.swift in Sources */,
 				BE205A6920CEA1AA00B53288 /* DataManager.swift in Sources */,
 				BE7D22AB20DAE21900FCC96C /* Process+CoreDataProperties.swift in Sources */,
 				BE63581A20D941A8002666EC /* SearchTagsViewController.swift in Sources */,
