@@ -28,20 +28,7 @@ class TopicImageCollectionViewCell: UICollectionViewCell {
         
         deleteButton.layer.isHidden = true
         
-        if !UIAccessibilityIsReduceTransparencyEnabled() {
-            viewBlur.backgroundColor = .clear
-            let blurEffect = UIBlurEffect(style: .light)
-            let blurEffectView = UIVisualEffectView(effect: blurEffect)
-            
-            blurEffectView.frame = CGRect(origin: viewBlur.frame.origin, size: viewBlur.bounds.size)
-            blurEffectView.layer.masksToBounds = true
-            blurEffectView.layer.cornerRadius = 16
-            
-            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            view.insertSubview(blurEffectView, at: 1)
-        } else {
-            view.backgroundColor = .black
-        }
+        viewBlur.backgroundColor = UIColor.white
     }
         
     //---------------- Wiggling -------------

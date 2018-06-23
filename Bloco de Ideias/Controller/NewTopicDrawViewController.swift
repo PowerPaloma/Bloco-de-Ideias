@@ -10,6 +10,10 @@ import UIKit
 
 class NewTopicDrawViewController: UIViewController {
 
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var drawView: DrawView!
+    var newTopicDraw = Topic()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,15 +25,26 @@ class NewTopicDrawViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func doneAction(_ sender: Any) {
+        if (self.titleTextField.text == ""){
+            let alert = UIAlertController(title: "Complete all the fields", message: nil, preferredStyle: .alert)
+            self.present(alert, animated: true, completion: nil)
+            let when = DispatchTime.now() + 1
+            DispatchQueue.main.asyncAfter(deadline: when){
+                alert.dismiss(animated: true, completion: nil)
+            }
+        }else{
+            let image_draw = drawView.getImage()
+            self.newTopicDraw.imageT = UIImageJPEGRepresentation(image_draw, 1.0)! as NSData
+            self.newTopicDraw.titleT = self.titleTextField.text
+            self.newTopicDraw.typeT = TopicsEnum.draw.rawValue
+            self.newTopicDraw.save()
+            dismiss(animated: true, completion: nil)
+        }
     }
-    */
-
+    
+    
+    @IBAction func cancelAction(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }

@@ -23,8 +23,6 @@
 		BE63582C20DA79C8002666EC /* TopicTextCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE63582A20DA79C8002666EC /* TopicTextCollectionViewCell.xib */; };
 		BE63582F20DA7FA6002666EC /* TopicImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63582D20DA7FA6002666EC /* TopicImageCollectionViewCell.swift */; };
 		BE63583020DA7FA6002666EC /* TopicImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE63582E20DA7FA6002666EC /* TopicImageCollectionViewCell.xib */; };
-		BE63583320DA8315002666EC /* TopicDrawCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63583120DA8315002666EC /* TopicDrawCollectionViewCell.swift */; };
-		BE63583420DA8315002666EC /* TopicDrawCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE63583220DA8315002666EC /* TopicDrawCollectionViewCell.xib */; };
 		BE6358C020DC5A22002666EC /* ImproveIdeaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6358BF20DC5A22002666EC /* ImproveIdeaViewController.swift */; };
 		BE7D22D520DE803100FCC96C /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22D420DE803100FCC96C /* DrawView.swift */; };
 		BE7D22F120DE80B000FCC96C /* SuggestionOrder+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22D620DE80AB00FCC96C /* SuggestionOrder+CoreDataProperties.swift */; };
@@ -55,6 +53,8 @@
 		BE7D230A20DE80B000FCC96C /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22EF20DE80B000FCC96C /* Topic.swift */; };
 		BE7D230B20DE80B000FCC96C /* Idea+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22F020DE80B000FCC96C /* Idea+CoreDataClass.swift */; };
 		BE7D230D20DE84C000FCC96C /* NewTopicDrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D230C20DE84C000FCC96C /* NewTopicDrawViewController.swift */; };
+		BE7D231020DE8CCA00FCC96C /* TopicDrawCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D230E20DE8CCA00FCC96C /* TopicDrawCollectionViewCell.swift */; };
+		BE7D231120DE8CCA00FCC96C /* TopicDrawCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE7D230F20DE8CCA00FCC96C /* TopicDrawCollectionViewCell.xib */; };
 		BE9F234120D7F950007B58BB /* IdeaDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F234020D7F950007B58BB /* IdeaDelegate.swift */; };
 		BE9F234620D9315D007B58BB /* NewIdeaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F234420D9315D007B58BB /* NewIdeaCollectionViewCell.swift */; };
 		BE9F234720D9315D007B58BB /* NewIdeaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE9F234520D9315D007B58BB /* NewIdeaCollectionViewCell.xib */; };
@@ -83,8 +83,6 @@
 		BE63582A20DA79C8002666EC /* TopicTextCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicTextCollectionViewCell.xib; sourceTree = "<group>"; };
 		BE63582D20DA7FA6002666EC /* TopicImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE63582E20DA7FA6002666EC /* TopicImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicImageCollectionViewCell.xib; sourceTree = "<group>"; };
-		BE63583120DA8315002666EC /* TopicDrawCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDrawCollectionViewCell.swift; sourceTree = "<group>"; };
-		BE63583220DA8315002666EC /* TopicDrawCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicDrawCollectionViewCell.xib; sourceTree = "<group>"; };
 		BE6358BF20DC5A22002666EC /* ImproveIdeaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImproveIdeaViewController.swift; sourceTree = "<group>"; };
 		BE7D22D420DE803100FCC96C /* DrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
 		BE7D22D620DE80AB00FCC96C /* SuggestionOrder+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SuggestionOrder+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -115,6 +113,8 @@
 		BE7D22EF20DE80B000FCC96C /* Topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 		BE7D22F020DE80B000FCC96C /* Idea+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Idea+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BE7D230C20DE84C000FCC96C /* NewTopicDrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTopicDrawViewController.swift; sourceTree = "<group>"; };
+		BE7D230E20DE8CCA00FCC96C /* TopicDrawCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDrawCollectionViewCell.swift; sourceTree = "<group>"; };
+		BE7D230F20DE8CCA00FCC96C /* TopicDrawCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicDrawCollectionViewCell.xib; sourceTree = "<group>"; };
 		BE9F234020D7F950007B58BB /* IdeaDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaDelegate.swift; sourceTree = "<group>"; };
 		BE9F234420D9315D007B58BB /* NewIdeaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewIdeaCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE9F234520D9315D007B58BB /* NewIdeaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewIdeaCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -160,8 +160,8 @@
 				BE63582A20DA79C8002666EC /* TopicTextCollectionViewCell.xib */,
 				BE63582D20DA7FA6002666EC /* TopicImageCollectionViewCell.swift */,
 				BE63582E20DA7FA6002666EC /* TopicImageCollectionViewCell.xib */,
-				BE63583120DA8315002666EC /* TopicDrawCollectionViewCell.swift */,
-				BE63583220DA8315002666EC /* TopicDrawCollectionViewCell.xib */,
+				BE7D230E20DE8CCA00FCC96C /* TopicDrawCollectionViewCell.swift */,
+				BE7D230F20DE8CCA00FCC96C /* TopicDrawCollectionViewCell.xib */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -341,8 +341,8 @@
 				BE205AD520D3D94400B53288 /* MyIdeaCollectionViewCell.xib in Resources */,
 				BEFCB37A20C9560C006F8498 /* LaunchScreen.storyboard in Resources */,
 				BE63582C20DA79C8002666EC /* TopicTextCollectionViewCell.xib in Resources */,
-				BE63583420DA8315002666EC /* TopicDrawCollectionViewCell.xib in Resources */,
 				BE9F234720D9315D007B58BB /* NewIdeaCollectionViewCell.xib in Resources */,
+				BE7D231120DE8CCA00FCC96C /* TopicDrawCollectionViewCell.xib in Resources */,
 				BE63583020DA7FA6002666EC /* TopicImageCollectionViewCell.xib in Resources */,
 				BEFCB37220C9560A006F8498 /* Main.storyboard in Resources */,
 				BE33F5A620DA85C900A026C9 /* Assets.xcassets in Resources */,
@@ -399,7 +399,6 @@
 				BE7D230A20DE80B000FCC96C /* Topic.swift in Sources */,
 				BE7D22F520DE80B000FCC96C /* Process+CoreDataClass.swift in Sources */,
 				BE7D230D20DE84C000FCC96C /* NewTopicDrawViewController.swift in Sources */,
-				BE63583320DA8315002666EC /* TopicDrawCollectionViewCell.swift in Sources */,
 				BE7D22F120DE80B000FCC96C /* SuggestionOrder+CoreDataProperties.swift in Sources */,
 				BE33F5A420D94B7400A026C9 /* TagDelegate.swift in Sources */,
 				BE9F234120D7F950007B58BB /* IdeaDelegate.swift in Sources */,
@@ -408,6 +407,7 @@
 				BE7D22FE20DE80B000FCC96C /* User+CoreDataClass.swift in Sources */,
 				BE7D230620DE80B000FCC96C /* Topic+CoreDataClass.swift in Sources */,
 				BE7D22FB20DE80B000FCC96C /* SuggestionStatus+CoreDataProperties.swift in Sources */,
+				BE7D231020DE8CCA00FCC96C /* TopicDrawCollectionViewCell.swift in Sources */,
 				BE7D22F320DE80B000FCC96C /* Tag.swift in Sources */,
 				BE7D22F720DE80B000FCC96C /* Tag+CoreDataClass.swift in Sources */,
 				BE7D22F620DE80B000FCC96C /* User+CoreDataProperties.swift in Sources */,
