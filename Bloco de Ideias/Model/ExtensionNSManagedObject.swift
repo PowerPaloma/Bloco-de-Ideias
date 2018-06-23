@@ -19,8 +19,8 @@ extension NSManagedObject {
         
         do {
             try context.save()
-        } catch {
-            print("Failed saving \(self.entity.description)")
+        } catch let error as NSError{
+            print("Failed saving \(error.userInfo)")
         }
     }
     

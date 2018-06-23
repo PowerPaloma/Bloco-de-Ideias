@@ -2,7 +2,7 @@
 //  Process+CoreDataProperties.swift
 //  
 //
-//  Created by Ada 2018 on 20/06/2018.
+//  Created by Ada 2018 on 21/06/2018.
 //
 //
 
@@ -19,6 +19,7 @@ extension Process {
     @NSManaged public var name: String?
     @NSManaged public var ideas: NSSet?
     @NSManaged public var suggestions: NSSet?
+    @NSManaged public var suggestionOrder: NSSet?
 
 }
 
@@ -53,5 +54,22 @@ extension Process {
 
     @objc(removeSuggestions:)
     @NSManaged public func removeFromSuggestions(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for suggestionOrder
+extension Process {
+
+    @objc(addSuggestionOrderObject:)
+    @NSManaged public func addToSuggestionOrder(_ value: SuggestionOrder)
+
+    @objc(removeSuggestionOrderObject:)
+    @NSManaged public func removeFromSuggestionOrder(_ value: SuggestionOrder)
+
+    @objc(addSuggestionOrder:)
+    @NSManaged public func addToSuggestionOrder(_ values: NSSet)
+
+    @objc(removeSuggestionOrder:)
+    @NSManaged public func removeFromSuggestionOrder(_ values: NSSet)
 
 }

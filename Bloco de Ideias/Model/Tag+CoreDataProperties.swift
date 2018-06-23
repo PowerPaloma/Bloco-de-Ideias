@@ -2,7 +2,7 @@
 //  Tag+CoreDataProperties.swift
 //  
 //
-//  Created by Ada 2018 on 20/06/2018.
+//  Created by Ada 2018 on 21/06/2018.
 //
 //
 
@@ -18,6 +18,7 @@ extension Tag {
 
     @NSManaged public var name: String?
     @NSManaged public var ideas: NSSet?
+    @NSManaged public var suggestions: NSSet?
 
 }
 
@@ -35,5 +36,22 @@ extension Tag {
 
     @objc(removeIdeas:)
     @NSManaged public func removeFromIdeas(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for suggestions
+extension Tag {
+
+    @objc(addSuggestionsObject:)
+    @NSManaged public func addToSuggestions(_ value: Suggestion)
+
+    @objc(removeSuggestionsObject:)
+    @NSManaged public func removeFromSuggestions(_ value: Suggestion)
+
+    @objc(addSuggestions:)
+    @NSManaged public func addToSuggestions(_ values: NSSet)
+
+    @objc(removeSuggestions:)
+    @NSManaged public func removeFromSuggestions(_ values: NSSet)
 
 }

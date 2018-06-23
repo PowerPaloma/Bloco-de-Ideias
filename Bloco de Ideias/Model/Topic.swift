@@ -13,13 +13,10 @@ import CoreData
 
 extension Topic {
     convenience init(){
-        let entity:NSEntityDescription = DataManager.getEntity(entity: "Topic")
-        let context:NSManagedObjectContext = DataManager.getContext()
-        self.init(entity: entity, insertInto: context)
+        self.init(entity: DataManager.getEntity(entity: "Topic"), insertInto: nil)
     }
     
     class func entityDescription() -> (NSEntityDescription){
-        let entity:NSEntityDescription = DataManager.getEntity(entity: "Topic")
-        return entity
+        return DataManager.getEntity(entity: "Topic")
     }
 }

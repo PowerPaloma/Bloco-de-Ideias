@@ -18,7 +18,7 @@ class MyIdeasViewController: UIViewController {
     var movingIndexPath: NSIndexPath?
     var ideasList : [Idea] = []
     var processList : [Process] = []
-    var ideaSelected = 1
+    var indexIdeaSelected = 0
     
     //Values for UICollectionViewFlowLayout
     let inset: CGFloat = 8
@@ -85,10 +85,13 @@ class MyIdeasViewController: UIViewController {
     
     //Delete all ideas
     @IBAction func deleteAllData(_ sender: UIBarButtonItem) {
+        DataManager.deleteAll(entity: Tag.entityDescription())
         DataManager.deleteAll(entity: Idea.entityDescription())
         DataManager.deleteAll(entity: Process.entityDescription())
-        DataManager.deleteAll(entity: Tag.entityDescription())
         DataManager.deleteAll(entity: Topic.entityDescription())
+        DataManager.deleteAll(entity: SuggestionStatus.entityDescription())
+        DataManager.deleteAll(entity: SuggestionOrder.entityDescription())
+        DataManager.deleteAll(entity: Suggestion.entityDescription())
     }
     
     //Change layout: number of rows
@@ -211,7 +214,7 @@ class MyIdeasViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is IdeaViewController{
            let vc = segue.destination as! IdeaViewController
-            vc.indexIdeaSelect = self.ideaSelected
+            vc.idea = self.ideasList[self.indexIdeaSelected]
         }
     }
 }
@@ -255,7 +258,7 @@ extension MyIdeasViewController : UICollectionViewDelegate, UICollectionViewData
         if (indexPath.row == 0){
             performSegue(withIdentifier: "newIdea", sender: nil)
         }else{
-            self.ideaSelected = indexPath.row - 1
+            self.indexIdeaSelected = indexPath.row - 1
             performSegue(withIdentifier: "viewIdea", sender: nil)
         }
         

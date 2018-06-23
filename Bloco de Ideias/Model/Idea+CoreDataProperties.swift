@@ -2,7 +2,7 @@
 //  Idea+CoreDataProperties.swift
 //  
 //
-//  Created by Ada 2018 on 20/06/2018.
+//  Created by Ada 2018 on 21/06/2018.
 //
 //
 
@@ -23,6 +23,7 @@ extension Idea {
     @NSManaged public var tags: NSSet?
     @NSManaged public var topics: NSSet?
     @NSManaged public var user: User?
+    @NSManaged public var suggestionStatus: NSSet?
 
 }
 
@@ -57,5 +58,22 @@ extension Idea {
 
     @objc(removeTopics:)
     @NSManaged public func removeFromTopics(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for suggestionStatus
+extension Idea {
+
+    @objc(addSuggestionStatusObject:)
+    @NSManaged public func addToSuggestionStatus(_ value: SuggestionStatus)
+
+    @objc(removeSuggestionStatusObject:)
+    @NSManaged public func removeFromSuggestionStatus(_ value: SuggestionStatus)
+
+    @objc(addSuggestionStatus:)
+    @NSManaged public func addToSuggestionStatus(_ values: NSSet)
+
+    @objc(removeSuggestionStatus:)
+    @NSManaged public func removeFromSuggestionStatus(_ values: NSSet)
 
 }

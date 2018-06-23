@@ -11,13 +11,12 @@ import Foundation
 import CoreData
 
 
-extension Tag {
+extension SuggestionStatus {
     convenience init(){
-        self.init(entity: DataManager.getEntity(entity: "Tag"), insertInto: nil)
+        self.init(entity: DataManager.getEntity(entity: "SuggestionStatus"), insertInto: nil)
     }
     
     class func entityDescription() -> (NSEntityDescription){
-        let entity:NSEntityDescription = DataManager.getEntity(entity: "Tag")
-        return entity
+        return DataManager.getEntity(entity: "SuggestionStatus")
     }
 }
