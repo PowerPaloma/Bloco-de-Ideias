@@ -13,13 +13,10 @@ import CoreData
 
 extension Process {
     convenience init(){
-        let entity:NSEntityDescription = DataManager.getEntity(entity: "Process")
-        
-        self.init(entity: entity, insertInto: nil)
+        self.init(entity: DataManager.getEntity(entity: "Process"), insertInto: nil)
     }
     
     class func entityDescription() -> (NSEntityDescription){
-        let entity:NSEntityDescription = DataManager.getEntity(entity: "Process")
-        return entity
+        return DataManager.getEntity(entity: "Process")
     }
 }

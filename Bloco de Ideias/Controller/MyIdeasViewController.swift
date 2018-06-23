@@ -89,6 +89,9 @@ class MyIdeasViewController: UIViewController {
         DataManager.deleteAll(entity: Process.entityDescription())
         DataManager.deleteAll(entity: Tag.entityDescription())
         DataManager.deleteAll(entity: Topic.entityDescription())
+        DataManager.deleteAll(entity: SuggestionStatus.entityDescription())
+        DataManager.deleteAll(entity: SuggestionOrder.entityDescription())
+        DataManager.deleteAll(entity: Suggestion.entityDescription())
     }
     
     //Change layout: number of rows

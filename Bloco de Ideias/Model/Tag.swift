@@ -13,9 +13,7 @@ import CoreData
 
 extension Tag {
     convenience init(){
-        let entity:NSEntityDescription = DataManager.getEntity(entity: "Tag")
-        let context:NSManagedObjectContext = DataManager.getContext()
-        self.init(entity: entity, insertInto: context)
+        self.init(entity: DataManager.getEntity(entity: "Tag"), insertInto: nil)
     }
     
     class func entityDescription() -> (NSEntityDescription){

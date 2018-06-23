@@ -13,13 +13,10 @@ import CoreData
 
 extension SuggestionOrder {
     convenience init(){
-        let entity:NSEntityDescription = DataManager.getEntity(entity: "SuggestionOrder")
-        let context:NSManagedObjectContext = DataManager.getContext()
-        self.init(entity: entity, insertInto: context)
+        self.init(entity: DataManager.getEntity(entity: "SuggestionOrder"), insertInto: nil)
     }
     
     class func entityDescription() -> (NSEntityDescription){
-        let entity:NSEntityDescription = DataManager.getEntity(entity: "SuggestionOrder")
-        return entity
+        return DataManager.getEntity(entity: "SuggestionOrder")
     }
 }

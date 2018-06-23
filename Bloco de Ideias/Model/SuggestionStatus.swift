@@ -13,13 +13,10 @@ import CoreData
 
 extension SuggestionStatus {
     convenience init(){
-        let entity:NSEntityDescription = DataManager.getEntity(entity: "SuggestionStatus")
-        let context:NSManagedObjectContext = DataManager.getContext()
-        self.init(entity: entity, insertInto: context)
+        self.init(entity: DataManager.getEntity(entity: "SuggestionStatus"), insertInto: nil)
     }
     
     class func entityDescription() -> (NSEntityDescription){
-        let entity:NSEntityDescription = DataManager.getEntity(entity: "SuggestionStatus")
-        return entity
+        return DataManager.getEntity(entity: "SuggestionStatus")
     }
 }
