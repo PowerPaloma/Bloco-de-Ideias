@@ -42,15 +42,22 @@ class DataManager {
     }
     
     class func deleteAll(entity: NSEntityDescription) {
-        let context = DataManager.getContext()
-        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entity.name!)
-        let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+        let managedContext = DataManager.getContext()
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity.name!)
+        fetchRequest.returnsObjectsAsFaults = false
         
-        do {
-            try context.execute(deleteRequest)
-            try context.save()
-        } catch {
-            print ("There was an error on deleting all")
+        do
+        {
+            let results = try managedContext.fetch(fetchRequest)
+            for managedObject in results
+            {
+                let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
+                managedContext.delete(managedObjectData)
+            }
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Detele all data in \(entity) error : \(error) \(error.userInfo)")
         }
+    
     }
 }

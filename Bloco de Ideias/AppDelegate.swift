@@ -22,7 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var tagList: [Tag] = []
         var suggestionList: [Suggestion] = []
         var suggestionOrderList: [SuggestionOrder] = []
-        var suggestionStatusList: [SuggestionStatus] = []
         
         //-------Process
         let p1:Process = Process()
@@ -122,14 +121,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //-------------------------
         
         
-        //-----------suggestions Order in process free
-        let sO1:SuggestionOrder = SuggestionOrder()
-        sO1.order = 0
-        sO1.process = p1
-        suggestionOrderList.append(sO1)
-        
-        //-------------------
-        
         
         //--------Suggestions of process free
         let s1:Suggestion = Suggestion()
@@ -138,22 +129,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         s1.topicTitle = "Audience"
         s1.isText = true
         s1.addToProcesses(p1)
-        //let s1Tags: Array<Tag> = [t1, t2, t3, t4, t6, t7, t8, t9, t10, t11, t12, t13, t17, t18, t19]
-//        s1.addToTags(t1)
-//        s1.addToTags(t2)
-//        s1.addToTags(t3)
-//        s1.addToTags(t4)
-//        s1.addToTags(t6)
-//        s1.addToTags(t7)
-//        s1.addToTags(t8)
-//        s1.addToTags(t9)
-//        s1.addToTags(t10)
-//        s1.addToTags(t11)
-//        s1.addToTags(t12)
-//        s1.addToTags(t13)
-//        s1.addToTags(t17)
-//        s1.addToTags(t18)
-//        s1.addToTags(t19)
+        let s1Tags: Array<Tag> = [t1, t2, t3, t4, t6, t7, t8, t9, t10, t11, t12, t13, t17, t18, t19]
+        self.addTagsInSuggestion(tags: s1Tags, s: s1)
         suggestionList.append(s1)
         
         let s2:Suggestion = Suggestion()
@@ -162,16 +139,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         s2.topicTitle = "Problem"
         s2.isText = true
         s2.addToProcesses(p1)
-        //let s2Tags:Array<Tag> = [t1, t2, t3, t4, t6, t7, t8, t9, t10, t11, t12, t13, t17, t18, t19]
-        //self.addTagsInSuggestion(tags: s2Tags, s: s2)
-//        s1.addToTags(t2)
-//        s1.addToTags(t3)
-//        s1.addToTags(t5)
-//        s1.addToTags(t10)
-//        s1.addToTags(t11)
-//        s1.addToTags(t13)
-//        s1.addToTags(t16)
-//        s1.addToTags(t17)
+        let s2Tags:Array<Tag> = [t1, t2, t3, t4, t6, t7, t8, t9, t10, t11, t12, t13, t17, t18, t19]
+        self.addTagsInSuggestion(tags: s2Tags, s: s2)
         suggestionList.append(s2)
         
         let s3:Suggestion = Suggestion()
@@ -180,22 +149,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         s3.topicTitle = "Impacts"
         s3.isText = true
         s3.addToProcesses(p1)
-//        let s3Tags: Array<Tag> = [t2, t3, t5, t6, t10, t11, t12, t13, t14, t16, t17, t18, t19]
-//        self.addTagsInSuggestion(tags: s3Tags, s: s3)
-//        s1.addToTags(t2)
-//        s1.addToTags(t3)
-//        s1.addToTags(t5)
-//        s1.addToTags(t6)
-//        s1.addToTags(t10)
-//        s1.addToTags(t11)
-//        s1.addToTags(t12)
-//        s1.addToTags(t13)
-//        s1.addToTags(t14)
-//        s1.addToTags(t16)
-//        s1.addToTags(t17)
-//        s1.addToTags(t18)
-//        s1.addToTags(t19)
-        
+        let s3Tags: Array<Tag> = [t2, t3, t5, t6, t10, t11, t12, t13, t14, t16, t17, t18, t19]
+        self.addTagsInSuggestion(tags: s3Tags, s: s3)
         suggestionList.append(s3)
         
         let s4:Suggestion = Suggestion()
@@ -204,77 +159,93 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         s4.topicTitle = "Motivations"
         s4.isText = true
         s4.addToProcesses(p1)
-//        let s4Tags: Array<Tag> = [t2, t3, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14, t15, t16, t17, t18, t19]
-//        self.addTagsInSuggestion(tags: s4Tags, s: s4)
-//        s1.addToTags(t2)
-//        s1.addToTags(t3)
-//        s1.addToTags(t5)
-//        s1.addToTags(t6)
-//        s1.addToTags(t10)
-//        s1.addToTags(t11)
-//        s1.addToTags(t12)
-//        s1.addToTags(t13)
-//        s1.addToTags(t14)
-//        s1.addToTags(t16)
-//        s1.addToTags(t17)
-//        s1.addToTags(t18)
-//        s1.addToTags(t19)
+        let s4Tags: Array<Tag> = [t2, t3, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14, t15, t16, t17, t18, t19]
+        self.addTagsInSuggestion(tags: s4Tags, s: s4)
         suggestionList.append(s4)
         //--------------------------------
         
-    
-    
         
+        //-----------suggestions Order in process free
+        let sO1:SuggestionOrder = SuggestionOrder()
+        sO1.order = 0
+        sO1.process = p1
+        sO1.suggestion = s1
+        suggestionOrderList.append(sO1)
+        
+        let sO2:SuggestionOrder = SuggestionOrder()
+        sO2.order = 0
+        sO2.process = p1
+        sO2.suggestion = s2
+        suggestionOrderList.append(sO2)
+        
+        let sO3:SuggestionOrder = SuggestionOrder()
+        sO3.order = 0
+        sO3.process = p1
+        sO3.suggestion = s3
+        suggestionOrderList.append(sO3)
+        
+        let sO4:SuggestionOrder = SuggestionOrder()
+        sO4.order = 0
+        sO4.process = p1
+        sO4.suggestion = s4
+        suggestionOrderList.append(sO4)
+        
+        //-------------------
+        
+        //--------saving suggestons in tags
+
+    
+    
         //---------Saving tags, processes and suggestions
         self.saving(recordsToSave:tagList, entityName: "Tag")
         self.saving(recordsToSave: processList, entityName: "Process")
-        self.saving(recordsToSave: suggestionOrderList, entityName: "SuggestionOrder")
         self.saving(recordsToSave: suggestionList, entityName: "Suggestion")
+        self.saving(recordsToSave: suggestionOrderList, entityName: "SuggestionOrder")
         //--------------------------------------------------
 
         return true
     }
     
-    // try this later
-//    func addTagsInSuggestion(tags:[Tag], s: Suggestion){
-//        for tag in tags{
-//            s.addToTags(tag)
+    // adding tags in a suggestion
+    func addTagsInSuggestion(tags:[Tag], s: Suggestion){
+        for tag in tags{
+            s.addToTags(tag)
+        }
+    }
+    
+//    func savingSuggestionsOnTags(tag: Tag, suggestions: [Suggestion]){
+//        for sug in suggestions{
+//            tag.addToSuggestions(sug)
 //        }
-//
 //    }
     
-    
     func saving(recordsToSave: [Any] ,entityName: String){
-        print("testing \(entityName)")
         let entity = DataManager.getEntity(entity: entityName)
         let entityRecords = DataManager.getAll(entity: entity)
-        print(entityRecords.objects.count)
-        
         if (entityRecords.success){
             if(entityRecords.objects.count == 0){
                 NSLog("Saving \(entityName)...")
                 if recordsToSave is [Process]{
                     for rec in recordsToSave as! [Process]{
-                        print("PROCESS")
                         rec.save()
                     }
                 }else if recordsToSave is [Tag]{
                     for rec in recordsToSave as! [Tag]{
-                        print("TAG")
                         rec.save()
                     }
                 }else if recordsToSave is [Suggestion]{
                     for rec in recordsToSave as! [Suggestion]{
-                        print("SUGGESTION")
                         rec.save()
                     }
                 }else if recordsToSave is [SuggestionOrder]{
                     for rec in recordsToSave as! [SuggestionOrder]{
-                        print("SUGGESTION ORDER")
+                        rec.save()
+                    }
+                }else if recordsToSave is [SuggestionStatus]{
+                    for rec in recordsToSave as! [SuggestionStatus]{
                         rec.save()
                     }
                 }
-                
                 
             }
         }else{
