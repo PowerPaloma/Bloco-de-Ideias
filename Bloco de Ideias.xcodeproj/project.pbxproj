@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0C9F2FC439CB661A78330101 /* Pods_Bloco_de_Ideias.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F40F065B579427B13474486E /* Pods_Bloco_de_Ideias.framework */; };
+		BE13FAB120E18B1D00579899 /* OverlayPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE13FAB020E18B1D00579899 /* OverlayPresentationController.swift */; };
+		BE13FAB320E18CC100579899 /* OverlayTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE13FAB220E18CC100579899 /* OverlayTransitioningDelegate.swift */; };
+		BE13FAB520E1918700579899 /* OverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE13FAB420E1918700579899 /* OverlayViewController.swift */; };
 		BE205A6120CE989A00B53288 /* IdeaBuilder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE205A5F20CE989A00B53288 /* IdeaBuilder.xcdatamodeld */; };
 		BE205A6D20CEA45400B53288 /* NewIdeaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE205A6C20CEA45400B53288 /* NewIdeaViewController.swift */; };
 		BE205ACF20D3D86600B53288 /* MyIdeasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE205ACD20D3D86600B53288 /* MyIdeasViewController.swift */; };
@@ -56,6 +59,9 @@
 /* Begin PBXFileReference section */
 		0290FE6C5410F9F7C3E06A60 /* Pods-Bloco de Ideias.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bloco de Ideias.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bloco de Ideias/Pods-Bloco de Ideias.debug.xcconfig"; sourceTree = "<group>"; };
 		77246C0EE9EB509EBFC78157 /* Pods-Bloco de Ideias.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bloco de Ideias.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bloco de Ideias/Pods-Bloco de Ideias.release.xcconfig"; sourceTree = "<group>"; };
+		BE13FAB020E18B1D00579899 /* OverlayPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayPresentationController.swift; sourceTree = "<group>"; };
+		BE13FAB220E18CC100579899 /* OverlayTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayTransitioningDelegate.swift; sourceTree = "<group>"; };
+		BE13FAB420E1918700579899 /* OverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayViewController.swift; sourceTree = "<group>"; };
 		BE205A6020CE989A00B53288 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		BE205A6C20CEA45400B53288 /* NewIdeaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewIdeaViewController.swift; sourceTree = "<group>"; };
 		BE205ACD20D3D86600B53288 /* MyIdeasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyIdeasViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +130,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BE13FAAF20E18AFB00579899 /* update */ = {
+			isa = PBXGroup;
+			children = (
+				BE13FAB020E18B1D00579899 /* OverlayPresentationController.swift */,
+				BE13FAB220E18CC100579899 /* OverlayTransitioningDelegate.swift */,
+				BE13FAB420E1918700579899 /* OverlayViewController.swift */,
+			);
+			path = update;
+			sourceTree = "<group>";
+		};
 		BE205AD120D3D91900B53288 /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +197,7 @@
 		BEFCB36B20C9560A006F8498 /* Bloco de Ideias */ = {
 			isa = PBXGroup;
 			children = (
+				BE13FAAF20E18AFB00579899 /* update */,
 				BE7D22B120DE6C3500FCC96C /* View */,
 				BE9F233F20D7F926007B58BB /* Protocols */,
 				BE205A5F20CE989A00B53288 /* IdeaBuilder.xcdatamodeld */,
@@ -368,6 +385,7 @@
 				BE7D231020DE8CCA00FCC96C /* TopicDrawCollectionViewCell.swift in Sources */,
 				BE7D22F320DE80B000FCC96C /* Tag.swift in Sources */,
 				BE33F5AA20DA9F4400A026C9 /* NewTopicImageViewController.swift in Sources */,
+				BE13FAB520E1918700579899 /* OverlayViewController.swift in Sources */,
 				BE9F234620D9315D007B58BB /* NewIdeaCollectionViewCell.swift in Sources */,
 				BE63581A20D941A8002666EC /* SearchTagsViewController.swift in Sources */,
 				BE205A6D20CEA45400B53288 /* NewIdeaViewController.swift in Sources */,
@@ -380,6 +398,7 @@
 				BE7D231320DE956400FCC96C /* ViewTopicTextViewController.swift in Sources */,
 				BE7D231520DE95B500FCC96C /* TopicDelegate.swift in Sources */,
 				BE7D230520DE80B000FCC96C /* TopicsEnum.swift in Sources */,
+				BE13FAB320E18CC100579899 /* OverlayTransitioningDelegate.swift in Sources */,
 				BE7D230820DE80B000FCC96C /* Suggestion.swift in Sources */,
 				BE74593C20E1330100700720 /* ViewTopicDrawViewController.swift in Sources */,
 				BE205A6120CE989A00B53288 /* IdeaBuilder.xcdatamodeld in Sources */,
@@ -387,6 +406,7 @@
 				BEFCB38220C9707B006F8498 /* IdeaViewController.swift in Sources */,
 				BE7D22D520DE803100FCC96C /* DrawView.swift in Sources */,
 				BE33F5AC20DACD7000A026C9 /* NewTopicTextViewController.swift in Sources */,
+				BE13FAB120E18B1D00579899 /* OverlayPresentationController.swift in Sources */,
 				BE7D22FD20DE80B000FCC96C /* ExtensionNSManagedObject.swift in Sources */,
 				BE63582F20DA7FA6002666EC /* TopicImageCollectionViewCell.swift in Sources */,
 				BE7D230020DE80B000FCC96C /* DataManager.swift in Sources */,
