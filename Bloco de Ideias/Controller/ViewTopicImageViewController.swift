@@ -33,9 +33,7 @@ class ViewTopicImageViewController: UIViewController {
     }
     
     
-    @IBAction func done(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
+    
     
     @IBAction func edit(_ sender: Any) {
         performSegue(withIdentifier: "editTopicImage", sender: self)

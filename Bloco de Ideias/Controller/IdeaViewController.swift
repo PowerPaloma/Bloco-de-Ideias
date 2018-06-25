@@ -80,6 +80,9 @@ class IdeaViewController: UIViewController {
             NSLog("Erro ao buscar topicos.")
         }
         collectionView.reloadData()
+        self.ideaImage.image = UIImage(data: self.idea.image! as Data)
+        self.titleIdea.text = self.idea.title
+        self.descrip.text = self.idea.desc
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -93,23 +96,32 @@ class IdeaViewController: UIViewController {
     
     //perform segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let dest = segue.destination as! UINavigationController
-        if dest.topViewController is ImproveIdeaViewController {
-            let vc = dest.topViewController as! ImproveIdeaViewController
-            vc.idea = self.idea
+        if segue.destination is UINavigationController {
+            let dest = segue.destination as! UINavigationController
+            
+            if dest.topViewController is ImproveIdeaViewController {
+                let vc = dest.topViewController as! ImproveIdeaViewController
+                vc.idea = self.idea
+            } else if dest.topViewController is NewIdeaViewController{
+                let vc = dest.topViewController as!NewIdeaViewController
+                vc.editingIdea = idea
+            }
+            
+        } else {
+            if segue.destination is ViewTopicTextViewController{
+                let vc = segue.destination as!ViewTopicTextViewController
+                vc.viewTopic = self.topicSelected
+            }
+            else if segue.destination is ViewTopicImageViewController{
+                let vc = segue.destination as!ViewTopicImageViewController
+                vc.viewTopic = self.topicSelected
+            }
+            else if segue.destination is ViewTopicDrawViewController{
+                let vc = segue.destination as!ViewTopicDrawViewController
+                vc.viewTopic = self.topicSelected
+            }
         }
-        if dest.topViewController is ViewTopicTextViewController{
-            let vc = dest.topViewController as!ViewTopicTextViewController
-            vc.viewTopic = self.topicSelected
-        }
-        if dest.topViewController is ViewTopicImageViewController{
-            let vc = dest.topViewController as!ViewTopicImageViewController
-            vc.viewTopic = self.topicSelected
-        }
-        if dest.topViewController is ViewTopicDrawViewController{
-            let vc = dest.topViewController as!ViewTopicDrawViewController
-            vc.viewTopic = self.topicSelected
-        }
+        
         
     }
     
@@ -236,6 +248,10 @@ class IdeaViewController: UIViewController {
             movingIndexPath = nil
         }
     }
+    @IBAction func compose(_ sender: Any) {
+        performSegue(withIdentifier: "editIdea", sender: nil)
+    }
+    
     
 }
 
@@ -360,6 +376,10 @@ extension IdeaViewController : UICollectionViewDelegate, UICollectionViewDataSou
         }
     }
 
+    
+    
+    
+    
     func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
         return indexPath.item != 0
     }

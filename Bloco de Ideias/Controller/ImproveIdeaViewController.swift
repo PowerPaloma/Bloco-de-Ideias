@@ -73,7 +73,7 @@ class ImproveIdeaViewController: UIViewController {
                     }).count >= 2 || ord == 0
                 }
                 
-                getRandomSuggestion()
+               // getRandomSuggestion()
             } else {
                 NSLog("There are no suggestions for you now...")
             }
@@ -95,13 +95,13 @@ class ImproveIdeaViewController: UIViewController {
         }))!
     }
     
-    func getRandomSuggestion(){
-        if 
-        let sug = filteredByOrd.remove(at: Int(arc4random_uniform(UInt32(filteredByOrd.count)))).0
-       
-        self.titleSugguestion.text = sug.titleS
-        self.descSuggestion.text = sug.descS
-    }
+//    func getRandomSuggestion(){
+//        if
+//            let sug = filteredByOrd.remove(at: Int(arc4random_uniform(UInt32(filteredByOrd.count)))).0
+//
+//        self.titleSugguestion.text = sug.titleS
+//        self.descSuggestion.text = sug.descS
+//    }
     
     @IBAction func exit(_ sender: UIBarButtonItem) {
         if answer.text != ""{
@@ -117,6 +117,6 @@ class ImproveIdeaViewController: UIViewController {
     }
     
     @IBAction func next(_ sender: UIBarButtonItem) {
-        getRandomSuggestion()
+        //getRandomSuggestion()
     }
 }

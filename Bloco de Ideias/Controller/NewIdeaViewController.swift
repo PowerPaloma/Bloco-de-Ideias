@@ -18,6 +18,9 @@ class NewIdeaViewController: UIViewController{
     @IBOutlet var scView: UIScrollView!
     @IBOutlet var button: UIButton!
     
+    var editingIdea : Idea?
+
+    
     var activeField: UITextField!
     var imagePicker = UIImagePickerController()
     
@@ -72,6 +75,17 @@ class NewIdeaViewController: UIViewController{
 
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: .UIKeyboardWillHide, object: nil)
+        
+        
+        if let ideaEd = editingIdea {
+            self.titleTF.text = ideaEd.title
+            self.desc.text = ideaEd.desc
+            self.image.image = UIImage(data: ideaEd.image!)
+            self.process.text = ideaEd.process?.name
+            self.tags(tags: Array(ideaEd.tags!) as! [Tag])
+        }
+        
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -172,12 +186,22 @@ class NewIdeaViewController: UIViewController{
                 alert.dismiss(animated: true, completion: nil)
             }
         }else{
-            self.newIdea.title = self.titleTF.text
-            self.newIdea.desc = self.desc.text
-            self.newIdea.image = UIImageJPEGRepresentation(self.image.image!, 1.0)!
-            DataManager.getContext().insert(self.newIdea)
-            self.newIdea.process = processes[processPicker.selectedRow(inComponent: 0)]
-            self.newIdea.save()
+            if let ideaEd = editingIdea {
+                ideaEd.title = self.titleTF.text
+                ideaEd.desc = self.desc.text
+                ideaEd.image = UIImageJPEGRepresentation(self.image.image!, 1.0)!
+//                DataManager.getContext().insert(self.newIdea)
+                ideaEd.process = processes[processPicker.selectedRow(inComponent: 0)]
+                ideaEd.save()
+                
+            }else{
+                self.newIdea.title = self.titleTF.text
+                self.newIdea.desc = self.desc.text
+                self.newIdea.image = UIImageJPEGRepresentation(self.image.image!, 1.0)!
+                DataManager.getContext().insert(self.newIdea)
+                self.newIdea.process = processes[processPicker.selectedRow(inComponent: 0)]
+                self.newIdea.save()
+            }
         }
         dismiss(animated: true, completion: nil)
     }
