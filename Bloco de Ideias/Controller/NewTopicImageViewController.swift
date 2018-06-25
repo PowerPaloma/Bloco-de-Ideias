@@ -43,7 +43,7 @@ class NewTopicImageViewController: UIViewController {
             }
         }else{
             self.newTopicImage.titleT = self.titleTextField.text
-            self.newTopicImage.imageT = UIImageJPEGRepresentation(self.image.image!, 1.0)! as NSData
+            self.newTopicImage.imageT = UIImageJPEGRepresentation(self.image.image!, 1.0)!
             self.newTopicImage.typeT = TopicsEnum.image.rawValue
             DataManager.getContext().insert(self.newTopicImage)
             self.newTopicImage.save()

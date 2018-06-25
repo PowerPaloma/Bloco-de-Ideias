@@ -25,33 +25,17 @@
 		BE63583020DA7FA6002666EC /* TopicImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE63582E20DA7FA6002666EC /* TopicImageCollectionViewCell.xib */; };
 		BE6358C020DC5A22002666EC /* ImproveIdeaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6358BF20DC5A22002666EC /* ImproveIdeaViewController.swift */; };
 		BE7D22D520DE803100FCC96C /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22D420DE803100FCC96C /* DrawView.swift */; };
-		BE7D22F120DE80B000FCC96C /* SuggestionOrder+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22D620DE80AB00FCC96C /* SuggestionOrder+CoreDataProperties.swift */; };
-		BE7D22F220DE80B000FCC96C /* SuggestionOrder+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22D720DE80AB00FCC96C /* SuggestionOrder+CoreDataClass.swift */; };
 		BE7D22F320DE80B000FCC96C /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22D820DE80AB00FCC96C /* Tag.swift */; };
-		BE7D22F420DE80B000FCC96C /* Topic+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22D920DE80AB00FCC96C /* Topic+CoreDataProperties.swift */; };
-		BE7D22F520DE80B000FCC96C /* Process+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22DA20DE80AB00FCC96C /* Process+CoreDataClass.swift */; };
-		BE7D22F620DE80B000FCC96C /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22DB20DE80AB00FCC96C /* User+CoreDataProperties.swift */; };
-		BE7D22F720DE80B000FCC96C /* Tag+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22DC20DE80AB00FCC96C /* Tag+CoreDataClass.swift */; };
 		BE7D22F820DE80B000FCC96C /* Idea.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22DD20DE80AC00FCC96C /* Idea.swift */; };
 		BE7D22F920DE80B000FCC96C /* SuggestionOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22DE20DE80AC00FCC96C /* SuggestionOrder.swift */; };
 		BE7D22FA20DE80B000FCC96C /* SuggestionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22DF20DE80AC00FCC96C /* SuggestionStatus.swift */; };
-		BE7D22FB20DE80B000FCC96C /* SuggestionStatus+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22E020DE80AD00FCC96C /* SuggestionStatus+CoreDataProperties.swift */; };
-		BE7D22FC20DE80B000FCC96C /* Idea+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22E120DE80AD00FCC96C /* Idea+CoreDataProperties.swift */; };
 		BE7D22FD20DE80B000FCC96C /* ExtensionNSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22E220DE80AD00FCC96C /* ExtensionNSManagedObject.swift */; };
-		BE7D22FE20DE80B000FCC96C /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22E320DE80AD00FCC96C /* User+CoreDataClass.swift */; };
 		BE7D22FF20DE80B000FCC96C /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22E420DE80AD00FCC96C /* Line.swift */; };
 		BE7D230020DE80B000FCC96C /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22E520DE80AE00FCC96C /* DataManager.swift */; };
-		BE7D230120DE80B000FCC96C /* Suggestion+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22E620DE80AE00FCC96C /* Suggestion+CoreDataClass.swift */; };
-		BE7D230220DE80B000FCC96C /* Process+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22E720DE80AE00FCC96C /* Process+CoreDataProperties.swift */; };
-		BE7D230320DE80B000FCC96C /* Suggestion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22E820DE80AE00FCC96C /* Suggestion+CoreDataProperties.swift */; };
-		BE7D230420DE80B000FCC96C /* Tag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22E920DE80AE00FCC96C /* Tag+CoreDataProperties.swift */; };
 		BE7D230520DE80B000FCC96C /* TopicsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22EA20DE80AF00FCC96C /* TopicsEnum.swift */; };
-		BE7D230620DE80B000FCC96C /* Topic+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22EB20DE80AF00FCC96C /* Topic+CoreDataClass.swift */; };
 		BE7D230720DE80B000FCC96C /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22EC20DE80AF00FCC96C /* Process.swift */; };
 		BE7D230820DE80B000FCC96C /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22ED20DE80AF00FCC96C /* Suggestion.swift */; };
-		BE7D230920DE80B000FCC96C /* SuggestionStatus+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22EE20DE80B000FCC96C /* SuggestionStatus+CoreDataClass.swift */; };
 		BE7D230A20DE80B000FCC96C /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22EF20DE80B000FCC96C /* Topic.swift */; };
-		BE7D230B20DE80B000FCC96C /* Idea+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22F020DE80B000FCC96C /* Idea+CoreDataClass.swift */; };
 		BE7D230D20DE84C000FCC96C /* NewTopicDrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D230C20DE84C000FCC96C /* NewTopicDrawViewController.swift */; };
 		BE7D231020DE8CCA00FCC96C /* TopicDrawCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D230E20DE8CCA00FCC96C /* TopicDrawCollectionViewCell.swift */; };
 		BE7D231120DE8CCA00FCC96C /* TopicDrawCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE7D230F20DE8CCA00FCC96C /* TopicDrawCollectionViewCell.xib */; };
@@ -87,33 +71,17 @@
 		BE63582E20DA7FA6002666EC /* TopicImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		BE6358BF20DC5A22002666EC /* ImproveIdeaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImproveIdeaViewController.swift; sourceTree = "<group>"; };
 		BE7D22D420DE803100FCC96C /* DrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
-		BE7D22D620DE80AB00FCC96C /* SuggestionOrder+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SuggestionOrder+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BE7D22D720DE80AB00FCC96C /* SuggestionOrder+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SuggestionOrder+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BE7D22D820DE80AB00FCC96C /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
-		BE7D22D920DE80AB00FCC96C /* Topic+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Topic+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BE7D22DA20DE80AB00FCC96C /* Process+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Process+CoreDataClass.swift"; sourceTree = "<group>"; };
-		BE7D22DB20DE80AB00FCC96C /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BE7D22DC20DE80AB00FCC96C /* Tag+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BE7D22DD20DE80AC00FCC96C /* Idea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Idea.swift; sourceTree = "<group>"; };
 		BE7D22DE20DE80AC00FCC96C /* SuggestionOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionOrder.swift; sourceTree = "<group>"; };
 		BE7D22DF20DE80AC00FCC96C /* SuggestionStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionStatus.swift; sourceTree = "<group>"; };
-		BE7D22E020DE80AD00FCC96C /* SuggestionStatus+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SuggestionStatus+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BE7D22E120DE80AD00FCC96C /* Idea+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Idea+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BE7D22E220DE80AD00FCC96C /* ExtensionNSManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionNSManagedObject.swift; sourceTree = "<group>"; };
-		BE7D22E320DE80AD00FCC96C /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BE7D22E420DE80AD00FCC96C /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		BE7D22E520DE80AE00FCC96C /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		BE7D22E620DE80AE00FCC96C /* Suggestion+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Suggestion+CoreDataClass.swift"; sourceTree = "<group>"; };
-		BE7D22E720DE80AE00FCC96C /* Process+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Process+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BE7D22E820DE80AE00FCC96C /* Suggestion+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Suggestion+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BE7D22E920DE80AE00FCC96C /* Tag+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BE7D22EA20DE80AF00FCC96C /* TopicsEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicsEnum.swift; sourceTree = "<group>"; };
-		BE7D22EB20DE80AF00FCC96C /* Topic+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Topic+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BE7D22EC20DE80AF00FCC96C /* Process.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Process.swift; sourceTree = "<group>"; };
 		BE7D22ED20DE80AF00FCC96C /* Suggestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Suggestion.swift; sourceTree = "<group>"; };
-		BE7D22EE20DE80B000FCC96C /* SuggestionStatus+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SuggestionStatus+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BE7D22EF20DE80B000FCC96C /* Topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
-		BE7D22F020DE80B000FCC96C /* Idea+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Idea+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BE7D230C20DE84C000FCC96C /* NewTopicDrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTopicDrawViewController.swift; sourceTree = "<group>"; };
 		BE7D230E20DE8CCA00FCC96C /* TopicDrawCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDrawCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE7D230F20DE8CCA00FCC96C /* TopicDrawCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicDrawCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -247,30 +215,14 @@
 				BE7D22E520DE80AE00FCC96C /* DataManager.swift */,
 				BE7D22E220DE80AD00FCC96C /* ExtensionNSManagedObject.swift */,
 				BE7D22DD20DE80AC00FCC96C /* Idea.swift */,
-				BE7D22F020DE80B000FCC96C /* Idea+CoreDataClass.swift */,
-				BE7D22E120DE80AD00FCC96C /* Idea+CoreDataProperties.swift */,
 				BE7D22E420DE80AD00FCC96C /* Line.swift */,
 				BE7D22EC20DE80AF00FCC96C /* Process.swift */,
-				BE7D22DA20DE80AB00FCC96C /* Process+CoreDataClass.swift */,
-				BE7D22E720DE80AE00FCC96C /* Process+CoreDataProperties.swift */,
 				BE7D22ED20DE80AF00FCC96C /* Suggestion.swift */,
-				BE7D22E620DE80AE00FCC96C /* Suggestion+CoreDataClass.swift */,
-				BE7D22E820DE80AE00FCC96C /* Suggestion+CoreDataProperties.swift */,
 				BE7D22DE20DE80AC00FCC96C /* SuggestionOrder.swift */,
-				BE7D22D720DE80AB00FCC96C /* SuggestionOrder+CoreDataClass.swift */,
-				BE7D22D620DE80AB00FCC96C /* SuggestionOrder+CoreDataProperties.swift */,
 				BE7D22DF20DE80AC00FCC96C /* SuggestionStatus.swift */,
-				BE7D22EE20DE80B000FCC96C /* SuggestionStatus+CoreDataClass.swift */,
-				BE7D22E020DE80AD00FCC96C /* SuggestionStatus+CoreDataProperties.swift */,
 				BE7D22D820DE80AB00FCC96C /* Tag.swift */,
-				BE7D22DC20DE80AB00FCC96C /* Tag+CoreDataClass.swift */,
-				BE7D22E920DE80AE00FCC96C /* Tag+CoreDataProperties.swift */,
 				BE7D22EF20DE80B000FCC96C /* Topic.swift */,
-				BE7D22EB20DE80AF00FCC96C /* Topic+CoreDataClass.swift */,
-				BE7D22D920DE80AB00FCC96C /* Topic+CoreDataProperties.swift */,
 				BE7D22EA20DE80AF00FCC96C /* TopicsEnum.swift */,
-				BE7D22E320DE80AD00FCC96C /* User+CoreDataClass.swift */,
-				BE7D22DB20DE80AB00FCC96C /* User+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -403,42 +355,26 @@
 			files = (
 				BE205AD420D3D94400B53288 /* MyIdeaCollectionViewCell.swift in Sources */,
 				BE7D230A20DE80B000FCC96C /* Topic.swift in Sources */,
-				BE7D22F520DE80B000FCC96C /* Process+CoreDataClass.swift in Sources */,
 				BE7D230D20DE84C000FCC96C /* NewTopicDrawViewController.swift in Sources */,
-				BE7D22F120DE80B000FCC96C /* SuggestionOrder+CoreDataProperties.swift in Sources */,
 				BE33F5A420D94B7400A026C9 /* TagDelegate.swift in Sources */,
 				BE9F234120D7F950007B58BB /* IdeaDelegate.swift in Sources */,
-				BE7D22FC20DE80B000FCC96C /* Idea+CoreDataProperties.swift in Sources */,
 				BE63582B20DA79C8002666EC /* TopicTextCollectionViewCell.swift in Sources */,
-				BE7D22FE20DE80B000FCC96C /* User+CoreDataClass.swift in Sources */,
-				BE7D230620DE80B000FCC96C /* Topic+CoreDataClass.swift in Sources */,
-				BE7D22FB20DE80B000FCC96C /* SuggestionStatus+CoreDataProperties.swift in Sources */,
 				BE7D231020DE8CCA00FCC96C /* TopicDrawCollectionViewCell.swift in Sources */,
 				BE7D22F320DE80B000FCC96C /* Tag.swift in Sources */,
-				BE7D22F720DE80B000FCC96C /* Tag+CoreDataClass.swift in Sources */,
-				BE7D22F620DE80B000FCC96C /* User+CoreDataProperties.swift in Sources */,
 				BE33F5AA20DA9F4400A026C9 /* NewTopicImageViewController.swift in Sources */,
 				BE9F234620D9315D007B58BB /* NewIdeaCollectionViewCell.swift in Sources */,
-				BE7D22F420DE80B000FCC96C /* Topic+CoreDataProperties.swift in Sources */,
 				BE63581A20D941A8002666EC /* SearchTagsViewController.swift in Sources */,
 				BE205A6D20CEA45400B53288 /* NewIdeaViewController.swift in Sources */,
 				BE6358C020DC5A22002666EC /* ImproveIdeaViewController.swift in Sources */,
 				BE7D22FF20DE80B000FCC96C /* Line.swift in Sources */,
 				BE7D22F920DE80B000FCC96C /* SuggestionOrder.swift in Sources */,
-				BE7D230320DE80B000FCC96C /* Suggestion+CoreDataProperties.swift in Sources */,
-				BE7D230B20DE80B000FCC96C /* Idea+CoreDataClass.swift in Sources */,
-				BE7D230120DE80B000FCC96C /* Suggestion+CoreDataClass.swift in Sources */,
 				BEFCB36F20C9560A006F8498 /* ViewController.swift in Sources */,
-				BE7D230220DE80B000FCC96C /* Process+CoreDataProperties.swift in Sources */,
 				BEFCB36D20C9560A006F8498 /* AppDelegate.swift in Sources */,
 				BE7D231320DE956400FCC96C /* ViewTopicTextViewController.swift in Sources */,
 				BE7D231520DE95B500FCC96C /* TopicDelegate.swift in Sources */,
-				BE7D230920DE80B000FCC96C /* SuggestionStatus+CoreDataClass.swift in Sources */,
 				BE7D230520DE80B000FCC96C /* TopicsEnum.swift in Sources */,
-				BE7D230420DE80B000FCC96C /* Tag+CoreDataProperties.swift in Sources */,
 				BE7D230820DE80B000FCC96C /* Suggestion.swift in Sources */,
 				BE205A6120CE989A00B53288 /* IdeaBuilder.xcdatamodeld in Sources */,
-				BE7D22F220DE80B000FCC96C /* SuggestionOrder+CoreDataClass.swift in Sources */,
 				BE205AD720D3F9C900B53288 /* ReorderableFlowLayout.swift in Sources */,
 				BEFCB38220C9707B006F8498 /* IdeaViewController.swift in Sources */,
 				BE7D22D520DE803100FCC96C /* DrawView.swift in Sources */,

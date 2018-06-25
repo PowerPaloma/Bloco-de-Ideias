@@ -29,16 +29,20 @@ class ImproveIdeaViewController: UIViewController {
         //Core Data - getting suggestions who has the tag of this idea
         do {
             let fetchRequest : NSFetchRequest<Suggestion> = Suggestion.fetchRequest()
+            //(ANY tags.name in %@)
             //AND (suggestionStatus.@count == 0 OR NOT (suggestionStatus.idea.title CONTAINS[cd] %@))
-            fetchRequest.predicate = NSPredicate(format: "(ANY tags.name in %@) AND (%@ in processes.name)",
-                                                 tagsNames //,idea.title!
+            //AND (%@ in processes.name)
+            fetchRequest.predicate = NSPredicate(format: "(ANY processes.name == %@)"
+                                                 //,tagsNames
+                                                //,idea.title!
                                                     ,idea.process!.name!
             )
             
             let fetchedResults = try context.fetch(fetchRequest)
             if fetchedResults.count > 0 {
+                print("Fetched", fetchedResults.count, "suggestions")
                 for sug in fetchedResults {
-                    print(sug.titleS!)
+                    print((sug.processes) ?? "NOTHING")
                     
                     let fetchRequest2 : NSFetchRequest<SuggestionOrder> = SuggestionOrder.fetchRequest()
                     fetchRequest2.predicate = NSPredicate(format: "process.name == %@ AND suggestion.titleS == %@",
@@ -46,20 +50,20 @@ class ImproveIdeaViewController: UIViewController {
                     
                     let fetchedResults2 = try context.fetch(fetchRequest2)
                     if fetchedResults2.count > 0 {
-                        print(fetchedResults2.count)
-                        
                         suggestionsOrder.append((sug, fetchedResults2.first!.order))
+                    } else {
+                        NSLog("Error on fetch suggestion order...")
                     }
                 }
+                
+                getRandomSuggestion()
+            } else {
+                NSLog("There are no suggestions for you now...")
             }
         }
         catch {
-            print ("fetch task failed", error)
+            print ("Error on reading suggestions:", error)
         }
-        
-        self.titleSugguestion.text = suggestionsOrder[0].0.titleS
-        self.descSuggestion.text = suggestionsOrder[0].0.descS
-//
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,6 +71,10 @@ class ImproveIdeaViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func getRandomSuggestion(){
+        self.titleSugguestion.text = suggestionsOrder[0].0.titleS
+        self.descSuggestion.text = suggestionsOrder[0].0.descS
+    }
     
     @IBAction func exit(_ sender: UIBarButtonItem) {
         if answer.text != ""{
