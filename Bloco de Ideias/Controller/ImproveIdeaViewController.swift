@@ -73,7 +73,7 @@ class ImproveIdeaViewController: UIViewController {
                     }).count >= 2 || ord == 0
                 }
                 
-                getRandomSuggestion()
+               // getRandomSuggestion()
             } else {
                 NSLog("There are no suggestions for you now...")
             }

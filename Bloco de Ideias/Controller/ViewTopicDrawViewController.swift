@@ -32,10 +32,6 @@ class ViewTopicDrawViewController: UIViewController {
     }
 
     
-    @IBAction func done(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
     @IBAction func edit(_ sender: Any) {
         performSegue(withIdentifier: "editTopicDraw", sender: nil)
     }
