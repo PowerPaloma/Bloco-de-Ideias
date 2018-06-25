@@ -816,7 +816,15 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AAd-LU-O0u">
                                 <rect key="frame" x="0.0" y="559" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem id="DdQ-Az-83y"/>
+                                    <barButtonItem title="pen" id="wYP-lA-J7K"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="omQ-r6-3WE"/>
+                                    <barButtonItem title="eraser" id="eDv-Ru-LGR">
+                                        <connections>
+                                            <action selector="eraserAction:" destination="7UW-iv-dSw" id="vew-9Z-NoM"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="a0R-Tq-lyS"/>
+                                    <barButtonItem title="save" id="4AF-Bc-wHf"/>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -985,6 +993,7 @@
                         <outlet property="descrip" destination="fhb-Kc-i2q" id="jRk-Uq-rWh"/>
                         <outlet property="editButton" destination="ERv-ru-Vf8" id="ND9-Rg-4H0"/>
                         <outlet property="ideaImage" destination="rhM-27-36k" id="Gzr-Dd-5bK"/>
+                        <outlet property="scrollView" destination="Uac-CC-Bum" id="Ala-Az-1jA"/>
                         <outlet property="titleIdea" destination="2aO-2I-mTE" id="WZE-7m-wCp"/>
                         <segue destination="oXU-TB-V9k" kind="presentation" identifier="newTopicText" id="ues-vQ-KO9"/>
                         <segue destination="fsS-fT-1KP" kind="presentation" identifier="newTopicDraw" id="b0x-a7-WBB"/>

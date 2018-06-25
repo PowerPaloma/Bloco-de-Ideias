@@ -16,6 +16,7 @@ class NewTopicDrawViewController: UIViewController {
     var newTopicDraw = Topic()
     var editingTopic : Topic?
     var lastColorUsed = UIButton()
+    var erasing = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,6 +87,16 @@ class NewTopicDrawViewController: UIViewController {
         button.isSelected = true
         lastColorUsed = button
         drawView.backgroundColor = color
+    }
+    
+    @IBAction func eraserAction(_ sender: Any) {
+        if erasing {
+            erasing = false
+            drawView.drawColor = UIColor.black
+        } else {
+            erasing = true
+            drawView.drawColor = drawView.backgroundColor!
+        }
     }
     
     @IBAction func cancelAction(_ sender: Any) {
