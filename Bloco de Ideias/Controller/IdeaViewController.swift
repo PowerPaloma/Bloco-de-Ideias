@@ -17,12 +17,20 @@ class IdeaViewController: UIViewController {
     @IBOutlet var editButton: UIButton!
     @IBOutlet var scrollView: UIScrollView!
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet var viewP: UIView!
+    
+    @IBOutlet var swipeUp: UISwipeGestureRecognizer!
+    
     //Variables
     var idea = Idea()
     var topicsList : [Topic] = []
     var longPressGR: UILongPressGestureRecognizer!
     var movingIndexPath: NSIndexPath?
     var topicSelected = Topic()
+    
+    let overlayTransitioningDelegate = OverlayTransitioningDelegate()
+
 
     
     //Values for UICollectionViewFlowLayout
@@ -57,6 +65,12 @@ class IdeaViewController: UIViewController {
         self.ideaImage.image = UIImage(data: self.idea.image! as Data)
         self.titleIdea.text = self.idea.title
         self.descrip.text = self.idea.desc
+        
+        swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(IdeaViewController.swipeUp(_:)))
+        swipeUp.direction = UISwipeGestureRecognizerDirection.up
+        self.view.addGestureRecognizer(swipeUp)
+
+
     }
 
     override func viewDidLayoutSubviews() {
@@ -122,6 +136,10 @@ class IdeaViewController: UIViewController {
             else if segue.destination is ViewTopicDrawViewController{
                 let vc = segue.destination as!ViewTopicDrawViewController
                 vc.viewTopic = self.topicSelected
+            }
+            if segue.identifier == "UP" {
+                let overlayVC = segue.destination as UIViewController
+                prepareOverlay(viewController: overlayVC)
             }
         }
         
@@ -255,6 +273,34 @@ class IdeaViewController: UIViewController {
         performSegue(withIdentifier: "editIdea", sender: nil)
     }
     
+    //teste
+    
+    
+    
+    @IBAction func swipeUp(_ recognizer: UISwipeGestureRecognizer) {
+        if (recognizer.direction == UISwipeGestureRecognizerDirection.up)
+        {
+            
+//            let location = recognizer.location(in: collectionView)
+//            print(location)
+//            print(collectionView.contains(location as! UIFocusEnvironment))
+//            if collectionView.frame.contains(location){
+                let overlayViewController = storyboard?.instantiateViewController(withIdentifier: "overlayViewController") as! UIViewController
+                prepareOverlay(viewController: overlayViewController)
+                present(overlayViewController, animated: true)
+//            }
+        }
+    }
+    
+    
+    
+    
+    
+    private func prepareOverlay(viewController: UIViewController) {
+        viewController.transitioningDelegate = overlayTransitioningDelegate
+        viewController.modalPresentationStyle = .custom
+    }
+
     
 }
 
@@ -428,3 +474,4 @@ extension IdeaViewController : UICollectionViewDelegateFlowLayout {
 //    
 //    
 //}
+
