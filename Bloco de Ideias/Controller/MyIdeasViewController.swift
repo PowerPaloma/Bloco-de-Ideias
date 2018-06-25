@@ -86,9 +86,9 @@ class MyIdeasViewController: UIViewController {
     //Delete all ideas
     @IBAction func deleteAllData(_ sender: UIBarButtonItem) {
         DataManager.deleteAll(entity: Tag.entityDescription())
-        DataManager.deleteAll(entity: Idea.entityDescription())
         DataManager.deleteAll(entity: Process.entityDescription())
         DataManager.deleteAll(entity: Topic.entityDescription())
+        DataManager.deleteAll(entity: Idea.entityDescription())
         DataManager.deleteAll(entity: SuggestionStatus.entityDescription())
         DataManager.deleteAll(entity: SuggestionOrder.entityDescription())
         DataManager.deleteAll(entity: Suggestion.entityDescription())
