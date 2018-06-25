@@ -41,8 +41,8 @@ class IdeaViewController: UIViewController {
         self.collectionView.register(nibImage, forCellWithReuseIdentifier: "TopicImageCell")
         let nibDraw = UINib(nibName: "TopicDrawCollectionViewCell", bundle: nil)
         self.collectionView.register(nibDraw, forCellWithReuseIdentifier: "TopicDrawCell")
-        let nibNew = UINib(nibName: "NewIdeaCollectionViewCell", bundle: nil)
-        self.collectionView.register(nibNew, forCellWithReuseIdentifier: "NewIdeaCell")
+        let nibNew = UINib(nibName: "NewTopicCollectionViewCell", bundle: nil)
+        self.collectionView.register(nibNew, forCellWithReuseIdentifier: "NewTopicCell")
         
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
@@ -83,6 +83,8 @@ class IdeaViewController: UIViewController {
         self.ideaImage.image = UIImage(data: self.idea.image! as Data)
         self.titleIdea.text = self.idea.title
         self.descrip.text = self.idea.desc
+        
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -262,7 +264,7 @@ extension IdeaViewController : UICollectionViewDelegate, UICollectionViewDataSou
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if(indexPath.row == 0){
-            return self.collectionView.dequeueReusableCell(withReuseIdentifier: "NewIdeaCell", for: indexPath) as! NewIdeaCollectionViewCell
+            return self.collectionView.dequeueReusableCell(withReuseIdentifier: "NewTopicCell", for: indexPath) as! NewTopicCollectionViewCell
         }else{
             //Use diferent types of cells depending on the topic type
             if topicsList[indexPath.row-1].typeT == TopicsEnum.text.rawValue {
