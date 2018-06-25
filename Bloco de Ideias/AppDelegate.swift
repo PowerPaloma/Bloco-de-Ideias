@@ -162,8 +162,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let s4Tags: Array<Tag> = [t2, t3, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14, t15, t16, t17, t18, t19]
         self.addTagsInSuggestion(tags: s4Tags, s: s4)
         suggestionList.append(s4)
+        
+        let s5:Suggestion = Suggestion()
+        s5.titleS = "Where my idea can be applied?"
+        s5.descS = "What are use cases of my idea??"
+        s5.topicTitle = "Aplications"
+        s5.isText = true
+        s5.addToProcesses(p1)
+        let s5Tags: Array<Tag> = [t1, t2, t3, t5, t6, t7, t8, t9, t10, t11, t12, t13, t16, t17, t18, t19]
+        self.addTagsInSuggestion(tags: s5Tags, s: s5)
+        suggestionList.append(s5)
+        
+        let s6:Suggestion = Suggestion()
+        s6.titleS = "What are the alternatives for my idea?"
+        s6.descS = "What things already exist that could solve the same problem?"
+        s6.topicTitle = "Alternatives"
+        s6.isText = true
+        s6.addToProcesses(p1)
+        let s6Tags: Array<Tag> = [t1, t2, t3, t5, t10, t11, t12, t13, t16, t17, t18, t19]
+        self.addTagsInSuggestion(tags: s6Tags, s: s6)
+        suggestionList.append(s6)
+    
         //--------------------------------
         
+        //-------saving suggestions in process free
+        p1.addToSuggestions(s1)
+        p1.addToSuggestions(s2)
+        p1.addToSuggestions(s3)
+        p1.addToSuggestions(s4)
+        p1.addToSuggestions(s5)
+        p1.addToSuggestions(s6)
+        //---------------------
         
         //-----------suggestions Order in process free
         let sO1:SuggestionOrder = SuggestionOrder()
@@ -190,16 +219,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         sO4.suggestion = s4
         suggestionOrderList.append(sO4)
         
+        let sO5:SuggestionOrder = SuggestionOrder()
+        sO5.order = 1
+        sO5.process = p1
+        sO5.suggestion = s5
+        suggestionOrderList.append(sO5)
+        
+        let sO6:SuggestionOrder = SuggestionOrder()
+        sO6.order = 1
+        sO6.process = p1
+        sO6.suggestion = s6
+        suggestionOrderList.append(sO6)
+        
         //-------------------
+        
+       
+        
         
         //--------saving suggestons in tags
 
     
     
         //---------Saving tags, processes and suggestions
-        self.saving(recordsToSave:tagList, entityName: "Tag")
-        self.saving(recordsToSave: processList, entityName: "Process")
-        self.saving(recordsToSave: suggestionList, entityName: "Suggestion")
+        self.saving(recordsToSave: tagList,             entityName: "Tag")
+        self.saving(recordsToSave: processList,         entityName: "Process")
+        self.saving(recordsToSave: suggestionList,      entityName: "Suggestion")
         self.saving(recordsToSave: suggestionOrderList, entityName: "SuggestionOrder")
         //--------------------------------------------------
 
@@ -219,34 +263,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        }
 //    }
     
-    func saving(recordsToSave: [Any] ,entityName: String){
+    func saving(recordsToSave: [NSManagedObject] ,entityName: String){
         let entity = DataManager.getEntity(entity: entityName)
         let entityRecords = DataManager.getAll(entity: entity)
         if (entityRecords.success){
             if(entityRecords.objects.count == 0){
                 NSLog("Saving \(entityName)...")
-                if recordsToSave is [Process]{
-                    for rec in recordsToSave as! [Process]{
-                        rec.save()
-                    }
-                }else if recordsToSave is [Tag]{
-                    for rec in recordsToSave as! [Tag]{
-                        rec.save()
-                    }
-                }else if recordsToSave is [Suggestion]{
-                    for rec in recordsToSave as! [Suggestion]{
-                        rec.save()
-                    }
-                }else if recordsToSave is [SuggestionOrder]{
-                    for rec in recordsToSave as! [SuggestionOrder]{
-                        rec.save()
-                    }
-                }else if recordsToSave is [SuggestionStatus]{
-                    for rec in recordsToSave as! [SuggestionStatus]{
-                        rec.save()
-                    }
+                for rec in recordsToSave{
+                    rec.save()
                 }
-                
             }
         }else{
             NSLog("Error on saving \(entityName)...")

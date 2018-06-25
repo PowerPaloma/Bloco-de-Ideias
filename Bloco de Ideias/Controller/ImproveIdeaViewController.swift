@@ -20,6 +20,12 @@ class ImproveIdeaViewController: UIViewController {
     var idea = Idea()
     var suggestionsOrder: [(Suggestion,Int64)] = []
     
+    var notAnswered: [(Suggestion,Int64)] = []
+    
+    var answered: [(Suggestion,Int64)] = []
+    
+    var filteredByOrd: [(Suggestion,Int64)] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,20 +35,17 @@ class ImproveIdeaViewController: UIViewController {
         //Core Data - getting suggestions who has the tag of this idea
         do {
             let fetchRequest : NSFetchRequest<Suggestion> = Suggestion.fetchRequest()
-            //(ANY tags.name in %@)
-            //AND (suggestionStatus.@count == 0 OR NOT (suggestionStatus.idea.title CONTAINS[cd] %@))
-            //AND (%@ in processes.name)
-            fetchRequest.predicate = NSPredicate(format: "(ANY processes.name == %@)"
-                                                 //,tagsNames
-                                                //,idea.title!
-                                                    ,idea.process!.name!
-            )
-            
+            // AND (suggestionStatus.@count == 0 OR NOT (ANY suggestionStatus.idea.title =[cd] %@))
+            fetchRequest.predicate = NSPredicate(format:"(ANY tags.name in %@) AND (ANY processes.name in %@)"
+                                               ,tagsNames
+                                                ,[idea.process!.name!]
+//                                               ,idea.title!
+         )
+
             let fetchedResults = try context.fetch(fetchRequest)
             if fetchedResults.count > 0 {
                 print("Fetched", fetchedResults.count, "suggestions")
                 for sug in fetchedResults {
-                    print((sug.processes) ?? "NOTHING")
                     
                     let fetchRequest2 : NSFetchRequest<SuggestionOrder> = SuggestionOrder.fetchRequest()
                     fetchRequest2.predicate = NSPredicate(format: "process.name == %@ AND suggestion.titleS == %@",
@@ -54,6 +57,20 @@ class ImproveIdeaViewController: UIViewController {
                     } else {
                         NSLog("Error on fetch suggestion order...")
                     }
+                }
+                
+                notAnswered = suggestionsOrder.filter({ (sug,_) -> Bool in
+                    !self.isAnswered(sug)
+                })
+                
+                answered = suggestionsOrder.filter({ (sug,_) -> Bool in
+                    self.isAnswered(sug)
+                })
+                
+                filteredByOrd = notAnswered.filter { (_, ord) -> Bool in
+                    answered.filter({ (_, ord2) -> Bool in
+                        ord2 == ord - 1
+                    }).count >= 2 || ord == 0
                 }
                 
                 getRandomSuggestion()
@@ -71,9 +88,19 @@ class ImproveIdeaViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func isAnswered(_ sug: Suggestion) -> Bool {
+        // verifica se a idea está incluída no conjunto das ideias que respodeu a sugestão
+        return (sug.suggestionStatus?.reduce(false, { (r, sugStat) -> Bool in
+            r || (sugStat as! SuggestionStatus).idea?.title == self.idea.title
+        }))!
+    }
+    
     func getRandomSuggestion(){
-        self.titleSugguestion.text = suggestionsOrder[0].0.titleS
-        self.descSuggestion.text = suggestionsOrder[0].0.descS
+        if 
+        let sug = filteredByOrd.remove(at: Int(arc4random_uniform(UInt32(filteredByOrd.count)))).0
+       
+        self.titleSugguestion.text = sug.titleS
+        self.descSuggestion.text = sug.descS
     }
     
     @IBAction func exit(_ sender: UIBarButtonItem) {
@@ -90,6 +117,6 @@ class ImproveIdeaViewController: UIViewController {
     }
     
     @IBAction func next(_ sender: UIBarButtonItem) {
-        
+        getRandomSuggestion()
     }
 }
