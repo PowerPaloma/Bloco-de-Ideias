@@ -174,7 +174,7 @@ class NewIdeaViewController: UIViewController{
         }else{
             self.newIdea.title = self.titleTF.text
             self.newIdea.desc = self.desc.text
-            self.newIdea.image = UIImageJPEGRepresentation(self.image.image!, 1.0)! as NSData
+            self.newIdea.image = UIImageJPEGRepresentation(self.image.image!, 1.0)!
             DataManager.getContext().insert(self.newIdea)
             self.newIdea.process = processes[processPicker.selectedRow(inComponent: 0)]
             self.newIdea.save()

@@ -375,7 +375,7 @@ extension IdeaViewController : UICollectionViewDelegateFlowLayout {
 
 extension IdeaViewController: TopicDelegate{
     func sendTopicToView(topic: Topic) {
-        <#code#>
+        
     }
     
     

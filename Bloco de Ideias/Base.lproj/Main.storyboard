@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
@@ -784,6 +783,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Umq-oZ-lww">
                                                 <rect key="frame" x="0.0" y="193" width="375" height="48"/>
                                                 <state key="normal" title="Improve Idea"/>
+                                                <connections>
+                                                    <segue destination="aM4-wu-ba5" kind="presentation" id="HSV-2I-URY"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

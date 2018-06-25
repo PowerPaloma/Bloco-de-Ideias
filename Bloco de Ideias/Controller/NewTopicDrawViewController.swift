@@ -35,7 +35,7 @@ class NewTopicDrawViewController: UIViewController {
             }
         }else{
             let image_draw = drawView.getImage()
-            self.newTopicDraw.imageT = UIImageJPEGRepresentation(image_draw, 1.0)! as NSData
+            self.newTopicDraw.imageT = UIImageJPEGRepresentation(image_draw, 1.0)!
             self.newTopicDraw.titleT = self.titleTextField.text
             self.newTopicDraw.typeT = TopicsEnum.draw.rawValue
             self.newTopicDraw.save()
