@@ -21,6 +21,7 @@ class IdeaViewController: UIViewController {
     var topicsList : [Topic] = []
     var longPressGR: UILongPressGestureRecognizer!
     var movingIndexPath: NSIndexPath?
+    var topicSelected = Topic()
     
     //Values for UICollectionViewFlowLayout
     let inset: CGFloat = 8
@@ -320,9 +321,17 @@ extension IdeaViewController : UICollectionViewDelegate, UICollectionViewDataSou
             //Show actionsheet
             self.present(actionSheet, animated: true, completion: nil)
         }else{
-//            self.ideaSelected = indexPath.row - 1
-//            performSegue(withIdentifier: "viewIdea", sender: nil)
-            print("Click in a topic cell")
+           self.topicSelected = topicsList[indexPath.row - 1]
+            
+            if topicSelected.typeT == TopicsEnum.text.rawValue{
+                performSegue(withIdentifier: "viewTopicText", sender: nil)
+            }
+            else if topicSelected.typeT == TopicsEnum.draw.rawValue{
+                performSegue(withIdentifier: "viewTopicImage", sender: nil)
+            }
+            else if topicSelected.typeT == TopicsEnum.image.rawValue{
+                performSegue(withIdentifier: "viewTopicImage", sender: nil)
+            }
         }
     }
 
@@ -362,4 +371,12 @@ extension IdeaViewController : UICollectionViewDelegateFlowLayout {
         
         return CGSize(width: itemWidth, height: 160.0)
     }
+}
+
+extension IdeaViewController: TopicDelegate{
+    func sendTopicToView(topic: Topic) {
+        <#code#>
+    }
+    
+    
 }

@@ -10,6 +10,13 @@ import Foundation
 
 import UIKit
 
+extension UIColor {
+    static var yellow: UIColor  { return UIColor(red:1.00, green:0.97, blue:0.66, alpha:1.0) }
+    static var pink: UIColor  { return UIColor(red:0.98, green:0.83, blue:0.85, alpha:1.0) }
+    static var blue: UIColor  { return UIColor(red:0.78, green:0.86, blue:0.98, alpha:1.0) }
+    static var green: UIColor  { return UIColor(red:0.81, green:0.96, blue:0.84, alpha:1.0) }
+}
+
 public class DrawView: UIView {
     
     var lines: [Line] = []

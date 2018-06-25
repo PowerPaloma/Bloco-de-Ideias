@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Foundation
+
 
 protocol TagDelegate : class {
     func tags(tags: [Tag])

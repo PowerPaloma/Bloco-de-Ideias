@@ -55,6 +55,8 @@
 		BE7D230D20DE84C000FCC96C /* NewTopicDrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D230C20DE84C000FCC96C /* NewTopicDrawViewController.swift */; };
 		BE7D231020DE8CCA00FCC96C /* TopicDrawCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D230E20DE8CCA00FCC96C /* TopicDrawCollectionViewCell.swift */; };
 		BE7D231120DE8CCA00FCC96C /* TopicDrawCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE7D230F20DE8CCA00FCC96C /* TopicDrawCollectionViewCell.xib */; };
+		BE7D231320DE956400FCC96C /* ViewTopicTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D231220DE956400FCC96C /* ViewTopicTextViewController.swift */; };
+		BE7D231520DE95B500FCC96C /* TopicDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D231420DE95B500FCC96C /* TopicDelegate.swift */; };
 		BE9F234120D7F950007B58BB /* IdeaDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F234020D7F950007B58BB /* IdeaDelegate.swift */; };
 		BE9F234620D9315D007B58BB /* NewIdeaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F234420D9315D007B58BB /* NewIdeaCollectionViewCell.swift */; };
 		BE9F234720D9315D007B58BB /* NewIdeaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE9F234520D9315D007B58BB /* NewIdeaCollectionViewCell.xib */; };
@@ -115,6 +117,8 @@
 		BE7D230C20DE84C000FCC96C /* NewTopicDrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTopicDrawViewController.swift; sourceTree = "<group>"; };
 		BE7D230E20DE8CCA00FCC96C /* TopicDrawCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDrawCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE7D230F20DE8CCA00FCC96C /* TopicDrawCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicDrawCollectionViewCell.xib; sourceTree = "<group>"; };
+		BE7D231220DE956400FCC96C /* ViewTopicTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTopicTextViewController.swift; sourceTree = "<group>"; };
+		BE7D231420DE95B500FCC96C /* TopicDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDelegate.swift; sourceTree = "<group>"; };
 		BE9F234020D7F950007B58BB /* IdeaDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaDelegate.swift; sourceTree = "<group>"; };
 		BE9F234420D9315D007B58BB /* NewIdeaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewIdeaCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE9F234520D9315D007B58BB /* NewIdeaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewIdeaCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -179,6 +183,7 @@
 			children = (
 				BE9F234020D7F950007B58BB /* IdeaDelegate.swift */,
 				BE33F5A320D94B7400A026C9 /* TagDelegate.swift */,
+				BE7D231420DE95B500FCC96C /* TopicDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -231,6 +236,7 @@
 				BE7D230C20DE84C000FCC96C /* NewTopicDrawViewController.swift */,
 				BE33F5A920DA9F4400A026C9 /* NewTopicImageViewController.swift */,
 				BE6358BF20DC5A22002666EC /* ImproveIdeaViewController.swift */,
+				BE7D231220DE956400FCC96C /* ViewTopicTextViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -425,6 +431,8 @@
 				BEFCB36F20C9560A006F8498 /* ViewController.swift in Sources */,
 				BE7D230220DE80B000FCC96C /* Process+CoreDataProperties.swift in Sources */,
 				BEFCB36D20C9560A006F8498 /* AppDelegate.swift in Sources */,
+				BE7D231320DE956400FCC96C /* ViewTopicTextViewController.swift in Sources */,
+				BE7D231520DE95B500FCC96C /* TopicDelegate.swift in Sources */,
 				BE7D230920DE80B000FCC96C /* SuggestionStatus+CoreDataClass.swift in Sources */,
 				BE7D230520DE80B000FCC96C /* TopicsEnum.swift in Sources */,
 				BE7D230420DE80B000FCC96C /* Tag+CoreDataProperties.swift in Sources */,
