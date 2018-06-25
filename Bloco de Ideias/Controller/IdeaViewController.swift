@@ -15,9 +15,6 @@ class IdeaViewController: UIViewController {
     @IBOutlet var titleIdea: UILabel!
     @IBOutlet weak var descrip: UILabel!
     @IBOutlet var editButton: UIButton!
-    @IBOutlet var scrollView: UIScrollView!
-    
-    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet var viewP: UIView!
     
     @IBOutlet var swipeUp: UISwipeGestureRecognizer!
@@ -98,8 +95,6 @@ class IdeaViewController: UIViewController {
         self.ideaImage.image = UIImage(data: self.idea.image! as Data)
         self.titleIdea.text = self.idea.title
         self.descrip.text = self.idea.desc
-        
-        scrollView.contentSize = CGSize(width: view.layer.bounds.width, height: 900.0)
     }
     
     override func viewDidDisappear(_ animated: Bool) {

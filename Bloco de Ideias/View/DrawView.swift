@@ -57,9 +57,9 @@ public class DrawView: UIView {
     public override func draw(_ rect: CGRect) {
         let context = UIGraphicsGetCurrentContext()
         context?.setLineCap(CGLineCap.round)
-        context?.setStrokeColor(drawColor.cgColor)
         context!.setLineWidth(CGFloat(drawWidth))
         for line in lines {
+            context?.setStrokeColor(line.color.cgColor)
             context!.beginPath()
             context?.move(to: line.start)
             context?.addLine(to: line.end)
