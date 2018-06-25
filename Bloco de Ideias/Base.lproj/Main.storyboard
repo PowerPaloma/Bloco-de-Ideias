@@ -478,7 +478,7 @@
         <!--Tópico-->
         <scene sceneID="lfH-8n-U3D">
             <objects>
-                <viewController id="7NA-n9-J0f" sceneMemberID="viewController">
+                <viewController id="7NA-n9-J0f" customClass="ViewTopicTextViewController" customModule="Bloco_de_Ideias" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IA8-kg-Sxe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -509,9 +509,22 @@
                         <viewLayoutGuide key="safeArea" id="JDH-4E-MFi"/>
                     </view>
                     <navigationItem key="navigationItem" title="Tópico" id="0ia-5b-dnY">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="YKW-mJ-QZB"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="U6T-Cu-6LL"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="YKW-mJ-QZB">
+                            <connections>
+                                <action selector="edit:" destination="7NA-n9-J0f" id="Fo8-5X-XAH"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="U6T-Cu-6LL">
+                            <connections>
+                                <action selector="done:" destination="7NA-n9-J0f" id="cVN-7z-zam"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="desc" destination="YKt-7r-gdl" id="oSe-uo-kol"/>
+                        <outlet property="titleTopic" destination="Pgu-FM-lcX" id="MdD-dj-l1K"/>
+                        <segue destination="67f-WX-UkI" kind="presentation" identifier="editTopicText" id="JY2-8d-eXL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ox5-QF-Hbf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -601,14 +614,14 @@
             <objects>
                 <viewController id="67f-WX-UkI" customClass="NewTopicTextViewController" customModule="Bloco_de_Ideias" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NC0-TW-lEm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="csJ-7S-5Pw">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="10" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zrO-1z-6t0">
-                                        <rect key="frame" x="-0.5" y="0.0" width="375" height="603"/>
+                                        <rect key="frame" x="-0.5" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fT-RJ-fOw">
                                                 <rect key="frame" x="16" y="32" width="343" height="24"/>
@@ -623,7 +636,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uOP-cZ-24u">
-                                                <rect key="frame" x="15.5" y="139" width="343" height="362"/>
+                                                <rect key="frame" x="15.5" y="139" width="343" height="400.5"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -1150,4 +1163,7 @@
         <image name="list" width="24" height="24"/>
         <image name="people" width="528" height="396"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="JY2-8d-eXL"/>
+    </inferredMetricsTieBreakers>
 </document>
