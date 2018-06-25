@@ -1,5 +1,5 @@
 //
-//  TopicDrawCollectionViewCell.swift
+//  TopicImageCollectionViewCell.swift
 //  Bloco de Ideias
 //
 //  Created by Ada 2018 on 20/06/2018.
@@ -10,10 +10,10 @@ import UIKit
 
 class TopicDrawCollectionViewCell: UICollectionViewCell {
     @IBOutlet var view: UIView!
-    @IBOutlet var viewBlur: UIView!
-    @IBOutlet var image: UIImageView!
     @IBOutlet var deleteButton: UIButton!
-    @IBOutlet weak var title: UILabel!
+    @IBOutlet var viewBlur: UIView!
+    @IBOutlet var title: UILabel!
+    @IBOutlet var image: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,17 +25,15 @@ class TopicDrawCollectionViewCell: UICollectionViewCell {
         view.layer.shadowOffset = CGSize(width: 3.0, height: 3.0)
         view.layer.shadowOpacity = 0.8
         view.layer.shadowRadius = 4.0
-
+        
         deleteButton.layer.isHidden = true
         
         if !UIAccessibilityIsReduceTransparencyEnabled() {
             viewBlur.backgroundColor = .clear
-            let blurEffect = UIBlurEffect(style: .light)
+            let blurEffect = UIBlurEffect(style: .dark)
             let blurEffectView = UIVisualEffectView(effect: blurEffect)
             
             blurEffectView.frame = CGRect(origin: viewBlur.frame.origin, size: viewBlur.bounds.size)
-            blurEffectView.layer.masksToBounds = true
-            blurEffectView.layer.cornerRadius = 16
             
             blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             view.insertSubview(blurEffectView, at: 1)
@@ -86,7 +84,5 @@ class TopicDrawCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
         stopWiggling()
     }
-    
-    @IBOutlet var deleteAction: UIButton!
     
 }
