@@ -22,6 +22,8 @@ class IdeaViewController: UIViewController {
     var longPressGR: UILongPressGestureRecognizer!
     var movingIndexPath: NSIndexPath?
     var topicSelected = Topic()
+    var topicSelectedIndex = 0
+
     
     //Values for UICollectionViewFlowLayout
     let inset: CGFloat = 8
@@ -97,6 +99,13 @@ class IdeaViewController: UIViewController {
             let vc = dest.topViewController as! ImproveIdeaViewController
             vc.idea = self.idea
         }
+        if dest.topViewController is ViewTopicTextViewController{
+            let vc = dest.topViewController as!ViewTopicTextViewController
+            vc.viewTopic = self.topicSelected
+            vc.index = topicSelectedIndex
+            
+        }
+        
         
     }
     
@@ -322,6 +331,7 @@ extension IdeaViewController : UICollectionViewDelegate, UICollectionViewDataSou
             self.present(actionSheet, animated: true, completion: nil)
         }else{
            self.topicSelected = topicsList[indexPath.row - 1]
+           self.topicSelectedIndex = indexPath.row - 1
             
             if topicSelected.typeT == TopicsEnum.text.rawValue{
                 performSegue(withIdentifier: "viewTopicText", sender: nil)
@@ -373,10 +383,10 @@ extension IdeaViewController : UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension IdeaViewController: TopicDelegate{
-    func sendTopicToView(topic: Topic) {
-        
-    }
-    
-    
-}
+//extension IdeaViewController: TopicDelegate{
+//    func sendTopicToView(topic: Topic) {
+//        
+//    }
+//    
+//    
+//}

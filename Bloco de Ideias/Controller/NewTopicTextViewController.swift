@@ -14,6 +14,7 @@ class NewTopicTextViewController: UIViewController {
     @IBOutlet weak var descTextField: UITextField!
     
     var newTopicText = Topic()
+    lazy var indexTopicEdit = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,10 @@ class NewTopicTextViewController: UIViewController {
     }
 
     @IBAction func doneAction(_ sender: Any) {
+        if (indexTopicEdit != 0 ){
+            
+        }
+        
         if (self.titleTextField.text == "" || self.descTextField.text == ""){
             let alert = UIAlertController(title: "Complete all the fields", message: nil, preferredStyle: .alert)
             self.present(alert, animated: true, completion: nil)
@@ -38,6 +43,7 @@ class NewTopicTextViewController: UIViewController {
             self.newTopicText.save()
             dismiss(animated: true, completion: nil)
         }
+        
     }
     
     @IBAction func cancelAction(_ sender: Any) {
