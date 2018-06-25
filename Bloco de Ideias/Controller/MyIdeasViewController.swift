@@ -43,6 +43,15 @@ class MyIdeasViewController: UIViewController {
         longPressGR = UILongPressGestureRecognizer(target: self, action: #selector(longPressed(gesture:)))
         collectionView.addGestureRecognizer(longPressGR)
         longPressGR.minimumPressDuration = 0.3
+        
+        //self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "FredokaOne-Regular.ttf", size: 20)!]
+        
+        let title = UILabel()
+        title.text = "My ideas"
+        title.font = UIFont(name: "FredokaOne-Regular", size: 20)
+        
+        navigationItem.titleView = title
+
     }
     
     override func viewDidLayoutSubviews() {

@@ -13,11 +13,11 @@ class OverlayTransitioningDelegate : NSObject, UIViewControllerTransitioningDele
         return OverlayPresentationController(presentedViewController: presented, presenting: presenting)
     }
     
-//    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        return BouncyViewControllerAnimator(isPresenting: true)
-//    }
-//
-//    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        return BouncyViewControllerAnimator()
-//    }
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return BouncyViewControllerAnimator(isPresenting: true)
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return BouncyViewControllerAnimator()
+    }
 }

@@ -36,7 +36,7 @@ class OverlayPresentationController: UIPresentationController {
     override var frameOfPresentedViewInContainerView: CGRect {
         var size = containerView!.bounds.size
         size.height = size.height - 40
-        return CGRect(origin: CGPoint(x: 0, y: 40), size: size)
+        return CGRect(origin: CGPoint(x: 0, y: 80), size: size)
     }
     
     override func containerViewWillLayoutSubviews() {

@@ -12,7 +12,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--My Ideas-->
+        <!--My Ideas View Controller-->
         <scene sceneID="eO5-AH-cnr">
             <objects>
                 <viewController id="CXF-i7-KEs" customClass="MyIdeasViewController" customModule="Bloco_de_Ideias" customModuleProvider="target" sceneMemberID="viewController">
@@ -52,7 +52,7 @@
                         <viewLayoutGuide key="safeArea" id="UIu-D1-1ML"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="My Ideas" id="gK0-7a-1rx">
+                    <navigationItem key="navigationItem" id="gK0-7a-1rx">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="list" id="NEM-b6-3SW">
                             <connections>
                                 <action selector="changeLayoutAction:" destination="CXF-i7-KEs" id="LJi-tU-heF"/>
@@ -475,16 +475,16 @@
             </objects>
             <point key="canvasLocation" x="1593" y="-1809"/>
         </scene>
-        <!--View Controller-->
+        <!--Overlay View Controller-->
         <scene sceneID="rFY-sn-dpi">
             <objects>
-                <viewController storyboardIdentifier="overlayViewController" id="Fi3-dh-Ci0" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="overlayViewController" id="Fi3-dh-Ci0" customClass="OverlayViewController" customModule="Bloco_de_Ideias" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wpV-zm-5Od">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vBc-Av-A2O">
-                                <rect key="frame" x="16" y="20" width="343" height="30"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="dismiss"/>
                                 <connections>
@@ -516,10 +516,10 @@
                         <constraints>
                             <constraint firstItem="t51-lC-WWD" firstAttribute="bottom" secondItem="zZX-GR-W1G" secondAttribute="bottom" id="AFV-sG-2mS"/>
                             <constraint firstItem="zZX-GR-W1G" firstAttribute="top" secondItem="vBc-Av-A2O" secondAttribute="bottom" id="OZw-Dh-vXr"/>
-                            <constraint firstItem="vBc-Av-A2O" firstAttribute="leading" secondItem="t51-lC-WWD" secondAttribute="leading" constant="16" id="Sy4-7R-Tud"/>
+                            <constraint firstItem="vBc-Av-A2O" firstAttribute="leading" secondItem="t51-lC-WWD" secondAttribute="leading" id="Sy4-7R-Tud"/>
                             <constraint firstItem="t51-lC-WWD" firstAttribute="trailing" secondItem="zZX-GR-W1G" secondAttribute="trailing" id="fhe-Ct-4Bv"/>
                             <constraint firstItem="vBc-Av-A2O" firstAttribute="top" secondItem="t51-lC-WWD" secondAttribute="top" id="jeT-90-dot"/>
-                            <constraint firstItem="t51-lC-WWD" firstAttribute="trailing" secondItem="vBc-Av-A2O" secondAttribute="trailing" constant="16" id="n97-eP-Iwo"/>
+                            <constraint firstItem="t51-lC-WWD" firstAttribute="trailing" secondItem="vBc-Av-A2O" secondAttribute="trailing" id="n97-eP-Iwo"/>
                             <constraint firstItem="zZX-GR-W1G" firstAttribute="leading" secondItem="t51-lC-WWD" secondAttribute="leading" id="vCU-N3-iKM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="t51-lC-WWD"/>
@@ -550,7 +550,7 @@
                                         <rect key="frame" x="0.0" y="40" width="343" height="487"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
@@ -1296,6 +1296,6 @@
         <segue reference="79T-yY-PGc"/>
         <segue reference="b0x-a7-WBB"/>
         <segue reference="ues-vQ-KO9"/>
-        <segue reference="bdN-Jx-yz1"/>
+        <segue reference="dPv-f4-p71"/>
     </inferredMetricsTieBreakers>
 </document>
