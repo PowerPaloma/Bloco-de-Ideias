@@ -22,7 +22,6 @@ class IdeaViewController: UIViewController {
     var longPressGR: UILongPressGestureRecognizer!
     var movingIndexPath: NSIndexPath?
     var topicSelected = Topic()
-    var topicSelectedIndex = 0
 
     
     //Values for UICollectionViewFlowLayout
@@ -102,15 +101,36 @@ class IdeaViewController: UIViewController {
         if dest.topViewController is ViewTopicTextViewController{
             let vc = dest.topViewController as!ViewTopicTextViewController
             vc.viewTopic = self.topicSelected
-            vc.index = topicSelectedIndex
-            
         }
-        
+        if dest.topViewController is ViewTopicImageViewController{
+            let vc = dest.topViewController as!ViewTopicImageViewController
+            vc.viewTopic = self.topicSelected
+        }
+        if dest.topViewController is ViewTopicDrawViewController{
+            let vc = dest.topViewController as!ViewTopicDrawViewController
+            vc.viewTopic = self.topicSelected
+        }
         
     }
     
     
-    //Edit mode collection view
+    //Improve Idea
+    @IBAction func improveIdea(_ sender: UIButton) {
+        performSegue(withIdentifier: "improve", sender: nil)
+    }
+    
+    //Change layout
+    @IBAction func changeLayoutAction(_ sender: Any) {
+        //Change number of rows in Collection View
+        if (cellsPerRow == 1) {
+            cellsPerRow = 2
+        } else {
+            cellsPerRow = 1
+        }
+        collectionView.collectionViewLayout.invalidateLayout()
+    }
+    
+    //Edit mode Action
     @IBAction func editModeAction(_ sender: Any) {
         //Starts and Stops Edit mode: reorder and delete cells
         if isEditing {
@@ -118,11 +138,7 @@ class IdeaViewController: UIViewController {
         } else {
             startEditMode()
         }
-    }
-    
-    //Improve Idea
-    @IBAction func improveIdea(_ sender: UIButton) {
-        performSegue(withIdentifier: "improve", sender: nil)
+        collectionView.reloadData()
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
@@ -330,14 +346,13 @@ extension IdeaViewController : UICollectionViewDelegate, UICollectionViewDataSou
             //Show actionsheet
             self.present(actionSheet, animated: true, completion: nil)
         }else{
-           self.topicSelected = topicsList[indexPath.row - 1]
-           self.topicSelectedIndex = indexPath.row - 1
+            self.topicSelected = topicsList[indexPath.row - 1]
             
             if topicSelected.typeT == TopicsEnum.text.rawValue{
                 performSegue(withIdentifier: "viewTopicText", sender: nil)
             }
             else if topicSelected.typeT == TopicsEnum.draw.rawValue{
-                performSegue(withIdentifier: "viewTopicImage", sender: nil)
+                performSegue(withIdentifier: "viewTopicDraw", sender: nil)
             }
             else if topicSelected.typeT == TopicsEnum.image.rawValue{
                 performSegue(withIdentifier: "viewTopicImage", sender: nil)

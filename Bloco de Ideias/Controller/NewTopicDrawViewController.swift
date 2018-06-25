@@ -12,12 +12,16 @@ class NewTopicDrawViewController: UIViewController {
 
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var drawView: DrawView!
+    
     var newTopicDraw = Topic()
+    var editingTopic : Topic?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let topic = editingTopic {
+            self.titleTextField.text = topic.titleT
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,12 +38,22 @@ class NewTopicDrawViewController: UIViewController {
                 alert.dismiss(animated: true, completion: nil)
             }
         }else{
-            let image_draw = drawView.getImage()
-            self.newTopicDraw.imageT = UIImageJPEGRepresentation(image_draw, 1.0)!
-            self.newTopicDraw.titleT = self.titleTextField.text
-            self.newTopicDraw.typeT = TopicsEnum.draw.rawValue
-            self.newTopicDraw.save()
-            dismiss(animated: true, completion: nil)
+            if let topic = editingTopic {
+                let image_draw = drawView.getImage()
+                topic.imageT = UIImageJPEGRepresentation(image_draw, 1.0)!
+                topic.titleT = self.titleTextField.text
+                topic.typeT = TopicsEnum.draw.rawValue
+                topic.save()
+                dismiss(animated: true, completion: nil)
+            } else {
+                let image_draw = drawView.getImage()
+                self.newTopicDraw.imageT = UIImageJPEGRepresentation(image_draw, 1.0)!
+                self.newTopicDraw.titleT = self.titleTextField.text
+                self.newTopicDraw.typeT = TopicsEnum.draw.rawValue
+                DataManager.getContext().insert(self.newTopicDraw)
+                self.newTopicDraw.save()
+                dismiss(animated: true, completion: nil)
+            }
         }
     }
     

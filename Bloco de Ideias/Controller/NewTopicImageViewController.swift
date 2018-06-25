@@ -15,6 +15,7 @@ class NewTopicImageViewController: UIViewController {
     var imagePicker = UIImagePickerController()
     
     var newTopicImage = Topic()
+    var editingTopic : Topic?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,10 @@ class NewTopicImageViewController: UIViewController {
         
         //Set imagepicker delegate to self
         imagePicker.delegate = self
+        
+        if let topic = editingTopic {
+            self.titleTextField.text = topic.titleT
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,12 +47,20 @@ class NewTopicImageViewController: UIViewController {
                 alert.dismiss(animated: true, completion: nil)
             }
         }else{
-            self.newTopicImage.titleT = self.titleTextField.text
-            self.newTopicImage.imageT = UIImageJPEGRepresentation(self.image.image!, 1.0)!
-            self.newTopicImage.typeT = TopicsEnum.image.rawValue
-            DataManager.getContext().insert(self.newTopicImage)
-            self.newTopicImage.save()
-            dismiss(animated: true, completion: nil)
+            if let topic = editingTopic {
+                topic.titleT = self.titleTextField.text
+                topic.imageT = UIImageJPEGRepresentation(self.image.image!, 1.0)!
+                topic.typeT = TopicsEnum.image.rawValue
+                topic.save()
+                dismiss(animated: true, completion: nil)
+            } else {
+                self.newTopicImage.titleT = self.titleTextField.text
+                self.newTopicImage.imageT = UIImageJPEGRepresentation(self.image.image!, 1.0)!
+                self.newTopicImage.typeT = TopicsEnum.image.rawValue
+                DataManager.getContext().insert(self.newTopicImage)
+                self.newTopicImage.save()
+                dismiss(animated: true, completion: nil)
+            }
 
         }
     }

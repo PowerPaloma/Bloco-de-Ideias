@@ -24,6 +24,8 @@
 		BE63582F20DA7FA6002666EC /* TopicImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE63582D20DA7FA6002666EC /* TopicImageCollectionViewCell.swift */; };
 		BE63583020DA7FA6002666EC /* TopicImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE63582E20DA7FA6002666EC /* TopicImageCollectionViewCell.xib */; };
 		BE6358C020DC5A22002666EC /* ImproveIdeaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6358BF20DC5A22002666EC /* ImproveIdeaViewController.swift */; };
+		BE74593A20E1286600700720 /* ViewTopicImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE74593920E1286600700720 /* ViewTopicImageViewController.swift */; };
+		BE74593C20E1330100700720 /* ViewTopicDrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE74593B20E1330100700720 /* ViewTopicDrawViewController.swift */; };
 		BE7D22D520DE803100FCC96C /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22D420DE803100FCC96C /* DrawView.swift */; };
 		BE7D22F320DE80B000FCC96C /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22D820DE80AB00FCC96C /* Tag.swift */; };
 		BE7D22F820DE80B000FCC96C /* Idea.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7D22DD20DE80AC00FCC96C /* Idea.swift */; };
@@ -70,6 +72,8 @@
 		BE63582D20DA7FA6002666EC /* TopicImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE63582E20DA7FA6002666EC /* TopicImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		BE6358BF20DC5A22002666EC /* ImproveIdeaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImproveIdeaViewController.swift; sourceTree = "<group>"; };
+		BE74593920E1286600700720 /* ViewTopicImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTopicImageViewController.swift; sourceTree = "<group>"; };
+		BE74593B20E1330100700720 /* ViewTopicDrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTopicDrawViewController.swift; sourceTree = "<group>"; };
 		BE7D22D420DE803100FCC96C /* DrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
 		BE7D22D820DE80AB00FCC96C /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		BE7D22DD20DE80AC00FCC96C /* Idea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Idea.swift; sourceTree = "<group>"; };
@@ -205,6 +209,8 @@
 				BE33F5A920DA9F4400A026C9 /* NewTopicImageViewController.swift */,
 				BE6358BF20DC5A22002666EC /* ImproveIdeaViewController.swift */,
 				BE7D231220DE956400FCC96C /* ViewTopicTextViewController.swift */,
+				BE74593920E1286600700720 /* ViewTopicImageViewController.swift */,
+				BE74593B20E1330100700720 /* ViewTopicDrawViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -368,12 +374,14 @@
 				BE6358C020DC5A22002666EC /* ImproveIdeaViewController.swift in Sources */,
 				BE7D22FF20DE80B000FCC96C /* Line.swift in Sources */,
 				BE7D22F920DE80B000FCC96C /* SuggestionOrder.swift in Sources */,
+				BE74593A20E1286600700720 /* ViewTopicImageViewController.swift in Sources */,
 				BEFCB36F20C9560A006F8498 /* ViewController.swift in Sources */,
 				BEFCB36D20C9560A006F8498 /* AppDelegate.swift in Sources */,
 				BE7D231320DE956400FCC96C /* ViewTopicTextViewController.swift in Sources */,
 				BE7D231520DE95B500FCC96C /* TopicDelegate.swift in Sources */,
 				BE7D230520DE80B000FCC96C /* TopicsEnum.swift in Sources */,
 				BE7D230820DE80B000FCC96C /* Suggestion.swift in Sources */,
+				BE74593C20E1330100700720 /* ViewTopicDrawViewController.swift in Sources */,
 				BE205A6120CE989A00B53288 /* IdeaBuilder.xcdatamodeld in Sources */,
 				BE205AD720D3F9C900B53288 /* ReorderableFlowLayout.swift in Sources */,
 				BEFCB38220C9707B006F8498 /* IdeaViewController.swift in Sources */,
