@@ -23,13 +23,12 @@ public class DrawView: UIView {
     var lastPoint: CGPoint!
     var drawColor = UIColor.black
     var drawWidth = 3
-    var bgColor = UIColor.yellow
     var canPaint = true
     var image = UIImage()
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.backgroundColor = bgColor
+        self.backgroundColor = .yellow
     }
 
     public func clear() {
@@ -37,9 +36,6 @@ public class DrawView: UIView {
     }
     public func getLines() -> [Line] {
         return self.lines
-    }
-    public func changeBgColorTo(_ color:UIColor) {
-        self.backgroundColor = color
     }
     public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with:event)
@@ -77,7 +73,7 @@ public class DrawView: UIView {
         let context = UIGraphicsGetCurrentContext()
         
         let rect = CGRect(x:0, y:0, width: self.frame.size.width, height: self.frame.size.height)
-        context?.setFillColor(bgColor.cgColor)
+        context?.setFillColor(self.backgroundColor!.cgColor)
         context?.fill(rect)
         context?.setLineCap(CGLineCap.round)
         

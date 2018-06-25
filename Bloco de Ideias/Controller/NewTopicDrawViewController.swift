@@ -15,6 +15,7 @@ class NewTopicDrawViewController: UIViewController {
     
     var newTopicDraw = Topic()
     var editingTopic : Topic?
+    var lastColorUsed = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,7 @@ class NewTopicDrawViewController: UIViewController {
         if let topic = editingTopic {
             self.titleTextField.text = topic.titleT
         }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,6 +59,34 @@ class NewTopicDrawViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func bgYellow(_ sender: UIButton) {
+        sender.setImage(#imageLiteral(resourceName: "color_yellow_selected"), for: .selected)
+        changeBgColorDrawView(color: .yellow, button: sender)
+    }
+    
+    
+    @IBAction func bgBlue(_ sender: UIButton) {
+        sender.setImage(#imageLiteral(resourceName: "color_blue_selected"), for: .selected)
+        changeBgColorDrawView(color: .blue, button: sender)
+    }
+    
+    @IBAction func bgGreen(_ sender: UIButton) {
+        sender.setImage(#imageLiteral(resourceName: "color_green_selected"), for: .selected)
+        changeBgColorDrawView(color: .green, button: sender)
+    }
+    
+    @IBAction func bgPink(_ sender: UIButton) {
+        sender.setImage(#imageLiteral(resourceName: "color_pink_selected"), for: .selected)
+        changeBgColorDrawView(color: .pink, button: sender)
+    }
+    
+    func changeBgColorDrawView(color: UIColor, button: UIButton){
+        lastColorUsed.isSelected = false
+        button.isSelected = true
+        lastColorUsed = button
+        drawView.backgroundColor = color
+    }
     
     @IBAction func cancelAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)

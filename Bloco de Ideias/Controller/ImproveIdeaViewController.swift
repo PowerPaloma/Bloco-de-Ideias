@@ -96,11 +96,10 @@ class ImproveIdeaViewController: UIViewController {
     }
     
     func getRandomSuggestion(){
-        if 
-        let sug = filteredByOrd.remove(at: Int(arc4random_uniform(UInt32(filteredByOrd.count)))).0
-       
-        self.titleSugguestion.text = sug.titleS
-        self.descSuggestion.text = sug.descS
+//        if let sug = filteredByOrd.remove(at: Int(arc4random_uniform(UInt32(filteredByOrd.count)))).0
+//
+//        self.titleSugguestion.text = sug.titleS
+//        self.descSuggestion.text = sug.descS
     }
     
     @IBAction func exit(_ sender: UIBarButtonItem) {
@@ -117,6 +116,6 @@ class ImproveIdeaViewController: UIViewController {
     }
     
     @IBAction func next(_ sender: UIBarButtonItem) {
-        getRandomSuggestion()
+//        getRandomSuggestion()
     }
 }
