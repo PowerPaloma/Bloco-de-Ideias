@@ -4,7 +4,7 @@
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="process" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Process" inverseName="ideas" inverseEntity="Process" syncable="YES"/>
+        <relationship name="process" maxCount="1" deletionRule="No Action" destinationEntity="Process" inverseName="ideas" inverseEntity="Process" syncable="YES"/>
         <relationship name="suggestionStatus" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SuggestionStatus" inverseName="idea" inverseEntity="SuggestionStatus" syncable="YES"/>
         <relationship name="tags" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Tag" inverseName="ideas" inverseEntity="Tag" syncable="YES"/>
         <relationship name="topics" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Topic" inverseName="idea" inverseEntity="Topic" syncable="YES"/>
@@ -65,13 +65,13 @@
         <relationship name="ideas" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Idea" inverseName="user" inverseEntity="Idea" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Idea" positionX="45" positionY="-171" width="128" height="165"/>
-        <element name="Process" positionX="45" positionY="606" width="128" height="105"/>
-        <element name="Suggestion" positionX="448" positionY="537" width="128" height="165"/>
-        <element name="SuggestionOrder" positionX="259" positionY="252" width="128" height="88"/>
-        <element name="SuggestionStatus" positionX="540" positionY="81" width="128" height="88"/>
-        <element name="Tag" positionX="835" positionY="-126" width="128" height="90"/>
-        <element name="Topic" positionX="-108" positionY="288" width="128" height="135"/>
-        <element name="User" positionX="-200" positionY="-211" width="128" height="240"/>
+        <element name="Idea" positionX="106" positionY="108" width="128" height="28"/>
+        <element name="Process" positionX="196" positionY="480" width="128" height="105"/>
+        <element name="Suggestion" positionX="718" positionY="468" width="128" height="165"/>
+        <element name="SuggestionOrder" positionX="171" positionY="684" width="128" height="88"/>
+        <element name="SuggestionStatus" positionX="547" positionY="270" width="128" height="88"/>
+        <element name="Tag" positionX="448" positionY="387" width="128" height="90"/>
+        <element name="Topic" positionX="79" positionY="-108" width="128" height="135"/>
+        <element name="User" positionX="-270" positionY="36" width="128" height="240"/>
     </elements>
 </model>
