@@ -23,10 +23,13 @@ class MyIdeaCollectionViewCell: UICollectionViewCell {
         image.layer.masksToBounds = true
         image.layer.cornerRadius = 16
         
-        image.layer.shadowColor = UIColor.black.cgColor
-        image.layer.shadowOffset = CGSize(width: 3.0, height: 3.0)
-        image.layer.shadowOpacity = 0.8
-        image.layer.shadowRadius = 4.0
+        view.layer.masksToBounds = false
+        view.layer.shadowColor = #colorLiteral(red: 0.4390000105, green: 0.4390000105, blue: 0.4390000105, alpha: 1)
+        view.layer.shadowRadius = 1
+        view.layer.shadowOpacity = 0.3
+        view.layer.shadowOffset = CGSize.init(width: 3.0, height: 5.0)
+        
+        
         
         deleteButton.layer.isHidden = true
         

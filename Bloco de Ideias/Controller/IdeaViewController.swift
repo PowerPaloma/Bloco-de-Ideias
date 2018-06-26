@@ -97,11 +97,6 @@ class IdeaViewController: UIViewController {
         self.descrip.text = self.idea.desc
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        // Navigation Bar Large Title
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

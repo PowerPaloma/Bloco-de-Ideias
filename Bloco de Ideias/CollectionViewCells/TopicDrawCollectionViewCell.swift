@@ -18,13 +18,14 @@ class TopicDrawCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        view.layer.masksToBounds = true
-        view.layer.cornerRadius = 16
+        image.layer.masksToBounds = true
+        image.layer.cornerRadius = 16
         
-        view.layer.shadowColor = UIColor.black.cgColor
-        view.layer.shadowOffset = CGSize(width: 3.0, height: 3.0)
-        view.layer.shadowOpacity = 0.8
-        view.layer.shadowRadius = 4.0
+        view.layer.masksToBounds = false
+        view.layer.shadowColor = #colorLiteral(red: 0.4390000105, green: 0.4390000105, blue: 0.4390000105, alpha: 1)
+        view.layer.shadowRadius = 1
+        view.layer.shadowOpacity = 0.3
+        view.layer.shadowOffset = CGSize.init(width: 3.0, height: 5.0)
         
         deleteButton.layer.isHidden = true
         
