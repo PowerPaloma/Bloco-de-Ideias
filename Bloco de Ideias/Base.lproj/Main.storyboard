@@ -574,7 +574,9 @@
                     <connections>
                         <outlet property="collectionView" destination="zZX-GR-W1G" id="9hP-ef-vc7"/>
                         <outlet property="editButton" destination="wEr-Dl-kG8" id="TxP-DX-7Rp"/>
-                        <segue destination="7NA-n9-J0f" kind="show" id="Sb7-Qu-V7t"/>
+                        <segue destination="7NA-n9-J0f" kind="show" identifier="viewTopicText2" id="Sb7-Qu-V7t"/>
+                        <segue destination="6t3-UM-UiH" kind="show" identifier="viewTopicDraw2" id="2c3-Le-ecV"/>
+                        <segue destination="KRV-ai-FMS" kind="show" identifier="viewTopicImage2" id="0oE-b3-ebC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ke-ih-gBj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1349,6 +1351,8 @@
         <segue reference="b0x-a7-WBB"/>
         <segue reference="ues-vQ-KO9"/>
         <segue reference="bdN-Jx-yz1"/>
-        <segue reference="Sb7-Qu-V7t"/>
+        <segue reference="W2h-to-TTt"/>
+        <segue reference="C2D-bf-MVB"/>
+        <segue reference="qMV-Fx-Vnj"/>
     </inferredMetricsTieBreakers>
 </document>
