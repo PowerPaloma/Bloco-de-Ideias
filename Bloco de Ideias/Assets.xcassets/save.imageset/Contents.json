@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Prancheta 1.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "download.png",
       "scale" : "2x"
     },
     {

@@ -49,6 +49,8 @@ class SearchTagsViewController: UIViewController, UITableViewDelegate, UITableVi
         searchBar.returnKeyType = UIReturnKeyType.done
         
         tagListView.textFont = UIFont.systemFont(ofSize: 15)
+    
+        
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
