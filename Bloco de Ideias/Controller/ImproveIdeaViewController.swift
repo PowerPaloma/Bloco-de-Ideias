@@ -35,6 +35,7 @@ class ImproveIdeaViewController: UIViewController {
         
         //Core Data - getting suggestions who has the tag of this idea
         do {
+            print(self.idea.title!)
             let fetchRequest : NSFetchRequest<Suggestion> = Suggestion.fetchRequest()
             // AND (suggestionStatus.@count == 0 OR NOT (ANY suggestionStatus.idea.title =[cd] %@))
             fetchRequest.predicate = NSPredicate(format:"(ANY tags.name in %@) AND (ANY processes.name in %@)"
