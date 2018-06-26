@@ -30,7 +30,7 @@
                                             <constraint firstAttribute="height" constant="34" id="f4o-c2-UgS"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.4823529412" green="0.30980392159999998" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalCompressionResistancePriority="749" image="plusButton" translatesAutoresizingMaskIntoConstraints="NO" id="qfy-Fh-Onm">
@@ -76,6 +76,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="plusButton" width="626" height="626"/>
+        <image name="plusButton" width="50" height="50"/>
     </resources>
 </document>

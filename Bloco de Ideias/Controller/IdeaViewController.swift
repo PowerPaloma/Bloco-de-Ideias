@@ -64,6 +64,8 @@ class IdeaViewController: UIViewController {
         self.ideaImage.image = UIImage(data: self.idea.image! as Data)
         self.titleIdea.text = self.idea.title
         self.descrip.text = self.idea.desc
+        
+        getCoreDataData()
     
     }
 

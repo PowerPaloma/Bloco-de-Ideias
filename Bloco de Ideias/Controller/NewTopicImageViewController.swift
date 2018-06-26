@@ -1,5 +1,5 @@
-//
 //  NewTopicImageViewController.swift
+//
 //  Bloco de Ideias
 //
 //  Created by Ada 2018 on 20/06/2018.
@@ -14,14 +14,14 @@ class NewTopicImageViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     var imagePicker = UIImagePickerController()
     
+    var flag: Bool = false
     var newTopicImage = Topic()
     var editingTopic : Topic?
     var idea = Idea()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Show ActionSheet
-        self.showAlert()
+        
         
         
         //Set imagepicker delegate to self
@@ -31,7 +31,18 @@ class NewTopicImageViewController: UIViewController {
             self.titleTextField.text = topic.titleT
         }
     }
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        //Show ActionSheet
+        if !flag{
+            self.showAlert()
+            flag = true
+        }
+        
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -39,6 +50,8 @@ class NewTopicImageViewController: UIViewController {
     @IBAction func captureImage(_ sender: UIButton) {
         showAlert()
     }
+    
+    
     
     @IBAction func doneAction(_ sender: Any) {
         if (self.titleTextField.text == "" || self.image.image == nil){
@@ -105,6 +118,7 @@ class NewTopicImageViewController: UIViewController {
         
         //Show actionsheet
         self.present(actionSheet, animated: true, completion: nil)
+        //self.present(actionSheet, animated: true, completion: nil)
     }
 }
 
