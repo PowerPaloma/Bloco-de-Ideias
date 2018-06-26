@@ -14,11 +14,16 @@ class NewTopicCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        view.layer.masksToBounds = true
+        view.layer.masksToBounds = false
         view.layer.cornerRadius = 16
         
         view.layer.borderWidth = 1
         view.layer.borderColor = UIColor.black.cgColor
+        
+        view.layer.shadowColor = #colorLiteral(red: 0.4390000105, green: 0.4390000105, blue: 0.4390000105, alpha: 1)
+        view.layer.shadowRadius = 1
+        view.layer.shadowOpacity = 0.3
+        view.layer.shadowOffset = CGSize.init(width: 3.0, height: 5.0)
     }
 
 }

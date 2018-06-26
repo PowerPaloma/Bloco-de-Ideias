@@ -29,6 +29,7 @@ class MyIdeasViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
         //Ideas Collection View
         let nib = UINib(nibName: "MyIdeaCollectionViewCell", bundle: nil)
@@ -43,15 +44,7 @@ class MyIdeasViewController: UIViewController {
         longPressGR = UILongPressGestureRecognizer(target: self, action: #selector(longPressed(gesture:)))
         collectionView.addGestureRecognizer(longPressGR)
         longPressGR.minimumPressDuration = 0.3
-        
-        //self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "FredokaOne-Regular.ttf", size: 20)!]
-        
-        let title = UILabel()
-        title.text = "My ideas"
-        title.font = UIFont(name: "FredokaOne-Regular", size: 20)
-        
-        navigationItem.titleView = title
-
+    
     }
     
     override func viewDidLayoutSubviews() {
@@ -64,9 +57,6 @@ class MyIdeasViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        // Navigation Bar Large Title
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        
         //Core Data
         let entityIdea = DataManager.getEntity(entity: "Idea")
         let ideas = DataManager.getAll(entity: entityIdea)

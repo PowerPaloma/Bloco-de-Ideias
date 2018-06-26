@@ -9,6 +9,8 @@
 import UIKit
 
 class OverlayViewController: UIViewController {
+    
+    var topicsList : [Topic] = []
 
     
     @IBAction func dismissed(_ sender: Any) {

@@ -20,8 +20,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNs-wt-ZK3">
+                                <rect key="frame" x="16" y="16" width="343" height="42"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="My Ideas">
+                                        <attributes>
+                                            <font key="NSFont" size="34" name="FredokaOne-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8W7-G7-eVx">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="66" width="375" height="537"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Opf-Ib-eXx">
                                     <size key="itemSize" width="50" height="50"/>
@@ -43,16 +55,19 @@
                         </subviews>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="UIu-D1-1ML" firstAttribute="bottom" secondItem="8W7-G7-eVx" secondAttribute="bottom" id="Ape-1o-rqc"/>
-                            <constraint firstItem="UIu-D1-1ML" firstAttribute="trailing" secondItem="8W7-G7-eVx" secondAttribute="trailing" id="QQ7-iv-AfR"/>
-                            <constraint firstItem="8W7-G7-eVx" firstAttribute="centerY" secondItem="UIu-D1-1ML" secondAttribute="centerY" id="Y5O-sL-6er"/>
-                            <constraint firstItem="8W7-G7-eVx" firstAttribute="leading" secondItem="UIu-D1-1ML" secondAttribute="leading" id="aUD-E3-Ybh"/>
-                            <constraint firstItem="8W7-G7-eVx" firstAttribute="centerX" secondItem="UIu-D1-1ML" secondAttribute="centerX" id="k10-5l-4xY"/>
+                            <constraint firstItem="lNs-wt-ZK3" firstAttribute="top" secondItem="UIu-D1-1ML" secondAttribute="top" constant="16" id="AvR-kq-I2U"/>
+                            <constraint firstItem="8W7-G7-eVx" firstAttribute="top" secondItem="lNs-wt-ZK3" secondAttribute="bottom" constant="8" id="HLf-Wi-ODr"/>
+                            <constraint firstItem="lNs-wt-ZK3" firstAttribute="leading" secondItem="UIu-D1-1ML" secondAttribute="leading" constant="16" id="KZJ-g0-TFO"/>
+                            <constraint firstItem="UIu-D1-1ML" firstAttribute="trailing" secondItem="lNs-wt-ZK3" secondAttribute="trailing" constant="16" id="Q1j-sT-NiC"/>
+                            <constraint firstItem="8W7-G7-eVx" firstAttribute="leading" secondItem="UIu-D1-1ML" secondAttribute="leading" id="XsM-Bl-Bhg"/>
+                            <constraint firstAttribute="bottom" secondItem="8W7-G7-eVx" secondAttribute="bottom" id="jrH-ug-shP"/>
+                            <constraint firstAttribute="trailing" secondItem="8W7-G7-eVx" secondAttribute="trailing" id="onn-X5-Itt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UIu-D1-1ML"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="gK0-7a-1rx">
+                        <barButtonItem key="backBarButtonItem" title="My ideas" id="UAk-JC-qwj"/>
                         <barButtonItem key="leftBarButtonItem" title="Item" image="list" id="NEM-b6-3SW">
                             <connections>
                                 <action selector="changeLayoutAction:" destination="CXF-i7-KEs" id="LJi-tU-heF"/>
@@ -81,7 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IKz-d2-Qdc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1313" y="-962"/>
+            <point key="canvasLocation" x="1312.8" y="-962.06896551724151"/>
         </scene>
         <!--New Idea-->
         <scene sceneID="k9x-Ft-us5">
@@ -1078,7 +1093,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2153" y="-953"/>
+            <point key="canvasLocation" x="2150" y="-962"/>
         </scene>
         <!--Ideia-->
         <scene sceneID="NoE-4j-4Rj">
@@ -1296,6 +1311,6 @@
         <segue reference="79T-yY-PGc"/>
         <segue reference="b0x-a7-WBB"/>
         <segue reference="ues-vQ-KO9"/>
-        <segue reference="dPv-f4-p71"/>
+        <segue reference="bdN-Jx-yz1"/>
     </inferredMetricsTieBreakers>
 </document>
