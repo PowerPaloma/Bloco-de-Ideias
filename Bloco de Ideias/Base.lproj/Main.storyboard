@@ -391,13 +391,13 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hLV-U8-CcE">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem title="Pular" id="Yzy-kt-B2Y">
+                                    <barButtonItem title="Skip" id="Yzy-kt-B2Y">
                                         <connections>
                                             <action selector="skip:" destination="jcK-00-69D" id="ivo-s6-Le0"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="iIj-Ch-nao"/>
-                                    <barButtonItem title="Proximo" id="3dC-bg-tPm">
+                                    <barButtonItem title="Next" id="3dC-bg-tPm">
                                         <connections>
                                             <action selector="next:" destination="jcK-00-69D" id="LhJ-Uj-nOe"/>
                                         </connections>
@@ -408,36 +408,47 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="people" translatesAutoresizingMaskIntoConstraints="NO" id="iLw-5F-OMm">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="167.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="168"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qual o seu público alvo?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ntu-GN-eUd" userLabel="Title">
-                                        <rect key="frame" x="0.0" y="182.5" width="375" height="29"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is my audience?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ntu-GN-eUd" userLabel="Title">
+                                        <rect key="frame" x="0.0" y="183" width="375" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzA-ng-kmj" userLabel="Desc">
-                                        <rect key="frame" x="15" y="226.5" width="345" height="122"/>
+                                        <rect key="frame" x="15" y="227" width="345" height="122"/>
                                         <string key="text">To avoid food spoilage and dispensing in large quantities, it is very important in a sustainable kitchen to do a review of the refrigerators and cabinets and write a list, noting just what is needed before leaving the house to do the shopping.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Resposta" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cpX-8E-4aU">
-                                        <rect key="frame" x="15" y="373.5" width="345" height="30"/>
+                                        <rect key="frame" x="15" y="374" width="345" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEY-7V-Gsk" userLabel="callback">
-                                        <rect key="frame" x="45" y="453.5" width="285" height="30"/>
+                                        <rect key="frame" x="45" y="464" width="285" height="30"/>
                                         <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Essa pergunta não se aplica a minha ideia"/>
+                                        <state key="normal" title="This question does not apply to my idea"/>
                                     </button>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sve-Zc-Dug">
+                                        <rect key="frame" x="311" y="413" width="51" height="31"/>
+                                    </switch>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create topic with this answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46H-Xq-wwK">
+                                        <rect key="frame" x="115" y="420" width="188" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="Sve-Zc-Dug" firstAttribute="leading" secondItem="46H-Xq-wwK" secondAttribute="trailing" constant="8" symbolic="YES" id="5wn-I1-MnX"/>
                                     <constraint firstItem="Ntu-GN-eUd" firstAttribute="centerX" secondItem="GoQ-6C-DJT" secondAttribute="centerX" id="96M-xX-4Kh"/>
                                     <constraint firstAttribute="trailing" secondItem="cpX-8E-4aU" secondAttribute="trailing" constant="15" id="Aud-ej-V26"/>
+                                    <constraint firstItem="Sve-Zc-Dug" firstAttribute="centerY" secondItem="46H-Xq-wwK" secondAttribute="centerY" id="H2t-5e-IRo"/>
                                     <constraint firstAttribute="trailing" secondItem="iLw-5F-OMm" secondAttribute="trailing" id="HXa-3t-pcG"/>
                                     <constraint firstItem="Ntu-GN-eUd" firstAttribute="leading" secondItem="GoQ-6C-DJT" secondAttribute="leading" id="PEi-Be-KPL"/>
                                     <constraint firstItem="iLw-5F-OMm" firstAttribute="leading" secondItem="GoQ-6C-DJT" secondAttribute="leading" id="SFB-Yg-NtU"/>
@@ -451,11 +462,13 @@
                                     <constraint firstItem="iLw-5F-OMm" firstAttribute="top" secondItem="GoQ-6C-DJT" secondAttribute="top" id="eQs-1e-4NA"/>
                                     <constraint firstItem="fzA-ng-kmj" firstAttribute="top" secondItem="Ntu-GN-eUd" secondAttribute="bottom" constant="15" id="hFY-I5-IUf"/>
                                     <constraint firstItem="eEY-7V-Gsk" firstAttribute="bottom" secondItem="GoQ-6C-DJT" secondAttribute="bottom" id="hfT-6d-3Kc"/>
-                                    <constraint firstItem="eEY-7V-Gsk" firstAttribute="top" secondItem="cpX-8E-4aU" secondAttribute="bottom" constant="50" id="mYr-Yf-dUt"/>
+                                    <constraint firstItem="eEY-7V-Gsk" firstAttribute="top" secondItem="Sve-Zc-Dug" secondAttribute="bottom" constant="20" id="jBq-rD-6BD"/>
+                                    <constraint firstItem="eEY-7V-Gsk" firstAttribute="top" secondItem="cpX-8E-4aU" secondAttribute="bottom" constant="60" id="mYr-Yf-dUt"/>
                                     <constraint firstItem="iLw-5F-OMm" firstAttribute="width" secondItem="GoQ-6C-DJT" secondAttribute="width" id="rF4-YF-lbu"/>
                                     <constraint firstItem="iLw-5F-OMm" firstAttribute="height" secondItem="GoQ-6C-DJT" secondAttribute="height" multiplier="0.3" id="uXp-OC-3UJ">
                                         <variation key="heightClass=compact-widthClass=compact" constant="100"/>
                                     </constraint>
+                                    <constraint firstItem="Sve-Zc-Dug" firstAttribute="trailing" secondItem="cpX-8E-4aU" secondAttribute="trailing" id="w94-PQ-m0x"/>
                                     <constraint firstAttribute="trailing" secondItem="fzA-ng-kmj" secondAttribute="trailing" constant="15" id="yzM-Oi-hEK"/>
                                 </constraints>
                             </scrollView>
