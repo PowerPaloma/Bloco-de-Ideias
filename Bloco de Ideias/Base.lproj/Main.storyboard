@@ -21,11 +21,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNs-wt-ZK3">
-                                <rect key="frame" x="16" y="16" width="343" height="42"/>
+                                <rect key="frame" x="16" y="16" width="343" height="40"/>
                                 <attributedString key="attributedText">
                                     <fragment content="My Ideas">
                                         <attributes>
-                                            <font key="NSFont" size="34" name="FredokaOne-Regular"/>
+                                            <font key="NSFont" metaFont="system" size="34"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -33,7 +33,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8W7-G7-eVx">
-                                <rect key="frame" x="0.0" y="66" width="375" height="537"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="539"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Opf-Ib-eXx">
                                     <size key="itemSize" width="50" height="50"/>
@@ -427,6 +427,9 @@
                                         <rect key="frame" x="45" y="362.5" width="285" height="30"/>
                                         <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="This question does not apply to my idea"/>
+                                        <connections>
+                                            <action selector="notApply:" destination="jcK-00-69D" eventType="touchUpInside" id="VMg-xu-NQ9"/>
+                                        </connections>
                                     </button>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sve-Zc-Dug">
                                         <rect key="frame" x="311" y="311.5" width="51" height="31"/>
@@ -504,11 +507,11 @@
             <objects>
                 <viewController storyboardIdentifier="overlayViewController" id="Fi3-dh-Ci0" customClass="OverlayViewController" customModule="Bloco_de_Ideias" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wpV-zm-5Od">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zZX-GR-W1G">
-                                <rect key="frame" x="0.0" y="40" width="375" height="519"/>
+                                <rect key="frame" x="0.0" y="60" width="375" height="607"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="164-75-H0Q">
                                     <size key="itemSize" width="50" height="50"/>
@@ -528,7 +531,7 @@
                                 </cells>
                             </collectionView>
                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="brI-Y4-kan">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3oc-Rr-gff">
                                         <rect key="frame" x="0.0" y="0.0" width="187.5" height="40"/>
@@ -608,7 +611,7 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="mAw-m8-In1">
-                                <rect key="frame" x="16" y="96" width="343" height="511"/>
+                                <rect key="frame" x="16" y="36" width="343" height="615"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgu-FM-lcX">
                                         <rect key="frame" x="153" y="0.0" width="37.5" height="24"/>
@@ -617,7 +620,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifF-HT-0bh">
-                                        <rect key="frame" x="0.0" y="40" width="343" height="471"/>
+                                        <rect key="frame" x="0.0" y="40" width="343" height="575"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -680,7 +683,7 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="sLf-yq-or2">
-                                <rect key="frame" x="16" y="84" width="343" height="523"/>
+                                <rect key="frame" x="16" y="36" width="343" height="615"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6mB-yt-uIz">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="24"/>
@@ -689,10 +692,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fyE-tN-pfS">
-                                        <rect key="frame" x="0.0" y="40" width="343" height="483"/>
+                                        <rect key="frame" x="0.0" y="40" width="343" height="575"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dUV-05-yrB">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="483"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dUV-05-yrB">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="575"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -757,7 +760,7 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ZD4-B6-gFd">
-                                <rect key="frame" x="16" y="96" width="343" height="511"/>
+                                <rect key="frame" x="16" y="36" width="343" height="615"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVA-ki-QWx">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="24"/>
@@ -767,7 +770,7 @@
                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="x0C-MU-JmB">
-                                        <rect key="frame" x="0.0" y="40" width="343" height="471"/>
+                                        <rect key="frame" x="0.0" y="40" width="343" height="575"/>
                                     </imageView>
                                 </subviews>
                             </stackView>
@@ -1124,7 +1127,7 @@
                                                     <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="aM4-wu-ba5" kind="presentation" id="HSV-2I-URY"/>
+                                                    <action selector="improveIdea:" destination="ZTJ-5U-gNN" eventType="touchUpInside" id="hFc-VK-cXP"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1249,13 +1252,14 @@
                         <outlet property="swipeUp" destination="7fy-d2-0bl" id="aa4-Gd-8LD"/>
                         <outlet property="titleIdea" destination="2aO-2I-mTE" id="WZE-7m-wCp"/>
                         <outlet property="viewP" destination="ezz-qu-NbM" id="Xfz-Bs-yp5"/>
-                        <segue destination="7NA-n9-J0f" kind="presentation" identifier="viewTopicText" id="qMV-Fx-Vnj"/>
-                        <segue destination="6t3-UM-UiH" kind="presentation" identifier="viewTopicDraw" id="C2D-bf-MVB"/>
-                        <segue destination="KRV-ai-FMS" kind="presentation" identifier="showTopicImage" id="W2h-to-TTt"/>
-                        <segue destination="Fi3-dh-Ci0" kind="show" identifier="UP" id="FBz-o0-W7x"/>
-                        <segue destination="67f-WX-UkI" kind="presentation" identifier="newTopicText" id="8QL-6t-hR7"/>
-                        <segue destination="7UW-iv-dSw" kind="presentation" identifier="newTopicDraw" id="eaD-FM-BJz"/>
-                        <segue destination="7rN-2b-3mK" kind="presentation" identifier="newTopicImage" id="8HB-oP-3Fg"/>
+                        <segue destination="oXU-TB-V9k" kind="presentation" identifier="newTopicText" id="ues-vQ-KO9"/>
+                        <segue destination="fsS-fT-1KP" kind="presentation" identifier="newTopicDraw" id="b0x-a7-WBB"/>
+                        <segue destination="99f-ze-aZS" kind="presentation" identifier="newTopicImage" id="79T-yY-PGc"/>
+                        <segue destination="7NA-n9-J0f" kind="show" identifier="viewTopicText" id="qMV-Fx-Vnj"/>
+                        <segue destination="6t3-UM-UiH" kind="show" identifier="viewTopicDraw" id="C2D-bf-MVB"/>
+                        <segue destination="KRV-ai-FMS" kind="show" identifier="showTopicImage" id="W2h-to-TTt"/>
+                        <segue destination="Fi3-dh-Ci0" kind="presentation" identifier="UP" id="FBz-o0-W7x"/>
+                        <segue destination="aM4-wu-ba5" kind="presentation" identifier="improve" id="D1Q-YM-HVg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qqr-fv-cGw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1479,5 +1483,8 @@
         <segue reference="W2h-to-TTt"/>
         <segue reference="C2D-bf-MVB"/>
         <segue reference="qMV-Fx-Vnj"/>
+        <segue reference="0oE-b3-ebC"/>
+        <segue reference="2c3-Le-ecV"/>
+        <segue reference="Sb7-Qu-V7t"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -260,7 +260,7 @@ extension MyIdeasViewController : UICollectionViewDelegate, UICollectionViewData
             self.indexIdeaSelected = indexPath.row - 1
             performSegue(withIdentifier: "viewIdea", sender: nil)
         }
-        
+        collectionView.endEditing(true)
     }
     
     func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {

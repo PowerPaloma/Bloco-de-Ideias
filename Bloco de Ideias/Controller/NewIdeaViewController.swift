@@ -83,6 +83,7 @@ class NewIdeaViewController: UIViewController{
             self.image.image = UIImage(data: ideaEd.image!)
             self.process.text = ideaEd.process?.name
             self.tags(tags: Array(ideaEd.tags!) as! [Tag])
+            self.navigationItem.title = "Edit Idea"
         }
         
         
@@ -181,7 +182,7 @@ class NewIdeaViewController: UIViewController{
         if (self.titleTF.text == "" || self.desc.text == "" || self.process.text == "" || self.tags.text == ""){
             let alert = UIAlertController(title: "Complete all the fields", message: nil, preferredStyle: .alert)
             self.present(alert, animated: true, completion: nil)
-            let when = DispatchTime.now() + 1
+            let when = DispatchTime.now() + 5
             DispatchQueue.main.asyncAfter(deadline: when){
                 alert.dismiss(animated: true, completion: nil)
             }
