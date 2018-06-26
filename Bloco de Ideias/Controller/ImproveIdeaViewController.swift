@@ -15,16 +15,16 @@ class ImproveIdeaViewController: UIViewController {
     @IBOutlet var answer: UITextField!
     @IBOutlet var titleSugguestion: UILabel!
     @IBOutlet var descSuggestion: UILabel!
+    @IBOutlet var createTopic: UISwitch!
+    @IBOutlet var image: UIImageView!
     
     //variables
     var idea = Idea()
     var suggestionsOrder: [(Suggestion,Int64)] = []
-    
     var notAnswered: [(Suggestion,Int64)] = []
-    
     var answered: [(Suggestion,Int64)] = []
-    
     var filteredByOrd: [(Suggestion,Int64)] = []
+    var currentSugg: (Suggestion, Int64) = (Suggestion(), 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +73,7 @@ class ImproveIdeaViewController: UIViewController {
                     }).count >= 2 || ord == 0
                 }
                 
-               // getRandomSuggestion()
+                getRandomSuggestion()
             } else {
                 NSLog("There are no suggestions for you now...")
             }
@@ -95,13 +95,25 @@ class ImproveIdeaViewController: UIViewController {
         }))!
     }
     
-//    func getRandomSuggestion(){
-//        if
-//            let sug = filteredByOrd.remove(at: Int(arc4random_uniform(UInt32(filteredByOrd.count)))).0
-//
-//        self.titleSugguestion.text = sug.titleS
-//        self.descSuggestion.text = sug.descS
-//    }
+    func getRandomSuggestion(){
+        if(!filteredByOrd.isEmpty){
+            currentSugg = filteredByOrd.remove(at: Int(arc4random_uniform(UInt32(filteredByOrd.count))))
+            self.titleSugguestion.text = currentSugg.0.titleS
+            self.descSuggestion.text = currentSugg.0.descS
+        }else{
+            let alertSheet: UIAlertController = UIAlertController(title: "Out of suggestions",
+                                                                  message: "According to your creative process and tags, we don't have more suggestions at the moment.\nNow you may be prepared to put your idea into practice!",
+                                                                  preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: { _ in
+                self.dismiss(animated: true, completion: nil)
+            })
+            
+            alertSheet.addAction(okAction)
+            
+            self.present(alertSheet, animated: true, completion: nil)
+        }
+    }
     
     @IBAction func exit(_ sender: UIBarButtonItem) {
         if answer.text != ""{
@@ -112,11 +124,34 @@ class ImproveIdeaViewController: UIViewController {
         
     }
     
-    @IBAction func skip(_ sender: UIBarButtonItem) {
-        
-    }
-    
     @IBAction func next(_ sender: UIBarButtonItem) {
-//        getRandomSuggestion()
+        let context = DataManager.getContext()
+        
+        if answer.text != "" {
+            // check done in suggestion
+            let status = SuggestionStatus()
+            status.done = true
+            context.insert(status)
+            status.idea = self.idea
+            status.suggestion = self.currentSugg.0
+            status.save()
+            
+            if createTopic.isOn {
+                // create topic in idea for the answer
+                let newTopic = Topic()
+                newTopic.titleT = self.currentSugg.0.topicTitle
+                newTopic.descT = self.answer.text
+                newTopic.typeT = TopicsEnum.text.rawValue
+                context.insert(newTopic)
+                newTopic.idea = self.idea
+                newTopic.save()
+            }
+            self.getRandomSuggestion()
+        } else {
+            let aux = currentSugg
+            self.getRandomSuggestion()
+            filteredByOrd.append(aux)
+        }
+        
     }
 }

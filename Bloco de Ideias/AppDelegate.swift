@@ -245,6 +245,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.saving(recordsToSave: processList,         entityName: "Process")
         self.saving(recordsToSave: suggestionList,      entityName: "Suggestion")
         self.saving(recordsToSave: suggestionOrderList, entityName: "SuggestionOrder")
+        
+        do {
+            try DataManager.getContext().save()
+            NSLog("CoreData Allright")
+        }catch {
+            NSLog("ERRROOOORRR ON SAVING DATA")
+        }
         //--------------------------------------------------
 
         return true
@@ -254,6 +261,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func addTagsInSuggestion(tags:[Tag], s: Suggestion){
         for tag in tags{
             s.addToTags(tag)
+            tag.addToSuggestions(s)
         }
     }
     
@@ -264,13 +272,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    }
     
     func saving(recordsToSave: [NSManagedObject] ,entityName: String){
+        let context = DataManager.getContext()
         let entity = DataManager.getEntity(entity: entityName)
         let entityRecords = DataManager.getAll(entity: entity)
         if (entityRecords.success){
             if(entityRecords.objects.count == 0){
                 NSLog("Saving \(entityName)...")
                 for rec in recordsToSave{
-                    rec.save()
+                    context.insert(rec)
                 }
             }
         }else{

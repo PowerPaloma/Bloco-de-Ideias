@@ -141,7 +141,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HKC-v6-IRl" userLabel="Stack title">
                                                 <rect key="frame" x="0.0" y="179" width="375" height="62"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Título" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1l-5a-S6k">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1l-5a-S6k">
                                                         <rect key="frame" x="16" y="0.0" width="343" height="24"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <nil key="textColor"/>
@@ -159,7 +159,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Iyb-xf-2jI" userLabel="Stack desc">
                                                 <rect key="frame" x="0.0" y="257" width="375" height="112"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzy-tM-WKC">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzy-tM-WKC">
                                                         <rect key="frame" x="16" y="0.0" width="343" height="24"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <nil key="textColor"/>
@@ -180,7 +180,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YhY-jf-ziM" userLabel="Stack process">
                                                 <rect key="frame" x="0.0" y="385" width="375" height="62"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Processo Criativo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbs-1a-Smf">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creative Process" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbs-1a-Smf">
                                                         <rect key="frame" x="16" y="0.0" width="343" height="24"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <nil key="textColor"/>
@@ -391,11 +391,6 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hLV-U8-CcE">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem title="Skip" id="Yzy-kt-B2Y">
-                                        <connections>
-                                            <action selector="skip:" destination="jcK-00-69D" id="ivo-s6-Le0"/>
-                                        </connections>
-                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="iIj-Ch-nao"/>
                                     <barButtonItem title="Next" id="3dC-bg-tPm">
                                         <connections>
@@ -410,35 +405,34 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="people" translatesAutoresizingMaskIntoConstraints="NO" id="iLw-5F-OMm">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="168"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is my audience?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ntu-GN-eUd" userLabel="Title">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some suggestion for you!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ntu-GN-eUd" userLabel="Title">
                                         <rect key="frame" x="0.0" y="183" width="375" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzA-ng-kmj" userLabel="Desc">
-                                        <rect key="frame" x="15" y="227" width="345" height="122"/>
-                                        <string key="text">To avoid food spoilage and dispensing in large quantities, it is very important in a sustainable kitchen to do a review of the refrigerators and cabinets and write a list, noting just what is needed before leaving the house to do the shopping.</string>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a tip for the question." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzA-ng-kmj" userLabel="Desc">
+                                        <rect key="frame" x="15" y="227" width="345" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Resposta" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cpX-8E-4aU">
-                                        <rect key="frame" x="15" y="374" width="345" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Answer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cpX-8E-4aU">
+                                        <rect key="frame" x="15" y="272.5" width="345" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEY-7V-Gsk" userLabel="callback">
-                                        <rect key="frame" x="45" y="464" width="285" height="30"/>
+                                        <rect key="frame" x="45" y="362.5" width="285" height="30"/>
                                         <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="This question does not apply to my idea"/>
                                     </button>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sve-Zc-Dug">
-                                        <rect key="frame" x="311" y="413" width="51" height="31"/>
+                                        <rect key="frame" x="311" y="311.5" width="51" height="31"/>
                                     </switch>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create topic with this answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46H-Xq-wwK">
-                                        <rect key="frame" x="115" y="420" width="188" height="17"/>
+                                        <rect key="frame" x="115" y="318.5" width="188" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                         <nil key="highlightedColor"/>
@@ -495,13 +489,15 @@
                     </navigationItem>
                     <connections>
                         <outlet property="answer" destination="cpX-8E-4aU" id="nw8-Ws-Fae"/>
+                        <outlet property="createTopic" destination="Sve-Zc-Dug" id="Owk-pe-FBV"/>
                         <outlet property="descSuggestion" destination="fzA-ng-kmj" id="ntD-sN-12a"/>
+                        <outlet property="image" destination="iLw-5F-OMm" id="DbS-ah-E4r"/>
                         <outlet property="titleSugguestion" destination="Ntu-GN-eUd" id="cUv-D0-2Pw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y7C-iw-3KG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1593" y="-1809"/>
+            <point key="canvasLocation" x="1592.8" y="-1809.4452773613195"/>
         </scene>
         <!--Overlay View Controller-->
         <scene sceneID="rFY-sn-dpi">
@@ -583,7 +579,7 @@
             </objects>
             <point key="canvasLocation" x="2858.4000000000001" y="-1796.8515742128936"/>
         </scene>
-        <!--Tópico-->
+        <!--Topic-->
         <scene sceneID="lfH-8n-U3D">
             <objects>
                 <viewController id="7NA-n9-J0f" customClass="ViewTopicTextViewController" customModule="Bloco_de_Ideias" customModuleProvider="target" sceneMemberID="viewController">
@@ -594,8 +590,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="mAw-m8-In1">
                                 <rect key="frame" x="16" y="16" width="343" height="527"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Título" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgu-FM-lcX">
-                                        <rect key="frame" x="147" y="0.0" width="49" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgu-FM-lcX">
+                                        <rect key="frame" x="153" y="0.0" width="37.5" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -623,7 +619,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JDH-4E-MFi"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Tópico" id="0ia-5b-dnY">
+                    <navigationItem key="navigationItem" title="Topic" id="0ia-5b-dnY">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="YKW-mJ-QZB">
                             <connections>
                                 <action selector="edit:" destination="7NA-n9-J0f" id="Fo8-5X-XAH"/>
@@ -638,9 +634,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ox5-QF-Hbf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3265" y="-931"/>
+            <point key="canvasLocation" x="3268" y="-942"/>
         </scene>
-        <!--Tópico-->
+        <!--Topic-->
         <scene sceneID="fqg-4b-A9p">
             <objects>
                 <viewController id="6t3-UM-UiH" customClass="ViewTopicDrawViewController" customModule="Bloco_de_Ideias" customModuleProvider="target" sceneMemberID="viewController">
@@ -684,7 +680,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Cgy-qC-NIn"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Tópico" id="blg-CK-3T9">
+                    <navigationItem key="navigationItem" title="Topic" id="blg-CK-3T9">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="Ee6-jB-9ZB">
                             <connections>
                                 <action selector="edit:" destination="6t3-UM-UiH" id="A4s-he-ijD"/>
@@ -699,9 +695,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PaL-dX-74f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4126" y="-931"/>
+            <point key="canvasLocation" x="4124" y="-899"/>
         </scene>
-        <!--View Topic Image View Controller-->
+        <!--Topic-->
         <scene sceneID="RfX-ZP-p6M">
             <objects>
                 <viewController id="KRV-ai-FMS" customClass="ViewTopicImageViewController" customModule="Bloco_de_Ideias" customModuleProvider="target" sceneMemberID="viewController">
@@ -712,7 +708,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ZD4-B6-gFd">
                                 <rect key="frame" x="16" y="16" width="343" height="527"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVA-ki-QWx">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVA-ki-QWx">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
@@ -734,7 +730,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5PY-rK-1pQ"/>
                     </view>
-                    <navigationItem key="navigationItem" id="igR-BM-BRy">
+                    <navigationItem key="navigationItem" title="Topic" id="igR-BM-BRy">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="Gdw-CG-smd">
                             <connections>
                                 <action selector="edit:" destination="KRV-ai-FMS" id="ash-01-ZSQ"/>
@@ -749,9 +745,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eeC-iV-FGW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5010" y="-931"/>
+            <point key="canvasLocation" x="5002" y="-816"/>
         </scene>
-        <!--Texto-->
+        <!--Text-->
         <scene sceneID="Vwn-rL-PPi">
             <objects>
                 <viewController id="67f-WX-UkI" customClass="NewTopicTextViewController" customModule="Bloco_de_Ideias" customModuleProvider="target" sceneMemberID="viewController">
@@ -780,8 +776,8 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Spn-8I-qk1">
-                                                        <rect key="frame" x="0.0" y="374.5" width="77" height="20.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Spn-8I-qk1">
+                                                        <rect key="frame" x="0.0" y="374.5" width="88" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -829,7 +825,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Vld-8m-naY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Texto" id="sSl-MP-iDl">
+                    <navigationItem key="navigationItem" title="Text" id="sSl-MP-iDl">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="2ru-bd-FD6">
                             <connections>
                                 <action selector="cancelAction:" destination="67f-WX-UkI" id="1Lh-pR-mIy"/>
@@ -850,7 +846,7 @@
             </objects>
             <point key="canvasLocation" x="3062" y="9"/>
         </scene>
-        <!--Desenho-->
+        <!--Draw-->
         <scene sceneID="T8c-UW-vQ5">
             <objects>
                 <viewController id="7UW-iv-dSw" customClass="NewTopicDrawViewController" customModule="Bloco_de_Ideias" customModuleProvider="target" sceneMemberID="viewController">
@@ -948,7 +944,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UHG-wi-JBM"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Desenho" id="CNs-PI-xnV">
+                    <navigationItem key="navigationItem" title="Draw" id="CNs-PI-xnV">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="fBp-4B-Akg">
                             <connections>
                                 <action selector="cancelAction:" destination="7UW-iv-dSw" id="wAI-yk-chT"/>
@@ -1244,7 +1240,7 @@
             </objects>
             <point key="canvasLocation" x="2230" y="706"/>
         </scene>
-        <!--Imagem-->
+        <!--Image-->
         <scene sceneID="4XH-XX-uVQ">
             <objects>
                 <viewController id="7rN-2b-3mK" customClass="NewTopicImageViewController" customModule="Bloco_de_Ideias" customModuleProvider="target" sceneMemberID="viewController">
@@ -1295,7 +1291,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lfH-TF-JuY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Imagem" id="DtE-56-ADK">
+                    <navigationItem key="navigationItem" title="Image" id="DtE-56-ADK">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Yho-AO-8RH">
                             <connections>
                                 <action selector="cancelAction:" destination="7rN-2b-3mK" id="esS-vU-cZO"/>
