@@ -10,8 +10,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="NunitoSans-Regular.ttf">
-            <string>NunitoSans-Regular</string>
+        <array key="NunitoSans-Bold.ttf">
+            <string>NunitoSans-Bold</string>
         </array>
     </customFonts>
     <objects>
@@ -51,8 +51,8 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meu tópico img" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqD-7t-k6e">
-                                <rect key="frame" x="16" y="111" width="168" height="33"/>
-                                <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="24"/>
+                                <rect key="frame" x="16" y="116.5" width="168" height="27.5"/>
+                                <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -97,6 +97,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="delete" width="50" height="50"/>
+        <image name="delete" width="30" height="30"/>
     </resources>
 </document>
