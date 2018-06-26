@@ -508,19 +508,11 @@
             <objects>
                 <viewController storyboardIdentifier="overlayViewController" id="Fi3-dh-Ci0" customClass="OverlayViewController" customModule="Bloco_de_Ideias" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wpV-zm-5Od">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vBc-Av-A2O">
-                                <rect key="frame" x="0.0" y="20" width="375" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="dismiss"/>
-                                <connections>
-                                    <action selector="dismissed:" destination="Fi3-dh-Ci0" eventType="touchUpInside" id="y9w-05-lTP"/>
-                                </connections>
-                            </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zZX-GR-W1G">
-                                <rect key="frame" x="0.0" y="50" width="375" height="617"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zZX-GR-W1G">
+                                <rect key="frame" x="0.0" y="40" width="375" height="519"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="164-75-H0Q">
                                     <size key="itemSize" width="50" height="50"/>
@@ -539,19 +531,51 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="brI-Y4-kan">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3oc-Rr-gff">
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="40"/>
+                                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="list">
+                                            <color key="titleShadowColor" red="0.23137254900000001" green="0.68627450980000004" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="changeLayoutAction:" destination="ZTJ-5U-gNN" eventType="touchUpInside" id="mOR-Y5-czC"/>
+                                            <action selector="changeLayoutAction:" destination="Fi3-dh-Ci0" eventType="touchUpInside" id="yh1-Vt-DZT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEr-Dl-kG8">
+                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="40"/>
+                                        <state key="normal" title="Edit"/>
+                                        <connections>
+                                            <action selector="editModeAction:" destination="ZTJ-5U-gNN" eventType="touchUpInside" id="PPS-ld-At9"/>
+                                            <action selector="editModeAction:" destination="Fi3-dh-Ci0" eventType="touchUpInside" id="kkG-Uz-lhQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="aVZ-vh-Uxh"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.96853011386846388" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="t51-lC-WWD" firstAttribute="bottom" secondItem="zZX-GR-W1G" secondAttribute="bottom" id="AFV-sG-2mS"/>
-                            <constraint firstItem="zZX-GR-W1G" firstAttribute="top" secondItem="vBc-Av-A2O" secondAttribute="bottom" id="OZw-Dh-vXr"/>
-                            <constraint firstItem="vBc-Av-A2O" firstAttribute="leading" secondItem="t51-lC-WWD" secondAttribute="leading" id="Sy4-7R-Tud"/>
+                            <constraint firstItem="brI-Y4-kan" firstAttribute="top" secondItem="t51-lC-WWD" secondAttribute="top" id="Bcb-6o-Pr6"/>
+                            <constraint firstItem="zZX-GR-W1G" firstAttribute="top" secondItem="brI-Y4-kan" secondAttribute="bottom" id="Bou-4C-ytf"/>
                             <constraint firstItem="t51-lC-WWD" firstAttribute="trailing" secondItem="zZX-GR-W1G" secondAttribute="trailing" id="fhe-Ct-4Bv"/>
-                            <constraint firstItem="vBc-Av-A2O" firstAttribute="top" secondItem="t51-lC-WWD" secondAttribute="top" id="jeT-90-dot"/>
-                            <constraint firstItem="t51-lC-WWD" firstAttribute="trailing" secondItem="vBc-Av-A2O" secondAttribute="trailing" id="n97-eP-Iwo"/>
+                            <constraint firstItem="brI-Y4-kan" firstAttribute="leading" secondItem="t51-lC-WWD" secondAttribute="leading" id="o0V-3A-h8a"/>
+                            <constraint firstItem="t51-lC-WWD" firstAttribute="trailing" secondItem="brI-Y4-kan" secondAttribute="trailing" id="pfB-px-58A"/>
                             <constraint firstItem="zZX-GR-W1G" firstAttribute="leading" secondItem="t51-lC-WWD" secondAttribute="leading" id="vCU-N3-iKM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="t51-lC-WWD"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="zZX-GR-W1G" id="9hP-ef-vc7"/>
+                        <outlet property="editButton" destination="wEr-Dl-kG8" id="TxP-DX-7Rp"/>
+                        <segue destination="7NA-n9-J0f" kind="show" id="Sb7-Qu-V7t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ke-ih-gBj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1011,7 +1035,7 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Wus-yM-aKF">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Wus-yM-aKF">
                                         <rect key="frame" x="0.0" y="347" width="375" height="181"/>
                                         <color key="backgroundColor" red="0.93725490196078431" green="0.94901960784313721" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <gestureRecognizers/>
@@ -1096,7 +1120,7 @@
                         <segue destination="7NA-n9-J0f" kind="show" identifier="viewTopicText" id="qMV-Fx-Vnj"/>
                         <segue destination="6t3-UM-UiH" kind="show" identifier="viewTopicDraw" id="C2D-bf-MVB"/>
                         <segue destination="KRV-ai-FMS" kind="show" identifier="showTopicImage" id="W2h-to-TTt"/>
-                        <segue destination="Fi3-dh-Ci0" kind="presentation" identifier="UP" id="FBz-o0-W7x"/>
+                        <segue destination="Fi3-dh-Ci0" kind="show" identifier="UP" id="FBz-o0-W7x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qqr-fv-cGw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1325,5 +1349,6 @@
         <segue reference="b0x-a7-WBB"/>
         <segue reference="ues-vQ-KO9"/>
         <segue reference="bdN-Jx-yz1"/>
+        <segue reference="Sb7-Qu-V7t"/>
     </inferredMetricsTieBreakers>
 </document>
