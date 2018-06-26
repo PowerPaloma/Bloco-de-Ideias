@@ -103,8 +103,8 @@ class ImproveIdeaViewController: UIViewController {
             self.titleSugguestion.text = currentSugg.0.titleS
             self.descSuggestion.text = currentSugg.0.descS
         }else{
-            let alertSheet: UIAlertController = UIAlertController(title: "Out of suggestions",
-                                                                  message: "According to your creative process and tags, we don't have more suggestions at the moment.\nNow you may be prepared to put your idea into practice!",
+            let alertSheet: UIAlertController = UIAlertController(title: "Go Head!",
+                                                                  message: "Congratulations!\n We think you're ready put your idea into practice!",
                                                                   preferredStyle: .alert)
             
             let okAction = UIAlertAction(title: "OK", style: .default, handler: { _ in
@@ -173,22 +173,30 @@ class ImproveIdeaViewController: UIViewController {
     }
     
     @IBAction func notApply(_ sender: Any) {
-        let context = DataManager.getContext()
-        // check done in suggestion
-        let status = SuggestionStatus()
-        status.done = true
-        context.insert(status)
-        status.idea = self.idea
-        status.suggestion = self.currentSugg.0
-        status.save()
+        let alertSheet = UIAlertController(title: "Sorry, we will not show it here anymore...",
+                                       message: nil,
+                                       preferredStyle: .alert)
         
-        let alert = UIAlertController(title: "Sorry, we will not show it here anymore...", message: nil, preferredStyle: .alert)
-        self.present(alert, animated: true, completion: nil)
-        self.getRandomSuggestion()
-        let when = DispatchTime.now() + 2
-        DispatchQueue.main.asyncAfter(deadline: when){
-            alert.dismiss(animated: true, completion: nil)
-        }
+        let saveAction = UIAlertAction(title: "Ok", style: .default, handler: { _ in
+            
+            let context = DataManager.getContext()
+            let status = SuggestionStatus()
+            status.done = true
+            context.insert(status)
+            status.idea = self.idea
+            status.suggestion = self.currentSugg.0
+            status.save()
+            self.getRandomSuggestion()
+            
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
+            alertSheet.dismiss(animated: true, completion: nil)
+        })
+        
+        alertSheet.addAction(saveAction)
+        alertSheet.addAction(cancelAction)
+        self.present(alertSheet, animated: true, completion: nil)
+     
     }
     
     func saveAnswer(){

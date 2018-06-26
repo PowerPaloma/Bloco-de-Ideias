@@ -182,6 +182,56 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let s6Tags: Array<Tag> = [t1, t2, t3, t5, t10, t11, t12, t13, t16, t17, t18, t19]
         self.addTagsInSuggestion(tags: s6Tags, s: s6)
         suggestionList.append(s6)
+        
+        let s7:Suggestion = Suggestion()
+        s7.titleS = "What are the similars for my idea?"
+        s7.descS = "What things already exist that could solve the same problem?"
+        s7.topicTitle = "Similars"
+        s7.isText = true
+        s7.addToProcesses(p1)
+        let s7Tags: Array<Tag> = [t1, t2, t3, t5, t6, t7, t8, t9, t10, t11, t12, t13, t16, t17, t18, t19]
+        self.addTagsInSuggestion(tags: s7Tags, s: s7)
+        suggestionList.append(s7)
+        
+        let s8:Suggestion = Suggestion()
+        s8.titleS = "What are the alternatives for my idea?"
+        s8.descS = "What things already exist that could solve the same problem?"
+        s8.topicTitle = "Alternatives"
+        s8.isText = true
+        s8.addToProcesses(p1)
+        let s8Tags: Array<Tag> = [t1, t2, t3, t5, t10, t11, t12, t13, t16, t17, t18, t19]
+        self.addTagsInSuggestion(tags: s8Tags, s: s8)
+        suggestionList.append(s8)
+        
+//        let s6:Suggestion = Suggestion()
+//        s6.titleS = "What are the alternatives for my idea?"
+//        s6.descS = "What things already exist that could solve the same problem?"
+//        s6.topicTitle = "Alternatives"
+//        s6.isText = true
+//        s6.addToProcesses(p1)
+//        let s6Tags: Array<Tag> = [t1, t2, t3, t5, t10, t11, t12, t13, t16, t17, t18, t19]
+//        self.addTagsInSuggestion(tags: s6Tags, s: s6)
+//        suggestionList.append(s6)
+//        
+//        let s6:Suggestion = Suggestion()
+//        s6.titleS = "What are the alternatives for my idea?"
+//        s6.descS = "What things already exist that could solve the same problem?"
+//        s6.topicTitle = "Alternatives"
+//        s6.isText = true
+//        s6.addToProcesses(p1)
+//        let s6Tags: Array<Tag> = [t1, t2, t3, t5, t10, t11, t12, t13, t16, t17, t18, t19]
+//        self.addTagsInSuggestion(tags: s6Tags, s: s6)
+//        suggestionList.append(s6)
+//        
+//        let s6:Suggestion = Suggestion()
+//        s6.titleS = "What are the alternatives for my idea?"
+//        s6.descS = "What things already exist that could solve the same problem?"
+//        s6.topicTitle = "Alternatives"
+//        s6.isText = true
+//        s6.addToProcesses(p1)
+//        let s6Tags: Array<Tag> = [t1, t2, t3, t5, t10, t11, t12, t13, t16, t17, t18, t19]
+//        self.addTagsInSuggestion(tags: s6Tags, s: s6)
+//        suggestionList.append(s6)
     
         //--------------------------------
         
