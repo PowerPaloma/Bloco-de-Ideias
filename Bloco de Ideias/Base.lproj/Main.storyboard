@@ -422,43 +422,25 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="168"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some suggestion for you!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ntu-GN-eUd" userLabel="Title">
-<<<<<<< HEAD
                                         <rect key="frame" x="0.0" y="196" width="375" height="23.5"/>
                                         <fontDescription key="fontDescription" name="NunitoSans-SemiBold" family="Nunito Sans" pointSize="17"/>
-=======
-                                        <rect key="frame" x="0.0" y="183" width="375" height="29"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
->>>>>>> 5df02520e566be817e1e86c079b058a5a820ee87
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a tip for the question." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzA-ng-kmj" userLabel="Desc">
-<<<<<<< HEAD
                                         <rect key="frame" x="15" y="234.5" width="345" height="23.5"/>
                                         <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="17"/>
-=======
-                                        <rect key="frame" x="15" y="227" width="345" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
->>>>>>> 5df02520e566be817e1e86c079b058a5a820ee87
                                         <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Answer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cpX-8E-4aU">
-<<<<<<< HEAD
                                         <rect key="frame" x="15" y="283" width="345" height="32"/>
-=======
-                                        <rect key="frame" x="15" y="272.5" width="345" height="30"/>
->>>>>>> 5df02520e566be817e1e86c079b058a5a820ee87
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEY-7V-Gsk" userLabel="callback">
-<<<<<<< HEAD
                                         <rect key="frame" x="45" y="375" width="285" height="30"/>
-=======
-                                        <rect key="frame" x="45" y="362.5" width="285" height="30"/>
->>>>>>> 5df02520e566be817e1e86c079b058a5a820ee87
                                         <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="This question does not apply to my idea">
                                             <color key="titleColor" red="0.4823529412" green="0.30980392159999998" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -468,21 +450,12 @@
                                         </connections>
                                     </button>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sve-Zc-Dug">
-<<<<<<< HEAD
                                         <rect key="frame" x="311" y="324" width="51" height="31"/>
                                         <color key="onTintColor" red="0.4823529412" green="0.30980392159999998" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </switch>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create topic with this answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46H-Xq-wwK">
                                         <rect key="frame" x="88" y="328" width="215" height="23.5"/>
                                         <fontDescription key="fontDescription" name="NunitoSans-ExtraLight" family="Nunito Sans" pointSize="17"/>
-=======
-                                        <rect key="frame" x="311" y="311.5" width="51" height="31"/>
-                                        <color key="onTintColor" red="0.4823529412" green="0.30980392159999998" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </switch>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create topic with this answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46H-Xq-wwK">
-                                        <rect key="frame" x="115" y="318.5" width="188" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
->>>>>>> 5df02520e566be817e1e86c079b058a5a820ee87
                                         <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
