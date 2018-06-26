@@ -18,6 +18,7 @@
     </entity>
     <entity name="Suggestion" representedClassName=".Suggestion" syncable="YES" codeGenerationType="class">
         <attribute name="descS" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="isText" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="titleS" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="topicTitle" optional="YES" attributeType="String" syncable="YES"/>
@@ -67,7 +68,7 @@
     <elements>
         <element name="Idea" positionX="106" positionY="108" width="128" height="165"/>
         <element name="Process" positionX="196" positionY="480" width="128" height="105"/>
-        <element name="Suggestion" positionX="718" positionY="468" width="128" height="165"/>
+        <element name="Suggestion" positionX="718" positionY="468" width="128" height="180"/>
         <element name="SuggestionOrder" positionX="171" positionY="684" width="128" height="90"/>
         <element name="SuggestionStatus" positionX="547" positionY="270" width="128" height="90"/>
         <element name="Tag" positionX="448" positionY="387" width="128" height="90"/>
