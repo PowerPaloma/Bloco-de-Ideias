@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 
 class IdeaViewController: UIViewController {
+    
     //Outlets from View
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var ideaImage: UIImageView!
@@ -66,7 +67,7 @@ class IdeaViewController: UIViewController {
         
         swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(IdeaViewController.swipeUp(_:)))
         swipeUp.direction = UISwipeGestureRecognizerDirection.up
-        self.view.addGestureRecognizer(swipeUp)
+//        self.view.addGestureRecognizer(swipeUp)
 
 
     }
@@ -115,7 +116,8 @@ class IdeaViewController: UIViewController {
                 vc.viewTopic = self.topicSelected
             }
             if segue.identifier == "UP" {
-                let overlayVC = segue.destination as UIViewController
+                let overlayVC = segue.destination as!OverlayViewController
+                overlayVC.idea = self.idea
                 prepareOverlay(viewController: overlayVC)
             }
         }
@@ -431,7 +433,18 @@ extension IdeaViewController : UICollectionViewDelegate, UICollectionViewDataSou
         }
     }
 
-    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        if (scrollView.contentOffset.y > 20){
+            let overlayViewController = storyboard?.instantiateViewController(withIdentifier: "overlayViewController") as! UIViewController
+            prepareOverlay(viewController: overlayViewController)
+            present(overlayViewController, animated: true, completion: {
+                scrollView.contentOffset.y = 0
+            })
+        }
+        
+        
+    }
     
     
     
@@ -473,11 +486,5 @@ extension IdeaViewController : UICollectionViewDelegateFlowLayout {
     }
 }
 
-//extension IdeaViewController: TopicDelegate{
-//    func sendTopicToView(topic: Topic) {
-//        
-//    }
-//    
-//    
-//}
+
 
