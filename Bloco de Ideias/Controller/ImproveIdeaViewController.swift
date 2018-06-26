@@ -17,6 +17,7 @@ class ImproveIdeaViewController: UIViewController {
     @IBOutlet var descSuggestion: UILabel!
     @IBOutlet var createTopic: UISwitch!
     @IBOutlet var image: UIImageView!
+
     
     //variables
     var idea = Idea()
@@ -116,8 +117,41 @@ class ImproveIdeaViewController: UIViewController {
     }
     
     @IBAction func exit(_ sender: UIBarButtonItem) {
+        let alertSheet: UIAlertController
         if answer.text != ""{
-            //tratar
+            if self.createTopic.isOn{
+                alertSheet = UIAlertController(title: "Save your answer",
+                                                                      message: "Do you want to save your answer?",
+                                                                      preferredStyle: .alert)
+                
+                let saveAction = UIAlertAction(title: "Save", style: .default, handler: { _ in
+                    self.saveAnswer()
+                    self.dismiss(animated: true, completion: nil)
+                    
+                })
+                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
+                    self.dismiss(animated: true, completion: nil)
+                })
+                
+                alertSheet.addAction(saveAction)
+                alertSheet.addAction(cancelAction)
+                
+            }else{
+                alertSheet = UIAlertController(title: "Discard your answer",
+                                                                      message: "Do you really want to discard your answer?",
+                                                                      preferredStyle: .alert)
+                
+                let discardAction = UIAlertAction(title: "Discard", style: .default, handler: { _ in
+                    self.dismiss(animated: true, completion: nil)
+                })
+                
+                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                alertSheet.addAction(discardAction)
+                alertSheet.addAction(cancelAction)
+                
+            }
+            
+            self.present(alertSheet, animated: true, completion: nil)
         }else{
            dismiss(animated: true, completion: nil)
         }
@@ -125,32 +159,63 @@ class ImproveIdeaViewController: UIViewController {
     }
     
     @IBAction func next(_ sender: UIBarButtonItem) {
-        let context = DataManager.getContext()
-        
         if answer.text != "" {
-            // check done in suggestion
-            let status = SuggestionStatus()
-            status.done = true
-            context.insert(status)
-            status.idea = self.idea
-            status.suggestion = self.currentSugg.0
-            status.save()
-            
-            if createTopic.isOn {
-                // create topic in idea for the answer
-                let newTopic = Topic()
-                newTopic.titleT = self.currentSugg.0.topicTitle
-                newTopic.descT = self.answer.text
-                newTopic.typeT = TopicsEnum.text.rawValue
-                context.insert(newTopic)
-                newTopic.idea = self.idea
-                newTopic.save()
-            }
+            self.saveAnswer()
+            self.answer.text = ""
             self.getRandomSuggestion()
         } else {
             let aux = currentSugg
             self.getRandomSuggestion()
             filteredByOrd.append(aux)
+        }
+        
+    }
+    
+    @IBAction func notApply(_ sender: Any) {
+        let context = DataManager.getContext()
+        // check done in suggestion
+        let status = SuggestionStatus()
+        status.done = true
+        context.insert(status)
+        status.idea = self.idea
+        status.suggestion = self.currentSugg.0
+        status.save()
+        
+        let alert = UIAlertController(title: "Sorry, we will not show it here anymore...", message: nil, preferredStyle: .alert)
+        self.present(alert, animated: true, completion: nil)
+        self.getRandomSuggestion()
+        let when = DispatchTime.now() + 2
+        DispatchQueue.main.asyncAfter(deadline: when){
+            alert.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func saveAnswer(){
+        let context = DataManager.getContext()
+        // check done in suggestion
+        let status = SuggestionStatus()
+        status.done = true
+        context.insert(status)
+        status.idea = self.idea
+        status.suggestion = self.currentSugg.0
+        status.save()
+        
+        if createTopic.isOn {
+            // create topic in idea for the answer
+            let newTopic = Topic()
+            newTopic.titleT = self.currentSugg.0.topicTitle
+            newTopic.descT = self.answer.text
+            newTopic.typeT = TopicsEnum.text.rawValue
+            context.insert(newTopic)
+            newTopic.idea = self.idea
+            newTopic.save()
+            
+            let alert = UIAlertController(title: "Your answer was saved!", message: nil, preferredStyle: .alert)
+            self.present(alert, animated: true, completion: nil)
+            let when = DispatchTime.now() + 1
+            DispatchQueue.main.asyncAfter(deadline: when){
+                alert.dismiss(animated: true, completion: nil)
+            }
         }
         
     }

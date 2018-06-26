@@ -21,11 +21,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNs-wt-ZK3">
-                                <rect key="frame" x="16" y="16" width="343" height="42"/>
+                                <rect key="frame" x="16" y="16" width="343" height="40"/>
                                 <attributedString key="attributedText">
                                     <fragment content="My Ideas">
                                         <attributes>
-                                            <font key="NSFont" size="34" name="FredokaOne-Regular"/>
+                                            <font key="NSFont" metaFont="system" size="34"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -33,7 +33,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8W7-G7-eVx">
-                                <rect key="frame" x="0.0" y="66" width="375" height="537"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="539"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Opf-Ib-eXx">
                                     <size key="itemSize" width="50" height="50"/>
@@ -427,6 +427,9 @@
                                         <rect key="frame" x="45" y="362.5" width="285" height="30"/>
                                         <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="This question does not apply to my idea"/>
+                                        <connections>
+                                            <action selector="notApply:" destination="jcK-00-69D" eventType="touchUpInside" id="VMg-xu-NQ9"/>
+                                        </connections>
                                     </button>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sve-Zc-Dug">
                                         <rect key="frame" x="311" y="311.5" width="51" height="31"/>
@@ -962,7 +965,7 @@
                                                     <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="aM4-wu-ba5" kind="presentation" id="HSV-2I-URY"/>
+                                                    <action selector="improveIdea:" destination="ZTJ-5U-gNN" eventType="touchUpInside" id="hFc-VK-cXP"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1093,6 +1096,7 @@
                         <segue destination="6t3-UM-UiH" kind="show" identifier="viewTopicDraw" id="C2D-bf-MVB"/>
                         <segue destination="KRV-ai-FMS" kind="show" identifier="showTopicImage" id="W2h-to-TTt"/>
                         <segue destination="Fi3-dh-Ci0" kind="presentation" identifier="UP" id="FBz-o0-W7x"/>
+                        <segue destination="aM4-wu-ba5" kind="presentation" identifier="improve" id="D1Q-YM-HVg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qqr-fv-cGw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1317,9 +1321,9 @@
         <image name="people" width="528" height="396"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QGS-gT-80S"/>
-        <segue reference="5ub-YS-NUe"/>
-        <segue reference="sxn-Gw-bv6"/>
+        <segue reference="79T-yY-PGc"/>
+        <segue reference="b0x-a7-WBB"/>
+        <segue reference="ues-vQ-KO9"/>
         <segue reference="dPv-f4-p71"/>
     </inferredMetricsTieBreakers>
 </document>

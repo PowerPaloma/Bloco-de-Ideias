@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class IdeaViewController: UIViewController {
     //Outlets from View
@@ -76,21 +77,7 @@ class IdeaViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        //Core Data
-        let entityTopic = DataManager.getEntity(entity: "Topic")
-        let topics = DataManager.getAll(entity: entityTopic)
-        if (topics.success){
-            if(topics.objects.count == 0){
-                NSLog("Não existem topicos.")
-            }else{
-                topicsList.removeAll()
-                for top in topics.objects as! [Topic] {
-                    topicsList.append(top)
-                }
-            }
-        }else{
-            NSLog("Erro ao buscar topicos.")
-        }
+        self.topicsList = idea.topics?.allObjects as! [Topic]
         collectionView.reloadData()
         self.ideaImage.image = UIImage(data: self.idea.image! as Data)
         self.titleIdea.text = self.idea.title
@@ -139,7 +126,36 @@ class IdeaViewController: UIViewController {
     
     //Improve Idea
     @IBAction func improveIdea(_ sender: UIButton) {
-        performSegue(withIdentifier: "improve", sender: nil)
+        let context = DataManager.getContext()
+        let tagsNames = self.idea.tags!.map{ ($0 as! Tag).name! }
+        
+        //Core Data - getting suggestions who has the tag of this idea
+        do {
+            let fetchRequest : NSFetchRequest<Suggestion> = Suggestion.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format:"(ANY tags.name in %@) AND (ANY processes.name in %@)"
+                ,tagsNames
+                ,[self.idea.process!.name!]
+            )
+            
+            let fetchedResults = try context.fetch(fetchRequest)
+            
+            print(self.idea.suggestionStatus!.count, fetchedResults.count)
+            
+            if self.idea.suggestionStatus!.count < fetchedResults.count {
+                performSegue(withIdentifier: "improve", sender: nil)
+            } else {
+                let alertSheet: UIAlertController = UIAlertController(title: "Out of suggestions",
+                                                                      message: "According to your creative process and tags, we don't have more suggestions at the moment.\nNow you may be prepared to put your idea into practice!",
+                                                                      preferredStyle: .alert)
+                
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alertSheet.addAction(okAction)
+                
+                self.present(alertSheet, animated: true, completion: nil)
+            }
+        }catch {
+            NSLog("Error on loading suggestions...")
+        }
     }
     
     //Change layout
