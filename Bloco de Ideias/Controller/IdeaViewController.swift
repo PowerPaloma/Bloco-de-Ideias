@@ -74,25 +74,27 @@ class IdeaViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         getCoreDataData()
+
     }
     
     func getCoreDataData() {
         //Core Data
-        let entityTopic = DataManager.getEntity(entity: "Topic")
-        let topics = DataManager.getAll(entity: entityTopic)
-        if (topics.success){
-            if(topics.objects.count == 0){
-                NSLog("Não existem topicos.")
-            }else{
-                topicsList.removeAll()
-                for top in topics.objects as! [Topic] {
-                    topicsList.append(top)
-                }
-            }
-        }else{
-            NSLog("Erro ao buscar topicos.")
-        }
+//        let entityTopic = DataManager.getEntity(entity: "Topic")
+//        let topics = DataManager.getAll(entity: entityTopic)
+//        if (topics.success){
+//            if(topics.objects.count == 0){
+//                NSLog("Não existem topicos.")
+//            }else{
+//                topicsList.removeAll()
+//                for top in topics.objects as! [Topic] {
+//                    topicsList.append(top)
+//                }
+//            }
+//        }else{
+//            NSLog("Erro ao buscar topicos.")
+//        }
         self.topicsList = idea.topics?.allObjects as! [Topic]
+        print("AQUIII", idea.topics?.allObjects.count)
         
         collectionView.reloadData()
         self.ideaImage.image = UIImage(data: self.idea.image! as Data)
@@ -129,6 +131,19 @@ class IdeaViewController: UIViewController {
             else if segue.destination is ViewTopicDrawViewController{
                 let vc = segue.destination as!ViewTopicDrawViewController
                 vc.viewTopic = self.topicSelected
+                
+            } else  if segue.destination is NewTopicTextViewController{
+                let vc = segue.destination as!NewTopicTextViewController
+                print("going to new tipic")
+                vc.idea = idea
+            }
+            else if segue.destination is NewTopicDrawViewController{
+                let vc = segue.destination as!NewTopicDrawViewController
+                 vc.idea = idea
+            }
+            else if segue.destination is NewTopicImageViewController{
+                let vc = segue.destination as!NewTopicImageViewController
+                 vc.idea = idea
             }
         }
         endEditMode()

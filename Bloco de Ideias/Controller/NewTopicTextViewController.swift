@@ -16,6 +16,8 @@ class NewTopicTextViewController: UIViewController {
     
     var newTopicText = Topic()
     var editingTopic : Topic?
+    var idea = Idea()
+    
 
     
     override func viewDidLoad() {
@@ -51,8 +53,16 @@ class NewTopicTextViewController: UIViewController {
                 self.newTopicText.titleT = self.titleTextField.text
                 self.newTopicText.descT = self.descTextView.text
                 self.newTopicText.typeT = TopicsEnum.text.rawValue
-                DataManager.getContext().insert(self.newTopicText)
+                self.idea.addToTopics(newTopicText)
+                //DataManager.getContext().insert(self.newTopicDraw)
                 self.newTopicText.save()
+                self.idea.save()
+                do {
+                    try DataManager.getContext().save()
+                    NSLog("CoreData Allright")
+                }catch {
+                    NSLog("ERRROOOORRR ON SAVING DATA")
+                }
                 dismiss(animated: true, completion: nil)
                 
             }

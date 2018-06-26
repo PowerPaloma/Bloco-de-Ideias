@@ -16,6 +16,7 @@ class NewTopicImageViewController: UIViewController {
     
     var newTopicImage = Topic()
     var editingTopic : Topic?
+    var idea = Idea()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,8 +59,16 @@ class NewTopicImageViewController: UIViewController {
                 self.newTopicImage.titleT = self.titleTextField.text
                 self.newTopicImage.imageT = UIImageJPEGRepresentation(self.image.image!, 1.0)!
                 self.newTopicImage.typeT = TopicsEnum.image.rawValue
-                DataManager.getContext().insert(self.newTopicImage)
+                self.idea.addToTopics(newTopicImage)
+//                DataManager.getContext().insert(self.newTopicImage)
                 self.newTopicImage.save()
+                self.idea.save()
+                do {
+                    try DataManager.getContext().save()
+                    NSLog("CoreData Allright")
+                }catch {
+                    NSLog("ERRROOOORRR ON SAVING DATA")
+                }
                 dismiss(animated: true, completion: nil)
             }
 

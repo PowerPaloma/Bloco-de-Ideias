@@ -17,6 +17,7 @@ class NewTopicDrawViewController: UIViewController {
     var newTopicDraw = Topic()
     var editingTopic : Topic?
     var erasing = false
+    var idea = Idea()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,8 +53,17 @@ class NewTopicDrawViewController: UIViewController {
                 self.newTopicDraw.imageT = UIImageJPEGRepresentation(image_draw, 1.0)!
                 self.newTopicDraw.titleT = self.titleTextField.text
                 self.newTopicDraw.typeT = TopicsEnum.draw.rawValue
-                DataManager.getContext().insert(self.newTopicDraw)
+                self.idea.addToTopics(newTopicDraw)
+                
+//                DataManager.getContext().insert(self.newTopicDraw)
                 self.newTopicDraw.save()
+                self.idea.save()
+                do {
+                    try DataManager.getContext().save()
+                    NSLog("CoreData Allright")
+                }catch {
+                    NSLog("ERRROOOORRR ON SAVING DATA")
+                }
                 dismiss(animated: true, completion: nil)
                 
             }
