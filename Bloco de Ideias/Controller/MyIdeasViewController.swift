@@ -44,6 +44,11 @@ class MyIdeasViewController: UIViewController {
         longPressGR = UILongPressGestureRecognizer(target: self, action: #selector(longPressed(gesture:)))
         collectionView.addGestureRecognizer(longPressGR)
         longPressGR.minimumPressDuration = 0.3
+        
+        //Fonts
+        let attributes = [NSAttributedStringKey.font: UIFont(name: "NunitoSans-Regular", size: 17)!]
+        navigationController?.navigationBar.titleTextAttributes = attributes
+        navigationController?.navigationItem.rightBarButtonItem?.setTitleTextAttributes(attributes, for: .application)
     
     }
     
