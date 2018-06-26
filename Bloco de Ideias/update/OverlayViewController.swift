@@ -53,6 +53,7 @@ class OverlayViewController: UIViewController {
         longPressGR.minimumPressDuration = 0.3
         
         
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -77,8 +78,8 @@ class OverlayViewController: UIViewController {
             NSLog("Erro ao buscar topicos.")
         }
         collectionView.reloadData()
-        
     }
+    
     
     
     
@@ -204,8 +205,39 @@ class OverlayViewController: UIViewController {
     
     
     
-    @IBAction func dismissed(_ sender: Any) {
-        presentingViewController?.dismiss(animated: true)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is UINavigationController {
+            let dest = segue.destination as! UINavigationController
+            
+            if dest.topViewController is IdeaViewController{
+                let vc = dest.topViewController as! IdeaViewController
+                vc.getCoreDataData()
+            } else
+            if dest.topViewController is ImproveIdeaViewController {
+                let vc = dest.topViewController as! ImproveIdeaViewController
+                vc.idea = self.idea
+            } else if dest.topViewController is NewIdeaViewController{
+                let vc = dest.topViewController as!NewIdeaViewController
+                vc.editingIdea = idea
+            }
+            
+        } else {
+            if segue.destination is ViewTopicTextViewController{
+                let vc = segue.destination as!ViewTopicTextViewController
+                vc.viewTopic = self.topicSelected
+            }
+             if segue.destination is ViewTopicImageViewController{
+                let vc = segue.destination as!ViewTopicImageViewController
+                vc.viewTopic = self.topicSelected
+            }
+            else if segue.destination is ViewTopicDrawViewController{
+                let vc = segue.destination as!ViewTopicDrawViewController
+                vc.viewTopic = self.topicSelected
+            }
+            
+        }
+        
+        
     }
     
 }
@@ -299,15 +331,15 @@ extension OverlayViewController : UICollectionViewDelegate, UICollectionViewData
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
             let textAction = UIAlertAction(title: "Text", style: .default)
             { _ in
-                self.performSegue(withIdentifier: "newTopicText", sender: nil)
+                self.performSegue(withIdentifier: "newTopicText2", sender: nil)
             }
             let drawAction = UIAlertAction(title: "Draw", style: .default)
             { _ in
-                self.performSegue(withIdentifier: "newTopicDraw", sender: nil)
+                self.performSegue(withIdentifier: "newTopicDraw2", sender: nil)
             }
             let galeryAction = UIAlertAction(title: "Image", style: .default)
             { _ in
-                self.performSegue(withIdentifier: "newTopicImage", sender: nil)
+                self.performSegue(withIdentifier: "newTopicImage2", sender: nil)
             }
             
             //Add options to actionsheet
@@ -322,13 +354,13 @@ extension OverlayViewController : UICollectionViewDelegate, UICollectionViewData
             self.topicSelected = topicsList[indexPath.row - 1]
             
             if topicSelected.typeT == TopicsEnum.text.rawValue{
-                performSegue(withIdentifier: "viewTopicText", sender: nil)
+                performSegue(withIdentifier: "viewTopicText2", sender: nil)
             }
             else if topicSelected.typeT == TopicsEnum.draw.rawValue{
-                performSegue(withIdentifier: "viewTopicDraw", sender: nil)
+                performSegue(withIdentifier: "viewTopicDraw2", sender: nil)
             }
             else if topicSelected.typeT == TopicsEnum.image.rawValue{
-                performSegue(withIdentifier: "viewTopicImage", sender: nil)
+                performSegue(withIdentifier: "viewTopicImage2", sender: nil)
             }
         }
     }
