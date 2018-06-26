@@ -10,5 +10,5 @@ import Foundation
 import UIKit
 
 protocol ColorsDelegate {
-    func newBgColorDrawView()->UIColor
+    func newBgColorDrawView(_ color:UIColor)
 }

@@ -500,7 +500,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y7C-iw-3KG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-538" y="-3191"/>
+            <point key="canvasLocation" x="679" y="-2969"/>
         </scene>
         <!--Overlay View Controller-->
         <scene sceneID="rFY-sn-dpi">
@@ -1021,7 +1021,7 @@
                     <connections>
                         <outlet property="drawView" destination="bEX-FA-cQK" id="X2b-la-lHX"/>
                         <outlet property="titleTextField" destination="bFi-bz-1Ne" id="WT7-wf-IK7"/>
-                        <segue destination="yzJ-an-kQG" kind="presentation" identifier="chooseColor" id="Pap-rx-Kf7"/>
+                        <segue destination="yzJ-an-kQG" kind="presentation" identifier="chooseColor" modalPresentationStyle="overCurrentContext" id="Pap-rx-Kf7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uQ7-MR-Zv0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1032,12 +1032,18 @@
         <scene sceneID="Stt-xf-M8a">
             <objects>
                 <viewController id="yzJ-an-kQG" customClass="ColorsViewController" customModule="Bloco_de_Ideias" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kVR-Pd-ShH">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="kVR-Pd-ShH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="if2-60-NZp">
+                                <rect key="frame" x="0.0" y="20" width="375" height="533"/>
+                                <connections>
+                                    <action selector="dismissAction:" destination="yzJ-an-kQG" eventType="touchUpInside" id="SfB-iK-je7"/>
+                                </connections>
+                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="B4J-n1-mlb">
-                                <rect key="frame" x="0.0" y="553" width="375" height="70"/>
+                                <rect key="frame" x="15" y="553" width="345" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWO-0i-2ce">
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
@@ -1048,7 +1054,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljM-Pe-6e6">
-                                        <rect key="frame" x="101.5" y="0.0" width="70" height="70"/>
+                                        <rect key="frame" x="91.5" y="0.0" width="70" height="70"/>
                                         <state key="normal" image="color_blue"/>
                                         <connections>
                                             <action selector="bgBlue:" destination="7UW-iv-dSw" eventType="touchUpInside" id="26D-Sq-65F"/>
@@ -1056,7 +1062,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2E-yk-Vvr">
-                                        <rect key="frame" x="203.5" y="0.0" width="70" height="70"/>
+                                        <rect key="frame" x="183.5" y="0.0" width="70" height="70"/>
                                         <state key="normal" image="color_green"/>
                                         <connections>
                                             <action selector="bgGreen:" destination="yzJ-an-kQG" eventType="touchUpInside" id="1ut-fd-dTU"/>
@@ -1064,7 +1070,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urK-bA-zDI">
-                                        <rect key="frame" x="305" y="0.0" width="70" height="70"/>
+                                        <rect key="frame" x="275" y="0.0" width="70" height="70"/>
                                         <state key="normal" image="color_pink"/>
                                         <connections>
                                             <action selector="bgPink:" destination="7UW-iv-dSw" eventType="touchUpInside" id="7Bn-Qr-HsD"/>
@@ -1072,33 +1078,31 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="oQt-zG-kC0"/>
                                 </constraints>
                             </stackView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="right" translatesAutoresizingMaskIntoConstraints="NO" id="ggV-tO-s3M">
-                                <rect key="frame" x="0.0" y="509" width="375" height="44"/>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="lyn-m9-kn4"/>
-                                    <barButtonItem title="Done" id="TrV-kx-tWX">
-                                        <connections>
-                                            <action selector="doneAction:" destination="yzJ-an-kQG" id="wd9-od-znt"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </toolbar>
                         </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="B4J-n1-mlb" firstAttribute="leading" secondItem="kVR-Pd-ShH" secondAttribute="leading" id="1M2-gq-Jyw"/>
-                            <constraint firstAttribute="trailing" secondItem="ggV-tO-s3M" secondAttribute="trailing" id="94i-6K-MEN"/>
-                            <constraint firstItem="B4J-n1-mlb" firstAttribute="top" secondItem="ggV-tO-s3M" secondAttribute="bottom" id="RV3-1f-d7X"/>
-                            <constraint firstAttribute="trailing" secondItem="B4J-n1-mlb" secondAttribute="trailing" id="S9P-Gu-Ot3"/>
+                            <constraint firstItem="B4J-n1-mlb" firstAttribute="leading" secondItem="kVR-Pd-ShH" secondAttribute="leading" constant="15" id="1M2-gq-Jyw"/>
+                            <constraint firstItem="if2-60-NZp" firstAttribute="top" secondItem="Oi3-C2-3PE" secondAttribute="top" id="LFc-Ux-Xo4"/>
+                            <constraint firstAttribute="trailing" secondItem="B4J-n1-mlb" secondAttribute="trailing" constant="15" id="S9P-Gu-Ot3"/>
+                            <constraint firstItem="B4J-n1-mlb" firstAttribute="top" secondItem="if2-60-NZp" secondAttribute="bottom" id="TI5-Fk-wm7"/>
+                            <constraint firstItem="Oi3-C2-3PE" firstAttribute="trailing" secondItem="if2-60-NZp" secondAttribute="trailing" id="kRz-bn-vfx"/>
+                            <constraint firstItem="if2-60-NZp" firstAttribute="leading" secondItem="Oi3-C2-3PE" secondAttribute="leading" id="lvK-hY-c7y"/>
                             <constraint firstAttribute="bottom" secondItem="B4J-n1-mlb" secondAttribute="bottom" constant="44" id="nAF-9b-bH8"/>
-                            <constraint firstItem="ggV-tO-s3M" firstAttribute="leading" secondItem="Oi3-C2-3PE" secondAttribute="leading" id="zx0-1f-dGg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Oi3-C2-3PE"/>
                     </view>
+                    <connections>
+                        <outlet property="btnBlue" destination="ljM-Pe-6e6" id="g9w-GX-Fg1"/>
+                        <outlet property="btnGreen" destination="e2E-yk-Vvr" id="Icd-r6-UuT"/>
+                        <outlet property="btnPink" destination="urK-bA-zDI" id="3bv-v5-J3f"/>
+                        <outlet property="btnYellow" destination="AWO-0i-2ce" id="W0K-nI-LnC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kYz-ub-QjR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1351,7 +1355,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t26-jN-ecw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1287" y="-3191"/>
+            <point key="canvasLocation" x="-70" y="-2969"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SQc-SL-vbe">
@@ -1477,7 +1481,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="8HB-oP-3Fg"/>
-        <segue reference="bdN-Jx-yz1"/>
+        <segue reference="dPv-f4-p71"/>
         <segue reference="eaD-FM-BJz"/>
         <segue reference="8QL-6t-hR7"/>
         <segue reference="W2h-to-TTt"/>

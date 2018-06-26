@@ -12,7 +12,7 @@ class NewTopicDrawViewController: UIViewController {
 
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var drawView: DrawView!
-    var delegate : ColorsDelegate!
+    
     
     var newTopicDraw = Topic()
     var editingTopic : Topic?
@@ -20,17 +20,10 @@ class NewTopicDrawViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.delegate = ColorsViewController()
 
         if let topic = editingTopic {
             self.titleTextField.text = topic.titleT
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        let bgColor = delegate.newBgColorDrawView()
-        drawView.backgroundColor = bgColor
     }
 
     override func didReceiveMemoryWarning() {
@@ -70,6 +63,13 @@ class NewTopicDrawViewController: UIViewController {
         performSegue(withIdentifier: "chooseColor", sender: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let colorsView = segue.destination as? ColorsViewController {
+           colorsView.delegate = self
+            colorsView.currentColor = drawView.backgroundColor!
+        }
+    }
+    
     @IBAction func eraserAction(_ sender: Any) {
         if erasing {
             erasing = false
@@ -84,5 +84,11 @@ class NewTopicDrawViewController: UIViewController {
     
     @IBAction func cancelAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension NewTopicDrawViewController : ColorsDelegate {
+    func newBgColorDrawView(_ color:UIColor){
+        self.drawView.backgroundColor = color
     }
 }
