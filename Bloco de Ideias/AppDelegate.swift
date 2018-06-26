@@ -182,9 +182,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let s6Tags: Array<Tag> = [t1, t2, t3, t5, t10, t11, t12, t13, t16, t17, t18, t19]
         self.addTagsInSuggestion(tags: s6Tags, s: s6)
         suggestionList.append(s6)
-    
-        //--------------------------------
         
+        let s7:Suggestion = Suggestion()
+        s7.titleS = "What are the similars for my idea?"
+        s7.descS = "What things already exist that could solve the same problem?"
+        s7.topicTitle = "Similars"
+        s7.isText = true
+        s7.addToProcesses(p1)
+        let s7Tags: Array<Tag> = [t1, t2, t3, t5, t6, t7, t8, t9, t10, t11, t12, t13, t16, t17, t18, t19]
+        self.addTagsInSuggestion(tags: s7Tags, s: s7)
+        suggestionList.append(s7)
+        
+        let s8:Suggestion = Suggestion()
+        s8.titleS = "What my idea has of special?"
+        s8.descS = "What is the difference between my idea and the existing ones? What is the key feature?"
+        s8.topicTitle = "Key feature"
+        s8.isText = true
+        s8.addToProcesses(p1)
+        let s8Tags: Array<Tag> = [t1, t2, t3, t5, t9, t10, t10, t11, t12, t13, t16, t17, t18, t19]
+        self.addTagsInSuggestion(tags: s8Tags, s: s8)
+        suggestionList.append(s8)
+        //--------------------------------
+  
         //-------saving suggestions in process free
         p1.addToSuggestions(s1)
         p1.addToSuggestions(s2)
@@ -192,6 +211,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         p1.addToSuggestions(s4)
         p1.addToSuggestions(s5)
         p1.addToSuggestions(s6)
+        p1.addToSuggestions(s7)
+        p1.addToSuggestions(s8)
         //---------------------
         
         //-----------suggestions Order in process free
@@ -231,10 +252,76 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         sO6.suggestion = s6
         suggestionOrderList.append(sO6)
         
+        let sO7:SuggestionOrder = SuggestionOrder()
+        sO7.order = 1
+        sO7.process = p1
+        sO7.suggestion = s7
+        suggestionOrderList.append(sO7)
+        
+        let sO8:SuggestionOrder = SuggestionOrder()
+        sO8.order = 1
+        sO8.process = p1
+        sO8.suggestion = s8
+        suggestionOrderList.append(sO8)
         //-------------------
         
-       
+        //--------Suggestions of process CBL
+        let scbl1:Suggestion = Suggestion()
+        scbl1.titleS = "What is my big idea?"
+        scbl1.descS = "My Big Idea must be a broad concept that i can be explored in multiple ways"
+        scbl1.topicTitle = "Big Idea"
+        scbl1.isText = true
+        scbl1.addToProcesses(p2)
+        let scbl1Tags: Array<Tag> = [t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14, t15, t16, t17, t18, t19]
+        self.addTagsInSuggestion(tags: scbl1Tags, s: scbl1)
+        suggestionList.append(scbl1)
         
+        let scbl2:Suggestion = Suggestion()
+        scbl2.titleS = "which are my essentials questions ?"
+        scbl2.descS = "The big idea allows for the generation of a wide variety of essential questions that reflect personal interests"
+        scbl2.topicTitle = "Essential Questioning"
+        scbl2.isText = true
+        scbl2.addToProcesses(p2)
+        let scbl2Tags: Array<Tag> = [t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14, t15, t16, t17, t18, t19]
+        self.addTagsInSuggestion(tags: scbl2Tags, s: scbl2)
+        suggestionList.append(scbl2)
+        
+        let scbl3:Suggestion = Suggestion()
+        scbl3.titleS = "Let's think about the challenge ? "
+        scbl3.descS = "The challenge turns the essential question into a call to action to learn deeply about the subjects"
+        scbl3.topicTitle = "Challenge"
+        scbl3.isText = true
+        scbl3.addToProcesses(p2)
+        let scbl3Tags: Array<Tag> = [t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14, t15, t16, t17, t18, t19]
+        self.addTagsInSuggestion(tags: scbl3Tags, s: scbl3)
+        suggestionList.append(scbl3)
+        //------------------------------
+        
+        //-------saving suggestions in process CBL
+        p2.addToSuggestions(scbl1)
+        p2.addToSuggestions(scbl2)
+        p2.addToSuggestions(scbl3)
+        //---------------------
+        
+        //-----------suggestions Order in process free
+        let sOcbl1:SuggestionOrder = SuggestionOrder()
+        sOcbl1.order = 0
+        sOcbl1.process = p2
+        sOcbl1.suggestion = scbl1
+        suggestionOrderList.append(sOcbl1)
+        
+        let sOcbl2:SuggestionOrder = SuggestionOrder()
+        sOcbl2.order = 0
+        sOcbl2.process = p2
+        sOcbl2.suggestion = scbl2
+        suggestionOrderList.append(sOcbl2)
+        
+        let sOcbl3:SuggestionOrder = SuggestionOrder()
+        sOcbl3.order = 0
+        sOcbl3.process = p2
+        sOcbl3.suggestion = scbl3
+        suggestionOrderList.append(sOcbl3)
+
         
         //--------saving suggestons in tags
 

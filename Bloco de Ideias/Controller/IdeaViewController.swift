@@ -156,8 +156,8 @@ class IdeaViewController: UIViewController {
             if self.idea.suggestionStatus!.count < fetchedResults.count {
                 performSegue(withIdentifier: "improve", sender: nil)
             } else {
-                let alertSheet: UIAlertController = UIAlertController(title: "Out of suggestions",
-                                                                      message: "According to your creative process and tags, we don't have more suggestions at the moment.\nNow you may be prepared to put your idea into practice!",
+                let alertSheet: UIAlertController = UIAlertController(title: "Go Head!",
+                                                                      message: "Congratulations!\n We think you're ready put your idea into practice!",
                                                                       preferredStyle: .alert)
                 
                 let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
