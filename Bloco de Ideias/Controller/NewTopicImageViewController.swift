@@ -20,7 +20,8 @@ class NewTopicImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //Show ActionSheet
-        showAlert()
+        self.showAlert()
+        
         
         //Set imagepicker delegate to self
         imagePicker.delegate = self

@@ -29,6 +29,8 @@
 		BE13FAF420E1C3A600579899 /* NunitoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE13FAD920E1C30900579899 /* NunitoSans-Regular.ttf */; };
 		BE13FAF520E1C3A600579899 /* NunitoSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE13FAE720E1C30C00579899 /* NunitoSans-SemiBold.ttf */; };
 		BE13FAF620E1C3A600579899 /* NunitoSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE13FADB20E1C30900579899 /* NunitoSans-SemiBoldItalic.ttf */; };
+		BE13FAF820E2A56F00579899 /* ColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE13FAF720E2A56F00579899 /* ColorsViewController.swift */; };
+		BE13FAFA20E2A60E00579899 /* ColorsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE13FAF920E2A60E00579899 /* ColorsDelegate.swift */; };
 		BE205A6120CE989A00B53288 /* IdeaBuilder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE205A5F20CE989A00B53288 /* IdeaBuilder.xcdatamodeld */; };
 		BE205A6D20CEA45400B53288 /* NewIdeaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE205A6C20CEA45400B53288 /* NewIdeaViewController.swift */; };
 		BE205ACF20D3D86600B53288 /* MyIdeasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE205ACD20D3D86600B53288 /* MyIdeasViewController.swift */; };
@@ -99,6 +101,8 @@
 		BE13FAE520E1C30B00579899 /* NunitoSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-Light.ttf"; path = "Bloco de Ideias/Fonts/NunitoSans-Light.ttf"; sourceTree = SOURCE_ROOT; };
 		BE13FAE620E1C30B00579899 /* NunitoSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-ExtraBoldItalic.ttf"; path = "Bloco de Ideias/Fonts/NunitoSans-ExtraBoldItalic.ttf"; sourceTree = SOURCE_ROOT; };
 		BE13FAE720E1C30C00579899 /* NunitoSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-SemiBold.ttf"; path = "Bloco de Ideias/Fonts/NunitoSans-SemiBold.ttf"; sourceTree = SOURCE_ROOT; };
+		BE13FAF720E2A56F00579899 /* ColorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsViewController.swift; sourceTree = "<group>"; };
+		BE13FAF920E2A60E00579899 /* ColorsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsDelegate.swift; sourceTree = "<group>"; };
 		BE205A6020CE989A00B53288 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		BE205A6C20CEA45400B53288 /* NewIdeaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewIdeaViewController.swift; sourceTree = "<group>"; };
 		BE205ACD20D3D86600B53288 /* MyIdeasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyIdeasViewController.swift; sourceTree = "<group>"; };
@@ -237,6 +241,7 @@
 				BE9F234020D7F950007B58BB /* IdeaDelegate.swift */,
 				BE33F5A320D94B7400A026C9 /* TagDelegate.swift */,
 				BE7D231420DE95B500FCC96C /* TopicDelegate.swift */,
+				BE13FAF920E2A60E00579899 /* ColorsDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 				BE7D231220DE956400FCC96C /* ViewTopicTextViewController.swift */,
 				BE74593920E1286600700720 /* ViewTopicImageViewController.swift */,
 				BE74593B20E1330100700720 /* ViewTopicDrawViewController.swift */,
+				BE13FAF720E2A56F00579899 /* ColorsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -488,10 +494,12 @@
 				BE74593C20E1330100700720 /* ViewTopicDrawViewController.swift in Sources */,
 				BE205A6120CE989A00B53288 /* IdeaBuilder.xcdatamodeld in Sources */,
 				BE205AD720D3F9C900B53288 /* ReorderableFlowLayout.swift in Sources */,
+				BE13FAF820E2A56F00579899 /* ColorsViewController.swift in Sources */,
 				BE13FAB720E1A67500579899 /* BouncyViewControllerAnimator.swift in Sources */,
 				BEFCB38220C9707B006F8498 /* IdeaViewController.swift in Sources */,
 				BEF8EF3D20E1819700CBE01D /* NewTopicCollectionViewCell.swift in Sources */,
 				BE7D22D520DE803100FCC96C /* DrawView.swift in Sources */,
+				BE13FAFA20E2A60E00579899 /* ColorsDelegate.swift in Sources */,
 				BE33F5AC20DACD7000A026C9 /* NewTopicTextViewController.swift in Sources */,
 				BE13FAB120E18B1D00579899 /* OverlayPresentationController.swift in Sources */,
 				BE7D22FD20DE80B000FCC96C /* ExtensionNSManagedObject.swift in Sources */,

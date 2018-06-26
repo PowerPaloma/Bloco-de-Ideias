@@ -31,14 +31,16 @@ class ViewTopicDrawViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
+    @IBAction func done(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func edit(_ sender: Any) {
         performSegue(withIdentifier: "editTopicDraw", sender: nil)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let dest = segue.destination as! UINavigationController
-        if dest.topViewController is NewTopicDrawViewController {
-            let vc = dest.topViewController as! NewTopicDrawViewController
+        if segue.destination is NewTopicDrawViewController {
+            let vc = segue.destination as! NewTopicDrawViewController
             vc.editingTopic = viewTopic
         }
     }

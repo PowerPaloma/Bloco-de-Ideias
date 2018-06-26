@@ -34,15 +34,17 @@ class ViewTopicImageViewController: UIViewController {
     
     
     
+    @IBAction func done(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func edit(_ sender: Any) {
         performSegue(withIdentifier: "editTopicImage", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let dest = segue.destination as! UINavigationController
-        if dest.topViewController is NewTopicImageViewController {
-            let vc = dest.topViewController as! NewTopicImageViewController
+        if segue.destination is NewTopicImageViewController {
+            let vc = segue.destination as! NewTopicImageViewController
             vc.editingTopic = viewTopic
         }
     }

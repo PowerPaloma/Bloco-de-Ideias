@@ -12,19 +12,25 @@ class NewTopicDrawViewController: UIViewController {
 
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var drawView: DrawView!
+    var delegate : ColorsDelegate!
     
     var newTopicDraw = Topic()
     var editingTopic : Topic?
-    var lastColorUsed = UIButton()
     var erasing = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.delegate = ColorsViewController()
 
         if let topic = editingTopic {
             self.titleTextField.text = topic.titleT
         }
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let bgColor = delegate.newBgColorDrawView()
+        drawView.backgroundColor = bgColor
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,48 +62,25 @@ class NewTopicDrawViewController: UIViewController {
                 DataManager.getContext().insert(self.newTopicDraw)
                 self.newTopicDraw.save()
                 dismiss(animated: true, completion: nil)
+                
             }
         }
     }
-    
-    
-    @IBAction func bgYellow(_ sender: UIButton) {
-        sender.setImage(#imageLiteral(resourceName: "color_yellow_selected"), for: .selected)
-        changeBgColorDrawView(color: .yellow, button: sender)
-    }
-    
-    
-    @IBAction func bgBlue(_ sender: UIButton) {
-        sender.setImage(#imageLiteral(resourceName: "color_blue_selected"), for: .selected)
-        changeBgColorDrawView(color: .blue, button: sender)
-    }
-    
-    @IBAction func bgGreen(_ sender: UIButton) {
-        sender.setImage(#imageLiteral(resourceName: "color_green_selected"), for: .selected)
-        changeBgColorDrawView(color: .green, button: sender)
-    }
-    
-    @IBAction func bgPink(_ sender: UIButton) {
-        sender.setImage(#imageLiteral(resourceName: "color_pink_selected"), for: .selected)
-        changeBgColorDrawView(color: .pink, button: sender)
-    }
-    
-    func changeBgColorDrawView(color: UIColor, button: UIButton){
-        lastColorUsed.isSelected = false
-        button.isSelected = true
-        lastColorUsed = button
-        drawView.backgroundColor = color
+    @IBAction func colorAction(_ sender: Any) {
+        performSegue(withIdentifier: "chooseColor", sender: nil)
     }
     
     @IBAction func eraserAction(_ sender: Any) {
         if erasing {
             erasing = false
             drawView.drawColor = UIColor.black
+            
         } else {
             erasing = true
             drawView.drawColor = drawView.backgroundColor!
         }
     }
+    
     
     @IBAction func cancelAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)

@@ -63,12 +63,7 @@ class IdeaViewController: UIViewController {
         self.ideaImage.image = UIImage(data: self.idea.image! as Data)
         self.titleIdea.text = self.idea.title
         self.descrip.text = self.idea.desc
-        
-        swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(IdeaViewController.swipeUp(_:)))
-        swipeUp.direction = UISwipeGestureRecognizerDirection.up
-//        self.view.addGestureRecognizer(swipeUp)
-
-
+    
     }
 
     override func viewDidLayoutSubviews() {
@@ -77,6 +72,10 @@ class IdeaViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        getCoreDataData()
+    }
+    
+    func getCoreDataData() {
         //Core Data
         let entityTopic = DataManager.getEntity(entity: "Topic")
         let topics = DataManager.getAll(entity: entityTopic)
@@ -128,14 +127,8 @@ class IdeaViewController: UIViewController {
                 let vc = segue.destination as!ViewTopicDrawViewController
                 vc.viewTopic = self.topicSelected
             }
-            if segue.identifier == "UP" {
-                let overlayVC = segue.destination as!OverlayViewController
-                overlayVC.idea = self.idea
-                prepareOverlay(viewController: overlayVC)
-            }
         }
-        
-        
+        endEditMode()
     }
     
     
@@ -264,28 +257,6 @@ class IdeaViewController: UIViewController {
     @IBAction func compose(_ sender: Any) {
         performSegue(withIdentifier: "editIdea", sender: nil)
     }
-    
-    //teste
-    
-    
-    
-    @IBAction func swipeUp(_ recognizer: UISwipeGestureRecognizer) {
-        if (recognizer.direction == UISwipeGestureRecognizerDirection.up)
-        {
-            
-//            let location = recognizer.location(in: collectionView)
-//            print(location)
-//            print(collectionView.contains(location as! UIFocusEnvironment))
-//            if collectionView.frame.contains(location){
-                let overlayViewController = storyboard?.instantiateViewController(withIdentifier: "overlayViewController") as! UIViewController
-                prepareOverlay(viewController: overlayViewController)
-                present(overlayViewController, animated: true)
-//            }
-        }
-    }
-    
-    
-    
     
     
     private func prepareOverlay(viewController: UIViewController) {
@@ -422,8 +393,10 @@ extension IdeaViewController : UICollectionViewDelegate, UICollectionViewDataSou
         if (scrollView.contentOffset.y > 20){
             let overlayViewController = storyboard?.instantiateViewController(withIdentifier: "overlayViewController") as! UIViewController
             prepareOverlay(viewController: overlayViewController)
+            
+        
             present(overlayViewController, animated: true, completion: {
-                scrollView.contentOffset.y = 0
+               scrollView.contentOffset.y = 0
             })
         }
         

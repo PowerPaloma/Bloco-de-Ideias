@@ -20,6 +20,8 @@ class ViewTopicTextViewController: UIViewController {
         
         titleTopic.text = viewTopic.titleT
         desc.text = viewTopic.descT
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,9 +42,8 @@ class ViewTopicTextViewController: UIViewController {
         performSegue(withIdentifier: "editTopicText", sender: self)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let dest = segue.destination as! UINavigationController
-        if dest.topViewController is NewTopicTextViewController {
-            let vc = dest.topViewController as! NewTopicTextViewController
+        if segue.destination is NewTopicTextViewController {
+            let vc = segue.destination as! NewTopicTextViewController
             vc.editingTopic = viewTopic
         }
     }
