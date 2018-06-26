@@ -34,6 +34,8 @@ class OverlayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //print(self.idea.title!)
+        
         //Topics Collection View
         let nibText = UINib(nibName: "TopicTextCollectionViewCell", bundle: nil)
         self.collectionView.register(nibText, forCellWithReuseIdentifier: "TopicTextCell")
@@ -63,24 +65,16 @@ class OverlayViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         //Core Data
-        let entityTopic = DataManager.getEntity(entity: "Topic")
-        let topics = DataManager.getAll(entity: entityTopic)
-        if (topics.success){
-            if(topics.objects.count == 0){
-                NSLog("Não existem topicos.")
-            }else{
-                topicsList.removeAll()
-                for top in topics.objects as! [Topic] {
-                    topicsList.append(top)
-                }
-            }
-        }else{
-            NSLog("Erro ao buscar topicos.")
-        }
+        self.getCoreDataData()
         collectionView.reloadData()
     }
     
-    
+    func getCoreDataData() {
+        //Core Data
+        self.topicsList = idea.topics?.allObjects as! [Topic]
+        print("Aquiii",idea.topics?.allObjects.count )
+        collectionView.reloadData()
+    }
     
     
     //Change layout
@@ -226,13 +220,25 @@ class OverlayViewController: UIViewController {
                 let vc = segue.destination as!ViewTopicTextViewController
                 vc.viewTopic = self.topicSelected
             }
-             if segue.destination is ViewTopicImageViewController{
+            else if segue.destination is ViewTopicImageViewController{
                 let vc = segue.destination as!ViewTopicImageViewController
                 vc.viewTopic = self.topicSelected
             }
             else if segue.destination is ViewTopicDrawViewController{
                 let vc = segue.destination as!ViewTopicDrawViewController
                 vc.viewTopic = self.topicSelected
+                
+            } else  if segue.destination is NewTopicTextViewController{
+                let vc = segue.destination as!NewTopicTextViewController
+                vc.idea = idea
+            }
+            else if segue.destination is NewTopicDrawViewController{
+                let vc = segue.destination as!NewTopicDrawViewController
+                vc.idea = idea
+            }
+            else if segue.destination is NewTopicImageViewController{
+                let vc = segue.destination as!NewTopicImageViewController
+                vc.idea = idea
             }
             
         }

@@ -53,10 +53,10 @@ class NewTopicTextViewController: UIViewController {
                 self.newTopicText.titleT = self.titleTextField.text
                 self.newTopicText.descT = self.descTextView.text
                 self.newTopicText.typeT = TopicsEnum.text.rawValue
+                DataManager.getContext().insert(self.newTopicText)
                 self.idea.addToTopics(newTopicText)
-                //DataManager.getContext().insert(self.newTopicDraw)
-                self.newTopicText.save()
-                self.idea.save()
+//                self.newTopicText.save()
+//                self.idea.save()
                 do {
                     try DataManager.getContext().save()
                     NSLog("CoreData Allright")

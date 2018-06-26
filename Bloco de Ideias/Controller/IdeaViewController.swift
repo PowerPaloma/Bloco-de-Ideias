@@ -79,23 +79,8 @@ class IdeaViewController: UIViewController {
     
     func getCoreDataData() {
         //Core Data
-//        let entityTopic = DataManager.getEntity(entity: "Topic")
-//        let topics = DataManager.getAll(entity: entityTopic)
-//        if (topics.success){
-//            if(topics.objects.count == 0){
-//                NSLog("Não existem topicos.")
-//            }else{
-//                topicsList.removeAll()
-//                for top in topics.objects as! [Topic] {
-//                    topicsList.append(top)
-//                }
-//            }
-//        }else{
-//            NSLog("Erro ao buscar topicos.")
-//        }
+//
         self.topicsList = idea.topics?.allObjects as! [Topic]
-        print("AQUIII", idea.topics?.allObjects.count)
-        
         collectionView.reloadData()
         self.ideaImage.image = UIImage(data: self.idea.image! as Data)
         self.titleIdea.text = self.idea.title
@@ -134,7 +119,6 @@ class IdeaViewController: UIViewController {
                 
             } else  if segue.destination is NewTopicTextViewController{
                 let vc = segue.destination as!NewTopicTextViewController
-                print("going to new tipic")
                 vc.idea = idea
             }
             else if segue.destination is NewTopicDrawViewController{
@@ -306,9 +290,11 @@ class IdeaViewController: UIViewController {
     }
     
     
-    private func prepareOverlay(viewController: UIViewController) {
+    private func prepareOverlay(viewController: OverlayViewController) {
         viewController.transitioningDelegate = overlayTransitioningDelegate
         viewController.modalPresentationStyle = .custom
+        viewController.idea = self.idea
+
     }
 
     
@@ -439,7 +425,7 @@ extension IdeaViewController : UICollectionViewDelegate, UICollectionViewDataSou
         
         if (scrollView.contentOffset.y > 20){
             let overlayViewController = storyboard?.instantiateViewController(withIdentifier: "overlayViewController") as! UIViewController
-            prepareOverlay(viewController: overlayViewController)
+            prepareOverlay(viewController: overlayViewController as! OverlayViewController)
             
         
             present(overlayViewController, animated: true, completion: {

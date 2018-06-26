@@ -59,10 +59,8 @@ class NewTopicImageViewController: UIViewController {
                 self.newTopicImage.titleT = self.titleTextField.text
                 self.newTopicImage.imageT = UIImageJPEGRepresentation(self.image.image!, 1.0)!
                 self.newTopicImage.typeT = TopicsEnum.image.rawValue
+                DataManager.getContext().insert(self.newTopicImage)
                 self.idea.addToTopics(newTopicImage)
-//                DataManager.getContext().insert(self.newTopicImage)
-                self.newTopicImage.save()
-                self.idea.save()
                 do {
                     try DataManager.getContext().save()
                     NSLog("CoreData Allright")
