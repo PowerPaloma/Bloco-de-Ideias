@@ -16,7 +16,6 @@ class IdeaViewController: UIViewController {
     @IBOutlet var ideaImage: UIImageView!
     @IBOutlet var titleIdea: UILabel!
     @IBOutlet weak var descrip: UILabel!
-    @IBOutlet var editButton: UIButton!
     @IBOutlet var viewP: UIView!
     
     @IBOutlet var swipeUp: UISwipeGestureRecognizer!
@@ -54,11 +53,6 @@ class IdeaViewController: UIViewController {
         
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
-        
-        //Edit Collection View Long Press
-        longPressGR = UILongPressGestureRecognizer(target: self, action: #selector(longPressed(gesture:)))
-        collectionView.addGestureRecognizer(longPressGR)
-        longPressGR.minimumPressDuration = 0.3
         
         //Set Idea data to view
         self.ideaImage.image = UIImage(data: self.idea.image! as Data)
@@ -132,7 +126,6 @@ class IdeaViewController: UIViewController {
                  vc.idea = idea
             }
         }
-        endEditMode()
     }
     
     
@@ -170,123 +163,7 @@ class IdeaViewController: UIViewController {
         }
     }
     
-    //Change layout
-    @IBAction func changeLayoutAction(_ sender: Any) {
-        //Change number of rows in Collection View
-        if (cellsPerRow == 1) {
-            cellsPerRow = 2
-        } else {
-            cellsPerRow = 1
-        }
-        collectionView.collectionViewLayout.invalidateLayout()
-    }
     
-    //Edit mode Action
-    @IBAction func editModeAction(_ sender: Any) {
-        //Starts and Stops Edit mode: reorder and delete cells
-        if isEditing {
-            endEditMode()
-        } else {
-            startEditMode()
-        }
-        collectionView.reloadData()
-    }
-    
-    override func setEditing(_ editing: Bool, animated: Bool) {
-        //Starts and end editing mode
-        super.setEditing(editing, animated: true)
-        startWigglingAllVisibleCells()
-    }
-    func startEditMode(){
-        //Starts edit mode
-        editButton.setTitle("Done", for: .normal)
-        setEditing(true, animated: true)
-    }
-    func endEditMode(){
-        //Stops edit mode
-        editButton.setTitle("Edit", for: .normal)
-        setEditing(false, animated: true)
-    }
-    
-    //Effects Edit Mode
-    func startWigglingAllVisibleCells() {
-        //Start Wiggling and Boucing effects in all cells
-        let cells = collectionView!.visibleCells
-        
-        for cell in cells {
-            if cell.reuseIdentifier == "TopicCell" {
-                let c = cell as! MyIdeaCollectionViewCell
-                if isEditing {
-                    c.startWiggling()
-                } else {
-                    c.stopWiggling()
-                } } }
-    }
-    
-    //Reordering Cells
-    func pickedUpCell() -> MyIdeaCollectionViewCell? {
-        //Return selected cell when longpressed
-        guard let indexPath = movingIndexPath else { return nil }
-        return collectionView.cellForItem(at: indexPath as IndexPath) as? MyIdeaCollectionViewCell
-    }
-    
-    func animatePickingUpCell(cell: MyIdeaCollectionViewCell?) {
-        //Animates the cell when longpress starts
-        UIView.animate(withDuration: 0.1, delay: 0.0, options: [.allowUserInteraction, .beginFromCurrentState], animations: { () -> Void in
-            cell?.alpha = 0.7
-            cell?.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
-        }, completion: { finished in
-            NSLog("animatePickingUpCell")
-        })
-    }
-    
-    func animatePuttingDownCell(cell: MyIdeaCollectionViewCell?) {
-        //Animates the cell when longpress ends
-        UIView.animate(withDuration: 0.1, delay: 0.0, options: [.allowUserInteraction, .beginFromCurrentState], animations: { () -> Void in
-            cell?.alpha = 1.0
-            cell?.transform = CGAffineTransform.identity
-        }, completion: { finished in
-            cell?.startWiggling()
-            NSLog("animatePickingDownCell")
-        })
-    }
-    
-    @objc func longPressed(gesture: UILongPressGestureRecognizer) {
-        //Get the longpress gesture and handle the reorder the cells based in it's location
-        let location = gesture.location(in: collectionView)
-        if let locationIndexPathForItem = collectionView.indexPathForItem(at: location) {
-            movingIndexPath = locationIndexPathForItem as NSIndexPath
-        }
-        //LongPress starts
-        if gesture.state == .began {
-            guard let indexPath = movingIndexPath else { return }
-            addCellFrame = collectionView.cellForItem(at: IndexPath(item: 0, section: 0))?.frame
-            
-            setEditing(true, animated: true)
-            startEditMode()
-            
-            collectionView.beginInteractiveMovementForItem(at: indexPath as IndexPath)
-            pickedUpCell()?.stopWiggling()
-            animatePickingUpCell(cell: pickedUpCell())
-        }
-            //Longpress changes
-        else if(gesture.state == .changed) {
-            collectionView.updateInteractiveMovementTargetPosition(location)
-        }
-            //Longpress ends
-        else {
-            if gesture.state == .ended &&
-                collectionView.cellForItem(at: IndexPath(item: 0, section: 0))?.frame == addCellFrame &&
-                !addCellFrame.contains(location)
-            {
-                collectionView.endInteractiveMovement()
-            } else{
-                collectionView.cancelInteractiveMovement()
-            }
-            animatePuttingDownCell(cell: pickedUpCell())
-            movingIndexPath = nil
-        }
-    }
     @IBAction func compose(_ sender: Any) {
         performSegue(withIdentifier: "editIdea", sender: nil)
     }
