@@ -32,7 +32,7 @@ class ImproveIdeaViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.textField.delegate = self
+        textField.delegate = self
         
         notApplyBtn.layer.masksToBounds = false
         notApplyBtn.layer.cornerRadius = 6
@@ -239,10 +239,16 @@ class ImproveIdeaViewController: UIViewController {
         }
         
     }
+    
 }
 
 extension ImproveIdeaViewController : UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.textField.resignFirstResponder()
+        return true
     }
 }
