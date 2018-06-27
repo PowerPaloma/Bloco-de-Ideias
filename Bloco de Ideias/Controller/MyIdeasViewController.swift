@@ -7,8 +7,9 @@
 //
 import CoreData
 import UIKit
+import TagListView
 
-class MyIdeasViewController: UIViewController {
+class MyIdeasViewController: UIViewController{
     //Outlets from View
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var editButton: UIBarButtonItem!
@@ -223,7 +224,7 @@ class MyIdeasViewController: UIViewController {
     }
 }
 
-extension MyIdeasViewController : UICollectionViewDelegate, UICollectionViewDataSource {
+extension MyIdeasViewController : UICollectionViewDelegate, UICollectionViewDataSource, TagListViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return ideasList.count + 1
     }
@@ -238,6 +239,13 @@ extension MyIdeasViewController : UICollectionViewDelegate, UICollectionViewData
             cell.desc.text = ideasList[indexPath.row-1].desc
             cell.image.image = UIImage(data: ideasList[indexPath.row-1].image! as Data)
             cell.deleteButton.tag = indexPath.row-1
+            cell.tagsList.delegate = self
+            let tagsIdea = self.ideasList[indexPath.row-1].tags?.allObjects as! [Tag]
+            cell.scroll.contentSize = CGSize(width: 10000, height: 10)
+            for tag in tagsIdea{
+                cell.tagsList.addTag(tag.name!)                
+            }
+            
             cell.delegate = self
             
             if isEditing {

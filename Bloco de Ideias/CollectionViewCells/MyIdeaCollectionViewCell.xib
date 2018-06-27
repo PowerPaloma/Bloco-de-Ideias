@@ -33,51 +33,94 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h3e-8B-xCZ">
                                 <rect key="frame" x="8" y="8" width="184" height="144"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minha ideia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1NF-KJ-fNU">
-                                <rect key="frame" x="24" y="24" width="152" height="27.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Minha ideia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1NF-KJ-fNU">
+                                <rect key="frame" x="24" y="24" width="152" height="28"/>
                                 <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Essa ideia é sobre como eu posso fazer do mundo um lugar melhor" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7a-nd-cBK">
-                                <rect key="frame" x="24" y="59.5" width="152" height="46.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Essa ideia é sobre como eu posso fazer do mundo um lugar melhor" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7a-nd-cBK">
+                                <rect key="frame" x="24" y="60" width="152" height="47"/>
                                 <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mEM-0O-NhG">
-                                <rect key="frame" x="24" y="122" width="160" height="14"/>
-                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXk-SN-mfi">
                                 <rect key="frame" x="2" y="2" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="EBM-WP-3L5"/>
                                     <constraint firstAttribute="width" constant="30" id="nHi-Xi-HKZ"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="delete"/>
+                                <state key="normal" image="delete"/>
                                 <connections>
                                     <action selector="deleteButtonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="pXZ-7L-HTv"/>
                                 </connections>
                             </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Re2-J8-x0u">
+                                <rect key="frame" x="-4" y="100" width="168" height="23"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cN6-oB-FIi" customClass="TagListView" customModule="TagListView">
+                                        <rect key="frame" x="0.0" y="-1" width="168" height="23"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="23" id="VOo-5P-TOL"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="paddingY">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="paddingX">
+                                                <real key="value" value="9"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="marginY">
+                                                <real key="value" value="7"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="marginX">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="enableRemoveButton" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="tagBackgroundColor">
+                                                <color key="value" red="0.90980392156862744" green="0.59215686274509804" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="cN6-oB-FIi" secondAttribute="trailing" id="5bK-tE-7a7"/>
+                                    <constraint firstAttribute="bottom" secondItem="cN6-oB-FIi" secondAttribute="bottom" constant="1" id="7uX-Yh-5TQ"/>
+                                    <constraint firstItem="cN6-oB-FIi" firstAttribute="leading" secondItem="Re2-J8-x0u" secondAttribute="leading" id="cm7-NX-D8R"/>
+                                    <constraint firstItem="cN6-oB-FIi" firstAttribute="top" secondItem="Re2-J8-x0u" secondAttribute="top" constant="-1" id="diW-IQ-zF0"/>
+                                    <constraint firstItem="cN6-oB-FIi" firstAttribute="centerX" secondItem="Re2-J8-x0u" secondAttribute="centerX" id="wac-Xj-cQL"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="Re2-J8-x0u" firstAttribute="leading" secondItem="Xyj-eH-htz" secondAttribute="leading" constant="16" id="28s-BR-6Xl"/>
                             <constraint firstItem="DXk-SN-mfi" firstAttribute="top" secondItem="Xyj-eH-htz" secondAttribute="top" constant="2" id="9uh-0N-NKK"/>
                             <constraint firstItem="DXk-SN-mfi" firstAttribute="leading" secondItem="Xyj-eH-htz" secondAttribute="leading" constant="2" id="A1U-VR-vwd"/>
+                            <constraint firstAttribute="bottom" secondItem="Re2-J8-x0u" secondAttribute="bottom" constant="16" id="Atk-Q4-YYl"/>
                             <constraint firstItem="h3e-8B-xCZ" firstAttribute="leading" secondItem="Xyj-eH-htz" secondAttribute="leading" constant="8" id="I4F-Wz-eKC"/>
                             <constraint firstItem="1NF-KJ-fNU" firstAttribute="top" secondItem="h3e-8B-xCZ" secondAttribute="top" constant="16" id="Iam-9p-fE7"/>
                             <constraint firstAttribute="bottom" secondItem="h3e-8B-xCZ" secondAttribute="bottom" constant="8" id="Ly6-BM-yJg"/>
                             <constraint firstItem="h3e-8B-xCZ" firstAttribute="height" secondItem="Xyj-eH-htz" secondAttribute="height" multiplier="0.9" id="PCG-Xm-ErL"/>
                             <constraint firstItem="1NF-KJ-fNU" firstAttribute="leading" secondItem="h3e-8B-xCZ" secondAttribute="leading" constant="16" id="PTE-fh-yn4"/>
-                            <constraint firstItem="h3e-8B-xCZ" firstAttribute="trailing" secondItem="mEM-0O-NhG" secondAttribute="trailing" constant="8" id="San-zd-gCx"/>
                             <constraint firstItem="h3e-8B-xCZ" firstAttribute="trailing" secondItem="1NF-KJ-fNU" secondAttribute="trailing" constant="16" id="Y9m-sk-0Sk"/>
                             <constraint firstItem="F7a-nd-cBK" firstAttribute="leading" secondItem="h3e-8B-xCZ" secondAttribute="leading" constant="16" id="YIL-SX-uy2"/>
                             <constraint firstItem="h3e-8B-xCZ" firstAttribute="top" secondItem="Xyj-eH-htz" secondAttribute="top" constant="8" id="Z5U-uf-gwh"/>
+                            <constraint firstItem="Re2-J8-x0u" firstAttribute="top" secondItem="F7a-nd-cBK" secondAttribute="bottom" constant="15" id="a2T-F5-kme"/>
                             <constraint firstAttribute="trailing" secondItem="h3e-8B-xCZ" secondAttribute="trailing" constant="8" id="dus-oO-6RD"/>
-                            <constraint firstItem="h3e-8B-xCZ" firstAttribute="bottom" secondItem="mEM-0O-NhG" secondAttribute="bottom" constant="16" id="ilW-o6-vyf"/>
-                            <constraint firstItem="mEM-0O-NhG" firstAttribute="leading" secondItem="h3e-8B-xCZ" secondAttribute="leading" constant="16" id="ox3-m8-Q7B"/>
                             <constraint firstItem="F7a-nd-cBK" firstAttribute="top" secondItem="1NF-KJ-fNU" secondAttribute="bottom" constant="8" id="qD6-2Z-aYK"/>
+                            <constraint firstItem="Re2-J8-x0u" firstAttribute="height" secondItem="Xyj-eH-htz" secondAttribute="height" multiplier="0.14" id="qYp-Gi-ZtN"/>
                             <constraint firstItem="h3e-8B-xCZ" firstAttribute="trailing" secondItem="F7a-nd-cBK" secondAttribute="trailing" constant="16" id="tXd-zB-jE2"/>
-                            <constraint firstItem="mEM-0O-NhG" firstAttribute="top" secondItem="F7a-nd-cBK" secondAttribute="bottom" constant="16" id="uAt-wf-TyI"/>
+                            <constraint firstAttribute="trailing" secondItem="Re2-J8-x0u" secondAttribute="trailing" constant="16" id="wWq-AS-JMd"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -94,7 +137,8 @@
                 <outlet property="deleteButton" destination="DXk-SN-mfi" id="zpE-O0-N9s"/>
                 <outlet property="desc" destination="F7a-nd-cBK" id="0bO-gE-t2D"/>
                 <outlet property="image" destination="h3e-8B-xCZ" id="aDt-4k-Y10"/>
-                <outlet property="tags" destination="mEM-0O-NhG" id="wix-uJ-37q"/>
+                <outlet property="scroll" destination="Re2-J8-x0u" id="Lt2-Xs-FuF"/>
+                <outlet property="tagsList" destination="cN6-oB-FIi" id="A1T-m2-kAf"/>
                 <outlet property="title" destination="1NF-KJ-fNU" id="QVv-LS-upO"/>
                 <outlet property="view" destination="Xyj-eH-htz" id="4LG-AG-Wkf"/>
             </connections>
