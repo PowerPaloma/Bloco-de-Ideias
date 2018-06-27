@@ -27,6 +27,8 @@ class NewTopicTextViewController: UIViewController {
             self.titleTextField.text = topic.titleT
             self.descTextView.text = topic.descT
         }
+        
+        self.titleTextField.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,5 +74,16 @@ class NewTopicTextViewController: UIViewController {
     
     @IBAction func cancelAction(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension NewTopicTextViewController : UITextFieldDelegate {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.titleTextField.resignFirstResponder()
+        return true
     }
 }

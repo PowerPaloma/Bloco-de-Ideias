@@ -30,6 +30,8 @@ class NewTopicImageViewController: UIViewController {
         if let topic = editingTopic {
             self.titleTextField.text = topic.titleT
         }
+        
+        self.titleTextField.delegate = self
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -134,5 +136,16 @@ extension NewTopicImageViewController: UIImagePickerControllerDelegate,  UINavig
     //Handle cancel button
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension NewTopicImageViewController : UITextFieldDelegate {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.titleTextField.resignFirstResponder()
+        return true
     }
 }

@@ -14,6 +14,8 @@ class NewTopicDrawViewController: UIViewController {
     @IBOutlet weak var drawView: DrawView!
     
     
+    @IBOutlet weak var textField: UITextField!
+    
     var newTopicDraw = Topic()
     var editingTopic : Topic?
     var erasing = false
@@ -25,6 +27,8 @@ class NewTopicDrawViewController: UIViewController {
         if let topic = editingTopic {
             self.titleTextField.text = topic.titleT
         }
+        
+        self.titleTextField.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -97,5 +101,16 @@ class NewTopicDrawViewController: UIViewController {
 extension NewTopicDrawViewController : ColorsDelegate {
     func newBgColorDrawView(_ color:UIColor){
         self.drawView.backgroundColor = color
+    }
+}
+
+extension NewTopicDrawViewController : UITextFieldDelegate {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.titleTextField.resignFirstResponder()
+        return true
     }
 }

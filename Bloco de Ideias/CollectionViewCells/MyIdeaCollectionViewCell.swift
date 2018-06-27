@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import TagListView
 
-class MyIdeaCollectionViewCell: UICollectionViewCell {
+class MyIdeaCollectionViewCell: UICollectionViewCell{
+    
+    
     @IBOutlet var view: UIView!
     @IBOutlet var title: UILabel!
     @IBOutlet var desc: UILabel!
-    @IBOutlet var tags: UIStackView!
     @IBOutlet var image: UIImageView!
     @IBOutlet var deleteButton: UIButton!
+    @IBOutlet var tagsList: TagListView!
+    @IBOutlet var scroll: UIScrollView!
     weak var delegate : IdeaDelegate!
     
     override func awakeFromNib() {
@@ -100,6 +104,7 @@ class MyIdeaCollectionViewCell: UICollectionViewCell {
     @IBAction func deleteButtonAction(_ sender: Any) {
         delegate.deleteIdea(item: deleteButton.tag)
     }
+
     //-----------------------------
     
 }
