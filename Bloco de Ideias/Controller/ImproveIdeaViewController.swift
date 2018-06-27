@@ -17,7 +17,9 @@ class ImproveIdeaViewController: UIViewController {
     @IBOutlet var descSuggestion: UILabel!
     @IBOutlet var createTopic: UISwitch!
     @IBOutlet var image: UIImageView!
-
+    @IBOutlet weak var notApplyBtn: UIButton!
+    
+    @IBOutlet weak var textField: UITextField!
     
     //variables
     var idea = Idea()
@@ -29,6 +31,14 @@ class ImproveIdeaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.textField.delegate = self
+        
+        notApplyBtn.layer.masksToBounds = false
+        notApplyBtn.layer.cornerRadius = 6
+        
+        notApplyBtn.layer.borderWidth = 0.3
+        notApplyBtn.layer.borderColor = UIColor(red: 230.0, green: 113.0, blue: 142.0, alpha: 1.0).cgColor
         
         let tagsNames = idea.tags!.map{ ($0 as! Tag).name! }
         let context = DataManager.getContext()
@@ -89,6 +99,7 @@ class ImproveIdeaViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     
     func isAnswered(_ sug: Suggestion) -> Bool {
         // verifica se a idea está incluída no conjunto das ideias que respodeu a sugestão
@@ -227,5 +238,11 @@ class ImproveIdeaViewController: UIViewController {
             }
         }
         
+    }
+}
+
+extension ImproveIdeaViewController : UITextFieldDelegate {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }
