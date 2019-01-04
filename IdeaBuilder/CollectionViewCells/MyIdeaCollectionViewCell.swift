@@ -17,7 +17,7 @@ class MyIdeaCollectionViewCell: UICollectionViewCell{
     @IBOutlet var desc: UILabel!
     @IBOutlet var image: UIImageView!
     @IBOutlet var deleteButton: UIButton!
-    @IBOutlet var tagsList: TagListView!
+    @IBOutlet weak var tagsList: TagListView!
     @IBOutlet var scroll: UIScrollView!
     weak var delegate : IdeaDelegate!
     

@@ -9,7 +9,7 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Bloco de Ideias/CollectionViewCells/NewIdeaCollectionViewCell.swift"
+            filePath = "IdeaBuilder/CollectionViewCells/NewIdeaCollectionViewCell.swift"
             timestampString = "551755089.053272"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"

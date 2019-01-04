@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C9F2FC439CB661A78330101 /* Pods_Bloco_de_Ideias.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F40F065B579427B13474486E /* Pods_Bloco_de_Ideias.framework */; };
+		0C9F2FC439CB661A78330101 /* Pods_IdeaBuilder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F40F065B579427B13474486E /* Pods_IdeaBuilder.framework */; };
 		BE13FAB120E18B1D00579899 /* OverlayPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE13FAB020E18B1D00579899 /* OverlayPresentationController.swift */; };
 		BE13FAB320E18CC100579899 /* OverlayTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE13FAB220E18CC100579899 /* OverlayTransitioningDelegate.swift */; };
 		BE13FAB520E1918700579899 /* OverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE13FAB420E1918700579899 /* OverlayViewController.swift */; };
 		BE13FAB720E1A67500579899 /* BouncyViewControllerAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE13FAB620E1A67500579899 /* BouncyViewControllerAnimator.swift */; };
-		BE13FAC320E1B38000579899 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BEFCB37B20C9560C006F8498 /* Info.plist */; };
 		BE13FAC720E1BA6200579899 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE13FAC620E1BA6200579899 /* Fonts.swift */; };
 		BE13FAE820E1C3A600579899 /* FredokaOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE13FADF20E1C30A00579899 /* FredokaOne-Regular.ttf */; };
 		BE13FAE920E1C3A600579899 /* NunitoSans-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE13FADA20E1C30900579899 /* NunitoSans-Black.ttf */; };
@@ -79,28 +78,28 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0290FE6C5410F9F7C3E06A60 /* Pods-Bloco de Ideias.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bloco de Ideias.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bloco de Ideias/Pods-Bloco de Ideias.debug.xcconfig"; sourceTree = "<group>"; };
-		77246C0EE9EB509EBFC78157 /* Pods-Bloco de Ideias.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bloco de Ideias.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bloco de Ideias/Pods-Bloco de Ideias.release.xcconfig"; sourceTree = "<group>"; };
+		0290FE6C5410F9F7C3E06A60 /* Pods-IdeaBuilder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdeaBuilder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IdeaBuilder/Pods-IdeaBuilder.debug.xcconfig"; sourceTree = "<group>"; };
+		77246C0EE9EB509EBFC78157 /* Pods-IdeaBuilder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IdeaBuilder.release.xcconfig"; path = "Pods/Target Support Files/Pods-IdeaBuilder/Pods-IdeaBuilder.release.xcconfig"; sourceTree = "<group>"; };
 		BE13FAB020E18B1D00579899 /* OverlayPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayPresentationController.swift; sourceTree = "<group>"; };
 		BE13FAB220E18CC100579899 /* OverlayTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayTransitioningDelegate.swift; sourceTree = "<group>"; };
 		BE13FAB420E1918700579899 /* OverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayViewController.swift; sourceTree = "<group>"; };
 		BE13FAB620E1A67500579899 /* BouncyViewControllerAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BouncyViewControllerAnimator.swift; sourceTree = "<group>"; };
 		BE13FAC620E1BA6200579899 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		BE13FAD920E1C30900579899 /* NunitoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-Regular.ttf"; path = "Bloco de Ideias/Fonts/NunitoSans-Regular.ttf"; sourceTree = SOURCE_ROOT; };
-		BE13FADA20E1C30900579899 /* NunitoSans-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-Black.ttf"; path = "Bloco de Ideias/Fonts/NunitoSans-Black.ttf"; sourceTree = SOURCE_ROOT; };
-		BE13FADB20E1C30900579899 /* NunitoSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-SemiBoldItalic.ttf"; path = "Bloco de Ideias/Fonts/NunitoSans-SemiBoldItalic.ttf"; sourceTree = SOURCE_ROOT; };
-		BE13FADC20E1C30A00579899 /* NunitoSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-ExtraBold.ttf"; path = "Bloco de Ideias/Fonts/NunitoSans-ExtraBold.ttf"; sourceTree = SOURCE_ROOT; };
-		BE13FADD20E1C30A00579899 /* NunitoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-BoldItalic.ttf"; path = "Bloco de Ideias/Fonts/NunitoSans-BoldItalic.ttf"; sourceTree = SOURCE_ROOT; };
-		BE13FADE20E1C30A00579899 /* NunitoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-Bold.ttf"; path = "Bloco de Ideias/Fonts/NunitoSans-Bold.ttf"; sourceTree = SOURCE_ROOT; };
-		BE13FADF20E1C30A00579899 /* FredokaOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FredokaOne-Regular.ttf"; path = "Bloco de Ideias/Fonts/FredokaOne-Regular.ttf"; sourceTree = SOURCE_ROOT; };
-		BE13FAE020E1C30A00579899 /* NunitoSans-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-BlackItalic.ttf"; path = "Bloco de Ideias/Fonts/NunitoSans-BlackItalic.ttf"; sourceTree = SOURCE_ROOT; };
-		BE13FAE120E1C30A00579899 /* NunitoSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-LightItalic.ttf"; path = "Bloco de Ideias/Fonts/NunitoSans-LightItalic.ttf"; sourceTree = SOURCE_ROOT; };
-		BE13FAE220E1C30B00579899 /* NunitoSans-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-ExtraLightItalic.ttf"; path = "Bloco de Ideias/Fonts/NunitoSans-ExtraLightItalic.ttf"; sourceTree = SOURCE_ROOT; };
-		BE13FAE320E1C30B00579899 /* NunitoSans-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-ExtraLight.ttf"; path = "Bloco de Ideias/Fonts/NunitoSans-ExtraLight.ttf"; sourceTree = SOURCE_ROOT; };
-		BE13FAE420E1C30B00579899 /* NunitoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-Italic.ttf"; path = "Bloco de Ideias/Fonts/NunitoSans-Italic.ttf"; sourceTree = SOURCE_ROOT; };
-		BE13FAE520E1C30B00579899 /* NunitoSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-Light.ttf"; path = "Bloco de Ideias/Fonts/NunitoSans-Light.ttf"; sourceTree = SOURCE_ROOT; };
-		BE13FAE620E1C30B00579899 /* NunitoSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-ExtraBoldItalic.ttf"; path = "Bloco de Ideias/Fonts/NunitoSans-ExtraBoldItalic.ttf"; sourceTree = SOURCE_ROOT; };
-		BE13FAE720E1C30C00579899 /* NunitoSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-SemiBold.ttf"; path = "Bloco de Ideias/Fonts/NunitoSans-SemiBold.ttf"; sourceTree = SOURCE_ROOT; };
+		BE13FAD920E1C30900579899 /* NunitoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-Regular.ttf"; path = "IdeaBuilder/Fonts/NunitoSans-Regular.ttf"; sourceTree = SOURCE_ROOT; };
+		BE13FADA20E1C30900579899 /* NunitoSans-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-Black.ttf"; path = "IdeaBuilder/Fonts/NunitoSans-Black.ttf"; sourceTree = SOURCE_ROOT; };
+		BE13FADB20E1C30900579899 /* NunitoSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-SemiBoldItalic.ttf"; path = "IdeaBuilder/Fonts/NunitoSans-SemiBoldItalic.ttf"; sourceTree = SOURCE_ROOT; };
+		BE13FADC20E1C30A00579899 /* NunitoSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-ExtraBold.ttf"; path = "IdeaBuilder/Fonts/NunitoSans-ExtraBold.ttf"; sourceTree = SOURCE_ROOT; };
+		BE13FADD20E1C30A00579899 /* NunitoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-BoldItalic.ttf"; path = "IdeaBuilder/Fonts/NunitoSans-BoldItalic.ttf"; sourceTree = SOURCE_ROOT; };
+		BE13FADE20E1C30A00579899 /* NunitoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-Bold.ttf"; path = "IdeaBuilder/Fonts/NunitoSans-Bold.ttf"; sourceTree = SOURCE_ROOT; };
+		BE13FADF20E1C30A00579899 /* FredokaOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FredokaOne-Regular.ttf"; path = "IdeaBuilder/Fonts/FredokaOne-Regular.ttf"; sourceTree = SOURCE_ROOT; };
+		BE13FAE020E1C30A00579899 /* NunitoSans-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-BlackItalic.ttf"; path = "IdeaBuilder/Fonts/NunitoSans-BlackItalic.ttf"; sourceTree = SOURCE_ROOT; };
+		BE13FAE120E1C30A00579899 /* NunitoSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-LightItalic.ttf"; path = "IdeaBuilder/Fonts/NunitoSans-LightItalic.ttf"; sourceTree = SOURCE_ROOT; };
+		BE13FAE220E1C30B00579899 /* NunitoSans-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-ExtraLightItalic.ttf"; path = "IdeaBuilder/Fonts/NunitoSans-ExtraLightItalic.ttf"; sourceTree = SOURCE_ROOT; };
+		BE13FAE320E1C30B00579899 /* NunitoSans-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-ExtraLight.ttf"; path = "IdeaBuilder/Fonts/NunitoSans-ExtraLight.ttf"; sourceTree = SOURCE_ROOT; };
+		BE13FAE420E1C30B00579899 /* NunitoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-Italic.ttf"; path = "IdeaBuilder/Fonts/NunitoSans-Italic.ttf"; sourceTree = SOURCE_ROOT; };
+		BE13FAE520E1C30B00579899 /* NunitoSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-Light.ttf"; path = "IdeaBuilder/Fonts/NunitoSans-Light.ttf"; sourceTree = SOURCE_ROOT; };
+		BE13FAE620E1C30B00579899 /* NunitoSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-ExtraBoldItalic.ttf"; path = "IdeaBuilder/Fonts/NunitoSans-ExtraBoldItalic.ttf"; sourceTree = SOURCE_ROOT; };
+		BE13FAE720E1C30C00579899 /* NunitoSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NunitoSans-SemiBold.ttf"; path = "IdeaBuilder/Fonts/NunitoSans-SemiBold.ttf"; sourceTree = SOURCE_ROOT; };
 		BE13FAF720E2A56F00579899 /* ColorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsViewController.swift; sourceTree = "<group>"; };
 		BE13FAF920E2A60E00579899 /* ColorsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsDelegate.swift; sourceTree = "<group>"; };
 		BE205A6020CE989A00B53288 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
@@ -143,14 +142,14 @@
 		BE9F234520D9315D007B58BB /* NewIdeaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewIdeaCollectionViewCell.xib; sourceTree = "<group>"; };
 		BEF8EF3B20E1819700CBE01D /* NewTopicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTopicCollectionViewCell.swift; sourceTree = "<group>"; };
 		BEF8EF3C20E1819700CBE01D /* NewTopicCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewTopicCollectionViewCell.xib; sourceTree = "<group>"; };
-		BEFCB36920C9560A006F8498 /* Bloco de Ideias.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bloco de Ideias.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEFCB36920C9560A006F8498 /* IdeaBuilder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IdeaBuilder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEFCB36C20C9560A006F8498 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEFCB36E20C9560A006F8498 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BEFCB37120C9560A006F8498 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BEFCB37920C9560C006F8498 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BEFCB37B20C9560C006F8498 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEFCB38120C9707B006F8498 /* IdeaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaViewController.swift; sourceTree = "<group>"; };
-		F40F065B579427B13474486E /* Pods_Bloco_de_Ideias.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bloco_de_Ideias.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F40F065B579427B13474486E /* Pods_IdeaBuilder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IdeaBuilder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,7 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C9F2FC439CB661A78330101 /* Pods_Bloco_de_Ideias.framework in Frameworks */,
+				0C9F2FC439CB661A78330101 /* Pods_IdeaBuilder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,7 +167,7 @@
 		4BDC66CC5AD7DF01E23A4B4F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F40F065B579427B13474486E /* Pods_Bloco_de_Ideias.framework */,
+				F40F065B579427B13474486E /* Pods_IdeaBuilder.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -249,7 +248,7 @@
 		BEFCB36020C95609006F8498 = {
 			isa = PBXGroup;
 			children = (
-				BEFCB36B20C9560A006F8498 /* Bloco de Ideias */,
+				BEFCB36B20C9560A006F8498 /* IdeaBuilder */,
 				BEFCB36A20C9560A006F8498 /* Products */,
 				E53934DA7CC1CF27007C8B28 /* Pods */,
 				4BDC66CC5AD7DF01E23A4B4F /* Frameworks */,
@@ -259,12 +258,12 @@
 		BEFCB36A20C9560A006F8498 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BEFCB36920C9560A006F8498 /* Bloco de Ideias.app */,
+				BEFCB36920C9560A006F8498 /* IdeaBuilder.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BEFCB36B20C9560A006F8498 /* Bloco de Ideias */ = {
+		BEFCB36B20C9560A006F8498 /* IdeaBuilder */ = {
 			isa = PBXGroup;
 			children = (
 				BE13FAC820E1C14D00579899 /* Fonts */,
@@ -281,7 +280,7 @@
 				BEFCB37820C9560C006F8498 /* LaunchScreen.storyboard */,
 				BEFCB37B20C9560C006F8498 /* Info.plist */,
 			);
-			path = "Bloco de Ideias";
+			path = IdeaBuilder;
 			sourceTree = "<group>";
 		};
 		BEFCB38320C97080006F8498 /* Controller */ = {
@@ -326,8 +325,8 @@
 		E53934DA7CC1CF27007C8B28 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0290FE6C5410F9F7C3E06A60 /* Pods-Bloco de Ideias.debug.xcconfig */,
-				77246C0EE9EB509EBFC78157 /* Pods-Bloco de Ideias.release.xcconfig */,
+				0290FE6C5410F9F7C3E06A60 /* Pods-IdeaBuilder.debug.xcconfig */,
+				77246C0EE9EB509EBFC78157 /* Pods-IdeaBuilder.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -335,9 +334,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BEFCB36820C95609006F8498 /* Bloco de Ideias */ = {
+		BEFCB36820C95609006F8498 /* IdeaBuilder */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BEFCB37E20C9560C006F8498 /* Build configuration list for PBXNativeTarget "Bloco de Ideias" */;
+			buildConfigurationList = BEFCB37E20C9560C006F8498 /* Build configuration list for PBXNativeTarget "IdeaBuilder" */;
 			buildPhases = (
 				668E9755F52FAC7D3251CE24 /* [CP] Check Pods Manifest.lock */,
 				BEFCB36520C95609006F8498 /* Sources */,
@@ -349,9 +348,9 @@
 			);
 			dependencies = (
 			);
-			name = "Bloco de Ideias";
-			productName = "Bloco de Ideias";
-			productReference = BEFCB36920C9560A006F8498 /* Bloco de Ideias.app */;
+			name = IdeaBuilder;
+			productName = "IdeaBuilder";
+			productReference = BEFCB36920C9560A006F8498 /* IdeaBuilder.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -369,7 +368,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BEFCB36420C95609006F8498 /* Build configuration list for PBXProject "Bloco de Ideias" */;
+			buildConfigurationList = BEFCB36420C95609006F8498 /* Build configuration list for PBXProject "IdeaBuilder" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -382,7 +381,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BEFCB36820C95609006F8498 /* Bloco de Ideias */,
+				BEFCB36820C95609006F8498 /* IdeaBuilder */,
 			);
 		};
 /* End PBXProject section */
@@ -414,7 +413,6 @@
 				BE63583020DA7FA6002666EC /* TopicImageCollectionViewCell.xib in Resources */,
 				BE13FAEC20E1C3A600579899 /* NunitoSans-BoldItalic.ttf in Resources */,
 				BEFCB37220C9560A006F8498 /* Main.storyboard in Resources */,
-				BE13FAC320E1B38000579899 /* Info.plist in Resources */,
 				BE13FAEA20E1C3A600579899 /* NunitoSans-BlackItalic.ttf in Resources */,
 				BE33F5A620DA85C900A026C9 /* Assets.xcassets in Resources */,
 			);
@@ -434,7 +432,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Bloco de Ideias-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-IdeaBuilder-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -447,7 +445,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Bloco de Ideias/Pods-Bloco de Ideias-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-IdeaBuilder/Pods-IdeaBuilder-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/TagListView/TagListView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -456,7 +454,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bloco de Ideias/Pods-Bloco de Ideias-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IdeaBuilder/Pods-IdeaBuilder-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -650,18 +648,19 @@
 		};
 		BEFCB37F20C9560C006F8498 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0290FE6C5410F9F7C3E06A60 /* Pods-Bloco de Ideias.debug.xcconfig */;
+			baseConfigurationReference = 0290FE6C5410F9F7C3E06A60 /* Pods-IdeaBuilder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 84MA3JMGLA;
-				INFOPLIST_FILE = "Bloco de Ideias/Info.plist";
+				DEVELOPMENT_TEAM = 4YUW7D4357;
+				INFOPLIST_FILE = IdeaBuilder/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "br.com.academy.Bloco-de-Ideias2";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.academy.IdeaBuilder;
+				PRODUCT_MODULE_NAME = IdeiaBuilder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -670,18 +669,19 @@
 		};
 		BEFCB38020C9560C006F8498 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 77246C0EE9EB509EBFC78157 /* Pods-Bloco de Ideias.release.xcconfig */;
+			baseConfigurationReference = 77246C0EE9EB509EBFC78157 /* Pods-IdeaBuilder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 84MA3JMGLA;
-				INFOPLIST_FILE = "Bloco de Ideias/Info.plist";
+				DEVELOPMENT_TEAM = 4YUW7D4357;
+				INFOPLIST_FILE = IdeaBuilder/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "br.com.academy.Bloco-de-Ideias2";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.academy.IdeaBuilder;
+				PRODUCT_MODULE_NAME = IdeiaBuilder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -691,7 +691,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BEFCB36420C95609006F8498 /* Build configuration list for PBXProject "Bloco de Ideias" */ = {
+		BEFCB36420C95609006F8498 /* Build configuration list for PBXProject "IdeaBuilder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BEFCB37C20C9560C006F8498 /* Debug */,
@@ -700,7 +700,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BEFCB37E20C9560C006F8498 /* Build configuration list for PBXNativeTarget "Bloco de Ideias" */ = {
+		BEFCB37E20C9560C006F8498 /* Build configuration list for PBXNativeTarget "IdeaBuilder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BEFCB37F20C9560C006F8498 /* Debug */,

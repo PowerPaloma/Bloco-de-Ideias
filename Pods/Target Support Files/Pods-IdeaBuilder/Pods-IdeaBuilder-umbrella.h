@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_Bloco_de_IdeiasVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_Bloco_de_IdeiasVersionString[];
+FOUNDATION_EXPORT double Pods_IdeaBuilderVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_IdeaBuilderVersionString[];
 

@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Bloco de Ideias.xcodeproj">
+      location = "self:IdeaBuilder.xcodeproj">
    </FileRef>
 </Workspace>
