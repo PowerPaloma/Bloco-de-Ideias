@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1O9-O2-LGP">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NunitoSans-Regular.ttf">
+            <string>NunitoSans-Regular</string>
+        </array>
+        <array key="NunitoSans-SemiBold.ttf">
+            <string>NunitoSans-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Idea View Controller-->
+        <scene sceneID="Pjk-By-oOy">
+            <objects>
+                <viewController id="HnI-UB-ADf" customClass="IdeaViewController" customModule="IdeiaBuilder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rnH-qF-J6w">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Q8c-Vi-kvS">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Gpw-du-xNx">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="194"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kitchen" translatesAutoresizingMaskIntoConstraints="NO" id="Z88-6M-ku6">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="155.5"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00h-Ky-0dl">
+                                                <rect key="frame" x="0.0" y="163.5" width="375" height="30.5"/>
+                                                <fontDescription key="fontDescription" name="NunitoSans-SemiBold" family="Nunito Sans" pointSize="17"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                <state key="normal" title="Improve Idea" image="improve">
+                                                    <color key="titleColor" red="0.90980392160000001" green="0.62352941179999999" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ehi-Pd-j8r">
+                                        <rect key="frame" x="0.0" y="396" width="375" height="200.5"/>
+                                        <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <gestureRecognizers/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aeG-5w-p7R">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TopicCell" id="tNA-oY-bJ9" customClass="TopicCollectionViewCell">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </view>
+                                                <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <gestureRecognizers/>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5kz-sK-e2x">
+                                        <rect key="frame" x="15" y="202" width="345" height="194"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" ambiguous="YES" text="Sustainable kitchen" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I61-qZ-ILQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="345" height="68"/>
+                                                <fontDescription key="fontDescription" name="NunitoSans-SemiBold" family="Nunito Sans" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" verticalCompressionResistancePriority="749" ambiguous="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFa-Sx-cSE">
+                                                <rect key="frame" x="0.0" y="68" width="345" height="126"/>
+                                                <string key="text">To avoid food spoilage and dispensing in large quantities, it is very important in a sustainable kitchen to do a review of the refrigerators and cabinets and write a list, noting just what is needed before leaving the house to do the shopping.</string>
+                                                <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="18"/>
+                                                <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="Gpw-du-xNx" firstAttribute="width" secondItem="Q8c-Vi-kvS" secondAttribute="width" id="0tu-P2-LxT"/>
+                                    <constraint firstItem="Gpw-du-xNx" firstAttribute="leading" secondItem="Q8c-Vi-kvS" secondAttribute="leading" id="1hb-NF-PyP"/>
+                                    <constraint firstItem="5kz-sK-e2x" firstAttribute="bottom" secondItem="Q8c-Vi-kvS" secondAttribute="bottom" id="AeJ-dc-sUq"/>
+                                    <constraint firstItem="5kz-sK-e2x" firstAttribute="height" secondItem="Q8c-Vi-kvS" secondAttribute="height" multiplier="0.3" id="IB3-kT-Q5x"/>
+                                    <constraint firstItem="5kz-sK-e2x" firstAttribute="leading" secondItem="Q8c-Vi-kvS" secondAttribute="leading" constant="15" id="Q7l-ws-Tch"/>
+                                    <constraint firstItem="Gpw-du-xNx" firstAttribute="top" secondItem="Q8c-Vi-kvS" secondAttribute="top" id="QSB-Ps-1Wp"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ehi-Pd-j8r" secondAttribute="trailing" id="X5h-tS-EV0"/>
+                                    <constraint firstItem="5kz-sK-e2x" firstAttribute="top" secondItem="Gpw-du-xNx" secondAttribute="bottom" constant="8" id="X9r-eR-Opl"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gpw-du-xNx" secondAttribute="trailing" id="ZWo-9I-56z"/>
+                                    <constraint firstItem="Gpw-du-xNx" firstAttribute="height" secondItem="Q8c-Vi-kvS" secondAttribute="height" multiplier="0.3" id="hW2-Xk-PPe"/>
+                                    <constraint firstAttribute="trailing" secondItem="5kz-sK-e2x" secondAttribute="trailing" constant="15" id="qCJ-ru-CIO"/>
+                                    <constraint firstItem="Ehi-Pd-j8r" firstAttribute="leading" secondItem="Q8c-Vi-kvS" secondAttribute="leading" id="qgk-RC-jOE"/>
+                                    <constraint firstItem="Ehi-Pd-j8r" firstAttribute="top" secondItem="5kz-sK-e2x" secondAttribute="bottom" id="yJH-Lr-a2B"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Q8c-Vi-kvS" firstAttribute="top" secondItem="cyF-ig-gmy" secondAttribute="top" id="4GV-3K-Fyc"/>
+                            <constraint firstAttribute="bottom" secondItem="Q8c-Vi-kvS" secondAttribute="bottom" id="6MC-wM-Ekg"/>
+                            <constraint firstItem="Q8c-Vi-kvS" firstAttribute="leading" secondItem="cyF-ig-gmy" secondAttribute="leading" id="Pdz-55-Jzm"/>
+                            <constraint firstItem="Z88-6M-ku6" firstAttribute="height" secondItem="Gpw-du-xNx" secondAttribute="height" multiplier="0.8" id="WCc-z9-pgL"/>
+                            <constraint firstItem="Q8c-Vi-kvS" firstAttribute="width" secondItem="rnH-qF-J6w" secondAttribute="width" id="caq-tK-OcJ"/>
+                            <constraint firstItem="Ehi-Pd-j8r" firstAttribute="height" secondItem="rnH-qF-J6w" secondAttribute="height" multiplier="0.3" id="fHC-k5-xgV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cyF-ig-gmy"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="GR2-VU-4e2">
+                        <barButtonItem key="backBarButtonItem" title="Idea" id="GST-g0-JrG"/>
+                        <barButtonItem key="rightBarButtonItem" image="edit" id="iLJ-bV-XJG"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NnM-QM-8Cy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2465" y="-3463"/>
+        </scene>
+        <!--Idea View Controller-->
+        <scene sceneID="fRg-AA-I5h">
+            <objects>
+                <viewController id="Gdt-ly-6kk" customClass="IdeaViewController" customModule="IdeiaBuilder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U8k-ka-0Xx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dgd-MP-Tg8">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="1x4-3k-uQG">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="393"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="l8v-zD-gQk">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="393"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="kitchen" translatesAutoresizingMaskIntoConstraints="NO" id="I4e-nX-1Bu">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="196.5"/>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwk-tR-YqP">
+                                                    <rect key="frame" x="0.0" y="199.5" width="375" height="48.5"/>
+                                                    <state key="normal" title="Improve Idea"/>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcs-qC-6FO">
+                                                    <rect key="frame" x="0.0" y="251" width="375" height="20"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Sustainable kitchen">
+                                                            <attributes>
+                                                                <font key="NSFont" size="17" name="NunitoSans-Bold"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1z5-OW-cIZ">
+                                                    <rect key="frame" x="0.0" y="274" width="375" height="119"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment>
+                                                            <string key="content">To avoid food spoilage and dispensing in large quantities, it is very important in a sustainable kitchen to do a review of the refrigerators and cabinets and write a list, noting just what is needed before leaving the house to do the shopping.</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" size="17" name="NunitoSans-Regular"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bcs-qC-6FO" firstAttribute="width" secondItem="l8v-zD-gQk" secondAttribute="width" id="3yH-Yg-eIz"/>
+                                                <constraint firstItem="1z5-OW-cIZ" firstAttribute="width" secondItem="l8v-zD-gQk" secondAttribute="width" id="ZJW-wK-XZ8"/>
+                                                <constraint firstItem="I4e-nX-1Bu" firstAttribute="width" secondItem="l8v-zD-gQk" secondAttribute="width" id="l8C-HJ-Slq"/>
+                                                <constraint firstItem="jwk-tR-YqP" firstAttribute="width" secondItem="l8v-zD-gQk" secondAttribute="width" id="pnV-Z6-F2n"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="l8v-zD-gQk" firstAttribute="leading" secondItem="1x4-3k-uQG" secondAttribute="leading" id="0PR-kb-6DA"/>
+                                        <constraint firstAttribute="bottom" secondItem="l8v-zD-gQk" secondAttribute="bottom" id="Aam-xy-ovB"/>
+                                        <constraint firstItem="I4e-nX-1Bu" firstAttribute="height" secondItem="1x4-3k-uQG" secondAttribute="height" multiplier="0.5" id="TvN-Nu-W9A"/>
+                                        <constraint firstItem="l8v-zD-gQk" firstAttribute="top" secondItem="1x4-3k-uQG" secondAttribute="top" id="cwR-WN-nl8"/>
+                                        <constraint firstAttribute="trailing" secondItem="l8v-zD-gQk" secondAttribute="trailing" id="xql-9O-LOK"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTopicsCollection" rowHeight="195" id="LlD-vb-mPh">
+                                        <rect key="frame" x="0.0" y="421" width="375" height="195"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LlD-vb-mPh" id="6Jd-MD-avg">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="194.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DEr-hv-NV9" firstAttribute="bottom" secondItem="Dgd-MP-Tg8" secondAttribute="bottom" id="JBF-3L-xdh"/>
+                            <constraint firstItem="DEr-hv-NV9" firstAttribute="trailing" secondItem="Dgd-MP-Tg8" secondAttribute="trailing" id="Ok4-l7-MkX"/>
+                            <constraint firstItem="Dgd-MP-Tg8" firstAttribute="leading" secondItem="DEr-hv-NV9" secondAttribute="leading" id="Y5K-ZX-aMj"/>
+                            <constraint firstItem="Dgd-MP-Tg8" firstAttribute="top" secondItem="DEr-hv-NV9" secondAttribute="top" id="ZLn-Gd-FSR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DEr-hv-NV9"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="DZq-Xm-n73">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="edit" id="EZw-dW-hdq">
+                            <color key="tintColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="ijc-G5-K7L" kind="presentation" identifier="editIdea" id="fD3-Gg-oZ3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="1z5-OW-cIZ" id="A7w-Gf-Kxr"/>
+                        <outlet property="ideaImageView" destination="I4e-nX-1Bu" id="bqH-ew-FVD"/>
+                        <outlet property="mainTableView" destination="Dgd-MP-Tg8" id="Kan-XW-8RO"/>
+                        <outlet property="titleLabel" destination="bcs-qC-6FO" id="Sww-9e-qlV"/>
+                        <segue destination="EeV-Vm-yAx" kind="presentation" identifier="improve" id="FH0-Vh-fXb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Ps-WL-ntD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2464.8000000000002" y="-2768.3658170914546"/>
+        </scene>
+        <!--NewIdea-->
+        <scene sceneID="c2J-PF-1bA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NewIdea" id="ijc-G5-K7L" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q21-4g-vOY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3233" y="-2860"/>
+        </scene>
+        <!--ImproveIdea-->
+        <scene sceneID="1ag-As-IH5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ImproveIdea" id="EeV-Vm-yAx" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WdO-jp-rwy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3233" y="-2678"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6Wi-QU-Cyc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1O9-O2-LGP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AX6-VN-da2">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Gdt-ly-6kk" kind="relationship" relationship="rootViewController" id="1Ba-JP-QjW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Roh-fg-Qfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1700" y="-2768.3658170914546"/>
+        </scene>
+        <!--Idea View Controller-->
+        <scene sceneID="iEE-fC-R9w">
+            <objects>
+                <viewController id="0XC-kU-Fof" customClass="IdeaViewController" customModule="IdeiaBuilder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qqA-7c-Hbh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ksg-XT-2uX">
+                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="STC-4T-qpI">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="50" height="333"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="mvb-vj-GgI">
+                                        <rect key="frame" x="0.0" y="333" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jNo-m5-4pc">
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="333"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XOe-sC-OLf">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="333"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="kitchen" translatesAutoresizingMaskIntoConstraints="NO" id="kuL-Lv-nBR">
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="140"/>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUW-b2-acO">
+                                                    <rect key="frame" x="0.0" y="148" width="343" height="30"/>
+                                                    <state key="normal" title="Improve Idea"/>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mDu-ra-utZ">
+                                                    <rect key="frame" x="0.0" y="186" width="343" height="20"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Sustainable kitchen">
+                                                            <attributes>
+                                                                <font key="NSFont" size="17" name="NunitoSans-Bold"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCK-yM-cHU">
+                                                    <rect key="frame" x="0.0" y="214" width="343" height="119"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment>
+                                                            <string key="content">To avoid food spoilage and dispensing in large quantities, it is very important in a sustainable kitchen to do a review of the refrigerators and cabinets and write a list, noting just what is needed before leaving the house to do the shopping.</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" size="17" name="NunitoSans-Regular"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="aUW-b2-acO" firstAttribute="width" secondItem="XOe-sC-OLf" secondAttribute="width" id="6d8-eF-whn"/>
+                                                <constraint firstItem="kuL-Lv-nBR" firstAttribute="width" secondItem="XOe-sC-OLf" secondAttribute="width" id="DdG-Nv-yxZ"/>
+                                                <constraint firstItem="mDu-ra-utZ" firstAttribute="width" secondItem="XOe-sC-OLf" secondAttribute="width" id="TWO-X9-2Bd"/>
+                                                <constraint firstItem="zCK-yM-cHU" firstAttribute="width" secondItem="XOe-sC-OLf" secondAttribute="width" id="gX9-uW-aqE"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="XOe-sC-OLf" secondAttribute="trailing" id="Kk0-fA-SRq"/>
+                                        <constraint firstAttribute="bottom" secondItem="XOe-sC-OLf" secondAttribute="bottom" id="NY1-rW-ecT"/>
+                                        <constraint firstAttribute="bottom" secondItem="XOe-sC-OLf" secondAttribute="bottom" id="Pm1-of-fz9"/>
+                                        <constraint firstItem="XOe-sC-OLf" firstAttribute="leading" secondItem="jNo-m5-4pc" secondAttribute="leading" id="ghp-1h-ROY"/>
+                                        <constraint firstItem="XOe-sC-OLf" firstAttribute="top" secondItem="jNo-m5-4pc" secondAttribute="top" id="thl-ei-Oad"/>
+                                    </constraints>
+                                </collectionReusableView>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ksg-XT-2uX" firstAttribute="top" secondItem="KHv-nX-vN7" secondAttribute="top" id="8nW-Ru-H4s"/>
+                            <constraint firstItem="Ksg-XT-2uX" firstAttribute="leading" secondItem="KHv-nX-vN7" secondAttribute="leading" constant="16" id="gno-TS-yvq"/>
+                            <constraint firstItem="KHv-nX-vN7" firstAttribute="trailing" secondItem="Ksg-XT-2uX" secondAttribute="trailing" constant="16" id="tXg-3i-FzU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KHv-nX-vN7"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="aLp-gn-FTZ">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="edit" id="GY8-Fw-Mv4">
+                            <color key="tintColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4KI-GV-N1g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2465" y="-2078"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="edit" width="47" height="48"/>
+        <image name="improve" width="61" height="60"/>
+        <image name="kitchen" width="562.5" height="377.25"/>
+    </resources>
+</document>

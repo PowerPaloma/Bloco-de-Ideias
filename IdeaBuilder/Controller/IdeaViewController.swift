@@ -12,82 +12,53 @@ import CoreData
 class IdeaViewController: UIViewController {
     
     //Outlets from View
-    @IBOutlet var collectionView: UICollectionView!
-    @IBOutlet var ideaImage: UIImageView!
-    @IBOutlet var titleIdea: UILabel!
-    @IBOutlet weak var descrip: UILabel!
-    @IBOutlet var viewP: UIView!
+
+    @IBOutlet weak var mainTableView: UITableView!
+    @IBOutlet weak var ideaImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
-    @IBOutlet var swipeUp: UISwipeGestureRecognizer!
+//    @IBOutlet var viewP: UIView!
+//    @IBOutlet var swipeUp: UISwipeGestureRecognizer!
     
-    //Variables
+//    //Variables
     var idea = Idea()
+    var topicsCollectionViewDataSource = TopicsDataSource()
     var topicsList : [Topic] = []
     var longPressGR: UILongPressGestureRecognizer!
     var movingIndexPath: NSIndexPath?
     var topicSelected = Topic()
-    
-    let overlayTransitioningDelegate = OverlayTransitioningDelegate()
+//    let overlayTransitioningDelegate = OverlayTransitioningDelegate()
 
-
-    
-    //Values for UICollectionViewFlowLayout
-    let inset: CGFloat = 8
-    let minimunLineSpacing: CGFloat = 0
-    let minimunInteritemSpacing: CGFloat = 0
-    var cellsPerRow = 2
-    var addCellFrame: CGRect!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Topics Collection View
-        let nibText = UINib(nibName: "TopicTextCollectionViewCell", bundle: nil)
-        self.collectionView.register(nibText, forCellWithReuseIdentifier: "TopicTextCell")
-        let nibImage = UINib(nibName: "TopicImageCollectionViewCell", bundle: nil)
-        self.collectionView.register(nibImage, forCellWithReuseIdentifier: "TopicImageCell")
-        let nibDraw = UINib(nibName: "TopicDrawCollectionViewCell", bundle: nil)
-        self.collectionView.register(nibDraw, forCellWithReuseIdentifier: "TopicDrawCell")
-        let nibNew = UINib(nibName: "NewTopicCollectionViewCell", bundle: nil)
-        self.collectionView.register(nibNew, forCellWithReuseIdentifier: "NewTopicCell")
+        getCoreDataData()
         
-        self.collectionView.dataSource = self
-        self.collectionView.delegate = self
+        self.mainTableView.dataSource = self
         
         //Set Idea data to view
-        self.ideaImage.image = UIImage(data: self.idea.image! as Data)
-        self.titleIdea.text = self.idea.title
-        self.descrip.text = self.idea.desc
-        
-        getCoreDataData()
+        self.ideaImageView.image = UIImage(data: self.idea.image! as Data)
+        self.titleLabel.text = self.idea.title
+        self.descriptionLabel.text = self.idea.desc
     
     }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        collectionView.collectionViewLayout.invalidateLayout()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        getCoreDataData()
-
     }
     
     func getCoreDataData() {
         //Core Data
-//
         self.topicsList = idea.topics?.allObjects as! [Topic]
-        collectionView.reloadData()
-        self.ideaImage.image = UIImage(data: self.idea.image! as Data)
-        self.titleIdea.text = self.idea.title
-        self.descrip.text = self.idea.desc
+//  mainTableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    //perform segue
+    //Perform segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is UINavigationController {
             let dest = segue.destination as! UINavigationController
@@ -168,96 +139,15 @@ class IdeaViewController: UIViewController {
         performSegue(withIdentifier: "editIdea", sender: nil)
     }
     
-    
-    private func prepareOverlay(viewController: OverlayViewController) {
-        viewController.transitioningDelegate = overlayTransitioningDelegate
-        viewController.modalPresentationStyle = .custom
-        viewController.idea = self.idea
-
-    }
-
-    
+//    private func prepareOverlay(viewController: OverlayViewController) {
+//        viewController.transitioningDelegate = overlayTransitioningDelegate
+//        viewController.modalPresentationStyle = .custom
+//        viewController.idea = self.idea
+//
+//    }
 }
 
-extension IdeaViewController : UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return topicsList.count + 1
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if(indexPath.row == 0){
-            return self.collectionView.dequeueReusableCell(withReuseIdentifier: "NewTopicCell", for: indexPath) as! NewTopicCollectionViewCell
-        }else{
-            //Use diferent types of cells depending on the topic type
-            if topicsList[indexPath.row-1].typeT == TopicsEnum.text.rawValue {
-                let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "TopicTextCell", for: indexPath) as! TopicTextCollectionViewCell
-                cell.title.text = topicsList[indexPath.row-1].titleT
-                cell.desc.text = topicsList[indexPath.row-1].descT
-                cell.deleteButton.tag = indexPath.row-1
-                //cell.delegate = self
-                
-                if isEditing {
-                    cell.startWiggling()
-                } else {
-                    cell.stopWiggling()
-                }
-                
-                if (indexPath as NSIndexPath) == movingIndexPath {
-                    cell.alpha = 0.7
-                    cell.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
-                } else {
-                    cell.alpha = 1.0
-                    cell.transform = CGAffineTransform.identity
-                }
-                return cell
-            } else if topicsList[indexPath.row-1].typeT == TopicsEnum.image.rawValue {
-                let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "TopicImageCell", for: indexPath) as! TopicImageCollectionViewCell
-                cell.title.text = topicsList[indexPath.row-1].titleT
-                cell.image.image = UIImage(data: topicsList[indexPath.row-1].imageT! as Data)
-                cell.deleteButton.tag = indexPath.row-1
-                //cell.delegate = self
-                
-                if isEditing {
-                    cell.startWiggling()
-                } else {
-                    cell.stopWiggling()
-                }
-                
-                if (indexPath as NSIndexPath) == movingIndexPath {
-                    cell.alpha = 0.7
-                    cell.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
-                } else {
-                    cell.alpha = 1.0
-                    cell.transform = CGAffineTransform.identity
-                }
-                return cell
-            } else if topicsList[indexPath.row-1].typeT == TopicsEnum.draw.rawValue {
-                let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "TopicDrawCell", for: indexPath) as! TopicDrawCollectionViewCell
-                cell.title.text = topicsList[indexPath.row-1].titleT
-                cell.image.image = UIImage(data: topicsList[indexPath.row-1].imageT! as Data)
-                cell.deleteButton.tag = indexPath.row-1
-                //cell.delegate = self
-                
-                if isEditing {
-                    cell.startWiggling()
-                } else {
-                    cell.stopWiggling()
-                }
-                
-                if (indexPath as NSIndexPath) == movingIndexPath {
-                    cell.alpha = 0.7
-                    cell.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
-                } else {
-                    cell.alpha = 1.0
-                    cell.transform = CGAffineTransform.identity
-                }
-                return cell
-            } else {
-                let cell2 = self.collectionView.dequeueReusableCell(withReuseIdentifier: "TopicCell", for: indexPath) as! TopicTextCollectionViewCell
-                return cell2
-            }
-        }
-    }
+extension IdeaViewController : UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if (indexPath.row == 0){
@@ -276,18 +166,18 @@ extension IdeaViewController : UICollectionViewDelegate, UICollectionViewDataSou
             { _ in
                 self.performSegue(withIdentifier: "newTopicImage", sender: nil)
             }
-            
+
             //Add options to actionsheet
             actionSheet.addAction(cancelAction)
             actionSheet.addAction(textAction)
             actionSheet.addAction(drawAction)
             actionSheet.addAction(galeryAction)
-            
+
             //Show actionsheet
             self.present(actionSheet, animated: true, completion: nil)
         }else{
             self.topicSelected = topicsList[indexPath.row - 1]
-            
+
             if topicSelected.typeT == TopicsEnum.text.rawValue{
                 performSegue(withIdentifier: "viewTopicText", sender: nil)
             }
@@ -299,61 +189,63 @@ extension IdeaViewController : UICollectionViewDelegate, UICollectionViewDataSou
             }
         }
     }
+    
 
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+}
+
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//
+//        if (scrollView.contentOffset.y > 20){
+//            let overlayViewController = storyboard?.instantiateViewController(withIdentifier: "overlayViewController") as! UIViewController
+//            prepareOverlay(viewController: overlayViewController as! OverlayViewController)
+//
+//
+//            present(overlayViewController, animated: true, completion: {
+//               scrollView.contentOffset.y = 0
+//            })
+//        }
+//
+//
+//    }
+
+extension IdeaViewController : UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellTopicsCollection") as! UITableViewCell
         
-        if (scrollView.contentOffset.y > 20){
-            let overlayViewController = storyboard?.instantiateViewController(withIdentifier: "overlayViewController") as! UIViewController
-            prepareOverlay(viewController: overlayViewController as! OverlayViewController)
+        if indexPath.row == 0 {
+            var topicsCollectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: cell.frame.width, height: 600.0), collectionViewLayout: UICollectionViewFlowLayout())
+            topicsCollectionView.backgroundColor = UIColor.red
             
+            let topicsCollectionViewDataSource = TopicsDataSource()
+            topicsCollectionViewDataSource.idea = self.idea
+            topicsCollectionViewDataSource.topics = self.topicsList
+            topicsCollectionView = topicsCollectionViewDataSource.registerNibs(topicsCollectionView)
         
-            present(overlayViewController, animated: true, completion: {
-               scrollView.contentOffset.y = 0
-            })
+            topicsCollectionView.dataSource = topicsCollectionViewDataSource
+            topicsCollectionView.delegate = self
+            
+            cell.addSubview(topicsCollectionView)
         }
-        
-        
+        return cell
     }
     
-    
-    
-    func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
-        return indexPath.item != 0
-    }
-
-    func collectionView(_ collectionView: UICollectionView, moveItemAt source: IndexPath, to destination: IndexPath) {
-
-        if destination.item != 0 {
-            let topic = topicsList.remove(at: source.item-1)
-            topicsList.insert(topic, at: destination.item-1)
-
-            //            collectionView.moveItem(at: destination, to: source)
-            // MUDAR NO CORE DATA A ORDEM DAS IDEIAS
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            var collectionHeight = topicsList.count*100
+            return CGFloat(collectionHeight)
         }
+        return 0.0
     }
+    
+    
 }
+    
 
-extension IdeaViewController : UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return minimunLineSpacing
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return minimunInteritemSpacing
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let marginsAndInsets = inset * 2 + collectionView.safeAreaInsets.left + collectionView.safeAreaInsets.right + minimunInteritemSpacing * CGFloat(cellsPerRow - 1)
-        
-        let itemWidth = ((view.bounds.size.width - marginsAndInsets) / CGFloat(cellsPerRow).rounded(.down))
-        
-        return CGSize(width: itemWidth, height: 160.0)
-    }
-}
+
 
 
 

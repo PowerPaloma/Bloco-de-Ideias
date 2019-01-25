@@ -75,6 +75,10 @@
 		BEFCB37220C9560A006F8498 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEFCB37020C9560A006F8498 /* Main.storyboard */; };
 		BEFCB37A20C9560C006F8498 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEFCB37820C9560C006F8498 /* LaunchScreen.storyboard */; };
 		BEFCB38220C9707B006F8498 /* IdeaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFCB38120C9707B006F8498 /* IdeaViewController.swift */; };
+		E5ADED3C21DFCFAE004602B6 /* NewIdea.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5ADED3B21DFCFAE004602B6 /* NewIdea.storyboard */; };
+		E5ADED3E21DFD0F4004602B6 /* ImproveIdea.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5ADED3D21DFD0F4004602B6 /* ImproveIdea.storyboard */; };
+		E5ADED4021E180D9004602B6 /* Idea.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5ADED3F21E180D9004602B6 /* Idea.storyboard */; };
+		E5ADED4521E39039004602B6 /* TopicsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ADED4421E39039004602B6 /* TopicsDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -149,6 +153,10 @@
 		BEFCB37920C9560C006F8498 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BEFCB37B20C9560C006F8498 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEFCB38120C9707B006F8498 /* IdeaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaViewController.swift; sourceTree = "<group>"; };
+		E5ADED3B21DFCFAE004602B6 /* NewIdea.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewIdea.storyboard; sourceTree = "<group>"; };
+		E5ADED3D21DFD0F4004602B6 /* ImproveIdea.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImproveIdea.storyboard; sourceTree = "<group>"; };
+		E5ADED3F21E180D9004602B6 /* Idea.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Idea.storyboard; sourceTree = "<group>"; };
+		E5ADED4421E39039004602B6 /* TopicsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsDataSource.swift; sourceTree = "<group>"; };
 		F40F065B579427B13474486E /* Pods_IdeaBuilder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IdeaBuilder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -266,6 +274,8 @@
 		BEFCB36B20C9560A006F8498 /* IdeaBuilder */ = {
 			isa = PBXGroup;
 			children = (
+				E5ADED4321E39016004602B6 /* DataSources and Delegates */,
+				E5ADED3A21DFCF93004602B6 /* Storyboards */,
 				BE13FAC820E1C14D00579899 /* Fonts */,
 				BE13FAAF20E18AFB00579899 /* Update */,
 				BE7D22B120DE6C3500FCC96C /* View */,
@@ -331,6 +341,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E5ADED3A21DFCF93004602B6 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				E5ADED3B21DFCFAE004602B6 /* NewIdea.storyboard */,
+				E5ADED3D21DFD0F4004602B6 /* ImproveIdea.storyboard */,
+				E5ADED3F21E180D9004602B6 /* Idea.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		E5ADED4321E39016004602B6 /* DataSources and Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				E5ADED4421E39039004602B6 /* TopicsDataSource.swift */,
+			);
+			path = "DataSources and Delegates";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -349,7 +377,7 @@
 			dependencies = (
 			);
 			name = IdeaBuilder;
-			productName = "IdeaBuilder";
+			productName = IdeaBuilder;
 			productReference = BEFCB36920C9560A006F8498 /* IdeaBuilder.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -395,6 +423,7 @@
 				BE13FAEB20E1C3A600579899 /* NunitoSans-Bold.ttf in Resources */,
 				BE13FAF120E1C3A600579899 /* NunitoSans-Italic.ttf in Resources */,
 				BE13FAF620E1C3A600579899 /* NunitoSans-SemiBoldItalic.ttf in Resources */,
+				E5ADED3E21DFD0F4004602B6 /* ImproveIdea.storyboard in Resources */,
 				BE13FAF020E1C3A600579899 /* NunitoSans-ExtraLightItalic.ttf in Resources */,
 				BE13FAEE20E1C3A600579899 /* NunitoSans-ExtraBoldItalic.ttf in Resources */,
 				BEF8EF3E20E1819700CBE01D /* NewTopicCollectionViewCell.xib in Resources */,
@@ -403,9 +432,11 @@
 				BEFCB37A20C9560C006F8498 /* LaunchScreen.storyboard in Resources */,
 				BE13FAF520E1C3A600579899 /* NunitoSans-SemiBold.ttf in Resources */,
 				BE13FAF420E1C3A600579899 /* NunitoSans-Regular.ttf in Resources */,
+				E5ADED3C21DFCFAE004602B6 /* NewIdea.storyboard in Resources */,
 				BE13FAF220E1C3A600579899 /* NunitoSans-Light.ttf in Resources */,
 				BE63582C20DA79C8002666EC /* TopicTextCollectionViewCell.xib in Resources */,
 				BE13FAEF20E1C3A600579899 /* NunitoSans-ExtraLight.ttf in Resources */,
+				E5ADED4021E180D9004602B6 /* Idea.storyboard in Resources */,
 				BE9F234720D9315D007B58BB /* NewIdeaCollectionViewCell.xib in Resources */,
 				BE13FAF320E1C3A600579899 /* NunitoSans-LightItalic.ttf in Resources */,
 				BE13FAED20E1C3A600579899 /* NunitoSans-ExtraBold.ttf in Resources */,
@@ -477,6 +508,7 @@
 				BE9F234620D9315D007B58BB /* NewIdeaCollectionViewCell.swift in Sources */,
 				BE63581A20D941A8002666EC /* SearchTagsViewController.swift in Sources */,
 				BE205A6D20CEA45400B53288 /* NewIdeaViewController.swift in Sources */,
+				E5ADED4521E39039004602B6 /* TopicsDataSource.swift in Sources */,
 				BE6358C020DC5A22002666EC /* ImproveIdeaViewController.swift in Sources */,
 				BE7D22FF20DE80B000FCC96C /* Line.swift in Sources */,
 				BE7D22F920DE80B000FCC96C /* SuggestionOrder.swift in Sources */,

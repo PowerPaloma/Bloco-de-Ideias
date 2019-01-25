@@ -19,7 +19,6 @@ class MyIdeasViewController: UIViewController{
     var movingIndexPath: NSIndexPath?
     var ideasList : [Idea] = []
     var processList : [Process] = []
-    var indexIdeaSelected = 0
     
     //Values for UICollectionViewFlowLayout
     let inset: CGFloat = 8
@@ -217,11 +216,15 @@ class MyIdeasViewController: UIViewController{
     
     //Prepare for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.destination is IdeaViewController{
-           let vc = segue.destination as! IdeaViewController
-            vc.idea = self.ideasList[self.indexIdeaSelected]
+        if segue.identifier == "viewIdea" {
+            guard let navigationController = segue.destination as? UINavigationController, let destination = navigationController.viewControllers.first as? IdeaViewController else { return }
+                destination.idea = self.ideasList[sender as! Int]
         }
+        
+        
     }
+    
+    
 }
 
 extension MyIdeasViewController : UICollectionViewDelegate, UICollectionViewDataSource, TagListViewDelegate {
@@ -270,8 +273,7 @@ extension MyIdeasViewController : UICollectionViewDelegate, UICollectionViewData
         if (indexPath.row == 0){
             performSegue(withIdentifier: "newIdea", sender: nil)
         }else{
-            self.indexIdeaSelected = indexPath.row - 1
-            performSegue(withIdentifier: "viewIdea", sender: nil)
+            performSegue(withIdentifier: "viewIdea", sender: indexPath.row - 1)
         }
         collectionView.endEditing(true)
     }
